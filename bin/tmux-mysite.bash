@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-dir="$HOME/develop/mysite/source"
+dir="$HOME/Projects/mysite/source"
 ses="mysite"
 
 if [[ ! -d "$dir" ]] ; then

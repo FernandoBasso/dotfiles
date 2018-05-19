@@ -25,15 +25,15 @@ bash ~/Projects/dotfiles/sync.sh --dry-run
 bash ~/Projects/dotfiles/sync.sh --sync
 ```
 
-## Fresh Machine
-
-Or a fresh $HOME directory...
+## Setup Vim
 
 Do the steps above and optionally install vim stuff:
 
 ```bash
 bash ~/Projects/dotfiles/sync.sh --setup-vim
 ```
+
+You may also run the above command everytime you wan't to update Vim Plug and its managed packages.
 
 TODO: Create a `setup_emacs` function since I used Emacs a lot as well.
 

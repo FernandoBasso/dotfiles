@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Spark
+Version=2.7.5
+GenericName=Spark
+X-GNOME-FullName=Spark
+Comment=ignite realtime Spark IM client
+Type=Application
+Categories=Application;Utility;Network;
+Path=/home/fernando/bin/Spark
+Exec=/bin/bash Spark
+Terminal=false
+StartupNotify=true
+Icon=/home/fernando/bin/Spark/spark.png
+TargetEnvironment=Unity
+

@@ -1,0 +1,62 @@
+Xcursor.theme: Vanilla-DMZ
+!Xcursor.theme: Comix Cursor original Red
+
+Xft.autohint: 0
+!Xft.rh_prefer_bitmaps: true
+Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintslight
+Xft.hintstyle:  none
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.dpi: 96
+Xft.rgba: rgb
+
+!URxvt.font: \
+!xft:Ubuntu Mono derivative Powerline:size=14:hintstyle=0:hinting=false:antialias=false, \
+!xft:Symbola:hintstyle=0:hinting=false:antialias=false, \
+!xft:Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
+!xft:DejaVu Sans Mono Slashed for Powerline:hintstyle=0:hinting=false:antialias=false, \
+!xft:DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
+!xft:Code2000:hintstyle=0:hinting=false:antialias=false
+
+URxvt.internalBorder: 10
+URxvt.borderLess: false
+URxvt.iconFile: /home/fernando/.dotfiles/FILES/imgs/icon-terminal1.png
+URxvt.scrollBar: false
+!URxvt.transparent: true
+!URxvt.shading: 20
+
+! Not necessary with rxvt-unicode-patched from aur.
+!URxvt.letterSpace: -1
+URxvt.saveLines: 8192
+URxvt.geometry: 142x42
+
+URxvt.perl-ext-common:      default,resize-font
+
+!URxvt.keysym.Control-Tab: \033[27;5;9~
+!URxvt.keysym.C-Tab:       \033[34~
+!URxvt.keysym.C-0xFF09: \033[27;5;9~
+URxvt.keysym.C-Tab:         \033<C-Tab>
+
+URxvt.keysym.F11: perl:fullscreen:switch
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-plus
+URxvt.resize-font.reset: C-equal
+URxvt.resize-font.show: C-question
+! -title param overrides this.
+URxvt.title: Always Be Awesome!
+
+
+XTerm*faceName: xft:Source Code Pro:size=13
+XTerm*internalBorder: 5
+XTerm*termName: xterm-256color
+XTerm*locale: true
+XTerm*saveLines: 8192
+XTerm*scrollTtyOutput: false
+XTerm*scrollKey: true
+XTerm*metaSendsEscape: true
+! double-click to select whole URLs :D
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+#include ".Xresources.d/dark1.xrdb"
+

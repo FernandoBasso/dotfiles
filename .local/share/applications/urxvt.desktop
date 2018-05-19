@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Name=RXVT Unicode
+Comment=An unicode capable rxvt clone
+Exec=urxvt -name theme-mytheme1 -tr -sh 20
+#Icon=utilities-terminal
+Icon=/home/fernando/.dotfiles/FILES/imgs/icon-terminal1.png
+Terminal=false
+Type=Application
+Categories=System;TerminalEmulator;Development;

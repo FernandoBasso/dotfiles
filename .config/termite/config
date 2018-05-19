@@ -1,0 +1,376 @@
+# vim: ft=dosini cms=#%s
+
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = false
+urgent_on_bell = true
+clickable_url = true
+font = Ubuntu Mono 14
+scrollback_lines = 10000
+search_wrap = true
+icon_name = terminal
+geometry = 1248x960
+
+# "system", "on" or "off"
+cursor_blink = off
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# set size hints for the window
+#size_hints = false
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+[colors]
+cursor = #ff0505
+cursor_foreground = #e11bf8
+foreground = #dcdccc
+foreground_bold = #ffffff
+background = #3f3f3f
+
+# 20% background transparency (requires a compositor)
+#background = rgba(63, 63, 63, 0.8)
+
+# if unset, will reverse foreground and background
+highlight = #2f2f2f
+
+[colors]
+# Base16 Monokai
+# Author: Wimer Hazenberg (http://www.monokai.nl)
+
+foreground      = #f8f8f2
+foreground_bold = #f5f4f1
+cursor          = #f5f4f1
+background      = #272822
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #272822
+color8  = #75715e
+color7  = #f8f8f2
+color15 = #f9f8f5
+
+# Red
+color1  = #f92672
+color9  = #f92672
+
+# Green
+color2  = #a6e22e
+color10 = #a6e22e
+
+# Yellow
+color3  = #f4bf75
+color11 = #f4bf75
+
+# Blue
+color4  = #66d9ef
+color12 = #66d9ef
+
+# Purple
+color5  = #ae81ff
+color13 = #ae81ff
+
+# Teal
+color6  = #a1efe4
+color14 = #a1efe4
+
+# Extra colors
+color16 = #fd971f
+color17 = #cc6633
+color18 = #383830
+color19 = #49483e
+color20 = #a59f85
+color21 = #f5f4f1
+
+# colors from color0 to color254 can be set
+#color0 = #3f3f3f
+#color1 = #705050
+#color2 = #60b48a
+#color3 = #dfaf8f
+#color4 = #506070
+#color5 = #dc8cc3
+#color6 = #8cd0d3
+#color7 = #dcdccc
+#color8 = #709080
+#color9 = #dca3a3
+#color10 = #c3bf9f
+#color11 = #f0dfaf
+#color12 = #94bff3
+#color13 = #ec93d3
+#color14 = #93e0e3
+#color15 = #ffffff
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = false
+urgent_on_bell = true
+clickable_url = true
+font = Ubuntu Mono 14
+scrollback_lines = 10000
+search_wrap = true
+icon_name = terminal
+geometry = 1248x960
+
+# "system", "on" or "off"
+cursor_blink = off
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# set size hints for the window
+#size_hints = false
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+[colors]
+cursor = #ff0505
+cursor_foreground = #e11bf8
+foreground = #dcdccc
+foreground_bold = #ffffff
+background = #3f3f3f
+
+# 20% background transparency (requires a compositor)
+#background = rgba(63, 63, 63, 0.8)
+
+# if unset, will reverse foreground and background
+highlight = #2f2f2f
+
+[colors]
+# Base16 Monokai
+# Author: Wimer Hazenberg (http://www.monokai.nl)
+
+foreground      = #f8f8f2
+foreground_bold = #f5f4f1
+cursor          = #f5f4f1
+background      = #272822
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #272822
+color8  = #75715e
+color7  = #f8f8f2
+color15 = #f9f8f5
+
+# Red
+color1  = #f92672
+color9  = #f92672
+
+# Green
+color2  = #a6e22e
+color10 = #a6e22e
+
+# Yellow
+color3  = #f4bf75
+color11 = #f4bf75
+
+# Blue
+color4  = #66d9ef
+color12 = #66d9ef
+
+# Purple
+color5  = #ae81ff
+color13 = #ae81ff
+
+# Teal
+color6  = #a1efe4
+color14 = #a1efe4
+
+# Extra colors
+color16 = #fd971f
+color17 = #cc6633
+color18 = #383830
+color19 = #49483e
+color20 = #a59f85
+color21 = #f5f4f1
+
+# colors from color0 to color254 can be set
+#color0 = #3f3f3f
+#color1 = #705050
+#color2 = #60b48a
+#color3 = #dfaf8f
+#color4 = #506070
+#color5 = #dc8cc3
+#color6 = #8cd0d3
+#color7 = #dcdccc
+#color8 = #709080
+#color9 = #dca3a3
+#color10 = #c3bf9f
+#color11 = #f0dfaf
+#color12 = #94bff3
+#color13 = #ec93d3
+#color14 = #93e0e3
+#color15 = #ffffff
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
+[options]
+scroll_on_output = false
+scroll_on_keystroke = true
+audible_bell = false
+mouse_autohide = false
+allow_bold = true
+dynamic_title = false
+urgent_on_bell = true
+clickable_url = true
+font = Ubuntu Mono 14
+scrollback_lines = 10000
+search_wrap = true
+icon_name = terminal
+geometry = 1248x960
+
+# "system", "on" or "off"
+cursor_blink = off
+
+# "block", "underline" or "ibeam"
+cursor_shape = block
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# set size hints for the window
+#size_hints = false
+
+# Hide links that are no longer valid in url select overlay mode
+filter_unmatched_urls = true
+
+# emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+[colors]
+cursor = #ff0505
+cursor_foreground = #e11bf8
+foreground = #dcdccc
+foreground_bold = #ffffff
+background = #3f3f3f
+
+# 20% background transparency (requires a compositor)
+#background = rgba(63, 63, 63, 0.8)
+
+# if unset, will reverse foreground and background
+highlight = #2f2f2f
+
+[colors]
+# Base16 Monokai
+# Author: Wimer Hazenberg (http://www.monokai.nl)
+
+foreground      = #f8f8f2
+foreground_bold = #f5f4f1
+cursor          = #f5f4f1
+background      = #272822
+
+# 16 color space
+
+# Black, Gray, Silver, White
+color0  = #272822
+color8  = #75715e
+color7  = #f8f8f2
+color15 = #f9f8f5
+
+# Red
+color1  = #f92672
+color9  = #f92672
+
+# Green
+color2  = #a6e22e
+color10 = #a6e22e
+
+# Yellow
+color3  = #f4bf75
+color11 = #f4bf75
+
+# Blue
+color4  = #66d9ef
+color12 = #66d9ef
+
+# Purple
+color5  = #ae81ff
+color13 = #ae81ff
+
+# Teal
+color6  = #a1efe4
+color14 = #a1efe4
+
+# Extra colors
+color16 = #fd971f
+color17 = #cc6633
+color18 = #383830
+color19 = #49483e
+color20 = #a59f85
+color21 = #f5f4f1
+
+# colors from color0 to color254 can be set
+#color0 = #3f3f3f
+#color1 = #705050
+#color2 = #60b48a
+#color3 = #dfaf8f
+#color4 = #506070
+#color5 = #dc8cc3
+#color6 = #8cd0d3
+#color7 = #dcdccc
+#color8 = #709080
+#color9 = #dca3a3
+#color10 = #c3bf9f
+#color11 = #f0dfaf
+#color12 = #94bff3
+#color13 = #ec93d3
+#color14 = #93e0e3
+#color15 = #ffffff
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+

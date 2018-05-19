@@ -1,0 +1,16 @@
+/* file: ~/.config/gtk-3.0/gtk.css */
+
+/*
+ * Works for gnome-terminal, mate-terminal, xfce4-terminal and probably others.
+ * rxvt-unicde uses something else (look at Xresource).
+ */
+vte-terminal,
+terminal-window {
+    padding: 5px 5px 3px 5px;
+    -vte-terminal-inner-border: 5px 5px 3px 5px;
+}
+
+.termite {
+    padding: 4px 4px 2px 4px;
+}
+

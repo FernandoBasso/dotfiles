@@ -1,0 +1,26 @@
+;;
+;; Chicken Scheme Interpreter RC file:  ~/.csirc
+;;
+;; Install
+;; -------
+;;
+;; Debian based distros:
+;;
+;;   apt get install libreadline-dev
+;;
+;; Arch Linux:
+;;
+;;   # No need to install anything because readline itself comes with
+;;   # `dev' stuff.
+;;
+;; Install the `readline' egg:
+;;
+;;   `chicken-install -s readline`
+;;
+
+(use readline)
+(current-input-port (make-readline-port))
+(install-history-file #f "/.csi.history")
+
+;; vim: set filetype=scheme:
+

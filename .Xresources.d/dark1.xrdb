@@ -1,0 +1,88 @@
+! vim: set filetype=xdefaults:
+
+! invoke with urxvt -name dark1
+
+! List of other fonts from ~/.local/share/fonts/ (there are many others not listed here)
+!xft: Ubuntu Mono derivative Powerline:size=14:hintstyle=0:hinting=false:antialias=false, \
+!xft: Noto Mono for Powerline:size=13:hintstyle=0:hinting=false:antialias=false, \
+!xft: monofur for Powerline:size=15:hintstyle=0:hinting=false:antialias=false, \
+!Roboto Mono for Powerline
+!ProFont for Powerline
+!monofur for Powerline Regular
+
+URxvt.font: \
+xft: Noto Mono for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: Droid Sans Mono Slashed for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: DejaVu Sans Mono Slashed for Powerline:hintstyle=0:hinting=false:antialias=false, \
+xft: Source Code Pro for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \
+xft: Symbola:hintstyle=0:hinting=false:antialias=false, \
+xft: Noto Color Emoji:hintstyle=0:hinting=false:antialias=false, \
+xft: Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
+xft: DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
+xft: Code2000:hintstyle=0:hinting=false:antialias=false
+URxvt.boldFont: \
+xft: Noto Mono for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: Droid Sans Mono Slashed for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: DejaVu Sans Mono Slashed for Powerline:hintstyle=0:hinting=false:antialias=false, \
+xft: Source Code Pro for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \
+xft: Symbola:hintstyle=0:hinting=false:antialias=false, \
+xft: Noto Color Emoji:hintstyle=0:hinting=false:antialias=false, \
+xft: Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
+xft: DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
+xft: Code2000:hintstyle=0:hinting=false:antialias=false
+URxvt.italicFont: \
+xft: Noto Mono for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: Droid Sans Mono Slashed for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: DejaVu Sans Mono Slashed for Powerline:hintstyle=0:hinting=false:antialias=false, \
+xft: Source Code Pro for Powerline:size=12:hintstyle=0:hinting=false:antialias=false, \
+xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \
+xft: Symbola:hintstyle=0:hinting=false:antialias=false, \
+xft: Noto Color Emoji:hintstyle=0:hinting=false:antialias=false, \
+xft: Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
+xft: DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
+xft: Code2000:hintstyle=0:hinting=false:antialias=false
+
+! Colored man pages.
+dark1*colorIT:      #87af5f
+dark1*colorBD:      #d7d7d7
+dark1*colorUL:      #87afd7
+
+! special
+dark1*foreground:   #93a1a1
+dark1*background:   #212121
+dark1*cursorColor:  #93a1a1
+
+! black
+dark1*color0:       #002b36
+dark1*color8:       #657b83
+
+! red
+dark1*color1:       #dc322f
+dark1*color9:       #dc322f
+
+! green
+dark1*color2:       #859900
+dark1*color10:      #859900
+
+! yellow
+dark1*color3:       #b58900
+dark1*color11:      #b58900
+
+! blue
+dark1*color4:       #268bd2
+dark1*color12:      #268bd2
+
+! magenta
+dark1*color5:       #af60ca
+dark1*color13:      #af60ca
+
+! cyan
+dark1*color6:       #2aa198
+dark1*color14:      #2aa198
+
+! white
+dark1*color7:       #93a1a1
+dark1*color15:      #fdf6e3
+

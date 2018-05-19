@@ -264,7 +264,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 " to work fine.
 "
 set runtimepath+=~/.dotfiles/FILES/vim
-let g:UltiSnipsSnippetsDir = "~/.dotfiles/FILES/vim/myultisnips"
+let g:UltiSnipsSnippetsDir = "~/Projects/dotfiles/.vim/myultisnips"
 let g:UltiSnipsSnippetDirectories = ["UltiSnips", "myultisnips"]
 
 " Problem: on terminals, c-tab sends tab, and tab is bound to ycm.

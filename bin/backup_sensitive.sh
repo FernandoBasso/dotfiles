@@ -48,10 +48,12 @@ dryrun=--dry-run
 # If there is a $1 and it is not --backup, we assume
 # the user is unaware of the implications and consider
 # it an error.
-if [ -n "$1" ] && [ "$1" == --backup ] ; then
-    dryrun=''
-else
-    usage 1
+if [ -n "$1" ] ; then
+    if [ "$1" == --backup ] ; then
+        dryrun=''
+    else
+        usage 1
+    fi
 fi
 
 #

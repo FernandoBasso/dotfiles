@@ -14,8 +14,11 @@ path_incl=~/Projects/dotfiles/bash_incl
 [[ -f "$path_incl/bash-utils" ]] && source "$path_incl/bash-utils"
 [[ -f "$path_incl/bash-utils" ]] && source "$path_incl/gen-passwords"
 
-# https://wiki.archlinux.org/index.php/Git#Git_prompt
+# Arch Linux
 [[ -f /usr/share/git/completion/git-prompt.sh ]] && source '/usr/share/git/git-prompt.sh'
+
+# Fedora
+[[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]] && source '/usr/share/git-core/contrib/completion/git-prompt.sh'
 
 PATH="$PATH:$HOME/bin:$HOME/.dotfiles/FILES/bin"
 

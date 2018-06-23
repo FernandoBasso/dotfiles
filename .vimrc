@@ -32,6 +32,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/dbext.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/vader.vim'
+Plug 'ryanoasis/vim-devicons'
 "Plug 'joonty/vdebug'
 Plug '~/Dropbox/vim/vim-uploader'
 Plug '~/Projects/vim/vim-tasklist-asciidoctor'
@@ -279,6 +280,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " Vim-Uploader
 "
 let g:VimUploaderHostsFile = '~/VBSMidia/WorkDATA/vimftpconf/remote-hosts.vim'
+
+"
+" ALE
+"
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
 
 "
 " TERN + TERN_FOR_VIM

@@ -35,7 +35,7 @@ WARNING:
     You have been warned!
 EOF
 
-    exit 0
+exit 0
 }
 
 function mkdirs () {
@@ -66,11 +66,11 @@ function sync () {
             dryrun=''
             ;;
         --dry-run)
-           dryrun=--dry-run
-           ;;
+            dryrun=--dry-run
+            ;;
         *)
-           usage
-           ;;
+            usage
+            ;;
     esac
 
     # If '$dryrun' is empty, rsync will __really_ copy files.
@@ -81,13 +81,15 @@ function sync () {
         --filter='- sync.sh' \
         --filter='- README.md' \
         --filter='- tmp_vim/' \
+        --filter='- imgs/' \
+        --filter='- bash_incl/' \
         --archive \
         --no-perms \
         --verbose \
         --human-readable \
         --itemize-changes \
-    ./ ~/
-}
+        ./ ~/
+    }
 
 case "$1" in
     --sync|-s)

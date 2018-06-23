@@ -44,6 +44,8 @@ highlight ALEError ctermbg=344
 " the quickfix window (which syntastic uses).
 highlight Search ctermbg=5 ctermfg=white
 
+highlight SpellBad ctermbg=213
+
 "
 " GitGutter
 "

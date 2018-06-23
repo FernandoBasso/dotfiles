@@ -29,7 +29,7 @@ highlight Comment guifg=#aeaeae
 highlight SpecialKey guifg=#cccccc
 
 
-set guifont=Ubuntu\ Mono\ 12
+set guifont=Ubuntu\ Mono\ 13
 
 set guicursor=n-c:hor14,i:ver14,a:blinkon0
 

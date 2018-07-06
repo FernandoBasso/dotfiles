@@ -2,7 +2,10 @@
 
 cd "$HOME" || exit 1
 
-if [ "$(hostname)" == 'theforce' ] ; then
+check_me='/etc/os-release'
+if [ -f "$check_me" ] && grep -q 'NAME=.*Ubuntu.*' "$check_me" ; then
+    dest='/media/fernando/5d737d73-4fed-4787-9795-873873e2a45e/Fernando/BackupSensitive/'
+elif [ "$(hostname)" == 'theforce' ] ; then
     dest='/run/media/fernando/5d737d73-4fed-4787-9795-873873e2a45e/Fernando/BackupSensitive/'
 elif [ "$(hostname)" == 'work1' ] ; then
     dest='/run/media/fbasso/5d737d73-4fed-4787-9795-873873e2a45e/Fernando/BackupSensitive/'

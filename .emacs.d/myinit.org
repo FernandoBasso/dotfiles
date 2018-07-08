@@ -1,0 +1,183 @@
+#+TITLE: My Init Org File
+#+STARTUP: content
+#+PROPERTY: header-args :results none :exports none
+
+* General Configs
+
+** Basic
+
+#+BEGIN_SRC emacs-lisp
+(setq inhibit-startup-message t)
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(setq frame-title-format "%b | Always Be Awesome!")
+(fset 'yes-or-no-p 'y-or-n-p)
+(global-set-key (kbd "<f5>") 'revert-buffer)
+
+;; For terminal non-blinking cursor. See C-h m Emacs RET m Cursor Display RET.
+(setq visible-cursor nil)
+
+(setq backup-directory-alist `(("." . "~/Projects/dotfiles/tmp/emacs_stuff")))
+
+(set-default-font "Ubuntu Mono 13")
+; (set-default-font "Noto Sans Mono 13")
+; (set-default-font "Hermit 13")
+
+(global-visual-line-mode t)
+
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "epiphany")
+
+;; It is causing problems with org-ellipsis set to ⤵ .
+;(global-linum-mode 2)
+(global-linum-mode 1)
+(setq linum-format "%4d \u2502")
+
+(setq show-trailing-whitespace t)
+(setq delete-trailing-lines nil)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Use spaces.
+(setq-default indent-tabs-mode nil)
+(setq tab-width 4)
+#+END_SRC
+
+** Cursor
+
+#+BEGIN_SRC emacs-lisp
+(blink-cursor-mode -1)
+(xterm-mouse-mode)
+
+;; Restore cursor position
+(if (version< emacs-version "25.0")
+(progn
+  (require 'saveplace)
+  (setq-default save-place t))
+(save-place-mode 1))
+#+END_SRC
+
+
+* Packages
+
+#+BEGIN_SRC emacs-lisp
+(require 'package)
+
+(setq package-enable-at-startup nil)
+
+(add-to-list 'package-archives
+         '("org" . "https://orgmode.org/elpa/") t)
+
+(add-to-list 'package-archives
+         '("melpa" . "https://melpa.org/packages/"))
+
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+(package-refresh-contents)
+(package-install 'use-package))
+
+(use-package which-key
+:ensure t
+:config (which-key-mode))
+
+#+END_SRC
+
+
+** Paredit and Other Lisp-Related Goodies
+
+#+BEGIN_SRC emacs-lisp
+(use-package paredit
+  :ensure t
+  :config
+  (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+  (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+  (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+  (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+  (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+  (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+  (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
+  (show-paren-mode 1))
+#+END_SRC
+
+
+** org-babel enabled languages
+
+#+BEGIN_SRC emacs-lisp
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (shell . t)
+   (scheme . t)
+   (ruby . t)
+   (haskell . t)))
+
+;; Ask (t) or don't ask (nil) for confirmation to evaluate?
+(setq org-confirm-babel-evaluate nil)
+#+END_SRC
+
+** flyspell
+
+#+BEGIN_SRC emacs-lisp
+(use-package flyspell
+  :ensure t)
+#+END_SRC
+
+
+** Key bindings
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+(setq org-default-notes-file "~/Dropbox/orgmode/tempnotes.org")
+(define-key global-map "\C-cc" 'org-capture)
+#+END_SRC
+
+** Org-mode General Settings
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-fontify-natively t)
+(setq org-src-tab-acts-natively t)
+(setq org-src-window-setup 'current-window)
+(setq org-edit-src-content-indentation 0)
+(setq org-goto-interface 'outline-path-completion)
+(setq org-outline-path-complete-in-steps nil)
+
+;; Bigger Latex Fragments
+(plist-put org-format-latex-options :scale 1.5)
+#+END_SRC
+
+** Org Babel
+** Htmlzie
+
+** Htmlize
+
+#+BEGIN_SRC emacs-lisp
+(use-package htmlize
+  :ensure t)
+#+END_SRC
+
+** Todo Keywords
+
+#+BEGIN_SRC emacs-lisp
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "WORKING(w)" "PAUSED(p)" "WAIT(W)" "VERIFY(v)" "|" "DELEGATED(D)" "CANCELED(c)" "DONE(d)")))
+#+END_SRC
+
+* Themes
+
+#+BEGIN_SRC emacs-lisp
+  (use-package color-theme
+    :ensure t)
+
+  (use-package zenburn-theme
+    :ensure t
+    :config (load-theme 'zenburn t))
+#+END_SRC
+
+#+RESULTS:
+: t
+

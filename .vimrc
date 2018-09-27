@@ -11,10 +11,9 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-clang' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'ternjs/tern_for_vim'
 Plug 'posva/vim-vue'
 Plug 'Quramy/tsuquyomi'
 Plug 'Yggdroot/indentLine'

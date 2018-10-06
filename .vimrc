@@ -28,6 +28,7 @@ Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'vim-scripts/dbext.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/vader.vim'
@@ -158,7 +159,7 @@ let g:vim_json_syntax_conceal = 0
 " NERDTree "
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
-autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
+"autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
 
 " Save the file (some terminals get locked on ctrl-s, and ctrl-q unlocks).
 " # We don't want C-s to lock and terminal (which is unlocked with C-q).
@@ -311,7 +312,7 @@ augroup javascript_folding
     au!
     au FileType javascript setlocal foldmethod=syntax
     let g:javascript_plugin_jsdoc = 1
-    set foldcolumn=3
+    set foldcolumn=0
     if !has('gui_running')
         highlight FoldColumn ctermbg=232
     else

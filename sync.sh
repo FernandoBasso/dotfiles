@@ -83,7 +83,6 @@ function sync () {
         --filter='- tmp_vim/' \
         --filter='- imgs/' \
         --filter='- bash_incl/' \
-        --filter='- .vim/myultisnips/' \
         --archive \
         --no-perms \
         --verbose \

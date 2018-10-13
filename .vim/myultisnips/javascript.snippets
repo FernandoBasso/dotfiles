@@ -1,3 +1,14 @@
+snippet log "console.log"
+console.log($1);
+endsnippet
+
+snippet deflog "define console.log/info/warn/err"
+const log = console.log.bind(console);
+const info = console.info.bind(console);
+const warn = console.warn.bind(console);
+const err = console.error.bind(console);
+endsnippet
+
 snippet jit "jest it test"
 it('${1:test description}', () => {
   $2

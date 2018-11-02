@@ -157,10 +157,12 @@ let g:indentLine_char = '¦' "'·'
 let g:vim_json_syntax_conceal = 0
 
 
-" NERDTree "
+"
+" NERDTree
+"
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
-"autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
+let NERDTreeIgnore = ['\~$', 'node_modules']
 
 " Save the file (some terminals get locked on ctrl-s, and ctrl-q unlocks).
 " # We don't want C-s to lock and terminal (which is unlocked with C-q).

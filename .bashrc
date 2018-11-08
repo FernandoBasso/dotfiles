@@ -13,6 +13,7 @@ path_incl=~/Projects/dotfiles/bash_incl
 [[ -f "$path_incl/bash-aliases" ]] && source "$path_incl/bash-aliases"
 [[ -f "$path_incl/bash-utils" ]] && source "$path_incl/bash-utils"
 [[ -f "$path_incl/bash-utils" ]] && source "$path_incl/gen-passwords"
+[[ -f "$path_incl/git-helpers" ]] && source "$path_incl/git-helpers"
 
 # Arch Linux
 [[ -f /usr/share/git/completion/git-prompt.sh ]] && source '/usr/share/git/git-prompt.sh'

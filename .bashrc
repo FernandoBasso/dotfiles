@@ -65,12 +65,16 @@ MANWIDTH=80
 
 unset HISTFILESIZE
 HISTSIZE=2000
-#PROMPT_COMMAND="${PROMPT_COMMAND:-:}; history -a"
-PROMPT_COMMAND=
+#
+# https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history
+#
+HISTCONTROL=ignorespace
 shopt -s histappend
+alias hfix='history -n && history | sort -k2 -k1nr | uniq -f1 | sort -n | cut -c8- > ~/.tmp$$ && history -c && history -r ~/.tmp$$ && history -w && rm ~/.tmp$$'  
+PROMPT_COMMAND="hfix; $PROMPT_COMMAND"
+
 
 export HISTSIZE
-#export PROMPT_COMMAND
 export MANWIDTH
 export EDITOR=vim
 export BROWSER=opera

@@ -162,7 +162,8 @@ let g:vim_json_syntax_conceal = 0
 "
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\~$', 'node_modules']
+nnoremap <Leader>nf :NERDTreeFind<CR>
+let NERDTreeIgnore = ['\~$', 'node_modules', 'public/assets', 'public/fonts', 'public/uploads', 'public/images']
 
 " Save the file (some terminals get locked on ctrl-s, and ctrl-q unlocks).
 " # We don't want C-s to lock and terminal (which is unlocked with C-q).

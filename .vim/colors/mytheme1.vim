@@ -52,5 +52,10 @@ highlight SpellBad ctermbg=213
 highlight SignColumn      ctermfg=118 ctermbg=235
 highlight FoldColumn      ctermfg=118 ctermbg=235
 
+"
+" ColorColumn works with cursorcolun to delimit max line length.
+"
+highlight ColorColumn term=NONE ctermbg=235
+
 " vim: sw=2
 

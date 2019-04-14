@@ -312,15 +312,15 @@ autocmd FileType vue syntax sync fromstart
 "
 " pangloss/vim-javascript
 "
-augroup javascript_folding
-    au!
-    au FileType javascript setlocal foldmethod=syntax
-    let g:javascript_plugin_jsdoc = 1
-    set foldcolumn=0
-    if !has('gui_running')
-        highlight FoldColumn ctermbg=232
-    else
-        highlight FoldColumn guibg=bg
-    endif
-augroup END
+"augroup javascript_folding
+"    au!
+"    au FileType javascript setlocal foldmethod=syntax
+"    let g:javascript_plugin_jsdoc = 1
+"    set foldcolumn=0
+"    if !has('gui_running')
+"        highlight FoldColumn ctermbg=232
+"    else
+"        highlight FoldColumn guibg=bg
+"    endif
+"augroup END
 

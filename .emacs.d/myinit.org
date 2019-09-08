@@ -175,12 +175,9 @@
 * Themes
 
 #+BEGIN_SRC emacs-lisp
-  (use-package color-theme
-    :ensure t)
-
-  (use-package zenburn-theme
-    :ensure t
-    :config (load-theme 'zenburn t))
+;;
+;; TODO: M-x load-theme TAB
+(load-theme 'zenburn t)
 #+END_SRC
 
 #+RESULTS:

@@ -6,7 +6,7 @@ check_me='/etc/os-release'
 if [ -f "$check_me" ] && grep -q 'NAME=.*Ubuntu.*' "$check_me" ; then
     dest='/media/fernando/5d737d73-4fed-4787-9795-873873e2a45e/Fernando/BackupSensitive/'
 elif [ "$(hostname)" == 'theforce' ] ; then
-    dest='/run/media/fernando/5d737d73-4fed-4787-9795-873873e2a45e/Fernando/BackupSensitive/'
+    dest='/run/media/fernando/SG1L560GB/FernandoBasso/BackupSensitive/'
 elif [ "$(hostname)" == 'work1' ] ; then
     dest='/run/media/fbasso/5d737d73-4fed-4787-9795-873873e2a45e/Fernando/BackupSensitive/'
 fi

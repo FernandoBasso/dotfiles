@@ -204,7 +204,7 @@
 #+BEGIN_SRC emacs-lisp
 ;;
 ;; TODO: M-x load-theme TAB
-(load-theme 'zenburn t)
+; (load-theme 'zenburn t)
 #+END_SRC
 
 #+RESULTS:

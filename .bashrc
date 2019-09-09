@@ -71,7 +71,7 @@ shopt -s histappend
 export HISTSIZE
 export MANWIDTH
 export EDITOR=vim
-export BROWSER=opera
+export BROWSER=firefox
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

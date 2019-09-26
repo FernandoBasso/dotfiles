@@ -21,7 +21,7 @@ path_incl=~/Projects/dotfiles/bash_incl
 # Fedora
 [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]] && source '/usr/share/git-core/contrib/completion/git-prompt.sh'
 
-PATH="$PATH:$HOME/bin:$HOME/.dotfiles/FILES/bin"
+PATH="$PATH:$HOME/bin:$HOME/Projects/dotfiles/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

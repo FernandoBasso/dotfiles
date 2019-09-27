@@ -326,3 +326,8 @@ let g:javascript_plugin_jsdoc = 1
 "    endif
 "augroup END
 
+"
+" CUSTOM HELPERS
+"
+source ~/Projects/dotfiles/.vim/helpers/redir.vim
+

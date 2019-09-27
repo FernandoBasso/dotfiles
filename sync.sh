@@ -81,6 +81,7 @@ function sync () {
         --filter='- sync.sh' \
         --filter='- README.md' \
         --filter='- tmp_vim/' \
+        --filter='- bin/' \
         --filter='- imgs/' \
         --filter='- bash_incl/' \
         --archive \

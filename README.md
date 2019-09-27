@@ -18,7 +18,7 @@ bash sync.sh --dry-run
 bash sync.sh --sync
 ```
 
-NOTE: Everytime a dotfile is to be edited, edit it (the file) from the repository's directory, then use `sync.sh` again to sync the changes to your `$HOME`. That is, do not edit, for instance, `~/.bashrc`. Rather, edit `~/Projects/dotfiles/.bashrc` and then:
+NOTE: Every time a dotfile is to be edited, edit it (the file) from the repository's directory, then use `sync.sh` again to sync the changes to your `$HOME`. That is, do not edit, for instance, `~/.bashrc`. Rather, edit `~/Projects/dotfiles/.bashrc` and then:
 
 ```bash
 bash ~/Projects/dotfiles/sync.sh --dry-run
@@ -33,8 +33,12 @@ Do the steps above and optionally install vim stuff:
 bash ~/Projects/dotfiles/sync.sh --setup-vim
 ```
 
-You may also run the above command everytime you wan't to update Vim Plug and its managed packages.
+You may also run the above command every time you want to update Vim Plug and its managed packages.
 
-TODO: Create a `setup_emacs` function since I used Emacs a lot as well.
+TODO: Create a `setup_emacs` function since I use Emacs a lot as well.
+
+## Notes
+
+The directory `bin/` is not copied to `$HOME/bin/`. `bin/` is just added to `PATH` and `$HOME/bin` is left untouched because there is really no advantage in doing so. This way, `$HOME/bin/` can be used by any other things that should not be committed to the repository, like, third-party programs.
 
 

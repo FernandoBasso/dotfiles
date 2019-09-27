@@ -35,7 +35,7 @@ function titlefy () {
     pad=$(printf '%0.1s' ={1..120})
     remaining=$(( 80 - "${#title}" ))
     padlen=$(( remaining / 2 ))
-    printf '%.*s %s %.*s\n' $padlen "$pad" "$title" $padlen $pad
+    printf '%.*s %s %.*s\n' $padlen "$pad" "$title" $padlen "$pad"
 }
 
 

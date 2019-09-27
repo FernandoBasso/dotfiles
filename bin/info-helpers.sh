@@ -25,7 +25,7 @@ EOF
 }
 
 
-if [ -z $1 ] || [ -z $2 ] ; then
+if [ -z "$1" ] || [ -z "$2" ] ; then
     usage
 fi
 
@@ -34,8 +34,8 @@ function titlefy () {
     title="‘${1}’ info menu index"
     pad=$(printf '%0.1s' ={1..120})
     remaining=$(( 80 - "${#title}" ))
-    padlen=$(( $remaining / 2 ))
-    printf '%.*s %s %.*s\n' $padlen $pad "$title" $padlen $pad
+    padlen=$(( remaining / 2 ))
+    printf '%.*s %s %.*s\n' $padlen "$pad" "$title" $padlen $pad
 }
 
 

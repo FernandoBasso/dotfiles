@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 
 function usage () {
     script_name=${0##*/}
@@ -9,6 +10,9 @@ function usage () {
   USAGE
 
     $script_name [OPTION]... PROGRAM
+
+  OPTIONS
+    --menus     A list of info PROGRAM main menus
 
   EXAMPLES
 
@@ -60,11 +64,14 @@ function list_menus () {
 }
 
 case "$1" in
+    -h|--help)
+        usage
+        ;;
     --menus)
         list_menus "$2"
         ;;
     *)
-        echo 'default ...'
+        usage
         ;;
 esac
 

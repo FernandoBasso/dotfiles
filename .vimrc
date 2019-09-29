@@ -34,9 +34,10 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/vader.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'habamax/vim-asciidoctor'
 "Plug 'joonty/vdebug'
 Plug '~/Dropbox/vim/vim-uploader'
-Plug '~/Projects/vim/vim-tasklist-asciidoctor'
+"Plug '~/Projects/vim/vim-tasklist-asciidoctor'
 
 "'file:///~/.vim/bundle/dbext'
 "'file:///~/.vim/bundle/vim-uploader'
@@ -294,11 +295,18 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 
+
 "
-" TERN + TERN_FOR_VIM
+" habamax/vim-asciidoctor
 "
-nnoremap \td :TernDef<CR>
-nnoremap \tr :TernRefs<CR>
+"
+" Fold sections, default `0`.
+let g:asciidoctor_folding = 1
+
+" Fold options, default `0`.
+let g:asciidoctor_fold_options = 1
+
+let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript', 'ruby', 'php', 'elm', 'haskell', 'bash', 'sh']
 
 "
 " VORG

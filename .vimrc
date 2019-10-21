@@ -295,6 +295,13 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 
+" Disable ALE for .c and .h files. YCM seems to be doing
+" some linting on its own, or something else is...
+let g:ale_pattern_options = {
+    \ '.*\.c$': { 'ale_enabled': 0 },
+    \ '.*\.h$': { 'ale_enabled': 0 },
+\ }
+
 
 "
 " habamax/vim-asciidoctor

@@ -35,6 +35,9 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
 [[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
 
+export DENO_INSTALL="$HOME/.deno"
+PATH="$PATH:$DENO_INSTALL/bin"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 # Load RVM into a shell session *as a function*

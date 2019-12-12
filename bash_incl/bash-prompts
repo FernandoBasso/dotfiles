@@ -26,7 +26,10 @@ ps1simple () {
   PS1='\n\[\e[0;34m\]\w \e[0;31m$(__git_ps1 "[%s ${check}]")\n\[\e[1;0m\]\n$ '
 }
 
-ps1all
+#
+# Make ps1simple the default prompt by invoking the function.
+#
+ps1simple
 
 # vim: set filetype=sh softtabstop=2 shiftwidth=2:
 

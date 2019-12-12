@@ -10,3 +10,11 @@ alias P='pacman-color'
 alias g='gvim --remote'
 alias g='gvim --remote-silent'
 
+#
+# Vim-related aliases.
+#
+#
+# For this alias, also see tmux/themes/tmux-light.conf.
+#
+alias vimlight="vim -c \"colorscheme mylight1\" -c NERDTree -c \"AirlineTheme xtermlight\""
+

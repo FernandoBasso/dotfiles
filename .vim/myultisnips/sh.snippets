@@ -1,4 +1,6 @@
 snippet chi "Challenge Init"
+#!/bin/bash
+
 #
 # ${1:title}
 # ${1/./=/g}
@@ -25,5 +27,13 @@ endsnippet
 snippet h2 "h2 with = title"
 # ${1:text}
 # ${1/./-/g}
+endsnippet
+
+snippet 'doc' "Null Statement Comment-like Block"
+: <<-'////'
+
+$1
+
+////
 endsnippet
 

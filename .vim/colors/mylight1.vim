@@ -32,6 +32,11 @@ highlight Comment ctermfg = 4
 highlight Constant ctermfg = 1
 highlight Folded ctermbg = 250
 
+"
+" For Vertical Split (also NERDTree divisor).
+"
+highlight VertSplit cterm=NONE ctermbg=255
+
 " :help hl-Search. It is also used for the current, selected line in
 " the quickfix window (which syntastic uses).
 highlight Search ctermbg = 1 ctermfg = white

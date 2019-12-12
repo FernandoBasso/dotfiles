@@ -42,3 +42,16 @@ TODO: Create a `setup_emacs` function since I use Emacs a lot as well.
 The directory `bin/` is not copied to `$HOME/bin/`. `bin/` is just added to `PATH` and `$HOME/bin` is left untouched because there is really no advantage in doing so. This way, `$HOME/bin/` can be used by any other things that should not be committed to the repository, like, third-party programs.
 
 
+
+## Screenshots
+
+### Tmux Dark Theme
+
+![Tmux Dark Theme](imgs-showcase/tmux-dark1.png)
+
+
+
+### Tmux Light Theme
+
+![Tmux Light Theme](imgs-showcase/tmux-light1.png)
+

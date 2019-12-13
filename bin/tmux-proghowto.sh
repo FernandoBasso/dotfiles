@@ -22,8 +22,10 @@ case "$1" in
     ;;
 esac
 
-dir="${1:-~/Projects/proghowto}"
+dir="${1:-$HOME/Projects/proghowto}"
 ses="${2:-proghowto}"
+
+echo "$dir ---- $ses"
 
 tmux -f ~/Projects/dotfiles/tmux/themes/tmux-light.conf \
   new-session -d -s "$ses" -c "$dir" \; \

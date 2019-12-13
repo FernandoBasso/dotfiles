@@ -5,7 +5,7 @@ function usage () {
 
 Usage:
 
-  ${0##*/} -, --help
+  ${0##*/} -h, --help
     Show this help text and exit.
 
   ${0##*/} [WORKING-DIRECTORY] [SESSION-NAME]

@@ -22,15 +22,13 @@ case "$1" in
     ;;
 esac
 
-dir="${1:-$HOME/Projects/proghowto}"
-ses="${2:-proghowto}"
+dir="${1:-$HOME/Projects/dotfiles}"
+ses="${2:-dotfiles}"
 
 tmux -f ~/Projects/dotfiles/tmux/themes/tmux-light.conf \
   new-session -d -s "$ses" -c "$dir" \; \
   rename-window 'vim' \; \
   send-keys 'vim -c NERDTree -c "colorscheme mylight1" -c "AirlineTheme xtermlight"' C-m
-
-tmux split-window -h -c "$dir" \; split-window -v -c "$dir"
 
 tmux new-window -t "${ses}:2" -n 'git' -c "$dir"
 

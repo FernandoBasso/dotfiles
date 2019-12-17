@@ -14,3 +14,29 @@ terminal-window {
     padding: 4px 4px 2px 4px;
 }
 
+/**
+ * Zim Source View.
+ *
+ * Insert codeblocks with the markup:
+ *
+ *      {{{code: language="bash" linenumbers="False"
+ *      read -r x
+ *      read -r y
+ *      printf '%s\n' $(( x + y ))
+ *      }}}
+ */
+.sourceview {
+    font-family: 'Source Code Variable', 'Source Code Pro', 'Ubuntu Mono';
+    font-weight: 400;
+    font-size: 16px;
+    padding: 5px;
+}
+
+/**
+ * Color for GtkSourceView text. Works when there is no language specified in
+ * the code block. Not sure when there _is_ a language selected for the block.
+ */
+.sourceview * {
+    color: #555;
+}
+

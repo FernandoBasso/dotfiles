@@ -28,7 +28,7 @@ ses="${2:-proghowto}"
 tmux -f ~/Projects/dotfiles/tmux/themes/tmux-light.conf \
   new-session -d -s "$ses" -c "$dir" \; \
   rename-window 'vim' \; \
-  send-keys 'vim -c NERDTree -c "colorscheme mylight1" -c "AirlineTheme xtermlight"'
+  send-keys 'vim -c "colorscheme mylight1" -c "AirlineTheme xtermlight"'
 
 tmux split-window -h -c "$dir" \; split-window -v -c "$dir"
 
@@ -37,6 +37,8 @@ tmux split-window -h -c "$dir/0dev"
 tmux split-window -v -c "$dir/0dev"
 
 tmux new-window -t "${ses}:3" -n 'git' -c "$dir"
+
+tmux new-window -t "${ses}:3" -n 'man' \; split-window -h
 
 tmux select-window -t "${ses}:1"
 tmux -2 attach-session -t "${ses}"

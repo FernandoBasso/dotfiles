@@ -19,7 +19,8 @@
 
 (setq backup-directory-alist `(("." . "~/Projects/dotfiles/tmp/emacs_stuff")))
 
-(set-default-font "Ubuntu Mono 13")
+(set-default-font "Source Code Variable 13")
+; (set-default-font "Ubuntu Mono 13")
 ; (set-default-font "Noto Sans Mono 13")
 ; (set-default-font "Hermit 13")
 

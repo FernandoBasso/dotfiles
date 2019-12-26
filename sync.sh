@@ -41,6 +41,11 @@ exit 0
 function mkdirs () {
     # Used for vim tmp/bkp files.
     mkdir --verbose --parents ~/Temp/vim_{tmp,bkp}
+    mkdir --verbose --parents ~/.config/Code/User
+}
+
+mk_symb_links () {
+    ln -s ~/Projects/dotfiles/.config/Code/User/settings.json ~/.config/Code/User/settings.json
 }
 
 #
@@ -63,6 +68,7 @@ function sync () {
     case "$1" in
         --sync)
             mkdirs
+            mk_symb_links
             dryrun=''
             ;;
         --dry-run)
@@ -85,6 +91,9 @@ function sync () {
         --filter='- bin/' \
         --filter='- imgs/' \
         --filter='- bash_incl/' \
+        --filter='- .config/Code' \
+        --filter='- .config/Code/User' \
+        --filter='- .config/Code/User/settings.json' \
         --archive \
         --no-perms \
         --verbose \

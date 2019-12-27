@@ -44,10 +44,6 @@ function mkdirs () {
     mkdir --verbose --parents ~/.config/Code/User
 }
 
-mk_symb_links () {
-    ln -s ~/Projects/dotfiles/.config/Code/User/settings.json ~/.config/Code/User/settings.json
-}
-
 #
 # Clone plug.vim into vim's autoload directory. You can use
 # this from time to time to fetch newer versions of Plug
@@ -68,7 +64,7 @@ function sync () {
     case "$1" in
         --sync)
             mkdirs
-            mk_symb_links
+            setup_vim
             dryrun=''
             ;;
         --dry-run)

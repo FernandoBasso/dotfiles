@@ -64,7 +64,6 @@ function sync () {
     case "$1" in
         --sync)
             mkdirs
-            setup_vim
             dryrun=''
             ;;
         --dry-run)

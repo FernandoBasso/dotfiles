@@ -25,18 +25,22 @@ terminal-window {
  *      printf '%s\n' $(( x + y ))
  *      }}}
  */
-.sourceview {
+/*
+ .sourceview {
     font-family: 'Source Code Variable', 'Source Code Pro', 'Ubuntu Mono';
     font-weight: 400;
     font-size: 16px;
     padding: 5px;
 }
+*/
 
 /**
  * Color for GtkSourceView text. Works when there is no language specified in
  * the code block. Not sure when there _is_ a language selected for the block.
  */
+/*
 .sourceview * {
     color: #555;
 }
+*/
 

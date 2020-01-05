@@ -28,7 +28,7 @@ ses="${2:-dotfiles}"
 tmux -f ~/Projects/dotfiles/tmux/themes/tmux-light.conf \
   new-session -d -s "$ses" -c "$dir" \; \
   rename-window 'vim' \; \
-  send-keys 'vim -c NERDTree -c "colorscheme mylight1" -c "AirlineTheme xtermlight"' C-m
+  send-keys 'vimlight'
 
 tmux new-window -t "${ses}:2" -n 'git' -c "$dir"
 

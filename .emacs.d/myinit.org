@@ -92,6 +92,14 @@
 #+END_SRC
 
 
+** Haskell
+
+#+BEGIN_SRC emacs-lisp
+(use-package haskell-mode
+  :ensure t)
+#+END_SRC
+
+
 ** Paredit and Other Lisp-Related Goodies
 
 #+BEGIN_SRC emacs-lisp

@@ -102,6 +102,17 @@
 #+BEGIN_SRC emacs-lisp
 (use-package haskell-mode
   :ensure t)
+
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+
+(setq
+ ;ghc-ghc-options '("-fno-warn-missing-signatures")
+ ;haskell-compile-cabal-build-command "cd %s && stack build"
+ haskell-process-type 'stack-ghci
+ haskell-interactive-popup-errors nil
+ ;haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=ghci-ng")
+ haskell-process-path-ghci "stack"
+)
 #+END_SRC
 
 
@@ -183,35 +194,32 @@
   :ensure t)
 #+END_SRC
 
-** sidebar.el
+
+** Dired Sidebar
+
+https://github.com/jojojames/dired-sidebar
 
 #+begin_src emacs-lisp
-(use-package dash
-  :ensure t)
+(use-package dired-sidebar
+  :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :init
+  (add-hook 'dired-sidebar-mode-hook
+            (lambda ()
+              (unless (file-remote-p default-directory)
+                (auto-revert-mode))))
+  :config
+  (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
+  (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
 
-(use-package dash-functional
-  :ensure t)
-
-(use-package s
-  :ensure t)
-
-(use-package ov
-  :ensure t)
-
-(use-package projectile
-  :ensure t)
-
-(use-package frame-local
-  :ensure t)
-
-(add-to-list 'load-path "~/.emacs.d/manually-installed/sidebar.el/")
-(require 'sidebar)
-; (global-set-key (kbd "C-x C-f") 'sidebar-open)
-; (global-set-key (kbd "C-x C-a") 'sidebar-buffers-open)
+  (setq dired-sidebar-subtree-line-prefix "__")
+  (setq dired-sidebar-theme 'vscode)
+  (setq dired-sidebar-use-term-integration t)
+  (setq dired-sidebar-use-custom-font t))
 #+end_src
 
 ** Todo Keywords
-
 #+BEGIN_SRC emacs-lisp
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WORKING(w)" "PAUSED(p)" "WAIT(W)" "VERIFY(v)" "|" "DELEGATED(D)" "CANCELED(c)" "DONE(d)")))

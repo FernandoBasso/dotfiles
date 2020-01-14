@@ -21,7 +21,7 @@
 
 (set-face-attribute 'default nil
                     :family "Source Code Variable"
-                    :height 110
+                    :height 120
                     :weight 'normal
                     :width 'normal)
 ; (set-default-font "Source Code Variable 13")

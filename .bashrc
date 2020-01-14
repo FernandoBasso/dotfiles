@@ -87,3 +87,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+#
+# https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
+#
+if [[ "$TILIX_ID" ]]; then
+    source /etc/profile.d/vte-2.91.sh
+fi
+

@@ -202,28 +202,16 @@
 #+END_SRC
 
 
-** Dired Sidebar
+** NeoTree
+https://www.emacswiki.org/emacs/NeoTree
 
-https://github.com/jojojames/dired-sidebar
+https://github.com/jaypei/emacs-neotree
 
 #+begin_src emacs-lisp
-(use-package dired-sidebar
-  :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
-  :ensure t
-  :commands (dired-sidebar-toggle-sidebar)
-  :init
-  (add-hook 'dired-sidebar-mode-hook
-            (lambda ()
-              (unless (file-remote-p default-directory)
-                (auto-revert-mode))))
-  :config
-  (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
-  (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
+(use-package neotree
+  :ensure t)
 
-  (setq dired-sidebar-subtree-line-prefix "__")
-  (setq dired-sidebar-theme 'vscode)
-  (setq dired-sidebar-use-term-integration t)
-  (setq dired-sidebar-use-custom-font t))
+(global-set-key [f4] 'neotree-toggle)
 #+end_src
 
 ** Todo Keywords

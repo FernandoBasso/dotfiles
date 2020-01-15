@@ -91,6 +91,14 @@ fi
 # https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
 #
 if [[ "$TILIX_ID" ]]; then
-    source /etc/profile.d/vte-2.91.sh
+    #
+    # NOTE:
+    # If your system does not contain /etc/profile.d/vte.sh, run:
+    #
+    #   sudo ln -s \
+    #       /etc/profile.d/vte-<some-version>.sh \
+    #       /etc/profile.d/vte.sh
+    #
+    source /etc/profile.d/vte.sh
 fi
 

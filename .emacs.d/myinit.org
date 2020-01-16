@@ -4,6 +4,13 @@
 
 * General Configs
 
+* Themes
+Load theme first because so we can disable damn bold and italic later.
+
+#+BEGIN_SRC emacs-lisp
+(load-theme 'adwaita t)
+#+END_SRC
+
 ** Basic
 
 #+BEGIN_SRC emacs-lisp
@@ -35,6 +42,15 @@
 ; (set-default-font "Ubuntu Mono 13")
 ; (set-default-font "Noto Sans Mono 13")
 ; (set-default-font "Hermit 13")
+
+(setq-default line-spacing 0.25)
+
+(set-face-italic 'font-lock-comment-face nil)
+
+(mapc
+  (lambda (face)
+    (set-face-attribute face nil :weight 'normal :underline nil))
+  (face-list))
 
 (global-visual-line-mode t)
 
@@ -219,15 +235,4 @@ https://github.com/jaypei/emacs-neotree
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WORKING(w)" "PAUSED(p)" "WAIT(W)" "VERIFY(v)" "|" "DELEGATED(D)" "CANCELED(c)" "DONE(d)")))
 #+END_SRC
-
-* Themes
-
-#+BEGIN_SRC emacs-lisp
-;;
-;; TODO: M-x load-theme TAB
-; (load-theme 'zenburn t)
-#+END_SRC
-
-#+RESULTS:
-: t
 

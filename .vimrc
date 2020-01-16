@@ -37,6 +37,7 @@ Plug 'junegunn/vader.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'habamax/vim-asciidoctor'
 "Plug 'joonty/vdebug'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Dropbox/vim/vim-uploader'
 "Plug '~/Projects/vim/vim-tasklist-asciidoctor'
 

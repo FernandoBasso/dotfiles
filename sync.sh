@@ -17,17 +17,16 @@ deploy () {
 }
 
 setup_vim () {
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  [ -e ~/.vim/autoload/plug.vim ] && return 0
 
-    vim -c 'PlugInstall'
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+  vim -c 'PlugInstall'
 }
 
 deploy
-
-if [ ! -e ~/.vim/autoload/plug.vim ] ; then
-  setup_vim
-fi
+setup_vim
 
 # vim: set tabstop=2 softtabstop=2 shiftwidth=2:
 

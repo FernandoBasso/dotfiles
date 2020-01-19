@@ -11,7 +11,7 @@ Load theme first because so we can disable damn bold and italic later.
 (load-theme 'adwaita t)
 #+END_SRC
 
-** Basic
+* Basic
 
 #+BEGIN_SRC emacs-lisp
 (setq inhibit-startup-message t)
@@ -22,7 +22,7 @@ Load theme first because so we can disable damn bold and italic later.
 (global-set-key (kbd "<f5>") 'revert-buffer)
 
 ;;
-;; So we don't end up with the damn two spaces after “.”
+;; So we don't end up with the damn two spayces after “.”
 ;;
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Sentences.html
 ;;
@@ -43,7 +43,7 @@ Load theme first because so we can disable damn bold and italic later.
 ; (set-default-font "Noto Sans Mono 13")
 ; (set-default-font "Hermit 13")
 
-(setq-default line-spacing 0.25)
+(setq-default line-spacing 0.0)
 
 (set-face-italic 'font-lock-comment-face nil)
 
@@ -74,7 +74,7 @@ Load theme first because so we can disable damn bold and italic later.
 (setq tab-width 4)
 #+END_SRC
 
-** Cursor
+* Cursor
 
 #+BEGIN_SRC emacs-lisp
 (blink-cursor-mode -1)
@@ -100,7 +100,7 @@ Load theme first because so we can disable damn bold and italic later.
              '("org" . "https://orgmode.org/elpa/") t)
 
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 (package-initialize)
 
@@ -230,6 +230,15 @@ https://github.com/jaypei/emacs-neotree
 (global-set-key [f4] 'neotree-toggle)
 #+end_src
 
+
+** Magit
+
+#+begin_src emacs-lisp
+(use-package magit
+  :ensure t
+  :config
+  (global-set-key (kbd "C-x g") 'magit-status))
+#+end_src
 ** Todo Keywords
 #+BEGIN_SRC emacs-lisp
 (setq org-todo-keywords

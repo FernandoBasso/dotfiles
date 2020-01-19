@@ -11,3 +11,8 @@ cd !$
 bash sync.sh
 ```
 
+
+## TODO
+
+Allow for commented lines and empty lines in the manifest file.
+

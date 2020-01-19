@@ -8,7 +8,7 @@ deploy () {
 
     if [ ! -L "$file" ]; then
       if [ -e "$HOME/$file" ]; then
-        printf '%s\n' "[WARNING]: ~/$file exists and is not a symblink..."
+        printf '%s\n' "[INFO]: ~/$file exists and is not a symblink..."
       else
         ln -sv "$dir_script/$file" "$HOME/$file"
       fi
@@ -22,6 +22,8 @@ setup_vim () {
 
     vim -c 'PlugInstall'
 }
+
+deploy
 
 if [ ! -e ~/.vim/autoload/plug.vim ] ; then
   setup_vim

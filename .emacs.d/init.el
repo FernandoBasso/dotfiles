@@ -16,7 +16,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (neotree paredit haskell-mode org-plus-contrib magit htmlize zenburn-theme color-theme which-key use-package))))
+    (projectile neotree paredit haskell-mode org-plus-contrib magit htmlize zenburn-theme color-theme which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

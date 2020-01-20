@@ -2,7 +2,6 @@
 #+STARTUP: content
 #+PROPERTY: header-args :results none :exports none
 
-* General Configs
 
 * Themes
 Load theme first because so we can disable damn bold and italic later.
@@ -20,6 +19,8 @@ Load theme first because so we can disable damn bold and italic later.
 (setq frame-title-format "%b | Always Be Awesome!")
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "<f5>") 'revert-buffer)
+
+(global-set-key (kbd "C-c t l") 'toggle-truncate-lines)
 
 ;;
 ;; So we don't end up with the damn two spayces after “.”

@@ -238,6 +238,18 @@ https://github.com/jaypei/emacs-neotree
   :config
   (global-set-key (kbd "C-x g") 'magit-status))
 #+end_src
+
+** Projectile
+
+#+begin_src emacs-lisp
+(use-package projectile
+  :ensure t
+  :config
+  (projectile-mode +1)
+  (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+#+end_src
+
 ** Todo Keywords
 #+BEGIN_SRC emacs-lisp
 (setq org-todo-keywords

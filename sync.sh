@@ -16,17 +16,7 @@ deploy () {
   done < ./MANIFEST-LINUX.txt
 }
 
-setup_vim () {
-  [ -e ~/.vim/autoload/plug.vim ] && return 0
-
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-  vim -c 'PlugInstall'
-}
-
 deploy
-setup_vim
 
 # vim: set tabstop=2 softtabstop=2 shiftwidth=2:
 

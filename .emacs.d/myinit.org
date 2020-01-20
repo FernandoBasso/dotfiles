@@ -208,7 +208,6 @@ Load theme first because so we can disable damn bold and italic later.
 #+END_SRC
 
 ** Org Babel
-** Htmlzie
 
 ** Htmlize
 

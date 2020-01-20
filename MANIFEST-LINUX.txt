@@ -6,3 +6,13 @@
 .vimrc
 .vim/colors/mylight1.vim
 .vim/colors/mytheme1.vim
+.tmux.conf
+.sbclrc
+.Xresources
+.gtkrc-2.0.mine
+.csirc
+.ghci
+.bash_profile
+.bashrc
+.config/Typora/themes/always-be-awesome.css
+

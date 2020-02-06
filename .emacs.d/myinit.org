@@ -130,15 +130,12 @@ Load theme first because so we can disable damn bold and italic later.
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
 (setq
- ;ghc-ghc-options '("-fno-warn-missing-signatures")
- ;haskell-compile-cabal-build-command "cd %s && stack build"
  haskell-process-type 'stack-ghci
  haskell-interactive-popup-errors nil
- ;haskell-process-args-stack-ghci '("--ghc-options=-ferror-spans" "--with-ghc=ghci-ng")
  haskell-process-path-ghci "stack"
-)
+ ;; https://github.com/haskell/haskell-mode/issues/1695
+ haskell-interactive-types-for-show-ambiguous nil)
 #+END_SRC
-
 
 ** Paredit and Other Lisp-Related Goodies
 

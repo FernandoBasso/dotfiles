@@ -16,6 +16,8 @@
 [PAUSED: %Y-%m-%d %H:%M]
 # Datetime, no specific use.
 [DATETIME: %Y-%m-%d %H:%M]
+
+[DATETIME: %a, %Y-%m-%d %H:%M]
 %x
 %c
 %A %d/%m/%Y

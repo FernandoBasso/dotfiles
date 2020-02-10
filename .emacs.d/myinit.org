@@ -80,6 +80,7 @@ Load theme first because so we can disable damn bold and italic later.
 #+BEGIN_SRC emacs-lisp
 (blink-cursor-mode -1)
 (xterm-mouse-mode)
+(line-number-mode 1)
 
 ;; Restore cursor position
 (if (version< emacs-version "25.0")

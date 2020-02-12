@@ -30,9 +30,10 @@ tmux -f ~/Projects/dotfiles/tmux/themes/tmux-light.conf \
   rename-window 'vim' \; \
   send-keys 'vimlight'
 
-tmux new-window -t "${ses}:2" -n 'git' -c "$dir"
+tmux new-window -t "${ses}:2" -n 'git' -c "$dir" \; \
+  send-keys 'git status' C-j
 
-tmux select-window -t "${ses}:1"
+tmux select-window -t "${ses}:2"
 tmux -2 attach-session -t "${ses}"
 
 # vim: set softtabstop=2 shiftwidth=2:

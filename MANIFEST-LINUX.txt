@@ -10,6 +10,7 @@
 .tmux.conf
 .sbclrc
 .Xresources
+.Xresources.d
 .gtkrc-2.0.mine
 .csirc
 .ghci

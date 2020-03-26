@@ -102,3 +102,11 @@ if [[ "$TILIX_ID" ]]; then
     source /etc/profile.d/vte.sh
 fi
 
+#
+# https://github.com/rupa/z
+#
+#   pacman -S z
+#   man z
+#
+[ -r /usr/share/z/z.sh ] && source /usr/share/z/z.sh
+

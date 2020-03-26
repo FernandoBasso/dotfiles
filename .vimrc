@@ -21,11 +21,11 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --system-libclang' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --system-libclang' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'posva/vim-vue'
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 Plug 'Quramy/tsuquyomi-vue'
@@ -325,9 +325,16 @@ let g:asciidoctor_fold_options = 1
 
 let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript', 'ruby', 'php', 'elm', 'haskell', 'bash', 'sh']
 
+
 "
-" VORG
+" coc
 "
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 
 " posva/vim-vue
 "

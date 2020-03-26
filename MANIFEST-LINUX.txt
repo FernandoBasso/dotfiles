@@ -3,6 +3,7 @@
 .config/gtk-3.0/gtk.css
 .config/zim/style.conf
 .config/zim/dates.list
+.gitconfig
 .vimrc
 .vim/colors/mylight1.vim
 .vim/colors/mytheme1.vim

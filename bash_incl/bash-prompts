@@ -27,9 +27,9 @@ ps1simple () {
 }
 
 #
-# Make ps1simple the default prompt by invoking the function.
+# Make ps1all the default prompt by invoking the function.
 #
-ps1simple
+ps1all
 
 # vim: set filetype=sh softtabstop=2 shiftwidth=2:
 

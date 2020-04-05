@@ -8,15 +8,8 @@
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
-GIT_PS1_SHOWUPSTREAM=git
+GIT_PS1_SHOWUPSTREAM=verbose
 
-
-# For a terminal emulator includes a ✔ char in the git prompt thing.
-if test "$TERM" == linux ; then
-  check=' '
-else
-  check=$'\u2714'
-fi
 
 curdir () {
   printf '%s' "${PWD##*/}"
@@ -39,7 +32,7 @@ ps1basic () {
 
 # PS1 with ruler, bash/node/ruby version and git prompt.
 ps1all () {
-  PS1='\n\[\e[0;34m\]$(printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}")\n\[\e[0;35m\][bash-$(echo -n $BASH_VERSION)] [$(~/.rvm/bin/rvm-prompt)] $(printf '%s' [node-`node -v`)] \e[0m\[\e[0;35m\][$(version_git)] \e[0;31m$(__git_ps1 "[%s ${check}]")\n\[\e[0;34m\]$(date +'%H:%M:%S') \[\e[0;34m\]\w/ \n \[\e[1;0m\] \n\$ '
+  PS1='\n\[\e[0;34m\]$(printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}")\n\[\e[0;35m\][bash-$(echo -n $BASH_VERSION)] [$(~/.rvm/bin/rvm-prompt)] $(printf '%s' [node-`node -v`)] \e[0m\[\e[0;35m\][$(version_git)] \e[0;31m$(__git_ps1 "[%s]")\n\[\e[0;34m\]$(date +'%H:%M:%S') \[\e[0;34m\]\w/ \n \[\e[1;0m\] \n\$ '
 }
 
 
@@ -62,5 +55,5 @@ ps1nodejs () {
 ps1nodejs
 
 # vim: set filetype=sh softtabstop=2 shiftwidth=2:
-# vim: set nowrap:
+# vim: set wrap:
 

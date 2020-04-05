@@ -35,7 +35,7 @@ ps1nodejs () {
   node="$(version_node)"
   dir="${PWD##*/}"
 
-  PS1="\n${blue}$dir ${cyan}[node:$node]\n${black}$ "
+  PS1="\n${blue}$dir ${cyan}[node:$node]\n${normal}$ "
 }
 
 #

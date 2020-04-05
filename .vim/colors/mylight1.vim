@@ -16,10 +16,7 @@ endif
 
 let colors_name  =  'mylight1'
 
-"highlight MatchParen ctermbg = 2 ctermfg = white
-
-" For termite base16-default-dark theme.
-"highlight MatchParen term = NONE ctermfg = 0 ctermbg = 1
+highlight MatchParen ctermbg = 2 ctermfg = 1
 
 highlight Visual ctermbg = 253
 highlight PmenuSel ctermbg = 13 ctermfg = white

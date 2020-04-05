@@ -12,14 +12,18 @@ ps1basic () {
   PS1='\n\[\e[0;34m\]$(printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}")\n\[\e[0;34m\]\w/\[\e[1;0m\]\n\$ '
 }
 
-git_version () {
+version_git () {
   ver=$(git --version | sed 's/ version / /')
   printf '%s' "$ver"
 }
 
+version_node () {
+  printf '%s' "$(node --version)"
+}
+
 # PS1 with ruler, bash/node/ruby version and git prompt.
 ps1all () {
-  PS1='\n\[\e[0;34m\]$(printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}")\n\[\e[0;35m\][bash-$(echo -n $BASH_VERSION)] [$(~/.rvm/bin/rvm-prompt)] $(echo -n [node-`node -v`)] \e[0m\[\e[0;35m\][$(git_version)] \e[0;31m$(__git_ps1 "[%s ${check}]")\n\[\e[0;34m\]$(date +'%H:%M:%S') \[\e[0;34m\]\w/ \n \[\e[1;0m\] \n\$ '
+  PS1='\n\[\e[0;34m\]$(printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}")\n\[\e[0;35m\][bash-$(echo -n $BASH_VERSION)] [$(~/.rvm/bin/rvm-prompt)] $(echo -n [node-`node -v`)] \e[0m\[\e[0;35m\][$(version_git)] \e[0;31m$(__git_ps1 "[%s ${check}]")\n\[\e[0;34m\]$(date +'%H:%M:%S') \[\e[0;34m\]\w/ \n \[\e[1;0m\] \n\$ '
 }
 
 
@@ -29,10 +33,6 @@ ps1simple () {
 
 git_info () {
   printf '%s' "$red$(__git_ps1 "[%s ${check}]")"
-}
-
-version_node () {
-  printf '%s' "$(node --version)"
 }
 
 ps1nodejs () {

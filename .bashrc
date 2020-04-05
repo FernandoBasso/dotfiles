@@ -1,19 +1,8 @@
 # ~/.bashrc utf8=✔ 💩 ‽ λ
-# vim: set nowrap:
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Path for files that are sourced.
-path_incl=~/Projects/dotfiles/bash_incl
-
-[[ -f "$path_incl/bash-colors.sh" ]] && source "$path_incl/bash-colors.sh"
-[[ -f "$path_incl/priv.sh" ]] && source "$path_incl/priv.sh"
-[[ -f "$path_incl/bash-prompts.sh" ]] &&  source "$path_incl/bash-prompts.sh"
-[[ -f "$path_incl/bash-aliases.sh" ]] && source "$path_incl/bash-aliases.sh"
-[[ -f "$path_incl/bash-utils.sh" ]] && source "$path_incl/bash-utils.sh"
-[[ -f "$path_incl/bash-passwords.sh" ]] && source "$path_incl/gen-passwords.sh"
-[[ -f "$path_incl/git-helpers.sh" ]] && source "$path_incl/git-helpers.sh"
 
 # Arch Linux
 [[ -f /usr/share/git/completion/git-prompt.sh ]] && source '/usr/share/git/git-prompt.sh'
@@ -109,4 +98,26 @@ fi
 #   man z
 #
 [ -r /usr/share/z/z.sh ] && source /usr/share/z/z.sh
+
+
+#
+# My own customizations require that programs like Ruby, Node and other things
+# be known beforehand so my Bash stuff is aware of them.
+#
+
+#
+# Path for files that are sourced.
+#
+path_incl=~/Projects/dotfiles/bash_incl
+
+[[ -f "$path_incl/bash-colors.sh" ]] && source "$path_incl/bash-colors.sh"
+[[ -f "$path_incl/priv.sh" ]] && source "$path_incl/priv.sh"
+[[ -f "$path_incl/bash-prompts.sh" ]] &&  source "$path_incl/bash-prompts.sh"
+[[ -f "$path_incl/bash-aliases.sh" ]] && source "$path_incl/bash-aliases.sh"
+[[ -f "$path_incl/bash-utils.sh" ]] && source "$path_incl/bash-utils.sh"
+[[ -f "$path_incl/bash-passwords.sh" ]] && source "$path_incl/gen-passwords.sh"
+[[ -f "$path_incl/git-helpers.sh" ]] && source "$path_incl/git-helpers.sh"
+
+# vim: set textwidth=78:
+# vim: set nowrap:
 

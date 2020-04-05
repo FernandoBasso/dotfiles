@@ -27,6 +27,10 @@ ps1simple () {
   PS1='\n\[\e[0;34m\]\w \e[0;31m$(__git_ps1 "[%s ${check}]")\n\[\e[1;0m\]\n$ '
 }
 
+git_info () {
+  printf '%s' "$red$(__git_ps1 "[%s ${check}]")"
+}
+
 version_node () {
   printf '%s' "$(node --version)"
 }
@@ -35,7 +39,7 @@ ps1nodejs () {
   node="$(version_node)"
   dir="${PWD##*/}"
 
-  PS1="\n${blue}$dir ${cyan}[node:$node]\n${normal}$ "
+  PS1="\n${blue}$dir ${cyan}[node:$node] $(git_info)\n${normal}$ "
 }
 
 #

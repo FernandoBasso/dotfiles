@@ -4,3 +4,5 @@
 [alias]
 	st = status
 	co = checkout
+[color "diff"]
+	whitespace = red reverse

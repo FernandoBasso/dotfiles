@@ -198,8 +198,8 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 nnoremap cd :cd %:h<CR>:pwd<CR>
 
 
-if hostname() == 'theforce' || hostname() == 'vbsmidiawork1'
-    colorscheme mytheme1
+if hostname() == 'theforce' || hostname() == 'x-gamming'
+    colorscheme mylight1
     highlight Visual ctermbg=235 " For dark backgrounds.
 else
     colorscheme mytheme1

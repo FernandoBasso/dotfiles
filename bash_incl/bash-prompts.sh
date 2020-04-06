@@ -1,3 +1,5 @@
+# shellcheck disable=2034,2154
+
 #
 # Git Prompt
 # ==========
@@ -17,25 +19,27 @@ curdir () {
 }
 
 version_git () {
-  ver=$(git --version | sed 's/ version / /')
-  printf '%s' "$ver"
+  printf '%s' "$(git --version | sed 's/[^0-9.]//g')"
 }
 
 version_node () {
-  printf '%s' "$(node --version)"
+  printf '%s' "$(node --version | sed 's/^v//')"
+}
+
+version_bash () {
+  printf '%s' "$(printf '%s' "$BASH_VERSION" | sed 's/[^0-9.]//g')"
 }
 
 hr='--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
-# Basic prompt. No git brach thing, no node/ruby version.
-ps1basic () {
-  PS1='\n\[\e[0;34m\]$(printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}")\n\[\e[0;34m\]\w/\[\e[1;0m\]\n\$ '
+
+make_line () {
+  printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}"
 }
 
-# PS1 with ruler, bash/node/ruby version and git prompt.
 ps1all () {
-  PS1='\n\[\e[0;34m\]$(printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}")\n\[\e[0;35m\][bash-$(echo -n $BASH_VERSION)] [$(~/.rvm/bin/rvm-prompt)] $(printf '%s' [node-`node -v`)] \e[0m\[\e[0;35m\][$(version_git)] \e[0;31m$(__git_ps1 "[%s]")\n\[\e[0;34m\]$(date +'%H:%M:%S') \[\e[0;34m\]\w/ \n \[\e[1;0m\] \n\$ '
+  PS1="\n${purple}\$(make_line)\n${purple}[bash-\$(version_bash)] [git-\$(version_git)] [$(~/.rvm/bin/rvm-prompt)] [node-\$(version_node)]"
+  PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
 }
-
 
 ps1simple () {
   PS1='\n\[\e[0;34m\]\w \e[0;31m$(__git_ps1 "[%s]")\n\[\e[1;0m\]\n$ '
@@ -46,14 +50,14 @@ git_info () {
 }
 
 ps1nodejs () {
-  PS1="\n${blue}\$(curdir) ${cyan}[node:\$(version_node)] $(git_info)\n${normal}$ "
+  PS1="\n${blue}\$(curdir) ${purple}[node-\$(version_node)] $(git_info)\n${normal}$ "
 }
 
 
 #
 # Sets the default prompt.
 #
-ps1nodejs
+ps1all
 
 # vim: set filetype=sh softtabstop=2 shiftwidth=2:
 # vim: set wrap:

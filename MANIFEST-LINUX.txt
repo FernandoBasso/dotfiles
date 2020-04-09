@@ -5,10 +5,10 @@
 .config/zim/dates.list
 .config/fish
 .gitconfig
+.tmux.conf
 .vimrc
 .vim/colors/mylight1.vim
 .vim/colors/mytheme1.vim
-.tmux.conf
 .sbclrc
 .Xresources
 .Xresources.d

@@ -36,28 +36,27 @@ make_line () {
   printf "%s\n" "${hr:0:${COLUMNS:-$(tput cols)}}"
 }
 
-ps1all () {
-  PS1="\n${purple}\$(make_line)\n${purple}[bash-\$(version_bash)] [git-\$(version_git)] [$(~/.rvm/bin/rvm-prompt)] [node-\$(version_node)]"
-  PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
+git_info () {
+  printf '%s' "$red\$(__git_ps1 "[%s]")"
 }
 
 ps1simple () {
-  PS1='\n\[\e[0;34m\]\w \e[0;31m$(__git_ps1 "[%s]")\n\[\e[1;0m\]\n$ '
+  PS1="\n$blue\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
 }
 
-git_info () {
-  printf '%s' "$red\$(__git_ps1 "[%s]")"
+ps1all () {
+  PS1="\n${purple}\$(make_line)\n${purple}[bash-\$(version_bash)] [git-\$(version_git)] [$(~/.rvm/bin/rvm-prompt)] [node-\$(version_node)]"
+  PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
 }
 
 ps1nodejs () {
   PS1="\n${blue}\$(curdir) ${purple}[node-\$(version_node)] $(git_info)\n${normal}$ "
 }
 
-
 #
 # Sets the default prompt.
 #
-ps1all
+ps1simple
 
 # vim: set filetype=sh softtabstop=2 shiftwidth=2:
 # vim: set wrap:

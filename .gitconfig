@@ -1,5 +1,5 @@
 [core]
-	editor = vim
+	editor = vim -c 'colorscheme mylight1' -c 'AirlineTheme xtermlight'
 	autocrlf = input
 [alias]
 	st = status

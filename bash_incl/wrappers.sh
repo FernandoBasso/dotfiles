@@ -4,9 +4,17 @@ v_usage () {
   cat << EOF
 ‘v’ vim wrapper requires a ‘VIM-SERVER-NAME’ parameter.
 
-Usage example:
+Usage:
 
-  v PROJECT-X [FILE]...
+  v SESSION-NAME [FILE]...
+
+Examples:
+
+  v PLAYGROUND
+
+  v DOTFILES ~/Projects/dotfiles/bin/backup.sh
+
+  v CMDLINE -c NERDTree sed/intro.adoc
 EOF
 
   return 0

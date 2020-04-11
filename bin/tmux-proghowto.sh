@@ -25,10 +25,10 @@ esac
 dir="${1:-$HOME/Projects/proghowto}"
 ses="${2:-proghowto}"
 
-tmux -f ~/Projects/dotfiles/tmux/themes/tmux-light.conf \
+tmux -f ~/.tmux.conf \
   new-session -d -s "$ses" -c "$dir" \; \
   rename-window 'vim' \; \
-  send-keys 'vimlight'
+  send-keys 'v PROGHOWTO'
 
 tmux new-window -t "${ses}:2" -n 'git' -c "$dir" \; \
   send-keys 'git status' C-j

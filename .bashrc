@@ -1,5 +1,7 @@
 # ~/.bashrc utf8=✔ 💩 ‽ λ
 
+# shellcheck source=/dev/null
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -110,13 +112,15 @@ fi
 #
 path_incl=~/Projects/dotfiles/bash_incl
 
-[[ -f "$path_incl/bash-colors.sh" ]] && source "$path_incl/bash-colors.sh"
-[[ -f "$path_incl/priv.sh" ]] && source "$path_incl/priv.sh"
-[[ -f "$path_incl/bash-prompts.sh" ]] &&  source "$path_incl/bash-prompts.sh"
-[[ -f "$path_incl/bash-aliases.sh" ]] && source "$path_incl/bash-aliases.sh"
-[[ -f "$path_incl/bash-utils.sh" ]] && source "$path_incl/bash-utils.sh"
-[[ -f "$path_incl/bash-passwords.sh" ]] && source "$path_incl/gen-passwords.sh"
-[[ -f "$path_incl/git-helpers.sh" ]] && source "$path_incl/git-helpers.sh"
+
+source "$path_incl/bash-colors.sh"
+source "$path_incl/priv.sh"
+source "$path_incl/bash-prompts.sh"
+source "$path_incl/bash-aliases.sh"
+source "$path_incl/bash-utils.sh"
+source "$path_incl/gen-passwords.sh"
+source "$path_incl/git-helpers.sh"
+source "$path_incl/wrappers.sh"
 
 # vim: set textwidth=78:
 # vim: set nowrap:

@@ -26,12 +26,18 @@ v () {
     return 0;
   fi
 
-  printf -v name '%s' "${2^^}"
+  printf -v name '%s' "${1^^}"
+
+  #
+  # “Remove” the SESSION-NAME parameter so only the remaining
+  # parameters, if any, are passed to vim with the use of ‘$@’.
+  #
+  shift 1
 
   vim \
+    --servername "$name" \
     -c 'colorscheme mylight1' \
     -c 'AirlineTheme xtermlight' \
-    --servername "$name"
     "$@"
 }
 

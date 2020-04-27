@@ -7,6 +7,7 @@
 .gitconfig
 .tmux.conf
 .vimrc
+.gvimrc
 .vim/colors/mylight1.vim
 .vim/colors/mytheme1.vim
 .sbclrc

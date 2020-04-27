@@ -24,12 +24,14 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --system-libclang' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'posva/vim-vue'
+" Plug 'posva/vim-vue'
 " Plug 'Quramy/tsuquyomi'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
-Plug 'Quramy/tsuquyomi-vue'
+" Plug 'Quramy/tsuquyomi-vue'
 Plug 'w0rp/ale'
+Plug 'morhetz/gruvbox'
+Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -154,7 +156,7 @@ inoremap <Esc><Leader>m :CtrlPMixed<CR>
 "
 " IndentLine
 "
-let g:indentLine_color_term = 235 "'darkgray'
+"let g:indentLine_color_term = 234 "'darkgray'
 let g:indentLine_char = '¦' "'·'
 " indentLine uses conceal stuff which together with default json.vim
 " hides quotes in json files. People suggest stuff here:

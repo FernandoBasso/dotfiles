@@ -4,6 +4,7 @@
 .config/zim/style.conf
 .config/zim/dates.list
 .config/fish
+.config/nvim
 .gitconfig
 .tmux.conf
 .vimrc

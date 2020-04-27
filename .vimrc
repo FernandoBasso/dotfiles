@@ -201,10 +201,10 @@ nnoremap cd :cd %:h<CR>:pwd<CR>
 
 
 if hostname() == 'theforce' || hostname() == 'x-gamming'
-    colorscheme mylight1
+    colorscheme mytheme1
     highlight Visual ctermbg=235 " For dark backgrounds.
 else
-    colorscheme mytheme1
+    colorscheme mylight1
 endif
 
 " mate-terminal default config.

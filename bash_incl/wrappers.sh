@@ -1,3 +1,6 @@
+#
+# To be sourced in ‘~/.bashrc’.
+#
 
 v_usage () {
 
@@ -26,6 +29,21 @@ v () {
     return 0;
   fi
 
+  #
+  # By default, assume ‘dark’.
+  #
+  TERM_THEME="${THEME:=dark}"
+  VIM_THEME=mytheme1
+  VIM_AIRLINE_THEME=wombat
+
+  #
+  # And if ‘light’, then we use light themes for vim and vim-airline.
+  #
+  if [ "$TERM_THEME" = light ] ; then
+    VIM_THEME=mylight1
+    VIM_AIRLINE_THEME=xtermlight
+  fi
+
   printf -v name '%s' "${1^^}"
 
   #
@@ -36,8 +54,8 @@ v () {
 
   vim \
     --servername "$name" \
-    -c 'colorscheme mylight1' \
-    -c 'AirlineTheme xtermlight' \
+    -c "colorscheme $VIM_THEME" \
+    -c "AirlineTheme $VIM_AIRLINE_THEME" \
     "$@"
 }
 

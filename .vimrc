@@ -307,6 +307,15 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 1
 
+"
+" In a project that uses ‘standard’ as an ESLint preset, it seems like ALE is
+" running both eslint _and_ standard, causing a lot of errors. With this
+" setting, we allow only eslint to run, and it picks configs from
+" ‘.eslintrs.js’ in the project's directory, and seems like everything works
+" fine then.
+"
+let b:ale_linters = { 'javascript': ['eslint'] }
+
 " Disable ALE for .c and .h files. YCM seems to be doing
 " some linting on its own, or something else is...
 let g:ale_pattern_options = {

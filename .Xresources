@@ -47,14 +47,21 @@ URxvt.resize-font.show: C-question
 URxvt.title: Always Be Awesome!
 
 
-XTerm*faceName: xft:Source Code Pro:size=13
+XTerm*allowBoldFonts: false
 XTerm*internalBorder: 5
 XTerm*termName: xterm-256color
 XTerm*locale: true
-XTerm*saveLines: 8192
+XTerm*saveLines: 17824
 XTerm*scrollTtyOutput: false
 XTerm*scrollKey: true
 XTerm*metaSendsEscape: true
+XTerm*title: 'λ Always Be Awesome! λ'
+
+!
+! So we can set a static title.
+!
+XTerm*allowTitleOps: false
+
 ! double-click to select whole URLs :D
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 

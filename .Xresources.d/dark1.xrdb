@@ -10,6 +10,8 @@
 !ProFont for Powerline
 !monofur for Powerline Regular
 
+XTerm*faceName: ProFontWindows Nerd Font Mono:size=16
+
 URxvt.font: \
 xft: ProFontWindows Nerd Font Mono:fontsize=16 \
 xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \

@@ -5,6 +5,7 @@
 .config/zim/dates.list
 .config/fish
 .config/nvim
+.config/terminator
 .gitconfig
 .tmux.conf
 .vimrc
@@ -20,4 +21,3 @@
 .bash_profile
 .bashrc
 .config/Typora/themes/always-be-awesome.css
-

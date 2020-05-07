@@ -224,7 +224,7 @@
       title = bash
       uuid = bf2919ec-f3a3-4e39-8e9e-944cc14ed179
       directory = /home/fernando/Projects/Natura/naturacf-fe
-  [[Terminator]]
+  [[Dotfiles]]
     [[[child0]]]
       type = Window
       parent = ""
@@ -240,29 +240,29 @@
       parent = child0
       order = 0
       labels = Main, Shells
-      last_active_term = 5a9dcd65-7555-48b4-9de9-cdfac593aa79, cf5c0aa0-aac9-46f6-b592-edb27259a5ab
-      active_page = 1
+      last_active_term = a59baac2-4180-400a-9581-653a57f86bca, c8af93bd-76c2-45cf-9cb4-d06ffd413aa2
+      active_page = 0
     [[[child2]]]
       type = HPaned
       parent = child1
       order = 0
-      position = 1143
-      ratio = 0.5974908520648197
+      position = 1198
+      ratio = 0.6262415054887611
     [[[terminal3]]]
       type = Terminal
       parent = child2
       order = 0
       profile = default
-      title = vim
-      uuid = 64a74e54-90b2-431a-bea5-cf14d4efaeec
+      title = Vim
+      uuid = ba165c36-d49b-4d88-a2fb-51e33d21c40a
       directory = /home/fernando/Projects/dotfiles
     [[[terminal4]]]
       type = Terminal
       parent = child2
       order = 1
       profile = default
-      title = shell
-      uuid = 5a9dcd65-7555-48b4-9de9-cdfac593aa79
+      title = Bash
+      uuid = a59baac2-4180-400a-9581-653a57f86bca
       directory = /home/fernando/Projects/dotfiles
     [[[child5]]]
       type = HPaned
@@ -276,7 +276,7 @@
       order = 0
       profile = default
       title = Help
-      uuid = dd8f508a-1688-4867-830c-ddd4a7323011
+      uuid = c8af93bd-76c2-45cf-9cb4-d06ffd413aa2
       directory = /home/fernando/Projects/dotfiles
     [[[terminal7]]]
       type = Terminal
@@ -284,6 +284,68 @@
       order = 1
       profile = default
       title = Bash
-      uuid = cf5c0aa0-aac9-46f6-b592-edb27259a5ab
+      uuid = 1622f3b6-4f8c-4038-b2f2-ac5e98d694a5
       directory = /home/fernando/Projects/dotfiles
+  [[Terminator]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:24
+      maximised = True
+      fullscreen = False
+      size = 1920, 1023
+      title = λ TERMINATOR DEV λ
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = Main, Shells
+      last_active_term = 6726b49b-7d44-4cd5-a292-b6c2475ad863, 3c93bd08-38b6-4d4c-bdd0-a3bf32a9d6c9
+      active_page = 0
+    [[[child2]]]
+      type = HPaned
+      parent = child1
+      order = 0
+      position = 1222
+      ratio = 0.6387872451646628
+    [[[terminal3]]]
+      type = Terminal
+      parent = child2
+      order = 0
+      profile = default
+      title = Vim
+      uuid = 6726b49b-7d44-4cd5-a292-b6c2475ad863
+      directory = /home/fernando/Projects/terminator
+    [[[terminal4]]]
+      type = Terminal
+      parent = child2
+      order = 1
+      profile = default
+      title = Bash
+      uuid = ca0427ab-99da-40d0-bc6c-f18eea19a9bd
+      directory = /home/fernando/Projects/terminator
+    [[[child5]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 956
+      ratio = 0.4997386304234187
+    [[[terminal6]]]
+      type = Terminal
+      parent = child5
+      order = 0
+      profile = default
+      title = Help
+      uuid = 3c93bd08-38b6-4d4c-bdd0-a3bf32a9d6c9
+      directory = /home/fernando/Projects/terminator
+    [[[terminal7]]]
+      type = Terminal
+      parent = child5
+      order = 1
+      profile = default
+      title = Bash
+      uuid = 54cd244f-b0c5-4144-bd51-67c876f0e690
+      directory = /home/fernando/Projects/terminator
 [plugins]

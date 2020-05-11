@@ -41,7 +41,7 @@ git_info () {
 }
 
 ps1simple () {
-  PS1="\n$blue\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
+  PS1="$blue\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
 }
 
 ps1all () {

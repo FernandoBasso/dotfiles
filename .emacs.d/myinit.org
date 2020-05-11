@@ -3,13 +3,6 @@
 #+PROPERTY: header-args :results none :exports none
 
 
-* Themes
-Load theme first because so we can disable damn bold and italic later.
-
-#+BEGIN_SRC emacs-lisp
-(load-theme 'adwaita t)
-#+END_SRC
-
 * Basic
 
 #+BEGIN_SRC emacs-lisp
@@ -253,5 +246,21 @@ https://github.com/jaypei/emacs-neotree
 #+BEGIN_SRC emacs-lisp
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WORKING(w)" "PAUSED(p)" "WAIT(W)" "VERIFY(v)" "|" "DELEGATED(D)" "CANCELED(c)" "DONE(d)")))
+#+END_SRC
+
+** Theme Zenburn
+#+begin_src emacs-lisp
+(use-package zenburn-theme
+  :ensure t)
+
+(use-package gruvbox-theme
+  :ensure t)
+#+end_src
+
+* Themes
+Load theme first because so we can disable damn bold and italic later.
+
+#+BEGIN_SRC emacs-lisp
+(load-theme 'gruvbox-light-hard t)
 #+END_SRC
 

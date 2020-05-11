@@ -43,4 +43,11 @@ highlight Search ctermbg = 1 ctermfg = white
 " 249 lighter than 248
 let g:indentLine_color_term = 249
 
+
+"
+" GitGutter
+"
+highlight clear SignColumn
+
 " vim: sw=2
+

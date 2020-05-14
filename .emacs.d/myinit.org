@@ -56,7 +56,7 @@
 
 ;; It is causing problems with org-ellipsis set to ⤵ .
 ;(global-linum-mode 2)
-(global-linum-mode 1)
+(global-linum-mode -1)
 (setq linum-format "%4d \u2502")
 
 (setq show-trailing-whitespace t)
@@ -68,12 +68,26 @@
 (setq tab-width 4)
 #+END_SRC
 
+** Prettify-Symbols Mode
+[[https://www.emacswiki.org/emacs/PrettyLambda#toc1][Pretty Lambda (EmacsWiki)]]
+
+#+begin_src emacs-lisp
+(defun my-pretty-lambda ()
+  "Make some word or string show as pretty unicode symbol"
+  (setq prettify-symbols-alist
+        '(
+          ("lambda" . 955) ; λ
+          )))
+
+(add-hook 'scheme-mode-hook 'my-pretty-lambda)
+(global-prettify-symbols-mode 1)
+#+end_src
+
 * Cursor
 
 #+BEGIN_SRC emacs-lisp
 (blink-cursor-mode -1)
 (xterm-mouse-mode)
-(line-number-mode 1)
 
 ;; Restore cursor position
 (if (version< emacs-version "25.0")
@@ -113,7 +127,6 @@
   :config)
 
 #+END_SRC
-
 
 ** Haskell
 
@@ -171,6 +184,15 @@
   :ensure t)
 #+END_SRC
 
+
+** Geiser
+#+begin_src emacs-lisp
+(use-package geiser
+  :ensure t
+  :hook (scheme-mode . geiser-mode)
+  :config
+  (setq geiser-active-implementations '(chicken racket)))
+#+end_src
 
 ** Key bindings
 

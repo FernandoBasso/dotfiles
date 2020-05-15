@@ -9,6 +9,7 @@
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(scroll-bar-mode -1)
 (setq frame-title-format "%b | Always Be Awesome!")
 (fset 'yes-or-no-p 'y-or-n-p)
 (global-set-key (kbd "<f5>") 'revert-buffer)
@@ -41,11 +42,6 @@
 
 (set-face-italic 'font-lock-comment-face nil)
 
-(mapc
-  (lambda (face)
-    (set-face-attribute face nil :weight 'normal :underline nil))
-  (face-list))
-
 (global-visual-line-mode t)
 
 (setq visual-line-fringe-indicators
@@ -61,11 +57,13 @@
 
 (setq show-trailing-whitespace t)
 (setq delete-trailing-lines nil)
+(setq-default show-trailing-whitespace t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-blank-lines)
 
 ;; Use spaces.
 (setq-default indent-tabs-mode nil)
-(setq tab-width 4)
+(setq tab-width 2)
 #+END_SRC
 
 ** Prettify-Symbols Mode
@@ -127,6 +125,15 @@
   :config)
 
 #+END_SRC
+
+
+** EditorConfig
+#+begin_src emacs-lisp
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+#+end_src
 
 ** Haskell
 
@@ -217,6 +224,7 @@
 (setq org-outline-path-complete-in-steps nil)
 (setq org-html-htmlize-output-type 'css)
 
+
 ;; Bigger Latex Fragments
 (plist-put org-format-latex-options :scale 1.5)
 #+END_SRC
@@ -270,7 +278,7 @@ https://github.com/jaypei/emacs-neotree
       '((sequence "TODO(t)" "WORKING(w)" "PAUSED(p)" "WAIT(W)" "VERIFY(v)" "|" "DELEGATED(D)" "CANCELED(c)" "DONE(d)")))
 #+END_SRC
 
-** Theme Zenburn
+** Theme Packages
 #+begin_src emacs-lisp
 (use-package zenburn-theme
   :ensure t)
@@ -280,9 +288,16 @@ https://github.com/jaypei/emacs-neotree
 #+end_src
 
 * Themes
-Load theme first because so we can disable damn bold and italic later.
+  Load theme first because so we can disable damn bold and italic later.
 
 #+BEGIN_SRC emacs-lisp
-(load-theme 'gruvbox-light-hard t)
+(load-theme 'zenburn t)
+
+;; Do away with bold fonts.
+(mapc
+ (lambda (face)
+        (when (eq (face-attribute face :weight) 'bold)
+          (set-face-attribute face nil :weight 'normal)))
+ (face-list))
 #+END_SRC
 

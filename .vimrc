@@ -186,9 +186,9 @@ inoremap <C-s> <Esc>:update<CR><Right>
 
 inoremap <C-Space> <C-x><C-o>
 
-" Mapping for tabpages "
-map <C-N> :tabnext<Return>
-map <C-P> :tabprevious<Return>
+" Mapping for buffer next/prev "
+map <C-N> :bnext<Return>
+map <C-P> :bprevious<Return>
 
 " Insert a nice formated data and time:
 inoremap <F2> <C-r>=strftime('%A, %H:%M - %B %d - %Y')
@@ -267,6 +267,7 @@ endfunction
 "
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
 
 "
 " YCM
@@ -314,7 +315,7 @@ let g:ale_lint_on_save = 1
 " ‘.eslintrs.js’ in the project's directory, and seems like everything works
 " fine then.
 "
-let b:ale_linters = { 'javascript': ['eslint'] }
+let g:ale_linters = { 'javascript': ['eslint'] }
 
 " Disable ALE for .c and .h files. YCM seems to be doing
 " some linting on its own, or something else is...

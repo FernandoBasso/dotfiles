@@ -22,7 +22,7 @@
     cursor_blink = False
     cursor_color = "#aaaaaa"
     font = ProFontWindows Nerd Font 15
-    foreground_color = "#000000"
+    foreground_color = "#2e3436"
     scrollback_lines = 19624
     use_system_font = False
   [[Dark]]
@@ -150,101 +150,6 @@
       title = bash
       uuid = e3c3a200-3e39-498f-a39a-c9daf40e9166
       directory = /home/fernando/Projects/MemoApp/memoapp
-  [[natura-fe]]
-    [[[child0]]]
-      type = Window
-      parent = ""
-      order = 0
-      position = 0:0
-      maximised = True
-      fullscreen = False
-      size = 1920, 1023
-      title = HackerRank JavaScript
-      last_active_term = 26bcb7a3-675a-4f55-8a04-e9d61bb9359c
-      last_active_window = False
-    [[[child1]]]
-      type = HPaned
-      parent = child0
-      order = 0
-      position = 956
-      ratio = 0.49921671018276764
-    [[[terminal2]]]
-      type = Terminal
-      parent = child1
-      order = 0
-      profile = default
-      title = shell1
-      uuid = 261ed95c-29ea-4144-9acc-8b6eb08c2aa1
-      directory = /home/fernando/Projects/Natura/naturacf-fe
-    [[[terminal3]]]
-      type = Terminal
-      parent = child1
-      order = 1
-      profile = default
-      title = shell 2
-      uuid = 26bcb7a3-675a-4f55-8a04-e9d61bb9359c
-      directory = /home/fernando/Projects/Natura/naturacf-fe
-    [[[child4]]]
-      type = Window
-      parent = ""
-      order = 0
-      position = 0:0
-      maximised = True
-      fullscreen = False
-      size = 1920, 1023
-      title = NATURA-FE
-      last_active_window = True
-    [[[child5]]]
-      type = Notebook
-      parent = child4
-      order = 0
-      labels = main, shells
-      last_active_term = 6a454cbb-62ef-41c9-9328-6e5e90da7f15, ed750cb1-1d40-4139-aa0e-66af62a8099a
-      active_page = 1
-    [[[child6]]]
-      type = HPaned
-      parent = child5
-      order = 0
-      position = 957
-      ratio = 0.5002613695765813
-    [[[terminal7]]]
-      type = Terminal
-      parent = child6
-      order = 0
-      profile = default
-      title = serv
-      uuid = 146185d0-12ab-4306-a915-8e8de1d273eb
-      directory = /home/fernando/Projects/Natura/naturacf-fe
-    [[[terminal8]]]
-      type = Terminal
-      parent = child6
-      order = 1
-      profile = default
-      title = shell
-      uuid = 6a454cbb-62ef-41c9-9328-6e5e90da7f15
-      directory = /home/fernando/Projects/Natura/naturacf-fe
-    [[[child9]]]
-      type = HPaned
-      parent = child5
-      order = 1
-      position = 1236
-      ratio = 0.6461055933089388
-    [[[terminal10]]]
-      type = Terminal
-      parent = child9
-      order = 0
-      profile = default
-      title = jest
-      uuid = ed750cb1-1d40-4139-aa0e-66af62a8099a
-      directory = /home/fernando/Projects/Natura/naturacf-fe
-    [[[terminal11]]]
-      type = Terminal
-      parent = child9
-      order = 1
-      profile = default
-      title = bash
-      uuid = bf2919ec-f3a3-4e39-8e9e-944cc14ed179
-      directory = /home/fernando/Projects/Natura/naturacf-fe
   [[Dotfiles]]
     [[[child0]]]
       type = Window
@@ -585,4 +490,164 @@
       profile = default
       title = bash
       uuid = 22e2f0c3-ba25-4f0d-983a-6df49240a575
+  [[VimEmacs]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 1920, 1023
+      title = λ Always Be Awesome! λ
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = "Vim, Shells", "Emacs, Shells", FullWin CmdLine, Shells
+      last_active_term = 98940032-e129-4685-8a05-cfa9d4835f89, e83ff0dc-6f74-4e8e-a5b6-5d6f259b9fdf, 22e2f0c3-ba25-4f0d-983a-6df49240a575, 9cd6ca32-9e8b-435f-bdbd-003174848e8a
+      active_page = 0
+    [[[child2]]]
+      type = HPaned
+      parent = child1
+      order = 0
+      position = 1214
+      ratio = 0.6346053319393623
+    [[[terminal3]]]
+      type = Terminal
+      parent = child2
+      order = 0
+      profile = default
+      title = vim
+      uuid = 98940032-e129-4685-8a05-cfa9d4835f89
+    [[[child4]]]
+      type = VPaned
+      parent = child2
+      order = 1
+      position = 414
+      ratio = 0.4190283400809717
+    [[[terminal5]]]
+      type = Terminal
+      parent = child4
+      order = 0
+      profile = default
+      title = shell
+      uuid = 3a2997b7-608a-4af2-a245-6c41d9bd4457
+    [[[terminal6]]]
+      type = Terminal
+      parent = child4
+      order = 1
+      profile = default
+      title = shell
+      uuid = a5448bdb-12d2-47f9-aaff-982ce371afd3
+    [[[child7]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 1042
+      ratio = 0.5446941975953999
+    [[[terminal8]]]
+      type = Terminal
+      parent = child7
+      order = 0
+      profile = default
+      title = help
+      uuid = e83ff0dc-6f74-4e8e-a5b6-5d6f259b9fdf
+    [[[terminal9]]]
+      type = Terminal
+      parent = child7
+      order = 1
+      profile = default
+      title = help
+      uuid = f20ee607-4267-4c7d-9c9b-85f2ea451c51
+    [[[terminal10]]]
+      type = Terminal
+      parent = child1
+      order = 2
+      profile = default
+      title = bash
+      uuid = 22e2f0c3-ba25-4f0d-983a-6df49240a575
+    [[[child11]]]
+      type = HPaned
+      parent = child1
+      order = 3
+      position = 956
+      ratio = 0.4997386304234187
+    [[[terminal12]]]
+      type = Terminal
+      parent = child11
+      order = 0
+      profile = default
+      title = help
+      uuid = 82bc09c1-0fb2-4cdc-9f2e-f33f5601bb51
+    [[[terminal13]]]
+      type = Terminal
+      parent = child11
+      order = 1
+      profile = default
+      title = shell
+      uuid = 9cd6ca32-9e8b-435f-bdbd-003174848e8a
+  [[Natura-FE]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 1920, 1023
+      title = λ NATURA-FE λ
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = "Serv, Bash", Shells
+      last_active_term = 98940032-e129-4685-8a05-cfa9d4835f89, 9616ae8b-3539-4129-be1a-858109485dfa
+      active_page = 0
+    [[[child2]]]
+      type = HPaned
+      parent = child1
+      order = 0
+      position = 957
+      ratio = 0.5002613695765813
+    [[[terminal3]]]
+      type = Terminal
+      parent = child2
+      order = 0
+      profile = default
+      title = serv
+      uuid = 98940032-e129-4685-8a05-cfa9d4835f89
+      directory = /home/fernando/Projects/Natura/naturacf-fe
+    [[[terminal4]]]
+      type = Terminal
+      parent = child2
+      order = 1
+      profile = default
+      title = bash
+      uuid = cb7511d8-68fd-499d-b465-2ec9fffab983
+      directory = /home/fernando/Projects/Natura/naturacf-fe
+    [[[child5]]]
+      type = HPaned
+      parent = child1
+      order = 1
+      position = 956
+      ratio = 0.4997386304234187
+    [[[terminal6]]]
+      type = Terminal
+      parent = child5
+      order = 0
+      profile = default
+      title = bash
+      uuid = 9616ae8b-3539-4129-be1a-858109485dfa
+      directory = /home/fernando/Projects/Natura/naturacf-fe
+    [[[terminal7]]]
+      type = Terminal
+      parent = child5
+      order = 1
+      profile = default
+      title = bash
+      uuid = 356aca63-5d6d-4aeb-855f-6b50889ca499
+      directory = /home/fernando/Projects/Natura/naturacf-fe
 [plugins]

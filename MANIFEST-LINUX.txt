@@ -6,6 +6,7 @@
 .config/fish
 .config/nvim
 .config/terminator
+.config/bashrun
 .gitconfig
 .tmux.conf
 .vimrc
@@ -20,4 +21,5 @@
 .ghci
 .bash_profile
 .bashrc
+.gmrunrc
 .config/Typora/themes/always-be-awesome.css

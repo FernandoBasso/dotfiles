@@ -59,8 +59,7 @@
 (setq delete-trailing-lines nil)
 (setq-default show-trailing-whitespace t)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(add-hook 'before-save-hook 'delete-blank-lines)
-
+; (add-hook 'before-save-hook 'delete-blank-lines)
 ;; Use spaces.
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
@@ -151,6 +150,12 @@
  haskell-interactive-types-for-show-ambiguous nil)
 #+END_SRC
 
+** TypeScript
+#+begin_src emacs-lisp
+(use-package typescript-mode
+  :ensure t)
+#+end_src
+
 ** Paredit and Other Lisp-Related Goodies
 
 #+BEGIN_SRC emacs-lisp
@@ -198,7 +203,7 @@
   :ensure t
   :hook (scheme-mode . geiser-mode)
   :config
-  (setq geiser-active-implementations '(chicken racket)))
+  (setq geiser-active-implementations '(chicken)))
 #+end_src
 
 ** Key bindings

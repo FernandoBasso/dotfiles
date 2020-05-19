@@ -21,6 +21,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --system-libclang' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -201,23 +202,14 @@ nnoremap cd :cd %:h<CR>:pwd<CR>
 
 
 if hostname() == 'theforce' || hostname() == 'x-gamming'
-    colorscheme mytheme1
-    highlight Visual ctermbg=235 " For dark backgrounds.
+    if $THEME == 'dark'
+        colorscheme mytheme1
+    else
+        colorscheme mylight1
+    end
 else
     colorscheme mylight1
 endif
-
-" mate-terminal default config.
-"if $TERM == 'xterm'
-"    highlight MatchParen cterm=reverse ctermbg=NONE ctermbg=NONE
-"elseif $TERM == 'rxvt-unicode-256color'
-"    highlight MatchParen ctermbg=2 ctermfg=white
-"endif
-
-"highlight Visual ctermbg=233
-"highlight PmenuSel ctermbg=yellow ctermfg=white
-"highlight Comment ctermfg=4
-"highlight Constant ctermfg=1
 
 
 if !exists("g:ycm_semantic_triggers")

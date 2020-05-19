@@ -22,7 +22,7 @@ highlight MatchParen ctermbg=2 ctermfg=white
 " For termite base16-default-dark theme.
 "highlight MatchParen term=NONE ctermfg=0 ctermbg=1
 
-highlight Visual ctermbg=234
+highlight Visual ctermbg=237
 
 " ctermbg a litte lighter than BG.
 highlight Pmenu ctermbg=236 ctermfg=white

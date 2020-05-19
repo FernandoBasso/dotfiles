@@ -20,7 +20,7 @@
  '(magit-push-arguments (quote ("--force-with-lease")))
  '(package-selected-packages
    (quote
-    (editorconfig geiser gruvbox-theme projectile neotree paredit haskell-mode org-plus-contrib magit htmlize zenburn-theme color-theme which-key use-package))))
+    (typescript-mode editorconfig geiser gruvbox-theme projectile neotree paredit haskell-mode org-plus-contrib magit htmlize zenburn-theme color-theme which-key use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

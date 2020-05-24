@@ -1,8 +1,7 @@
 .emacs.d/init.el
 .emacs.d/myinit.org
 .config/gtk-3.0/gtk.css
-.config/zim/style.conf
-.config/zim/dates.list
+.config/zim
 .config/fish
 .config/nvim
 .config/terminator

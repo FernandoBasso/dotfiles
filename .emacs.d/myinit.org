@@ -28,8 +28,13 @@
 
 (setq backup-directory-alist `(("." . "~/Projects/dotfiles/tmp/emacs_stuff")))
 
+; (set-face-attribute 'default nil
+;                     :family "Source Code Variable"
+;                     :height 120
+;                     :weight 'normal
+;                     :width 'normal)
 (set-face-attribute 'default nil
-                    :family "Source Code Variable"
+                    :family "ProFontIIx Nerd Font"
                     :height 120
                     :weight 'normal
                     :width 'normal)
@@ -76,8 +81,8 @@
           ("lambda" . 955) ; λ
           )))
 
-(add-hook 'scheme-mode-hook 'my-pretty-lambda)
-(global-prettify-symbols-mode 1)
+;(add-hook 'scheme-mode-hook 'my-pretty-lambda)
+;(global-prettify-symbols-mode 1)
 #+end_src
 
 * Cursor
@@ -203,7 +208,7 @@
   :ensure t
   :hook (scheme-mode . geiser-mode)
   :config
-  (setq geiser-active-implementations '(chicken)))
+  (setq geiser-active-implementations '(chicken racket)))
 #+end_src
 
 ** Key bindings

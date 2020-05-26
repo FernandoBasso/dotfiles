@@ -1,1 +1,27 @@
-/home/fernando/Projects/dotfiles/.config/zim/dates.list
+# List with date-time formats used for the
+# "Insert Date eand Time" dialog.
+# See man strftime a description of the format.
+# For when it was recorded as a todo/note.
+[LOGGED: %Y-%m-%d %H:%M]
+# when started working the task.
+[STARTED: %Y-%m-%d %H:%M]
+# When entered "verify" state.
+[VERIFYING: %Y-%m-%d %H:%M]
+# when finished working on the task.
+# "concluded" is more formal than "finished".
+[CONCLUDED: %Y-%m-%d %H:%M]
+# Waiting for something that doesn't depend upon me.
+[WAITING: %Y-%m-%d %H:%M]
+# Paused of a reason of my own.
+[PAUSED: %Y-%m-%d %H:%M]
+# Datetime, no specific use.
+[DATETIME: %Y-%m-%d %H:%M]
+
+[DATETIME: %a, %Y-%m-%d %H:%M]
+%x
+%c
+%A %d/%m/%Y
+%A %d/%m/%Y %H:%M
+%A %d %B %Y
+[d: %Y-%m-%d]
+%Y-%m-%d

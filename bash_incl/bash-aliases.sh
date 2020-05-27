@@ -9,6 +9,12 @@ alias t='tree -a -C'
 alias P='pacman-color'
 
 #
+# Let's use ‘--interactive’ by default to avoid unwittingly
+# overwriting files. Better safe than sorry.
+#
+alias cp='cp --verbose --interactive'
+
+#
 # Vim-related aliases.
 #
 #

@@ -114,7 +114,6 @@ path_incl=~/Projects/dotfiles/bash_incl
 
 
 source "$path_incl/bash-colors.sh"
-source "$path_incl/priv.sh"
 source "$path_incl/bash-prompts.sh"
 source "$path_incl/bash-aliases.sh"
 source "$path_incl/bash-utils.sh"

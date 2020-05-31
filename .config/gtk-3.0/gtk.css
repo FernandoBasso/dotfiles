@@ -6,12 +6,12 @@
  */
 vte-terminal,
 terminal-window {
-    padding: 10px 10px 5px 10px;
-    -vte-terminal-inner-border: 10px 10px 5px 10px;
+  padding: 10px 10px 5px 10px;
+  -vte-terminal-inner-border: 10px 10px 5px 10px;
 }
 
 .termite {
-    padding: 4px 4px 2px 4px;
+  padding: 4px 4px 2px 4px;
 }
 
 /**
@@ -26,13 +26,13 @@ terminal-window {
  *      }}}
  */
 /*
- .sourceview {
-    font-family: 'Source Code Variable', 'Source Code Pro', 'Ubuntu Mono';
-    font-weight: 400;
-    font-size: 16px;
-    padding: 5px;
+.sourceview {
+font-family: 'Source Code Variable', 'Source Code Pro', 'Ubuntu Mono';
+font-weight: 400;
+font-size: 16px;
+padding: 5px;
 }
-*/
+ */
 
 /**
  * Color for GtkSourceView text. Works when there is no language specified in
@@ -40,7 +40,30 @@ terminal-window {
  */
 /*
 .sourceview * {
-    color: #555;
+color: #555;
 }
-*/
+ */
+
+/**
+ * Make Gnome titlebar height take less space.
+ *
+ * Type Alt-F2 then ‘restart’ for changes to take effect.
+ *
+ * NOTE: Not all applications will honor this setting.
+ *
+ * - https://wiki.archlinux.org/index.php/GNOME#Titlebar_height
+ */
+headerbar.default-decoration {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  /* min-height: 2px; */
+  /* font-size: 1em; */
+}
+
+headerbar.default-decoration button.titlebutton {
+  padding: 2px;
+  min-height: 2px;
+}
+
+/* vim: set sw=2 sts=2 et: */
 

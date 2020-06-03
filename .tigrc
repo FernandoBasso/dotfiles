@@ -1,0 +1,7 @@
+#
+# ~/.tigrc
+#
+
+set main-view-author-display = abbreviated
+set main-view-date-display = relative-compact
+

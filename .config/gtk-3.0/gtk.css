@@ -54,15 +54,15 @@ color: #555;
  * - https://wiki.archlinux.org/index.php/GNOME#Titlebar_height
  */
 headerbar.default-decoration {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  /* padding-top: 2px; */
+  /* padding-bottom: 2px; */
   /* min-height: 2px; */
   /* font-size: 1em; */
 }
 
 headerbar.default-decoration button.titlebutton {
-  padding: 2px;
-  min-height: 2px;
+  /* padding: 2px; */
+  /* min-height: 2px; */
 }
 
 /* vim: set sw=2 sts=2 et: */

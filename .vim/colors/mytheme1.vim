@@ -4,7 +4,7 @@
 " Set 'background' back to the default.  The value can't always be estimated
 " and is then guessed.
 hi clear Normal
-set bg&
+set background=dark
 
 " Remove all existing highlighting and set the defaults.
 hi clear
@@ -44,7 +44,11 @@ highlight ALEError ctermbg=344
 " the quickfix window (which syntastic uses).
 highlight Search ctermbg=5 ctermfg=white
 
-highlight SpellBad ctermbg=213
+"
+" red fg, darkish bg.
+"
+highlight SpellBad ctermfg=1 ctermbg=234
+highlight SpellCap ctermbg=234
 
 "
 " GitGutter

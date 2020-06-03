@@ -56,7 +56,7 @@ ps1nodejs () {
 #
 # Sets the default prompt.
 #
-ps1all
+ps1simple
 
 # vim: set filetype=sh softtabstop=2 shiftwidth=2:
 # vim: set wrap:

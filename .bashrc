@@ -81,7 +81,7 @@ fi
 #
 # https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
 #
-if [[ "$TILIX_ID" ]]; then
+if [ "$TILIX_ID" ] || [ "$TERMINATOR_UUID" ] ; then
     #
     # NOTE:
     # If your system does not contain /etc/profile.d/vte.sh, run:

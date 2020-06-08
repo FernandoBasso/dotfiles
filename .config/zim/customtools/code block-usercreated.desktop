@@ -2,17 +2,17 @@
 Type=X-Zim-CustomTool
 Version=1.0
 GenericName=
-Name=Join Lines
+Name=Code Block
 Comment=
 Exec=
 TryExec=
-Icon=/home/fernando/Pictures/Programs and Tools/sed-superman.png
+Icon=
 MimeType=
 Terminal=false
 NoDisplay=false
-X-Zim-ExecTool=~/Projects/dotfiles/bin/zim-join-lines.sh "%t"
+X-Zim-ExecTool=~/Projects/dotfiles/bin/zim-code-block.sh %T
 X-Zim-ReadOnly=false
 X-Zim-ShowInToolBar=true
-X-Zim-ShowInContextMenu=Text
+X-Zim-ShowInContextMenu=None
 X-Zim-ReplaceSelection=true
 

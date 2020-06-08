@@ -16,7 +16,10 @@
 # - Go to Edit → Preferences → Key bindings and set a shortcut like
 #   ‘Ctrl-\’ to <Actions>/custom_tools/code block-usercreated.
 #
-
+# Then, to actually insert the delimters or wrap text with them,
+# either just hit ‘Ctrl-\’ (or from Tools → Code Block) or first
+# select some text before applying the script.
+#
 
 #
 # If we have been passed the selected text. That is the ‘%T’ option

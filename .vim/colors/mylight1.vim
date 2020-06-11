@@ -30,6 +30,15 @@ highlight Constant ctermfg = 1
 highlight Folded ctermbg = 250
 
 "
+" ‘listchars’ colors.
+"
+"   :help hl-SpecialKey
+"   :help 'listchars'
+"   :help cterm-colors
+"
+highlight SpecialKey ctermfg=8
+
+"
 " For Vertical Split (also NERDTree divisor).
 "
 highlight VertSplit cterm=NONE ctermbg=255

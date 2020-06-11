@@ -121,6 +121,13 @@ source "$path_incl/gen-passwords.sh"
 source "$path_incl/git-helpers.sh"
 source "$path_incl/wrappers.sh"
 
+#
+# Work-related stuff. I'm better off not committing this to
+# any public repo.
+#
+[ -e "$path_incl/workprojs.sh" ] && source "$path_incl/workprojs.sh"
+
+
 # vim: set textwidth=78:
 # vim: set nowrap:
 

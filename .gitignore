@@ -2,3 +2,11 @@
 # the repo's .gitignore.
 tmp/
 .emacs.bkp
+
+#
+# Work-related stuff that I am better off not sharing.
+#
+# See ‘bash_incl/workprojs.sh.example’.
+#
+bash_incl/workprojs.sh
+

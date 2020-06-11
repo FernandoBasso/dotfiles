@@ -1,0 +1,17 @@
+#
+# Path to the projects helpers.
+#
+incpath=~/Projects/Secret-Project/git-helpers
+
+#
+# Bail out if it does not exist.
+#
+[ -d "$incpath" ] || return 0
+
+#
+#
+# In “this example project”, we need to include the ‘ext’ and
+# ‘bin’ directories inside ‘$incpath/maint-tools’ to the path.
+#
+PATH="$PATH:$incpath/maint-tools/ext:$incpath/maint-tools/bin"
+

@@ -35,7 +35,7 @@
 ;                     :width 'normal)
 (set-face-attribute 'default nil
                     :family "ProFontIIx Nerd Font"
-                    :height 120
+                    :height 125
                     :weight 'normal
                     :width 'normal)
 ; (set-default-font "Source Code Variable 13")
@@ -290,18 +290,23 @@ https://github.com/jaypei/emacs-neotree
 
 ** Theme Packages
 #+begin_src emacs-lisp
-(use-package zenburn-theme
-  :ensure t)
 
-(use-package gruvbox-theme
-  :ensure t)
 #+end_src
 
 * Themes
-  Load theme first because so we can disable damn bold and italic later.
+Load theme first because so we can disable damn bold and italic later.
+
+NOTE: If we ~use-package~ a theme, it also loads that theme. That means if the another theme is loaded later, and it doesn't override some stuff from the first loaded theme, then we end up with ugly and/or undreadable stuff.
 
 #+BEGIN_SRC emacs-lisp
-(load-theme 'zenburn t)
+;;(use-package zenburn-theme
+;;  :ensure t)
+;;
+;;(use-package gruvbox-theme
+;;  :ensure t)
+
+;(load-theme 'zenburn t)
+;(load-theme 'tango)
 
 ;; Do away with bold fonts.
 (mapc

@@ -110,7 +110,7 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set listchars=tab:▸\ ,trail:·
 set list
 
@@ -206,6 +206,7 @@ if hostname() == 'theforce' || hostname() == 'x-gamming'
         colorscheme mytheme1
     else
         colorscheme mylight1
+        let g:airline_theme = 'xtermlight'
     end
 else
     colorscheme mylight1

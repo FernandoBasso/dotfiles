@@ -10,3 +10,11 @@ tmp/
 #
 bash_incl/workprojs.sh
 
+#
+# Each computer has a different list of Notebooks and their
+# locations are not the same across machines.
+#
+.config/zim/notebooks.list
+
+# vim: set tw=68:
+

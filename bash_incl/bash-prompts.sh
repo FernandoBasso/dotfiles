@@ -54,7 +54,7 @@ ps1simple_nl () {
 
 ps1all () {
   PS1="\n${purple}\$(make_line)\n${purple}[bash-\$(version_bash)] [git-\$(version_git)] [$(~/.rvm/bin/rvm-prompt)] [node-\$(version_node)]"
-  PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
+  PS1+="\n${blue}\w $red\$(__git_ps1 '[%s]')\n$normal\$ "
 }
 
 ps1nodejs () {

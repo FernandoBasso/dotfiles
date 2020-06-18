@@ -2,7 +2,6 @@
 #+STARTUP: content
 #+PROPERTY: header-args :results none :exports none
 
-
 * Basic
 
 #+BEGIN_SRC emacs-lisp
@@ -15,6 +14,9 @@
 (global-set-key (kbd "<f5>") 'revert-buffer)
 
 (global-set-key (kbd "C-c t l") 'toggle-truncate-lines)
+
+(save-place-mode 1)
+(savehist-mode 1)
 
 ;;
 ;; So we don't end up with the damn two spayces after “.”

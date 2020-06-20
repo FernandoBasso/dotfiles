@@ -1,0 +1,19 @@
+#+OPTIONS: num:nil
+
+# Turn off default internal styles
+#+OPTIONS: html-style:t html5-fancy:t
+
+# Exporting to HTML5
+#+HTML_DOCTYPE: html5
+#+HTML_HEAD: <meta http-equiv="X-UA-Compatible" content="IE=edge">
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1">
+
+#+HTML_HEAD: <style type="text/css">
+#+HTML_HEAD: body {
+#+HTML_HEAD:   font-family: Ubuntu, Helvetica, Arial, serif;
+#+HTML_HEAD: }
+#+HTML_HEAD: code, pre {
+#+HTML_HEAD:   font-family: 'Source Code Variable', 'Source Code Pro', monospace;
+#+HTML_HEAD:   font-weight: 400;
+#+HTML_HEAD: }
+#+HTML_HEAD: </style>

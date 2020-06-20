@@ -4,5 +4,9 @@
 [alias]
 	st = status
 	co = checkout
+	lg = log --pretty='%C(yellow)%h%Creset %Cblue%an%Creset %Cgreen%cr%Creset%Cred%d%Creset %s'
 [color "diff"]
 	whitespace = red reverse
+[help]
+	htmlPath = /home/fernando/Projects/From-Other-People/git-htmldocs
+	browser = opera

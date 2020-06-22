@@ -100,6 +100,7 @@ fi
 #   man z
 #
 [ -r /usr/share/z/z.sh ] && source /usr/share/z/z.sh
+[ -r ~/bin/z.sh ] && source ~/bin/z.sh
 
 
 #

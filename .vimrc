@@ -201,16 +201,12 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 nnoremap cd :cd %:h<CR>:pwd<CR>
 
 
-if hostname() == 'theforce' || hostname() == 'x-gamming'
-    if $THEME == 'dark'
-        colorscheme mytheme1
-    else
-        colorscheme mylight1
-        let g:airline_theme = 'xtermlight'
-    end
+if $THEME == 'dark'
+    colorscheme mytheme1
 else
     colorscheme mylight1
-endif
+    let g:airline_theme = 'xtermlight'
+end
 
 
 if !exists("g:ycm_semantic_triggers")

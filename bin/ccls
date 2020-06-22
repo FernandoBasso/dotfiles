@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+#
+# CCLS wrapper to run from the compiled binary on my machine.
+#
+# https://github.com/MaskRay/ccls/wiki/Install
+#
+
+ccls_path="$HOME/Projects/From-Other-People/ccls/Release/ccls"
+
+ini_opts=('--log-file=/tmp/ccls.log' '-v=1')
+
+exec "$ccls_path" "${ini_opts[@]}" "$@"
+

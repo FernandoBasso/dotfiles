@@ -90,7 +90,7 @@ if [ "$TILIX_ID" ] || [ "$TERMINATOR_UUID" ] ; then
     #       /etc/profile.d/vte-<some-version>.sh \
     #       /etc/profile.d/vte.sh
     #
-    source /etc/profile.d/vte.sh
+    [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 fi
 
 #

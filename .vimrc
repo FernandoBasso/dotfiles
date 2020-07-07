@@ -103,6 +103,15 @@ set backupdir=~/Temp/vim_bkp/
 set backupext=.vimbkp
 set directory=~/Temp/vim_tmp//
 
+"
+" Create-React-App fresh project does not auto-reload on save.
+"
+" https://create-react-app.dev/docs/troubleshooting/#npm-start-doesnt-detect-changes
+"
+" https://webpack.js.org/guides/development/#adjusting-your-text-editor
+"
+set backupcopy=yes
+
 
 " Restore cursor position (:help restore-cursor).
 autocmd BufReadPost *

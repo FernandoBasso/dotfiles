@@ -37,7 +37,7 @@
 ;                     :width 'normal)
 (set-face-attribute 'default nil
                     :family "ProFontIIx Nerd Font"
-                    :height 125
+                    :height 120
                     :weight 'normal
                     :width 'normal)
 ; (set-default-font "Source Code Variable 13")

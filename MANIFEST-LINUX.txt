@@ -8,9 +8,9 @@
 .config/zim/customtools
 .config/fish
 .config/nvim
-.config/terminator
 .config/bashrun
 .gitconfig
+.fu.conf
 .tigrc
 .tmux.conf
 .vimrc

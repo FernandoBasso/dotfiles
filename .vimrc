@@ -19,6 +19,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
@@ -39,8 +40,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
-Plug 'pangloss/vim-javascript'
-Plug 'jparise/vim-graphql'
+"Plug 'jparise/vim-graphql'
 Plug 'mxw/vim-jsx'
 Plug 'vim-scripts/dbext.vim'
 Plug 'jwalton512/vim-blade'
@@ -336,14 +336,36 @@ let g:asciidoctor_fold_options = 1
 let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript', 'ruby', 'php', 'elm', 'haskell', 'bash', 'sh']
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CoC — Conquer of Completion
+" ---------------------------
 "
-" coc
 "
 " GoTo code navigation.
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+"
+" Display diagnostics (errors and warnings) and documentation.
+" Type uppercase ‘K’ to activate, and any motion (like ‘j’, ‘k’,
+" ‘h’, ‘b’, ‘<C-o>’, ‘<C-i>’, etc.) to deactivate.
+"
+nnoremap <silent> K :call CocAction('doHover')<CR>
+
+"
+" Navigate to next/prev errors.
+"
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+"
+" Rename symbol
+"
+nmap <leader>rn <Plug>(coc-rename>
+
 
 
 " posva/vim-vue

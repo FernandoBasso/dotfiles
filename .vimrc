@@ -21,14 +21,16 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'mileszs/ack.vim'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --system-libclang' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'posva/vim-vue'
 " Plug 'Quramy/tsuquyomi'
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 " Plug 'Quramy/tsuquyomi-vue'
 Plug 'w0rp/ale'
@@ -123,51 +125,24 @@ autocmd BufReadPost *
 set listchars=tab:▸\ ,trail:·
 set list
 
-" log, tmp, vendor, bin, libs and some other stuff are rails
-" specific directories.
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.*(git|hg|svn|log|tmp|vendor|bin|node_modules|lsm|gerenciador)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ }
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-"let g:syntastic_elm_checkers = ['elm_make']
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
-let g:elm_syntastic_show_warnings = 1
-
-" Disable for typescript since it already provides syntax checking
-" stuff and other things. All other filetypes still run syntax checking
-" by default.
-let g:syntastic_mode_map = {
-    \ 'mode': 'active',
-    \ 'passive_filetypes': ['typescript'] }
-
-" CtrlP "
-" change default mapping "
-let g:ctrlp_map = '<c-;>'
-
-nnoremap <Leader>f :CtrlP<CR>
-inoremap <Esc><Leader>f :CtrlP<CR>
-
-nnoremap <Leader>b :CtrlPBuffer<CR>
-inoremap <Esc><Leader>b :CtrlPBuffer<CR>
-
-nnoremap <Leader>m :CtrlPMixed<CR>
-inoremap <Esc><Leader>m :CtrlPMixed<CR>
+"
+" FZF
+"
+silent nnoremap <Leader>f :Files
+map <Leader>f :Files<CR>
+map <Leader>b :Buffers<CR>
+nnoremap <Leader>g :Rg<CR>
+nnoremap <Leader>t :Tags<CR>
+nnoremap <Leader>m :Marks<CR>
 
 "
 " IndentLine
 "
-"let g:indentLine_color_term = 234 "'darkgray'
-let g:indentLine_char = '¦' "'·'
+let g:indentLine_color_term = 237 "'darkgray'
+"let g:indentLine_char = '¦' "'·'
+"let g:indentLine_char = '·'
+let g:indentLine_char_list = ['·', ':', '┆', '┊', '|']
 " indentLine uses conceal stuff which together with default json.vim
 " hides quotes in json files. People suggest stuff here:
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054

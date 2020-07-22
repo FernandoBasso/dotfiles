@@ -20,19 +20,14 @@ Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'mileszs/ack.vim'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --system-libclang' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'posva/vim-vue'
-" Plug 'Quramy/tsuquyomi'
 Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
-" Plug 'Quramy/tsuquyomi-vue'
 Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
@@ -42,14 +37,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
-"Plug 'jparise/vim-graphql'
-Plug 'mxw/vim-jsx'
 Plug 'vim-scripts/dbext.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/vader.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'habamax/vim-asciidoctor'
-"Plug 'joonty/vdebug'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Dropbox/vim/vim-uploader'
 "Plug '~/Projects/vim/vim-tasklist-asciidoctor'
@@ -136,13 +128,17 @@ nnoremap <Leader>g :Rg<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>
 
-"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " IndentLine
 "
 let g:indentLine_color_term = 237 "'darkgray'
-"let g:indentLine_char = '¦' "'·'
+
+"
+" NOTE: The font ProFontIIx does not display the char “¦”.
+"
+let g:indentLine_char = '¦' "'·'
 "let g:indentLine_char = '·'
-let g:indentLine_char_list = ['·', ':', '┆', '┊', '|']
+"let g:indentLine_char_list = ['·', ':', '┆', '┊', '|']
 " indentLine uses conceal stuff which together with default json.vim
 " hides quotes in json files. People suggest stuff here:
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
@@ -185,26 +181,26 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 nnoremap cd :cd %:h<CR>:pwd<CR>
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+"
+
+let g:gruvbox_bold = 0
+let g:gruvbox_italic = 0
+
 if $THEME == 'dark'
-    colorscheme mytheme1
+    set background=dark
+    colorscheme gruvbox
+
+    " For visual selections. The reverse thing looks ugly. This
+    " transparent-like grayish thing looks and feels much more pleasant.
+    highlight Visual cterm=NONE gui=NONE ctermbg=237 guibg=#393939
 else
     colorscheme mylight1
     let g:airline_theme = 'xtermlight'
 end
 
-
-if !exists("g:ycm_semantic_triggers")
-  let g:ycm_semantic_triggers = {
-              \ 'elm': ['.'],
-              \ 'typescript': ['.']}
-endif
-
-if hostname() == 'theforce'
-  let g:ycm_server_python_interpreter = '/usr/bin/python3'
-end
-
 let html_no_rendering = 1
-
 autocmd BufReadPost *.twig set filetype=html
 
 "
@@ -365,8 +361,50 @@ let g:javascript_plugin_jsdoc = 1
 "    endif
 "augroup END
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI, GVim
+"
+if (has('gui_running'))
+  " No menu bar
+  set guioptions-=m
+  "set guioptions-=M
+  " No toolbar
+  set guioptions-=T
+
+  " Desabilita todos os scrollbars.
+  " Right-hand scrollbar when thereis a vertially split window
+  set guioptions-=R
+  " Left-Hand scrollbar
+  set guioptions-=L
+  " Left-hand scrollbar when vertically split window
+  set guioptions-=l
+  " Bottom horizontal scrollbar
+  set guioptions-=b
+  " Habilitar o icone.
+  set guioptions=i
+  " Right-hand scrollbar
+  set guioptions+=r
+  " Right scroolbar when there are splits (NERDtree, taglist).
+  set guioptions+=R
+  set guioptions+=L
+  set guioptions+=e
+
+  set lines=45
+  set columns=120
+
+  "
+  " The font ProFontIIx does not display the char “¦”.
+  "
+  set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
+
+  set guicursor=n-c:hor14,i:ver14,a:blinkon0
+endif
+
 "
 " CUSTOM HELPERS
 "
 source ~/Projects/dotfiles/.vim/helpers/redir.vim
+
+
+" vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:
 

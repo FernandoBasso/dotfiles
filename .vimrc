@@ -136,9 +136,7 @@ let g:indentLine_color_term = 237 "'darkgray'
 "
 " NOTE: The font ProFontIIx does not display the char “¦”.
 "
-let g:indentLine_char = '¦' "'·'
-"let g:indentLine_char = '·'
-"let g:indentLine_char_list = ['·', ':', '┆', '┊', '|']
+let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
 " indentLine uses conceal stuff which together with default json.vim
 " hides quotes in json files. People suggest stuff here:
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
@@ -184,6 +182,8 @@ nnoremap cd :cd %:h<CR>:pwd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 "
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"
 
 let g:gruvbox_bold = 0
 let g:gruvbox_italic = 0

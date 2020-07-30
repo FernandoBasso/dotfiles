@@ -194,7 +194,7 @@ if $THEME == 'dark'
 
     " For visual selections. The reverse thing looks ugly. This
     " transparent-like grayish thing looks and feels much more pleasant.
-    highlight Visual cterm=NONE gui=NONE ctermbg=237 guibg=#393939
+    highlight Visual cterm=NONE gui=NONE ctermbg=234 guibg=#393939
 else
     colorscheme mylight1
     let g:airline_theme = 'xtermlight'

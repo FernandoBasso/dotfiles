@@ -1,4 +1,4 @@
-" utf8=✔ 👍
+" utf8=✔ 💩
 
 " **** BASIC **** "
 
@@ -30,6 +30,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -122,9 +123,9 @@ set list
 " FZF
 "
 silent nnoremap <Leader>f :Files
-map <Leader>f :Files<CR>
+map <Leader>f :Files!<CR>
 map <Leader>b :Buffers<CR>
-nnoremap <Leader>g :Rg<CR>
+nnoremap <Leader>g :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>
 
@@ -196,8 +197,17 @@ if $THEME == 'dark'
     " transparent-like grayish thing looks and feels much more pleasant.
     highlight Visual cterm=NONE gui=NONE ctermbg=234 guibg=#393939
 else
-    colorscheme mylight1
-    let g:airline_theme = 'xtermlight'
+    " colorscheme mylight1
+    " let g:airline_theme = 'xtermlight'
+    set background=light
+    colorscheme solarized
+    " colorscheme gruvbox
+    " let g:airline_theme = 'gruvbox'
+    " No yellow background.
+    " highlight Normal ctermbg=NONE
+    " No reverse, very light yellow selection.
+    highlight Visual cterm=NONE ctermbg=230
+    let g:indentLine_color_term = 249
 end
 
 let html_no_rendering = 1
@@ -360,6 +370,27 @@ let g:javascript_plugin_jsdoc = 1
 "        highlight FoldColumn guibg=bg
 "    endif
 "augroup END
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FZF
+"
+"
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI, GVim

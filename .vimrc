@@ -123,7 +123,7 @@ set list
 " FZF
 "
 silent nnoremap <Leader>f :Files
-map <Leader>f :Files!<CR>
+map <Leader>f :GFiles!<CR>
 map <Leader>b :Buffers<CR>
 nnoremap <Leader>g :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
@@ -200,14 +200,25 @@ else
     " colorscheme mylight1
     " let g:airline_theme = 'xtermlight'
     set background=light
-    colorscheme solarized
-    " colorscheme gruvbox
-    " let g:airline_theme = 'gruvbox'
-    " No yellow background.
-    " highlight Normal ctermbg=NONE
+    colorscheme gruvbox
+    let g:airline_theme = 'gruvbox'
+    "
+    " Not so yellowish background for light theme. Let's make
+    " it just a very slight yellow. Set ctermbg=NONE so it uses
+    " the terminal background.
+    "
+    hi Normal ctermbg=230
     " No reverse, very light yellow selection.
-    highlight Visual cterm=NONE ctermbg=230
-    let g:indentLine_color_term = 249
+    hi Visual cterm=NONE ctermbg=229
+    let g:indentLine_color_term = 248
+    let g:gruvbox_invert_signs=0
+    let g:gitgutter_override_sign_column_highlight=1
+    hi SignColumn ctermbg=229
+    hi GitGutterAdd ctermbg=229
+    hi GitGutterChange ctermbg=229
+    hi ColorColumn ctermbg=229
+    hi Pmenu ctermbg=229
+    hi PmenuSel ctermbg=3 ctermfg=229
 end
 
 let html_no_rendering = 1

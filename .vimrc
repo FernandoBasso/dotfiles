@@ -132,9 +132,7 @@ nnoremap <Leader>m :Marks<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " IndentLine
 "
-let g:indentLine_color_term = 237 "'darkgray'
 
-"
 " NOTE: The font ProFontIIx does not display the char “¦”.
 "
 let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
@@ -210,9 +208,9 @@ else
     hi Normal ctermbg=230
     " No reverse, very light yellow selection.
     hi Visual cterm=NONE ctermbg=229
-    let g:indentLine_color_term = 248
+    let g:indentLine_color_term = 187
     let g:gruvbox_invert_signs=0
-    let g:gitgutter_override_sign_column_highlight=1
+    let g:gitgutter_override_sign_column_highlight=0
     hi SignColumn ctermbg=229
     hi GitGutterAdd ctermbg=229
     hi GitGutterChange ctermbg=229
@@ -437,7 +435,9 @@ if (has('gui_running'))
   "
   " The font ProFontIIx does not display the char “¦”.
   "
-  set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
+  "set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
+
+  set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
 
   set guicursor=n-c:hor14,i:ver14,a:blinkon0
 endif

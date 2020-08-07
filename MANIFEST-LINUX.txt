@@ -15,6 +15,7 @@
 .tmux.conf
 .vimrc
 .vim/colors
+.vim/after
 .sbclrc
 .Xresources
 .Xresources.d

@@ -82,8 +82,8 @@ let g:netrw_browsex_viewer= 'xdg-open'
 " set shiftwidth=4
 " set noexpandtab
 
-set history=999
-set undolevels=99
+set history=8192
+set undolevels=199
 
 set encoding=utf-8
 set fileencoding=utf-8

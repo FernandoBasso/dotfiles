@@ -205,10 +205,12 @@ else
     " it just a very slight yellow. Set ctermbg=NONE so it uses
     " the terminal background.
     "
-    hi Normal ctermbg=230
+    hi Normal ctermbg=230 ctermfg=240
     " No reverse, very light yellow selection.
     hi Visual cterm=NONE ctermbg=229
     let g:indentLine_color_term = 187
+    let g:indentLine_bgcolor_term = 230
+    hi CursorLine ctermbg=229
     let g:gruvbox_invert_signs=0
     let g:gitgutter_override_sign_column_highlight=0
     hi SignColumn ctermbg=229

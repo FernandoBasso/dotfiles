@@ -35,14 +35,10 @@ _0-set-title () {
     PS1=${ORIG}${title}
 }
 
+#
+# Uses default title if one is not passed as param.
+#
 _0-title-term () {
-    title="λ ${1:-Always Be Awesome!} λ"
-    shift
-    # update title
-    PROMPT_COMMAND='echo -ne "\033]0; $title \007"'
-}
-
-_0-title-gnome-terminal () {
     title="λ ${1:-Always Be Awesome!} λ"
     shift
     # update title

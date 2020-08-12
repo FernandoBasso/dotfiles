@@ -36,15 +36,21 @@
 ;                     :weight 'normal
 ;                     :width 'normal)
 (set-face-attribute 'default nil
-                    :family "ProFontIIx Nerd Font"
-                    :height 120
-                    :weight 'normal
+                    :family "Space Mono Nerd Font"
+                    :height 125
+                    :weight 'bold
                     :width 'normal)
 ; (set-default-font "Source Code Variable 13")
 ; (set-default-font "Ubuntu Mono 13")
 ; (set-default-font "Noto Sans Mono 13")
 ; (set-default-font "Hermit 13")
 
+;; Do away with bold fonts. (for space mono, I want bold, so, disable this)
+;; (mapc
+;;  (lambda (face)
+;;         (when (eq (face-attribute face :weight) 'bold)
+;;           (set-face-attribute face nil :weight 'normal)))
+;;  (face-list))
 (setq-default line-spacing 0.0)
 
 (set-face-italic 'font-lock-comment-face nil)
@@ -114,8 +120,6 @@
 
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-
-(package-initialize)
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -310,11 +314,6 @@ NOTE: If we ~use-package~ a theme, it also loads that theme. That means if the a
 ;(load-theme 'zenburn t)
 ;(load-theme 'tango)
 
-;; Do away with bold fonts.
-(mapc
- (lambda (face)
-        (when (eq (face-attribute face :weight) 'bold)
-          (set-face-attribute face nil :weight 'normal)))
- (face-list))
+
 #+END_SRC
 

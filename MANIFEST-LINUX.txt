@@ -8,6 +8,7 @@
 .config/zim/customtools
 .config/fish
 .config/nvim
+.config/nvim/after
 .config/bashrun
 .gitconfig
 .fu.conf

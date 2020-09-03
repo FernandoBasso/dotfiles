@@ -28,7 +28,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
@@ -38,6 +38,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround',
 Plug 'vim-scripts/dbext.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/vader.vim'
@@ -57,7 +58,7 @@ syntax on
 set nocompatible
 packadd! matchit
 set omnifunc=syntaxcomplete#Complete
-set number
+set number relativenumber
 set ruler
 set showcmd
 set hidden
@@ -194,31 +195,33 @@ if $THEME == 'dark'
     " For visual selections. The reverse thing looks ugly. This
     " transparent-like grayish thing looks and feels much more pleasant.
     highlight Visual cterm=NONE gui=NONE ctermbg=234 guibg=#393939
+    hi Folded ctermbg = 236
+    hi CursorLine ctermbg = 236
 else
     " colorscheme mylight1
     " let g:airline_theme = 'xtermlight'
     set background=light
-    colorscheme gruvbox
-    let g:airline_theme = 'gruvbox'
+    colorscheme solarized
+    let g:airline_theme = 'solarized'
     "
     " Not so yellowish background for light theme. Let's make
     " it just a very slight yellow. Set ctermbg=NONE so it uses
     " the terminal background.
     "
-    hi Normal ctermbg=230 ctermfg=240
-    " No reverse, very light yellow selection.
-    hi Visual cterm=NONE ctermbg=229
-    let g:indentLine_color_term = 187
-    let g:indentLine_bgcolor_term = 230
-    hi CursorLine ctermbg=229
-    let g:gruvbox_invert_signs=0
-    let g:gitgutter_override_sign_column_highlight=0
-    hi SignColumn ctermbg=229
-    hi GitGutterAdd ctermbg=229
-    hi GitGutterChange ctermbg=229
-    hi ColorColumn ctermbg=229
-    hi Pmenu ctermbg=229
-    hi PmenuSel ctermbg=3 ctermfg=229
+    " hi Normal ctermbg=230 ctermfg=240
+    " " No reverse, very light yellow selection.
+    " hi Visual cterm=NONE ctermbg=229
+    " let g:indentLine_color_term = 187
+    " let g:indentLine_bgcolor_term = 230
+    " hi CursorLine ctermbg=229
+    " let g:gruvbox_invert_signs=0
+    " let g:gitgutter_override_sign_column_highlight=0
+    " hi SignColumn ctermbg=229
+    " hi GitGutterAdd ctermbg=229
+    " hi GitGutterChange ctermbg=229
+    " hi ColorColumn ctermbg=229
+    " hi Pmenu ctermbg=229
+    " hi PmenuSel ctermbg=3 ctermfg=229
 end
 
 let html_no_rendering = 1
@@ -333,8 +336,10 @@ let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript', 'ruby', 'php'
 " ---------------------------
 "
 "
-" GoTo code navigation.
 
+let g:coc_global_extensions = ['coc-tsserver']
+
+" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -413,8 +418,10 @@ if (has('gui_running'))
   " No toolbar
   set guioptions-=T
 
-  " Desabilita todos os scrollbars.
-  " Right-hand scrollbar when thereis a vertially split window
+  "
+  " No scrollbars.
+  "
+  " Right-hand scrollbar when thereis a vertically split window
   set guioptions-=R
   " Left-Hand scrollbar
   set guioptions-=L
@@ -449,6 +456,8 @@ endif
 "
 source ~/Projects/dotfiles/.vim/helpers/redir.vim
 
+source ~/MyNotes/bin/libdev.vim
+source ~/MyNotes/bin/vim-solarized-light-overrides.vim
 
 " vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:
 

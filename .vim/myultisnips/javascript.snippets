@@ -2,6 +2,10 @@ snippet log "console.log"
 console.log($1);
 endsnippet
 
+snippet cl "console log abbrev"
+console.log('==== $1', $2);
+endsnippet
+
 snippet deflog "define console.log/info/warn/err"
 const log = console.log.bind(console);
 const info = console.info.bind(console);

@@ -1,0 +1,9 @@
+snippet log "log to the console"
+console.log('=== $1', $2);
+endsnippet
+
+snippet it "it('should ...') jest test block"
+it('should $1', ${2:async?}() => {
+  $3
+});
+endsnippet

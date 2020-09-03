@@ -16,23 +16,6 @@ lsf() { /bin/ls -F1 "$@" | grep -E -v '/$'| sort -d; }
 _0-title-urxvt () {
     #unset PROMPT_COMMAND
     printf "\033]2;%s\007" "$1"
-    #PROMPT_COMMAND='echo -ne "\033]0;$1\007"'
-}
-
-# Sets title for gnome-terminal 3.24.
-# @param string $1 - the title.
-_0-title-gnome-terminal () {
-    echo 'Setting title.'
-    printf "\033]0;%s\007" "$1"
-}
-
-# Works on gnome-terminal 3.26 and Bash.
-_0-set-title () {
-    if [[ -z "$ORIG" ]]; then
-        ORIG=$PS1
-    fi
-    title="\[\e]2;$*\a\]"
-    PS1=${ORIG}${title}
 }
 
 #

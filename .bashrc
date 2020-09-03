@@ -128,6 +128,7 @@ source "$path_incl/wrappers.sh"
 #
 [ -e "$path_incl/workprojs.sh" ] && source "$path_incl/workprojs.sh"
 
+export THEME=light BAT_THEME=GitHub
 
 # vim: set textwidth=78:
 # vim: set nowrap:

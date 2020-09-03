@@ -18,5 +18,18 @@ deploy () {
 
 deploy
 
+#
+# Setup nvim. Just link to good old Vim stuff.
+#
+mkdir -pv ~/.config/nvim/colors
+ln -sv ~/.vimrc ~/.config/nvim/init.vim
+ln -sv ~/.vim/colors/mylight1.vim ~/.config/nvim/colors/mylight1.vim
+ln -sv ~/.vim/colors/mytheme1.vim ~/.config/nvim/colors/mytheme1.vim
+ln -sv ~/.vim/after ~/.config/nvim/after
+ln -sv ~/.vim/helpers ~/.config/nvim/helpers
+ln -sv ~/.vim/syntax ~/.config/nvim/syntax
+ln -sv ~/.vim/myultisnips ~/.config/nvim/myultisnips
+
+
 # vim: set tabstop=2 softtabstop=2 shiftwidth=2:
 

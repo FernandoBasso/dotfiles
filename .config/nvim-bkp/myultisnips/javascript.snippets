@@ -1,0 +1,42 @@
+#
+# JavaScript custom snippepts.
+#
+
+###################################################################
+# Define a very short alias for console.log.
+#
+snippet defl "def l"
+const l = console.log.bind(console);
+$1
+endsnippet
+
+###################################################################
+# console.log with “====” delimiter.
+#
+snippet log "log to the console"
+console.log('==== $1', $2);
+endsnippet
+
+###################################################################
+# Init a simple JS file for pure studies. Disables js filetype,
+# colos, etc. Enables only autoindent with a modline.
+#
+snippet inijs "ini js simple dev file"
+const l = console.log.bind(console);
+
+$1
+
+
+/* vim: set tw=68: */
+
+endsnippet
+
+####################################################################
+# Jest ‘it’ block.
+#
+snippet it "jest it block"
+it('should $1', () => {
+  $2
+});
+endsnippet
+

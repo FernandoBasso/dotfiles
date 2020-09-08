@@ -1,4 +1,6 @@
-" utf8=✔ 💩
+" UTF-8: 💩 λ ‽ ✔
+set encoding=utf-8
+set fileencoding=utf-8
 
 " **** BASIC **** "
 
@@ -6,13 +8,29 @@
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 "
 
+"
+" Install plug for VIM.
+"
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+ !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/plugged')
+"
+" Install Plug for NVIM.
+"
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+if has('nvim')
+  call plug#begin(stdpath('data') . '/plugged')
+else
+  call plug#begin('~/.vim/plugged')
+endif
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
@@ -85,9 +103,6 @@ let g:netrw_browsex_viewer= 'xdg-open'
 
 set history=8192
 set undolevels=199
-
-set encoding=utf-8
-set fileencoding=utf-8
 
 " All three settings are necessary to avoid noise... "
 set noerrorbells

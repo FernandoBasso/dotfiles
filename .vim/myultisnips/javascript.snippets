@@ -6,6 +6,10 @@ snippet cl "console log abbrev"
 console.log('==== $1', $2);
 endsnippet
 
+snippet defl "def console.log abbrev"
+const l = console.log.bind(console);
+endsnippet
+
 snippet deflog "define console.log/info/warn/err"
 const log = console.log.bind(console);
 const info = console.info.bind(console);

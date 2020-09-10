@@ -5,6 +5,11 @@ set fileencoding=utf-8
 " **** BASIC **** "
 
 "
+" Dotfiles dir.
+"
+let g:dfdir = expand('~/Projects/dotfiles')
+
+"
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 "
 
@@ -172,6 +177,13 @@ inoremap <F3> <Esc>:NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\~$', 'node_modules', 'public/assets', 'public/fonts', 'public/uploads', 'public/images']
 
+"
+" Prevent seeing only nerdtree window after closing or deleting a buffer.
+"
+" Use these instead of :bdelete, :bclose and :bwipeout.
+"
+nnoremap <Leader>d :bprevious<CR>:bwipeout#<CR>
+
 " Save the file (some terminals get locked on ctrl-s, and ctrl-q unlocks).
 " # We don't want C-s to lock and terminal (which is unlocked with C-q).
 " `stty -ixon` on bashrc
@@ -197,6 +209,7 @@ nnoremap cd :cd %:h<CR>:pwd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 "
+
 let &t_Cs = "\e[4:3m"
 let &t_Ce = "\e[4:0m"
 
@@ -204,39 +217,22 @@ let g:gruvbox_bold = 0
 let g:gruvbox_italic = 0
 
 if $THEME == 'dark'
-    set background=dark
-    colorscheme gruvbox
+  let s:theme_name = 'gruvbox'
+  set background=dark
+  " colorscheme s:theme_name
+  let g:colors_name = s:theme_name
 
-    " For visual selections. The reverse thing looks ugly. This
-    " transparent-like grayish thing looks and feels much more pleasant.
-    highlight Visual cterm=NONE gui=NONE ctermbg=234 guibg=#393939
-    hi Folded ctermbg = 236
-    hi CursorLine ctermbg = 236
+  execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
 else
-    " colorscheme mylight1
-    " let g:airline_theme = 'xtermlight'
-    set background=light
-    colorscheme solarized
-    let g:airline_theme = 'solarized'
-    "
-    " Not so yellowish background for light theme. Let's make
-    " it just a very slight yellow. Set ctermbg=NONE so it uses
-    " the terminal background.
-    "
-    " hi Normal ctermbg=230 ctermfg=240
-    " " No reverse, very light yellow selection.
-    " hi Visual cterm=NONE ctermbg=229
-    " let g:indentLine_color_term = 187
-    " let g:indentLine_bgcolor_term = 230
-    " hi CursorLine ctermbg=229
-    " let g:gruvbox_invert_signs=0
-    " let g:gitgutter_override_sign_column_highlight=0
-    " hi SignColumn ctermbg=229
-    " hi GitGutterAdd ctermbg=229
-    " hi GitGutterChange ctermbg=229
-    " hi ColorColumn ctermbg=229
-    " hi Pmenu ctermbg=229
-    " hi PmenuSel ctermbg=3 ctermfg=229
+  let theme_name = 'solarized'
+  set background=light
+  colorscheme s:theme_name
+
+  " colorscheme mylight1
+  " let g:airline_theme = 'xtermlight'
+  let g:airline_theme = 'solarized'
+
+  execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
 end
 
 let html_no_rendering = 1
@@ -472,7 +468,6 @@ endif
 source ~/Projects/dotfiles/.vim/helpers/redir.vim
 
 source ~/MyNotes/bin/libdev.vim
-source ~/MyNotes/bin/vim-solarized-light-overrides.vim
 
 " vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:
 

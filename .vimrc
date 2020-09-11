@@ -219,16 +219,14 @@ let g:gruvbox_italic = 0
 if $THEME == 'dark'
   let s:theme_name = 'gruvbox'
   set background=dark
-  " colorscheme s:theme_name
-  let g:colors_name = s:theme_name
+  execute 'colorscheme' s:theme_name
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
 else
   let theme_name = 'solarized'
   set background=light
-  colorscheme s:theme_name
+  execute 'colorscheme' s:theme_name
 
-  " colorscheme mylight1
   " let g:airline_theme = 'xtermlight'
   let g:airline_theme = 'solarized'
 

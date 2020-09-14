@@ -49,7 +49,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 " Plug 'w0rp/ale'
 Plug 'morhetz/gruvbox'
@@ -96,7 +96,14 @@ set breakindent
 
 set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,localoptions
 
+"
+" NETRW
+"
 let g:netrw_browsex_viewer= 'xdg-open'
+let g:netrw_banner       = 0
+let g:netrw_keepdir      = 0
+let g:netrw_liststyle    = 1 " or 3
+let g:netrw_sort_options = 'i'
 
 "let mapleader = "_"
 
@@ -223,14 +230,14 @@ if $THEME == 'dark'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
 else
-  let theme_name = 'solarized'
+  let s:theme_name = 'solarized'
   set background=light
   execute 'colorscheme' s:theme_name
 
   " let g:airline_theme = 'xtermlight'
   let g:airline_theme = 'solarized'
 
-  execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
+  execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
 end
 
 let html_no_rendering = 1
@@ -415,6 +422,8 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+let g:fzf_preview_window = 'right:36%'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -7,6 +7,7 @@
 .config/zim/style.conf
 .config/zim/customtools
 .config/fish
+.config/alacritty
 .vim/colors/mylight1.vim
 .vim/colors/mytheme1.vim
 .vim/after

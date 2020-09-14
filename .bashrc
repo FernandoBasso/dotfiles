@@ -26,6 +26,8 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
 [[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
 
+export FZF_DEFAULT_OPTS='--preview-window right:36%'
+
 export DENO_INSTALL="$HOME/.deno"
 PATH="$PATH:$DENO_INSTALL/bin"
 
@@ -128,8 +130,8 @@ source "$path_incl/wrappers.sh"
 #
 [ -e "$path_incl/workprojs.sh" ] && source "$path_incl/workprojs.sh"
 
-# export THEME=light BAT_THEME=GitHub
-export THEME=dark BAT_THEME=zenburn
+export THEME=light BAT_THEME=GitHub
+# export THEME=dark BAT_THEME=zenburn
 
 # vim: set textwidth=78:
 # vim: set nowrap:

@@ -21,10 +21,22 @@ const warn = console.warn.bind(console);
 const err = console.error.bind(console);
 endsnippet
 
-snippet jit "jest it test"
+snippet jdesc "jest describe() block"
+describe('${1:test description}', () => {
+ $2
+});
+endsnippet
+
+snippet jit "jest it() test"
 it('${1:test description}', () => {
   $2
 });
+endsnippet
+
+snippet rh "renderHook()"
+const { result } = renderHook(() => use$1($2));
+
+expect(result.current$3)$4
 endsnippet
 
 snippet /tw "// @TODO @WORKING"

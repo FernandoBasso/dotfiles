@@ -385,7 +385,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 "
-" Suggest semantic completions with TAB. Works really well,
+" Suggest semantic completions with Ctrl+Tab. Works really well,
 " and handles suggestions of object properties. Example:
 "
 " type TParams {
@@ -393,11 +393,11 @@ nmap <silent> gr <Plug>(coc-references)
 "   method: string,
 " }
 "
-" Now, typing “const params: TParams { <Tab>” displays
+" Now, typing “const params: TParams { <C-Space>” displays
 " url, method, and their types and even documentation,
 " if available.
 "
-inoremap <silent><expr> <Tab> coc#refresh()
+inoremap <silent><expr> <C-Space> coc#refresh()
 
 "
 " Display diagnostics (errors and warnings) and documentation.
@@ -530,4 +530,4 @@ source ~/Projects/dotfiles/.vim/helpers/redir.vim
 source ~/work/local/libdev.vim
 
 " vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:
-
+" vim: set textwidth=68:

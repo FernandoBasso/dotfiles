@@ -376,11 +376,28 @@ let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript', 'ruby', 'php'
 
 let g:coc_global_extensions = ['coc-tsserver']
 
-" GoTo code navigation.
+"
+" “Go To” code navigation.
+"
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+"
+" Suggest semantic completions with TAB. Works really well,
+" and handles suggestions of object properties. Example:
+"
+" type TParams {
+"   url: string,
+"   method: string,
+" }
+"
+" Now, typing “const params: TParams { <Tab>” displays
+" url, method, and their types and even documentation,
+" if available.
+"
+inoremap <silent><expr> <Tab> coc#refresh()
 
 "
 " Display diagnostics (errors and warnings) and documentation.

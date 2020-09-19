@@ -68,10 +68,10 @@ ps1nodejs () {
   PS1="\n${blue}\$(curdir) ${purple}[node-\$(version_node)] $(git_info)\n${normal}$ "
 }
 
-# unset PROMPT_COMMAND
-
-#
+##
 # Sets the default prompt.
+#
+# This setting may be overridden in ‘~/work/local/local.bash’.
 #
 ps1all
 

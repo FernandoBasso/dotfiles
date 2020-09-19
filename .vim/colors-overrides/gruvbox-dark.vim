@@ -15,7 +15,7 @@ highlight String ctermfg=1
 " @TODO @WORKING @FIXME:
 "
 " REDish colors: 88, 124, 160, 196
+"
 hi MyKeyWords ctermfg=196
-match MyKeyWords /@\(TODO\|FIXME\|WORKING\|HACK\):\?/
-
+match MyKeyWords /@\?\(TODO\|FIXME\|WORKING\|HACK\):\?/
 

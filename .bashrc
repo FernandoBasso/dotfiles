@@ -125,13 +125,9 @@ source "$path_incl/git-helpers.sh"
 source "$path_incl/wrappers.sh"
 
 #
-# Work-related stuff. I'm better off not committing this to
-# any public repo.
+# Local per machine, not commited.
 #
-[ -e "$path_incl/workprojs.sh" ] && source "$path_incl/workprojs.sh"
-
-export THEME=light BAT_THEME=GitHub
-# export THEME=dark BAT_THEME=zenburn
+[ -f ~/work/local/local.bash ] && source ~/work/local/local.bash
 
 # vim: set textwidth=78:
 # vim: set nowrap:

@@ -15,3 +15,9 @@ hi PmenuSel ctermbg=3 ctermfg=228
 
 hi CocUnderline cterm=undercurl gui=undercurl
 
+"
+" pacha/vem-tabline overrides
+"
+hi TabLine cterm=NONE
+hi TabLineSel cterm=NONE ctermbg=7 ctermfg=1
+

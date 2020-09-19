@@ -47,6 +47,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'leafgarland/typescript-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'pacha/vem-tabline'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'Yggdroot/indentLine'
@@ -69,6 +70,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'habamax/vim-asciidoctor'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Dropbox/vim/vim-uploader'
+Plug 'gabrielelana/vim-markdown'
 "Plug '~/Projects/vim/vim-tasklist-asciidoctor'
 
 "'file:///~/.vim/bundle/dbext'
@@ -90,11 +92,16 @@ set timeoutlen=350
 set mouse=a
 
 " Indentation with SPACES
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 set breakindent
 
 set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,localoptions
+
+"
+" Always copy to the clipboard.
+"
+set clipboard+=unnamedplus
 
 "
 " NETRW
@@ -152,8 +159,8 @@ set list
 "
 silent nnoremap <Leader>f :Files
 map <Leader>f :GFiles!<CR>
-map <Leader>b :Buffers<CR>
-nnoremap <Leader>g :Rg!<CR>
+map <Leader>b :Bufers<CR>
+nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>
 
@@ -203,6 +210,14 @@ inoremap <C-Space> <C-x><C-o>
 map <C-N> :bnext<Return>
 map <C-P> :bprevious<Return>
 
+"
+" vem_tabline
+"
+nmap <Leader>h <Plug>vem_move_buffer_left-
+nmap <Leader>l <Plug>vem_move_buffer_right-
+" nmap <C-P> <Plug>vem_prev_buffer-
+" nmap <C-N>n <Plug>vem_next_buffer-
+
 " Insert a nice formated data and time:
 inoremap <F2> <C-r>=strftime('%A, %H:%M - %B %d - %Y')
 
@@ -212,6 +227,11 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 " Change directory to the path of current file/buffer.
 nnoremap cd :cd %:h<CR>:pwd<CR>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" FUGITIVE
+"
+nnoremap <Leader>gs :vertical Git<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
@@ -423,6 +443,21 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
+""
+" Popup window!
+"
+let g:fzf_layout = {
+  \ 'window' : {
+    \ 'width': 0.9, 
+    \ 'height': 0.8, 
+    \ 'highlight': 'Normal'
+    \ } 
+  \ }
+
+""
+" Some projects I work on have a very deep hierarchy of directories
+" and making the right window shorter helps reading the filenames.
+"
 let g:fzf_preview_window = 'right:36%'
 
 
@@ -474,7 +509,7 @@ endif
 "
 source ~/Projects/dotfiles/.vim/helpers/redir.vim
 
-source ~/MyNotes/bin/libdev.vim
+source ~/work/local/libdev.vim
 
 " vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:
 

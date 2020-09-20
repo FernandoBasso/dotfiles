@@ -48,6 +48,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'https://github.com/junegunn/vim-emoji'
+Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 Plug 'pacha/vem-tabline'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -154,16 +156,6 @@ autocmd BufReadPost *
 set listchars=tab:▸\ ,trail:·
 set list
 
-
-"
-" FZF
-"
-silent nnoremap <Leader>f :Files
-map <Leader>f :GFiles!<CR>
-map <Leader>b :Bufers<CR>
-nnoremap <Leader>rg :Rg!<CR>
-nnoremap <Leader>t :Tags<CR>
-nnoremap <Leader>m :Marks<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " IndentLine
@@ -466,10 +458,10 @@ let g:fzf_colors =
 "
 let g:fzf_layout = {
   \ 'window' : {
-    \ 'width': 0.9, 
-    \ 'height': 0.8, 
+    \ 'width': 0.9,
+    \ 'height': 0.8,
     \ 'highlight': 'Normal'
-    \ } 
+    \ }
   \ }
 
 ""
@@ -478,6 +470,18 @@ let g:fzf_layout = {
 "
 let g:fzf_preview_window = 'right:36%'
 
+silent nnoremap <Leader>f :Files
+map <Leader>f :GFiles!<CR>
+map <Leader>b :Bufers<CR>
+nnoremap <Leader>rg :Rg!<CR>
+nnoremap <Leader>t :Tags<CR>
+nnoremap <Leader>m :Marks<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-emoji, vim-emoji-ab
+"
+set completefunc=gh_emoji#complete
+runtime macros/emoji-ab.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI, GVim

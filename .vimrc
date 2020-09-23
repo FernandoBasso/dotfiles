@@ -478,10 +478,21 @@ nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-emoji, vim-emoji-ab
+" 😃 vim-emoji, vim-emoji-ab ⭐
+"
+" USAGE:
+"
+" • Type ‘:fire:<Space>’ (or some punctuation char,
+"   newline, etc). and it will turn into 🔥.
+"
+" • Type ‘:<C-x><C-o>’ to see a list of suggestions. 👍
+" • Type ‘:smi<C-x><C-o>’ to see a list of suggestions
+"   related to smileys. 😄
 "
 set completefunc=gh_emoji#complete
-runtime macros/emoji-ab.vim
+runtime macros/emojis.vim
+autocmd FileType * runtime macros/emoji-ab.vim
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI, GVim

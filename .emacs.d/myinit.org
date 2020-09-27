@@ -35,11 +35,25 @@
 ;                     :height 120
 ;                     :weight 'normal
 ;                     :width 'normal)
+;
+;;(set-face-attribute 'default nil
+;;                    :family "Space Mono Nerd Font"
+;;                    :height 125
+;;                    :weight 'bold
+;;                    :width 'normal)
+
+;; (set-face-attribute 'default nil
+;;                     :family "Hurmit Nerd Font Mono"
+;;                     :height 125
+;;                     :weight 'bold
+;;                     :width 'normal)
+
 (set-face-attribute 'default nil
-                    :family "Space Mono Nerd Font"
-                    :height 125
+                    :family "Cascadia Code Regular"
+                    :height 130
                     :weight 'bold
                     :width 'normal)
+
 ; (set-default-font "Source Code Variable 13")
 ; (set-default-font "Ubuntu Mono 13")
 ; (set-default-font "Noto Sans Mono 13")
@@ -65,7 +79,7 @@
 
 ;; It is causing problems with org-ellipsis set to ⤵ .
 ;(global-linum-mode 2)
-(global-linum-mode -1)
+(global-linum-mode t)
 (setq linum-format "%4d \u2502")
 
 (setq show-trailing-whitespace t)
@@ -184,6 +198,13 @@
   (show-paren-mode 1))
 #+END_SRC
 
+
+** Racket
+
+#+begin_src emacs-lisp
+(use-package racket-mode
+  :ensure t)
+#+end_src
 
 ** org-babel enabled languages
 
@@ -308,12 +329,11 @@ NOTE: If we ~use-package~ a theme, it also loads that theme. That means if the a
 ;;(use-package zenburn-theme
 ;;  :ensure t)
 ;;
-;;(use-package gruvbox-theme
-;;  :ensure t)
+(use-package gruvbox-theme
+  :ensure t)
+(load-theme 'gruvbox-light-hard)
 
 ;(load-theme 'zenburn t)
 ;(load-theme 'tango)
-
-
 #+END_SRC
 

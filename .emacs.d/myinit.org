@@ -204,6 +204,8 @@
 #+begin_src emacs-lisp
 (use-package racket-mode
   :ensure t)
+
+(setq racket-documentation-search-location 'local)
 #+end_src
 
 ** org-babel enabled languages

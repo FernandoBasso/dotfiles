@@ -205,14 +205,14 @@
 
 ;;
 ;; https://www.racket-mode.com/#paredit
-;;
-(bind-keys :map paredit-mode-map
-           ("{" . paredit-open-curly)
-           ("}" . paredit-close-curly))
-(unless terminal-frame
-  (bind-keys :map paredit-mode-map
-             ("M-[" . paredit-wrap-square)
-             ("M-{" . paredit-wrap-curly)))
+;; Prevetns navigating between paragraphs...
+;;(bind-keys :map paredit-mode-map
+;;           ("{" . paredit-open-curly)
+;;           ("}" . paredit-close-curly))
+;;(unless terminal-frame
+;;  (bind-keys :map paredit-mode-map
+;;             ("M-[" . paredit-wrap-square)
+;;             ("M-{" . paredit-wrap-curly)))
 
 #+END_SRC
 

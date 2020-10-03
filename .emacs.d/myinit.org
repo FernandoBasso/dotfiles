@@ -30,12 +30,13 @@
 
 (setq backup-directory-alist `(("." . "~/Projects/dotfiles/tmp/emacs_stuff")))
 
-; (set-face-attribute 'default nil
-;                     :family "Source Code Variable"
-;                     :height 120
-;                     :weight 'normal
-;                     :width 'normal)
-;
+(set-face-attribute 'default nil
+                    :family "Source Code Variable"
+                    :height 135
+                    :weight 'semibold
+                    :width 'normal)
+(setq-default line-spacing 0.1)
+
 ;;(set-face-attribute 'default nil
 ;;                    :family "Space Mono Nerd Font"
 ;;                    :height 125
@@ -44,15 +45,16 @@
 
 ;; (set-face-attribute 'default nil
 ;;                     :family "Hurmit Nerd Font Mono"
-;;                     :height 125
 ;;                     :weight 'bold
-;;                     :width 'normal)
+;;                     :height 135
+;;                     :width 'ultra-condensed)
+;; (setq-default line-spacing 0.2)
 
-(set-face-attribute 'default nil
-                    :family "Cascadia Code Regular"
-                    :height 130
-                    :weight 'bold
-                    :width 'normal)
+;; (set-face-attribute 'default nil
+;;                     :family "Cascadia Code Regular"
+;;                     :height 130
+;;                     :weight 'bold
+;;                     :width 'ultra-expanded)
 
 ; (set-default-font "Source Code Variable 13")
 ; (set-default-font "Ubuntu Mono 13")
@@ -65,7 +67,7 @@
 ;;         (when (eq (face-attribute face :weight) 'bold)
 ;;           (set-face-attribute face nil :weight 'normal)))
 ;;  (face-list))
-(setq-default line-spacing 0.0)
+;(setq-default line-spacing 0.2)
 
 (set-face-italic 'font-lock-comment-face nil)
 
@@ -187,15 +189,31 @@
 (use-package paredit
   :ensure t
   :config
+  (dolist (m '(emacs-lisp-mode-hook
+               eval-expression-minibuffer-setup-hook
+               ielm-mode-hook
+               lisp-mode-hook
+               lisp-interaction-mode-hook
+               scheme-mode-hook
+               racket-mode-hook))
+    (add-hook m #'paredit-mode))
+
   (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-  (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-  (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-  (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-  (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-  (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
   (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
   (show-paren-mode 1))
+
+;;
+;; https://www.racket-mode.com/#paredit
+;;
+(bind-keys :map paredit-mode-map
+           ("{" . paredit-open-curly)
+           ("}" . paredit-close-curly))
+(unless terminal-frame
+  (bind-keys :map paredit-mode-map
+             ("M-[" . paredit-wrap-square)
+             ("M-{" . paredit-wrap-curly)))
+
 #+END_SRC
 
 
@@ -203,9 +221,12 @@
 
 #+begin_src emacs-lisp
 (use-package racket-mode
-  :ensure t)
+  :ensure t
+  :mode "\\.rkt\\'")
 
 (setq racket-documentation-search-location 'local)
+
+(add-hook 'racket-repl-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 #+end_src
 
 ** org-babel enabled languages

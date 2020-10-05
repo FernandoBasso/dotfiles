@@ -61,6 +61,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
@@ -179,6 +180,7 @@ let g:vim_json_syntax_conceal = 0
 "
 " NERDTree
 "
+let g:NERDTreeWinSize=60
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
 nnoremap <Leader>nf :NERDTreeFind<CR>
@@ -208,8 +210,8 @@ map <C-P> :bprevious<Return>
 "
 nmap <Leader>h <Plug>vem_move_buffer_left-
 nmap <Leader>l <Plug>vem_move_buffer_right-
-" nmap <C-P> <Plug>vem_prev_buffer-
-" nmap <C-N>n <Plug>vem_next_buffer-
+nmap <C-P> <Plug>vem_prev_buffer-
+nmap <C-N> <Plug>vem_next_buffer-
 
 " Insert a nice formated data and time:
 inoremap <F2> <C-r>=strftime('%A, %H:%M - %B %d - %Y')

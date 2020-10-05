@@ -18,3 +18,8 @@ snippet ll "console.log"
 const l = console.log.bind(console);
 endsnippet
 
+snippet sto "setTimeout"
+setTimeout(() => {
+  $2
+}, ${1:millis});
+endsnippet

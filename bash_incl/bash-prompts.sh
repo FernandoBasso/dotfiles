@@ -68,6 +68,10 @@ ps1nodejs () {
   PS1="\n${blue}\$(curdir) ${purple}[node-\$(version_node)] $(git_info)\n${normal}$ "
 }
 
+ps1heart () {
+  PS1="\n$blue\w $red\$(__git_ps1 '[%s]')\n$normal💖️ "
+}
+
 ##
 # Sets the default prompt.
 #

@@ -5,21 +5,19 @@
 
 » %a, %Y-%m-%d %H:%M
 
-[LOGGED: %Y-%m-%d %H:%M]
+[LOGGED: %a, %Y-%m-%d %H:%M]
 # when started working the task.
-[STARTED: %Y-%m-%d %H:%M]
+[STARTED: %a, %Y-%m-%d %H:%M]
 # When entered "verify" state.
-[VERIFYING: %Y-%m-%d %H:%M]
+[VERIFYING: %a, %Y-%m-%d %H:%M]
 # when finished working on the task.
 # "concluded" is more formal than "finished".
-[CONCLUDED: %Y-%m-%d %H:%M]
+[CONCLUDED: %a, %Y-%m-%d %H:%M]
 # Waiting for something that doesn't depend upon me.
-[WAITING: %Y-%m-%d %H:%M]
+[WAITING: %a, %Y-%m-%d %H:%M]
 # Paused of a reason of my own.
-[PAUSED: %Y-%m-%d %H:%M]
+[PAUSED: %a, %Y-%m-%d %H:%M]
 # Datetime, no specific use.
-[DATETIME: %Y-%m-%d %H:%M]
-
 [DATETIME: %a, %Y-%m-%d %H:%M]
 %x
 %c

@@ -6,27 +6,27 @@ font:
 
   offset:
     x: 0
-    y: 8
+    y: 0
 
   glyph_offset:
     x: 0
-    y: 4
+    y: 0
 
   normal:
-    family: Hurmit Nerd Font Mono
-    style: Bold
+    family: Source Code Pro Semibold
+    style: Semibold
 
   bold:
-    family: Hurmit Nerd Font Mono
-    style: Bold
+    family: Source Code Pro Semibold
+    style: Semibold
 
   italic:
-    family: Hurmit Nerd Font Mono
-    style: Bold
+    family: Source Code Pro Semibold
+    style: Semibold
 
   bold_italic:
-    family: Hurmit Nerd Font Mono
-    style: Bold
+    family: Source Code Pro Semibold
+    style: Semibold
 
 window:
   padding:

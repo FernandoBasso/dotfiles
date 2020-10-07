@@ -72,12 +72,16 @@ ps1heart () {
   PS1="\n$blue\w $red\$(__git_ps1 '[%s]')\n$normal💖️ "
 }
 
+ps1tux () {
+  PS1="\n$blue\w $red\$(__git_ps1 '[%s]')\n$normal "
+}
+
 ##
 # Sets the default prompt.
 #
 # This setting may be overridden in ‘~/work/local/local.bash’.
 #
-ps1all
+ps1tux
 
 # vim: set filetype=sh softtabstop=2 shiftwidth=2:
 # vim: set wrap:

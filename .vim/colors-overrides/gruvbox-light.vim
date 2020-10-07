@@ -10,6 +10,11 @@ hi Visual cterm=NONE ctermbg=222
 " Block of the current line underneath line numbers.
 hi CursorLineNr ctermbg=bg
 
+hi CocErrorSign ctermbg=229
+hi CocWarningSign ctermbg=229
+hi CocInfoSign ctermbg=229
+hi CocHintSign ctermbg=229
+
 let g:indentLine_color_term = 187
 let g:indentLine_bgcolor_term = 230
 hi CursorLine ctermbg=229

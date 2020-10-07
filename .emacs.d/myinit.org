@@ -31,35 +31,59 @@
 (setq backup-directory-alist `(("." . "~/Projects/dotfiles/tmp/emacs_stuff")))
 
 (set-face-attribute 'default nil
-                    :family "Source Code Variable"
-                    :height 135
+                    :family "Source Code Pro"
+                    :height 140
                     :weight 'semibold
                     :width 'normal)
-(setq-default line-spacing 0.1)
+(setq-default line-spacing 0.0)
+
+;;(set-face-attribute 'default nil
+;;                    :family "Source Code Variable"
+;;                    :height 135
+;;                    :weight 'semibold
+;;                    :width 'extra-expanded)
+;;(setq-default line-spacing 0.2)
 
 ;;(set-face-attribute 'default nil
 ;;                    :family "Space Mono Nerd Font"
-;;                    :height 125
+;;                    :height 135
 ;;                    :weight 'bold
+;;(setq-default line-spacing 0.0)
+
+;;(set-face-attribute 'default nil
+;;                    :family "Hurmit Nerd Font Mono"
+;;                    :weight 'bold
+;;                    :height 135
 ;;                    :width 'normal)
+;;(setq-default line-spacing 0.4)
+
+;;(set-face-attribute 'default nil
+;;                    :family "Hack Nerd Font Mono"
+;;                    :weight 'bold
+;;                    :height 135
+;;                    :width 'normal)
+;;(setq-default line-spacing 0.0)
+
+
+(set-face-attribute 'default nil
+                    :family "Cascadia Code Regular"
+                    :height 135
+                    :weight 'semibold
+                    :width 'normal)
 
 ;; (set-face-attribute 'default nil
-;;                     :family "Hurmit Nerd Font Mono"
-;;                     :weight 'bold
+;;                     :family "Noto Sans Mono"
 ;;                     :height 135
-;;                     :width 'ultra-condensed)
-;; (setq-default line-spacing 0.2)
+;;                     :weight 'semibold
+;;                     :width 'normal)
 
-;; (set-face-attribute 'default nil
-;;                     :family "Cascadia Code Regular"
-;;                     :height 130
-;;                     :weight 'bold
-;;                     :width 'ultra-expanded)
-
-; (set-default-font "Source Code Variable 13")
-; (set-default-font "Ubuntu Mono 13")
-; (set-default-font "Noto Sans Mono 13")
-; (set-default-font "Hermit 13")
+;(set-frame-font "Source Code Variable 13")
+;(set-frame-font "Source Code Pro Semibold 14")
+;(set-frame-font "Hack Nerd Font 14")
+;(set-frame-font "Ubuntu Mono 16")
+;(set-frame-font "Noto Sans Mono Semibold 14")
+;(set-frame-font "MesloLGL Nerd Font Mono Bold 14")
+; (set-frame-font "Hermit 13")
 
 ;; Do away with bold fonts. (for space mono, I want bold, so, disable this)
 ;; (mapc

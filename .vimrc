@@ -50,7 +50,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/junegunn/vim-emoji'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
-Plug 'pacha/vem-tabline'
+"Plug 'pacha/vem-tabline'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'Yggdroot/indentLine'
@@ -75,6 +75,7 @@ Plug 'habamax/vim-asciidoctor'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Dropbox/vim/vim-uploader'
 Plug 'gabrielelana/vim-markdown'
+Plug 'terryma/vim-multiple-cursors'
 "Plug '~/Projects/vim/vim-tasklist-asciidoctor'
 
 "'file:///~/.vim/bundle/dbext'
@@ -105,7 +106,7 @@ set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,resi
 "
 " Always copy to the clipboard.
 "
-set clipboard+=unnamedplus
+"set clipboard+=unnamedplus
 
 "
 " NETRW
@@ -202,16 +203,18 @@ inoremap <C-s> <Esc>:update<CR><Right>
 inoremap <C-Space> <C-x><C-o>
 
 " Mapping for buffer next/prev "
-map <C-N> :bnext<Return>
-map <C-P> :bprevious<Return>
+map <Leader>n :bnext<Return>
+map <Leader>p :bprevious<Return>
 
 "
 " vem_tabline
 "
-nmap <Leader>h <Plug>vem_move_buffer_left-
-nmap <Leader>l <Plug>vem_move_buffer_right-
-nmap <C-P> <Plug>vem_prev_buffer-
-nmap <C-N> <Plug>vem_next_buffer-
+" @NOTE: Using <C-N> for vim multiple cursors.
+"
+"nmap <Leader>h <Plug>vem_move_buffer_left-
+"nmap <Leader>l <Plug>vem_move_buffer_right-
+"nmap <C-P> <Plug>vem_prev_buffer-
+"nmap <C-N> <Plug>vem_next_buffer-
 
 " Insert a nice formated data and time:
 inoremap <F2> <C-r>=strftime('%A, %H:%M - %B %d - %Y')
@@ -245,12 +248,12 @@ if $THEME == 'dark'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
 else
-  let s:theme_name = 'solarized'
+  let s:theme_name = 'gruvbox'
   set background=light
   execute 'colorscheme' s:theme_name
 
   " let g:airline_theme = 'xtermlight'
-  let g:airline_theme = 'solarized'
+  let g:airline_theme = 'gruvbox'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
 end
@@ -412,8 +415,20 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <leader>rn <Plug>(coc-rename>
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" React, TypeScript, JavaScript
+" -----------------------------
+"
+" • peitalin/vim-jsx-typescript
+"
+autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
 
-" posva/vim-vue
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vue.js
+" ------
+"
+" • posva/vim-vue
 "
 " https://github.com/posva/vim-vue#my-syntax-highlighting-stops-working-randomly
 autocmd FileType vue syntax sync fromstart
@@ -474,7 +489,7 @@ let g:fzf_preview_window = 'right:36%'
 
 silent nnoremap <Leader>f :Files
 map <Leader>f :GFiles!<CR>
-map <Leader>b :Bufers<CR>
+map <Leader>b :Buffers<CR>
 nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>

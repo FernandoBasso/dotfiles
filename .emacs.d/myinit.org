@@ -32,7 +32,7 @@
 
 (set-face-attribute 'default nil
                     :family "Source Code Pro"
-                    :height 140
+                    :height 135
                     :weight 'semibold
                     :width 'normal)
 (setq-default line-spacing 0.0)
@@ -55,7 +55,7 @@
 ;;                    :weight 'bold
 ;;                    :height 135
 ;;                    :width 'normal)
-;;(setq-default line-spacing 0.4)
+;;(setq-default line-spacing 0.2)
 
 ;;(set-face-attribute 'default nil
 ;;                    :family "Hack Nerd Font Mono"
@@ -65,11 +65,12 @@
 ;;(setq-default line-spacing 0.0)
 
 
-(set-face-attribute 'default nil
-                    :family "Cascadia Code Regular"
-                    :height 135
-                    :weight 'semibold
-                    :width 'normal)
+;;(set-face-attribute 'default nil
+;;                    :family "Cascadia Code"
+;;                    :height 130
+;;                    :weight 'semibold
+;;                    :width 'normal)
+;;(setq-default line-spacing 0.2)
 
 ;; (set-face-attribute 'default nil
 ;;                     :family "Noto Sans Mono"

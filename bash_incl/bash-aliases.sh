@@ -22,3 +22,5 @@ alias cp='cp --verbose --interactive'
 #
 alias vimlight='vim -c "colorscheme mylight1" -c "AirlineTheme xtermlight"'
 
+alias fzf=fzf --delimiter=: --preview='bat --style=numbers --color=always {1}'
+

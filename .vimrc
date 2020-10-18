@@ -50,7 +50,11 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/junegunn/vim-emoji'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
-"Plug 'pacha/vem-tabline'
+Plug 'pacha/vem-tabline'
+
+" Requires code-minimap (Rust program) from the same author.
+Plug 'wfxr/minimap.vim'
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'Yggdroot/indentLine'
@@ -211,10 +215,10 @@ map <Leader>p :bprevious<Return>
 "
 " @NOTE: Using <C-N> for vim multiple cursors.
 "
-"nmap <Leader>h <Plug>vem_move_buffer_left-
-"nmap <Leader>l <Plug>vem_move_buffer_right-
-"nmap <C-P> <Plug>vem_prev_buffer-
-"nmap <C-N> <Plug>vem_next_buffer-
+nmap <Leader>h <Plug>vem_move_buffer_left-
+nmap <Leader>l <Plug>vem_move_buffer_right-
+nmap <Leader>p <Plug>vem_prev_buffer-
+nmap <Leader>n <Plug>vem_next_buffer-
 
 " Insert a nice formated data and time:
 inoremap <F2> <C-r>=strftime('%A, %H:%M - %B %d - %Y')

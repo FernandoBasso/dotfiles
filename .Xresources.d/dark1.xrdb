@@ -10,7 +10,11 @@
 !ProFont for Powerline
 !monofur for Powerline Regular
 
-XTerm*faceName: ProFontWindows Nerd Font Mono:size=16
+!XTerm*faceName: ProFontWindows Nerd Font Mono:size=16
+!XTerm*faceName: Hurmit Nerd Font Mono:size=15
+!XTerm*VT100*faceName: Inconsolata:style=Semibold:size=15:antialas=false
+XTerm*VT100*faceName: Source Code pro:style=Semibold:size=14:antialas=false
+
 
 URxvt.font: \
 xft: ProFontWindows Nerd Font Mono:fontsize=16 \

@@ -2,36 +2,36 @@
 # FONTS
 #
 font:
-  size: 13
+  size: 14
 
   offset:
     x: 0
-    y: 0
+    y: 4
 
   glyph_offset:
     x: 0
-    y: 0
+    y: 2
 
   normal:
-    family: Source Code Pro Semibold
+    family: Source Code Pro
     style: Semibold
 
   bold:
-    family: Source Code Pro Semibold
+    family: Source Code Pro
     style: Semibold
 
   italic:
-    family: Source Code Pro Semibold
+    family: Source Code Pro
     style: Semibold
 
   bold_italic:
-    family: Source Code Pro Semibold
+    family: Source Code Pro
     style: Semibold
 
 window:
   padding:
-    x: 6
-    y: 6
+    x: 3
+    y: 3
   dimensions:
     columns: 142
     lines: 38

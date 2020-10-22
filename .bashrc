@@ -96,16 +96,6 @@ if [ "$TILIX_ID" ] || [ "$TERMINATOR_UUID" ] ; then
 fi
 
 #
-# https://github.com/rupa/z
-#
-#   pacman -S z
-#   man z
-#
-[ -r /usr/share/z/z.sh ] && source /usr/share/z/z.sh
-[ -r ~/bin/z.sh ] && source ~/bin/z.sh
-
-
-#
 # My own customizations require that programs like Ruby, Node and other things
 # be known beforehand so my Bash stuff is aware of them.
 #
@@ -128,6 +118,20 @@ source "$path_incl/wrappers.sh"
 # Local per machine, not commited.
 #
 [ -f ~/work/local/local.bash ] && source ~/work/local/local.bash
+
+#
+# https://github.com/rupa/z
+#
+#   pacman -S z
+#   man z
+#
+# @NOTE: This _MUST_ be included _AFTER_ my local bash stuff otherwise
+# my stuff overwrites PROMPT_COMMAND stuff from ‘z’ (check ‘man z’) and
+# it breaks ‘z’, which stops creating ‘~/.z’ and/or updating the entries.
+#
+[ -r /usr/share/z/z.sh ] && source /usr/share/z/z.sh
+[ -r ~/bin/z.sh ] && source ~/bin/z.sh
+
 
 # vim: set textwidth=78:
 # vim: set nowrap:

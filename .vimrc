@@ -142,6 +142,12 @@ set backupdir=~/Temp/vim_bkp/
 set backupext=.vimbkp
 set directory=~/Temp/vim_tmp//
 
+
+""
+" Remove ‘, ’, “ and ” from ‘iskeyword’.
+"
+set iskeyword-=‘,’,“,”
+
 "
 " Create-React-App fresh project does not auto-reload on save.
 "

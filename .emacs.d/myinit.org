@@ -37,6 +37,13 @@
                     :width 'normal)
 (setq-default line-spacing 0.0)
 
+;; (set-face-attribute 'default nil
+;;                     :family "Inconsolata Expanded Semibold"
+;;                     :height 135
+;;                     :weight 'semibold
+;;                     :width 'normal)
+;; (setq-default line-spacing 0.2)
+
 ;;(set-face-attribute 'default nil
 ;;                    :family "Source Code Variable"
 ;;                    :height 135

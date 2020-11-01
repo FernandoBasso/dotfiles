@@ -50,10 +50,17 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/junegunn/vim-emoji'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
+
+" Plug 'google/vim-maktaba'
+" Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'romgrk/lib.kom'
+" Plug 'romgrk/barbar.nvim'
+" Plug 'romgrk/doom-one.vim'
+
 Plug 'pacha/vem-tabline'
 
 " Requires code-minimap (Rust program) from the same author.
-Plug 'wfxr/minimap.vim'
+" Plug 'wfxr/minimap.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -142,12 +149,6 @@ set backupdir=~/Temp/vim_bkp/
 set backupext=.vimbkp
 set directory=~/Temp/vim_tmp//
 
-
-""
-" Remove ‘, ’, “ and ” from ‘iskeyword’.
-"
-set iskeyword-=‘,’,“,”
-
 "
 " Create-React-App fresh project does not auto-reload on save.
 "
@@ -191,10 +192,10 @@ let g:vim_json_syntax_conceal = 0
 "
 " NERDTree
 "
-let g:NERDTreeWinSize=60
+let g:NERDTreeWinSize=42
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
-nnoremap <Leader>nf :NERDTreeFind<CR>
+nnoremap <Leader>ff :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\~$', 'node_modules', 'public/assets', 'public/fonts', 'public/uploads', 'public/images']
 
 "
@@ -216,7 +217,7 @@ inoremap <C-Space> <C-x><C-o>
 map <Leader>n :bnext<Return>
 map <Leader>p :bprevious<Return>
 
-"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vem_tabline
 "
 " @NOTE: Using <C-N> for vim multiple cursors.
@@ -234,6 +235,46 @@ nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
 
 " Change directory to the path of current file/buffer.
 nnoremap cd :cd %:h<CR>:pwd<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" romgrk/barbar.vim
+"
+
+"" Enabled by the plugin itself as of now.
+" set showtabline=2
+
+" Magic buffer-picking mode
+" nnoremap <silent>      <Leader>s :BufferPick<CR>
+
+""
+" Sort automatically by...
+"
+"nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+"nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+
+""
+" Move to previous/next
+" nnoremap <silent> <Leader>p :BufferPrevious<CR>
+" nnoremap <silent> <Leader>n :BufferNext<CR>
+
+" Re-order to previous/next
+" nnoremap <silent> <Leader>h :BufferMovePrevious<CR>
+" nnoremap <silent> <Leader>l :BufferMoveNext<CR>
+
+""
+" Goto buffer in position...
+"
+" nnoremap <silent> <A-1> :BufferGoto 1<CR>
+" nnoremap <silent> <A-2> :BufferGoto 2<CR>
+" nnoremap <silent> <A-3> :BufferGoto 3<CR>
+" nnoremap <silent> <A-4> :BufferGoto 4<CR>
+" nnoremap <silent> <A-5> :BufferGoto 5<CR>
+" nnoremap <silent> <A-6> :BufferGoto 6<CR>
+" nnoremap <silent> <A-7> :BufferGoto 7<CR>
+" nnoremap <silent> <A-8> :BufferGoto 8<CR>
+" nnoremap <silent> <A-9> :BufferLast<CR>
+
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -422,7 +463,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 "
 " Rename symbol
 "
-nmap <leader>rn <Plug>(coc-rename>
+nmap <leader>rn <Plug>(coc-rename)
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -4,6 +4,13 @@ highlight Visual cterm=NONE gui=NONE ctermbg=234 guibg=#393939
 hi Folded ctermbg = 236
 hi CursorLine ctermbg = 236
 
+""
+" Search.
+"
+" Blue fg with bg a little less dark than the BG.
+"
+" hi Search cterm=NONE ctermfg=1 ctermbg=239
+
 "
 " Strings should be more redish.
 "

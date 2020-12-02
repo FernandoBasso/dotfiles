@@ -536,7 +536,7 @@ let g:fzf_layout = {
 " Some projects I work on have a very deep hierarchy of directories
 " and making the right window shorter helps reading the filenames.
 "
-let g:fzf_preview_window = 'right:36%'
+let g:fzf_preview_window = 'right:42%'
 
 silent nnoremap <Leader>f :Files
 map <Leader>f :GFiles!<CR>

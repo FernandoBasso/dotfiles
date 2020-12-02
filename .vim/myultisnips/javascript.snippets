@@ -3,7 +3,11 @@ console.log($1);
 endsnippet
 
 snippet cl "console log abbrev"
-console.log('==== $1', $2);
+console.log('$1', $2);
+endsnippet
+
+snippet cl= "console log ==="
+console.log('=== $1', $2);
 endsnippet
 
 snippet defl "def console.log abbrev"
@@ -61,4 +65,14 @@ Vue.nextTick()
   .then(() => {
     $1
   });
+endsnippet
+
+snippet imp "named import statement single line"
+import { $2 } from '$1';
+endsnippet
+
+snippet impnl "named import multiple lines"
+import {
+  $2
+} from '$1';
 endsnippet

@@ -12,7 +12,7 @@
 # Fedora
 [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]] && source '/usr/share/git-core/contrib/completion/git-prompt.sh'
 
-PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/Projects/dotfiles/bin:$HOME/.local/bin"
+PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/Projects/dotfiles/bin:$HOME/local/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -131,7 +131,6 @@ source "$path_incl/wrappers.sh"
 #
 [ -r /usr/share/z/z.sh ] && source /usr/share/z/z.sh
 [ -r ~/bin/z.sh ] && source ~/bin/z.sh
-
 
 # vim: set textwidth=78:
 # vim: set nowrap:

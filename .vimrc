@@ -600,7 +600,9 @@ if (has('gui_running'))
   "
   "set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
 
-  set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
+  " set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
+  set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 14
+  set linespace=2
 
   set guicursor=n-c:hor14,i:ver14,a:blinkon0
 endif

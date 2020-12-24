@@ -32,7 +32,7 @@
 
 (set-face-attribute 'default nil
                     :family "Source Code Pro"
-                    :height 135
+                    :height 130
                     :weight 'semibold
                     :width 'normal)
 (setq-default line-spacing 0.0)
@@ -342,6 +342,7 @@ https://github.com/jaypei/emacs-neotree
   :ensure t)
 
 (global-set-key [f4] 'neotree-toggle)
+(setq neo-window-width 32)
 #+end_src
 
 

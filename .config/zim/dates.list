@@ -5,9 +5,12 @@
 
 » %a, %Y-%m-%d %H:%M
 
+[WORKTIME: [hh:mm - hh:mm, hh:mm - hh:mm] = 00:00]
+
 [LOGGED: %a, %Y-%m-%d %H:%M]
 # when started working the task.
 [STARTED: %a, %Y-%m-%d %H:%M]
+[STOPED: %a, %Y-%m-%d %H:%M]
 # When entered "verify" state.
 [VERIFYING: %a, %Y-%m-%d %H:%M]
 # when finished working on the task.

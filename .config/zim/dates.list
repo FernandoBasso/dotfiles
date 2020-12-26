@@ -3,6 +3,9 @@
 # See man strftime a description of the format.
 # For when it was recorded as a todo/note.
 
+Dicts: -- cambridge -- reverso --
+
+
 » %a, %Y-%m-%d %H:%M
 
 [WORKTIME: [hh:mm - hh:mm, hh:mm - hh:mm] = 00:00]

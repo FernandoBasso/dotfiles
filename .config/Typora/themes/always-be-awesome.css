@@ -21,7 +21,7 @@
     --item-hover-bg-color: rgba(229, 229, 229, 0.59); /*background of control items when hover, like menu in sidebar*/
     --item-hover-text-color: inherit;
 
-    --monospace: 'Source Code Variable', 'Source Code Pro', monospace; /*monospace font for codes, fences*/
+    --monospace: 'Source Code Pro', monospace; /*monospace font for codes, fences*/
 }
 
 html {
@@ -209,7 +209,7 @@ table tr td:last-child {
 }
 
 .md-fences {
-    font-family: "Source Code Variable";
+    font-family: var(--monospace);
 }
 
 .md-fences,

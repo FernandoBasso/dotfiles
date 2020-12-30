@@ -37,42 +37,42 @@ else
   call plug#begin('~/.vim/plugged')
 endif
 
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
+
+if !has('nvim-0.5')
+  Plug 'MaxMEllon/vim-jsx-pretty'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+endif
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/junegunn/vim-emoji'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 
-" Plug 'google/vim-maktaba'
-" Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'romgrk/lib.kom'
-" Plug 'romgrk/barbar.nvim'
-" Plug 'romgrk/doom-one.vim'
+if has('nvim-0.5')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+endif
 
 Plug 'pacha/vem-tabline'
-
-" Requires code-minimap (Rust program) from the same author.
-" Plug 'wfxr/minimap.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
-" Plug 'w0rp/ale'
-Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'NLKNguyen/papercolor-theme'
+
 Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
@@ -273,8 +273,6 @@ nnoremap cd :cd %:h<CR>:pwd<CR>
 " nnoremap <silent> <A-7> :BufferGoto 7<CR>
 " nnoremap <silent> <A-8> :BufferGoto 8<CR>
 " nnoremap <silent> <A-9> :BufferLast<CR>
-
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -561,6 +559,20 @@ set completefunc=gh_emoji#complete
 runtime macros/emojis.vim
 autocmd FileType * runtime macros/emoji-ab.vim
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tree Sitter
+"
+if has('nvim-0.5')
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+    disable = { "perl", "rust" },
+  },
+}
+EOF
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI, GVim

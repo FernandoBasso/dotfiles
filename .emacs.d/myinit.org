@@ -158,6 +158,8 @@
 
 * Packages
 
+** Repositories
+
 #+BEGIN_SRC emacs-lisp
     (require 'package)
 
@@ -185,6 +187,20 @@
 
 #+END_SRC
 
+
+** Info
+
+#+begin_src emacs-lisp
+;;
+; Disable show-trailing-whitespace on Info mode because we sometimes
+; see some ugly whitespace markers at the end of lines and we can't
+; change that. One such example is when we are viewing the Table Of
+; Contents (with the command ‘T’ in an info page).
+;
+(add-hook 'Info-mode-hook
+               (lambda ()
+                 (setq show-trailing-whitespace nil)))
+#+end_src
 
 ** EditorConfig
 #+begin_src emacs-lisp
@@ -259,7 +275,9 @@
 
 (setq racket-documentation-search-location 'local)
 
-(add-hook 'racket-repl-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'racket-repl-mode-hook
+          (lambda ()
+            (setq show-trailing-whitespace nil)))
 #+end_src
 
 ** org-babel enabled languages

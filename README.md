@@ -42,6 +42,18 @@ C-b :kill-server # from inside tmux, quit tmux
 
 
 
+## Node and Deno Bash Completion
+
+From time to time, update the completion scripts as necessary (like when changing versions or upgrading to new versions). Run these from bash, as a normal user:
+
+```
+mkdir -pv ~/local/lib
+npm completion > ~/local/lib/node-completions.sh
+deno completions bash > ~/local/lib/deno-completions.sh
+```
+
+
+
 ## TODO
 
 Allow for commented lines and empty lines in the manifest file.

@@ -119,7 +119,17 @@ source "$path_incl/wrappers.sh"
 #
 # Local per machine, not commited.
 #
-[ -f ~/work/local/local.bash ] && source ~/work/local/local.bash
+to_source=(
+  ~/work/local/local.bash
+  ~/local/lib/node-completions.sh
+  ~/local/lib/deno-completions.sh
+)
+
+for file in "${to_source[@]}" ; do
+  if [[ -f "$file" ]] ; then
+    source "$file"
+  fi
+done
 
 #
 # https://github.com/rupa/z

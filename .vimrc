@@ -63,6 +63,7 @@ if has('nvim-0.5')
 endif
 
 Plug 'pacha/vem-tabline'
+" Plug 'pseewald/vim-anyfold'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -85,7 +86,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'habamax/vim-asciidoctor'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Dropbox/vim/vim-uploader'
-Plug 'gabrielelana/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 Plug 'terryma/vim-multiple-cursors'
 "Plug '~/Projects/vim/vim-tasklist-asciidoctor'
 
@@ -573,6 +574,12 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 endif
+
+""
+" Does not fold comments.
+"
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI, GVim

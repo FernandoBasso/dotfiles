@@ -9,6 +9,7 @@ Dicts: -- cambridge -- reverso --
 » %a, %Y-%m-%d %H:%M
 
 [WORKTIME: [hh:mm - hh:mm, hh:mm - hh:mm] = 00:00]
+[DATE: %Y-%m-%d]
 
 [LOGGED: %a, %Y-%m-%d %H:%M]
 # when started working the task.

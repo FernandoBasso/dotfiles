@@ -311,6 +311,17 @@ end
 let html_no_rendering = 1
 autocmd BufReadPost *.twig set filetype=html
 
+""
+" :Man
+"
+" :execute "normal! \<C-w>H"
+"
+autocmd BufRead * if &buftype == 'quickfix'
+      \ && w:quickfix_title == 'Man TOC'
+      \ | wincmd H
+      \ | vertical resize 36
+      \ | endif
+
 "
 " Number sections #[Qn]# to #[Q1]#, #[Q2]#, #[Q3]#, etc.
 " Also for id='Qn' and <<Qn>>.

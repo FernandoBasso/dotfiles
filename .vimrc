@@ -70,7 +70,6 @@ Plug 'honza/vim-snippets'
 " Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 Plug 'altercation/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -304,12 +303,12 @@ if $THEME == 'dark'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
 else
-  let s:theme_name = 'gruvbox'
+  let s:theme_name = 'solarized'
   set background=light
   execute 'colorscheme' s:theme_name
 
   " let g:airline_theme = 'xtermlight'
-  let g:airline_theme = 'gruvbox'
+  let g:airline_theme = 'solarized'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
 end

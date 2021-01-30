@@ -279,7 +279,13 @@ nnoremap cd :cd %:h<CR>:pwd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FUGITIVE
 "
-nnoremap <Leader>gs :vertical Git<CR>
+
+""
+" Opens Gstatus in a vertical split on the left. Closes NERDTree in
+" case it is open so I have a two-split only layout and not a messy
+" one with NERDTree in the middle.
+"
+nnoremap <Leader>gs :NERDTreeClose \| vertical Gstatus<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors

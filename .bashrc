@@ -144,6 +144,12 @@ done
 [ -r /usr/share/z/z.sh ] && source /usr/share/z/z.sh
 [ -r ~/bin/z.sh ] && source ~/bin/z.sh
 
+##
+# FZF installed manually from the GIT repo:
+#
+# https://github.com/junegunn/fzf#using-git
+#
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # vim: set textwidth=78:
 # vim: set nowrap:
-

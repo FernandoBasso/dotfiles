@@ -18,6 +18,10 @@ snippet ll "l(...)"
 l('==== $1', $2);
 endsnippet
 
+snippet ccl "console.log to use inside pipe or compose"
+const ccl = label => obj => { console.log(label, obj); return obj; }
+endsnippet
+
 snippet deflog "define console.log/info/warn/err"
 const log = console.log.bind(console);
 const info = console.info.bind(console);

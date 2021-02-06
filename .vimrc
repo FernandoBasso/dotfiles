@@ -647,7 +647,7 @@ endif
 "
 let files_to_source = [
       \ '~/work/local/libdev.vim',
-      \ './.vim/digraphs.vim'
+      \ '~/Projects/dotfiles/.vim/digraphs.vim'
       \ ]
 
 for file in files_to_source

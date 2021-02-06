@@ -642,12 +642,17 @@ if (has('gui_running'))
   set guicursor=n-c:hor14,i:ver14,a:blinkon0
 endif
 
-"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM HELPERS
 "
-source ~/Projects/dotfiles/.vim/helpers/redir.vim
+let files_to_source = [
+      \ '~/work/local/libdev.vim',
+      \ './.vim/digraphs.vim'
+      \ ]
 
-source ~/work/local/libdev.vim
+for file in files_to_source
+  execute 'source' . file
+endfor
 
 " vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:
 " vim: set textwidth=68:

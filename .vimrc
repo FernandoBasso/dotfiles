@@ -642,9 +642,30 @@ if (has('gui_running'))
   set guicursor=n-c:hor14,i:ver14,a:blinkon0
 endif
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CUSTOM HELPERS
+" C
 "
+
+""
+" Build the C file from current buffer.
+"
+" Check <dotfiles>/bash_incl/c-helpers.sh
+"
+nnoremap <F5> :execute '!C_bf %' <CR>
+
+""
+" Build and run the C file from current buffer.
+"
+" Check <dotfiles>/bash_incl/c-helpers.sh
+"
+" NOTE: In NeoVim, pressing C-F5 while in the buffer automatically
+" converts to <F29>, but then it doesn't seem to work on Vim. This
+" <C-F5> thing seems to work on both Vim and NeoVim.
+"
+nnoremap <C-F5>  :execute '!C_brf %' <CR>
+
+
 let files_to_source = [
       \ '~/work/local/libdev.vim',
       \ '~/Projects/dotfiles/.vim/digraphs.vim'

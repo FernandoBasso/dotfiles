@@ -107,19 +107,15 @@ fi
 #
 path_incl=~/Projects/dotfiles/bash_incl
 
-
-source "$path_incl/bash-colors.sh"
-source "$path_incl/bash-prompts.sh"
-source "$path_incl/bash-aliases.sh"
-source "$path_incl/bash-utils.sh"
-source "$path_incl/gen-passwords.sh"
-source "$path_incl/git-helpers.sh"
-source "$path_incl/wrappers.sh"
-
-#
-# Local per machine, not commited.
-#
 to_source=(
+  "$path_incl/bash-colors.sh"
+  "$path_incl/bash-prompts.sh"
+  "$path_incl/bash-aliases.sh"
+  "$path_incl/bash-utils.sh"
+  "$path_incl/gen-passwords.sh"
+  "$path_incl/git-helpers.sh"
+  "$path_incl/wrappers.sh"
+  "$path_incl/c-helpers.sh"
   ~/work/local/local.bash
   ~/local/lib/node-completions.sh
   ~/local/lib/deno-completions.sh

@@ -1,0 +1,21 @@
+! vim: set filetype=xdefaults:
+
+XTerm.vt100.allowBoldFonts: false
+XTerm.vt100.faceName: ProFontWindows Nerd Font Mono:size=18
+
+#define urxvt_fonts \
+  xft: ProFontWindows Nerd Font Mono:fontsize=17 \
+  xft: Dejavu Sans Mono:size=14,hintstyle=0:hinting=false:antialias=false \
+  xft: Source Code pro:style=Semibold:size=14:antialas=false \
+  xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \
+  xft: Symbola:hintstyle=0:hinting=false:antialias=false, \
+  xft: Noto Color Emoji:hintstyle=0:hinting=false:antialias=false, \
+  xft: Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
+  xft: DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
+  xft: Code2000:hintstyle=0:hinting=false:antialias=false \
+  xft: Hack NF:hintstyle=0:hinting=false:antialias=false
+
+URxvt.font: urxvt_fonts
+URxvt.boldFont: urxvt_fonts
+URxvt.italicFont: urxvt_fonts
+

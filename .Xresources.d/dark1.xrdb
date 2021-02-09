@@ -1,45 +1,27 @@
 ! vim: set filetype=xdefaults:
 
-! invoke with urxvt -name dark1
+!!
+! Invoke with:
+!
+!   urxvt -name dark1
+!   xterm -name dark1
+!
 
-! List of other fonts from ~/.local/share/fonts/ (there are many others not listed here)
-!xft: Ubuntu Mono derivative Powerline:size=14:hintstyle=0:hinting=false:antialias=false, \
-!xft: Noto Mono for Powerline:size=13:hintstyle=0:hinting=false:antialias=false, \
-!xft: monofur for Powerline:size=15:hintstyle=0:hinting=false:antialias=false, \
-!Roboto Mono for Powerline
-!ProFont for Powerline
-!monofur for Powerline Regular
+#define myfonts \
+  xft: ProFontWindows Nerd Font Mono:fontsize=16 \
+  xft: Dejavu Sans Mono:size=14,hintstyle=0:hinting=false:antialias=false \
+  xft: Source Code pro:style=Semibold:size=14:antialas=false \
+  xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \
+  xft: Symbola:hintstyle=0:hinting=false:antialias=false, \
+  xft: Noto Color Emoji:hintstyle=0:hinting=false:antialias=false, \
+  xft: Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
+  xft: DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
+  xft: Code2000:hintstyle=0:hinting=false:antialias=false \
+  xft: Hack NF:hintstyle=0:hinting=false:antialias=false
 
-!XTerm*faceName: ProFontWindows Nerd Font Mono:size=16
-!XTerm*faceName: Hurmit Nerd Font Mono:size=15
-!XTerm*VT100*faceName: Inconsolata:style=Semibold:size=15:antialas=false
-XTerm*VT100*faceName: Source Code pro:style=Semibold:size=14:antialas=false
-
-
-URxvt.font: \
-xft: ProFontWindows Nerd Font Mono:fontsize=16 \
-xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \
-xft: Symbola:hintstyle=0:hinting=false:antialias=false, \
-xft: Noto Color Emoji:hintstyle=0:hinting=false:antialias=false, \
-xft: Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
-xft: DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
-xft: Code2000:hintstyle=0:hinting=false:antialias=false
-URxvt.boldFont: \
-xft: ProFontWindows Nerd Font Mono:fontsize=16 \
-xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \
-xft: Symbola:hintstyle=0:hinting=false:antialias=false, \
-xft: Noto Color Emoji:hintstyle=0:hinting=false:antialias=false, \
-xft: Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
-xft: DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
-xft: Code2000:hintstyle=0:hinting=false:antialias=false
-URxvt.italicFont: \
-xft: ProFontWindows Nerd Font Mono:fontsize=16 \
-xft: Dejavu Sans:size=14,hintstyle=0:hinting=false:antialias=false \
-xft: Symbola:hintstyle=0:hinting=false:antialias=false, \
-xft: Noto Color Emoji:hintstyle=0:hinting=false:antialias=false, \
-xft: Noto Emoji:hintstyle=0:hinting=false:antialias=false, \
-xft: DroidSansMono Nerd Font:hintstyle=0:hinting=false:antialias=false, \
-xft: Code2000:hintstyle=0:hinting=false:antialias=false
+URxvt.font: myfonts
+URxvt.boldFont: myfonts
+URxvt.italicFont: myfonts
 
 ! Colored man pages.
 dark1*colorIT:      #87af5f

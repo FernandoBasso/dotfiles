@@ -1,0 +1,32 @@
+! vim: set ft=xdefaults tw=72:
+
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  none
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.dpi: 96
+Xft.rgba: rgb
+
+URxvt.internalBorder: 10
+URxvt.borderLess: false
+URxvt.iconFile: /home/fernandobasso/Projects/dotfiles/imgs/icon-terminal1.png
+URxvt.scrollBar: false
+
+URxvt.saveLines: 8912
+URxvt.geometry: 142x42
+
+URxvt.perl-ext-common:      default,resize-font
+
+!URxvt.keysym.Control-Tab: \033[27;5;9~
+!URxvt.keysym.C-Tab:       \033[34~
+!URxvt.keysym.C-0xFF09: \033[27;5;9~
+URxvt.keysym.C-Tab:         \033<C-Tab>
+
+URxvt.keysym.F11: perl:fullscreen:switch
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-plus
+URxvt.resize-font.reset: C-equal
+URxvt.resize-font.show: C-question
+! -title param overrides this.
+URxvt.title: Always Be Awesome!

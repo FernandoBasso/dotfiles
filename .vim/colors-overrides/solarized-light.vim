@@ -15,9 +15,16 @@ hi PmenuSel ctermbg=3 ctermfg=228
 
 hi CocUnderline cterm=undercurl gui=undercurl
 
+""
+" Folded text contains an underline which I find somewhat ugly on my
+" setup. Instead of bold and underline, let's make it just bold.
+"
+hi Folded cterm=bold
+
 "
 " pacha/vem-tabline overrides
 "
 hi TabLine cterm=NONE
 hi TabLineSel cterm=NONE ctermbg=7 ctermfg=1
 
+" vim: set tw=72:

@@ -112,6 +112,14 @@ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 set breakindent
 
+""
+" I like a more “expected” backspace behaviour.
+"
+"   :help 'backspace'
+"   :help fixdel
+"
+set backspace=indent,start,eol
+
 set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,resize,localoptions
 
 "

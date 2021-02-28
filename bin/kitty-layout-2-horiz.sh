@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
-if [[ "$TERM" != xterm-kitty ]] ; then
-  printf '%s\n' \
-    'This script can only be used from Kitty terminal emulator' \
-    1>&2
+script_dir="$(
+	cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null 2>&1 && pwd
+)"
 
-  exit 1
-fi
+##
+# ‘exit 1’ if not running this inside kitty.
+#
+source "$script_dir/kitty-helpers/kitty-if-not.sh"
 
 ##
 # A script to remote-control kitty and set some windows and tabs to a
@@ -33,18 +34,18 @@ win_title='λ H4CK1N9 λ' work_dir=~/Public
 # If passed, let's set the custom window title.
 #
 if [[ -n "$1" ]]; then
-  win_title="$1"
+	win_title="$1"
 fi
 
 if [[ -n "$2" ]]; then
-  work_dir="$2"
+	work_dir="$2"
 fi
 
 ##
 # A single OS window with two horizontal (side by side) panes.
 #
 kitty @ launch --cwd "$work_dir" --title "$win_title" \
-  --type=tab
+	--type=tab
 
 kitty @ launch --cwd "$work_dir" --title "$win_title"
 

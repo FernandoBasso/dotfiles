@@ -45,9 +45,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'pangloss/vim-javascript'
 
 if !has('nvim-0.5')
+  Plug 'pangloss/vim-javascript'
   Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
@@ -86,7 +86,7 @@ Plug 'habamax/vim-asciidoctor'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Dropbox/vim/vim-uploader'
 Plug 'plasticboy/vim-markdown'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 "Plug '~/Projects/vim/vim-tasklist-asciidoctor'
 
 "'file:///~/.vim/bundle/dbext'
@@ -671,7 +671,11 @@ nnoremap <F5> :execute '!C_bf %' <CR>
 " converts to <F29>, but then it doesn't seem to work on Vim. This
 " <C-F5> thing seems to work on both Vim and NeoVim.
 "
-nnoremap <C-F5>  :execute '!C_brf %' <CR>
+" NOTE: Looks like one mapping doesn't work for Vim, and the other
+" doesn't work for NeoVim, so I mapped both.
+"
+nnoremap <C-F5> :execute '!C_brf %' <CR>
+nnoremap <F29> :execute '!C_brf %' <CR>
 
 
 let files_to_source = [

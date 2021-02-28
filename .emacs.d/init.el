@@ -106,18 +106,17 @@
 
 (require 'package)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(setq package-enable-at-startup nil)
-
 (add-to-list 'package-archives
              '("org" . "https://orgmode.org/elpa/") t)
 
 (add-to-list 'package-archives
-           '("melpa" . "https://melpa.org/packages/")
-           t)
+           '("melpa" . "https://melpa.org/packages/") t)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(setq package-enable-at-startup nil)
+
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)

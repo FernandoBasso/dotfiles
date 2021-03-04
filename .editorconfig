@@ -11,3 +11,14 @@ insert_final_newline = true
 [*.{md}]
 trim_trailing_whitespace = false
 
+##
+# I use hard tabs for bash scripts because of the ‘<<-EOF’ syntax
+# which removes tabs from HEREDOCS allowing EOF delimiters to be
+# indented more naturally with the code. See
+#
+#   ‘man bash’ → ‘REDIRECTION’ → ‘Here Documents’
+#
+[*.{sh,bash}]
+indent_style = tab
+max_line_length = 72
+

@@ -1,5 +1,16 @@
 # shellcheck disable=2034,2154
 
+##
+# Also see ~/work/local/local.bash.
+#
+#  (hack nerd font mono)
+# λ
+# 💛️
+#
+# Let's default to the traditional “$” char 😄
+#
+BASH_PROMPT_CHAR="${BASH_PROMPT_CHAR:-$}"
+
 #
 # Git Prompt
 # ==========
@@ -49,23 +60,23 @@ ps1simple () {
 # before the prompt itself.
 #
 ps1simple_nl () {
-  PS1="\n$blue\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
+  PS1="\n$blue\$(curdir) $red\$(__git_ps1 '[%s]')\n${normal}$BASH_PROMPT_CHAR "
 }
 
 #
 # PS1 simple, full path, newline
 #
 ps1sfpnl () {
-  PS1="\n$blue\w $red\$(__git_ps1 '[%s]')\n$normal\$ "
+  PS1="\n$blue\w $red\$(__git_ps1 '[%s]')\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ps1all () {
   PS1="\n${purple}\$(make_line)\n${purple}[bash-\$(version_bash)] [git-\$(version_git)] [$(~/.rvm/bin/rvm-prompt)] [node-\$(version_node)]"
-  PS1+="\n${blue}\w $red\$(__git_ps1 '[%s]')\n$normal\$ "
+  PS1+="\n${blue}\w $red\$(__git_ps1 '[%s]')\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ps1nodejs () {
-  PS1="\n${blue}\$(curdir) ${purple}[node-\$(version_node)] $(git_info)\n${normal}$ "
+  PS1="\n${blue}\$(curdir) ${purple}[node-\$(version_node)] $(git_info)\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ps1heart () {

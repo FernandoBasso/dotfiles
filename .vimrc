@@ -335,6 +335,18 @@ autocmd BufRead * if &buftype == 'quickfix'
       \ | vertical resize 36
       \ | endif
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Markdown
+" --------
+
+""
+" Problem with constant folding and unfolding.
+" https://github.com/plasticboy/vim-markdown/issues/414#issuecomment-519061229
+"
+let g:vim_markdown_folding_style_pythonic = 1
+
+
 "
 " Number sections #[Qn]# to #[Q1]#, #[Q2]#, #[Q3]#, etc.
 " Also for id='Qn' and <<Qn>>.

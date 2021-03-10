@@ -174,7 +174,8 @@ autocmd BufReadPost *
     \ endif
 
 " set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
-set listchars=tab:▸\ ,trail:·
+" set listchars=tab:▸\ ,trail:·
+set listchars=tab:␉\ ,trail:·
 set list
 
 

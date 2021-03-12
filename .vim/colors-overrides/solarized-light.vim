@@ -16,6 +16,16 @@ hi PmenuSel ctermbg=3 ctermfg=228
 hi CocUnderline cterm=undercurl gui=undercurl
 
 ""
+" Make some special chars like
+"
+"   tab:␉\ ,trail:·
+"
+" display 	and other special stuff without the different background
+" color behind it.
+"
+highlight SpecialKey ctermbg=NONE guibg=NONE
+
+""
 " Folded text contains an underline which I find somewhat ugly on my
 " setup. Instead of bold and underline, let's make it just bold.
 "

@@ -304,6 +304,7 @@ let &t_Ce = "\e[4:0m"
 
 let g:gruvbox_bold = 0
 let g:gruvbox_italic = 0
+let g:solarized_italic = 0
 
 if $THEME == 'dark'
   let s:theme_name = 'gruvbox'
@@ -657,7 +658,8 @@ if (has('gui_running'))
   "set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
 
   " set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
-  set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 14
+  " set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 14
+  set guifont=Source\ Code\ Pro\ Semi-Bold\ 13
   set linespace=2
 
   set guicursor=n-c:hor14,i:ver14,a:blinkon0

@@ -201,6 +201,17 @@
           (lambda ()
             (setq show-trailing-whitespace nil)))
 
+;;
+; Geiser and Chicken Scheme
+;
+(use-package geiser
+  :ensure t)
+
+(setq geiser-active-implementations '(chicken))
+
+;;
+; org-mode
+;
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-ca" 'org-agenda)

@@ -33,6 +33,8 @@ export FZF_DEFAULT_OPTS='--preview-window right:36%'
 export DENO_INSTALL="$HOME/.deno"
 PATH="$PATH:$DENO_INSTALL/bin"
 
+PATH="$PATH:$HOME/local/bin/chicken-5.2.0/bin"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 # Load RVM into a shell session *as a function*

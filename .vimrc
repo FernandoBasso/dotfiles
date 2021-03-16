@@ -585,7 +585,7 @@ nnoremap <Leader>m :Marks<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 😃 vim-emoji, vim-emoji-ab ⭐
 "
-" USAGE:
+" USAGE: 💫
 "
 " • Type ‘:fire:<Space>’ (or some punctuation char,
 "   newline, etc). and it will turn into 🔥.

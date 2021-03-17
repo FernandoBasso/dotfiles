@@ -28,3 +28,22 @@ _0-title-term () {
     PROMPT_COMMAND='echo -ne "\033]0; $title \007"'
 }
 
+##
+# Run ‘tree’ with colors on a directory and pipe it to less.
+#
+# ‘tree -C’ produces colors. ‘less -R’ honors that colors and displays
+# them nicely instead of outputting escape sequences in plain text.
+# Cool, huh‽ 😄
+#
+# @param {str} path - The path to list in tree format.
+#
+# @examples:
+#
+#   $ t src
+#   $ t /boot/
+#   $ t ~/Projects/tmuxsitter
+#
+t () {
+	tree -CF "$1" | less -R
+}
+

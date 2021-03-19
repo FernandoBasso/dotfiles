@@ -24,6 +24,22 @@ setTimeout(() => {
 }, ${1:millis});
 endsnippet
 
+snippet dt "Deno.test"
+Deno.test("$1", () => {
+  $2
+});
+endsnippet
+
+snippet imp "import"
+import { $1 } from "$2";
+endsnippet
+
+snippet impnl "import multiline"
+import {
+  $1,
+} from "$2";
+endsnippet
+
 # snippet imp "named import statement single line"
 # import { $2 } from '$1';
 # endsnippet

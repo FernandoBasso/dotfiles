@@ -270,5 +270,10 @@
 
 (use-package gruvbox-theme
   :ensure t)
+
 (load-theme 'gruvbox-light-hard)
+
+(use-package diff-hl
+  :ensure t
+  :config (global-diff-hl-mode))
 

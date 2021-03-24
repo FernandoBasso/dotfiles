@@ -20,6 +20,23 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+##
+# Java, JDK
+#
+# This works for Arch Linux, which has the ‘archlinux-java’ command to switch
+# between different java versions and implementations.
+#
+# • https://wiki.archlinux.org/index.php/Java
+#
+export JAVA_HOME=/usr/lib/jvm/default
+
+##
+# Maven
+#
+# • http://maven.apache.org/
+#
+PATH="$PATH:$HOME/bin/apache-maven-3.6.3/bin"
+
 #
 # FZF
 # https://github.com/junegunn/fzf

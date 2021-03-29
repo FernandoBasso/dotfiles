@@ -10,8 +10,8 @@ hi GitGutterAdd ctermbg=7 guibg=NONE
 hi GitGutterChange ctermbg=7 guibg=NONE
 hi GitGutterDelete ctermbg=7 guibg=NONE
 " hi ColorColumn ctermbg=229
-hi Pmenu cterm=NONE ctermbg=230
-hi PmenuSel ctermbg=3 ctermfg=228
+hi Pmenu cterm=NONE ctermbg=230 gui=NONE guibg=#ffffd7
+hi PmenuSel ctermbg=3 ctermfg=228 gui=NONE guibg=#ffff87
 
 hi CocUnderline cterm=undercurl gui=undercurl
 

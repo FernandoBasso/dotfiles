@@ -36,10 +36,6 @@ if has('nvim')
 else
   call plug#begin('~/.vim/plugged')
 endif
-
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'morhetz/gruvbox'
-
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
@@ -70,6 +66,8 @@ Plug 'honza/vim-snippets'
 " Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -205,7 +203,7 @@ let g:NERDTreeWinSize=42
 nnoremap <F3> :NERDTreeToggle<CR>
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
 nnoremap <Leader>ff :NERDTreeFind<CR>
-let NERDTreeIgnore = ['\~$', 'node_modules', 'public/assets', 'public/fonts', 'public/uploads', 'public/images']
+let NERDTreeIgnore = ['\~$', 'node_modules']
 
 "
 " Prevent seeing only nerdtree window after closing or deleting a buffer.
@@ -317,7 +315,7 @@ else
   set background=light
   execute 'colorscheme' s:theme_name
 
-  " let g:airline_theme = 'xtermlight'
+  let g:airline_theme = 'xtermlight'
   let g:airline_theme = 'solarized'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
@@ -604,7 +602,7 @@ autocmd FileType * runtime macros/emoji-ab.vim
 if has('nvim-0.5')
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  -- ensure_installed = "maintained",
   highlight = {
     enable = true,
     disable = { "perl", "rust" },
@@ -623,31 +621,7 @@ endif
 " GUI, GVim
 "
 if (has('gui_running'))
-  " No menu bar
-  set guioptions-=m
-  "set guioptions-=M
-  " No toolbar
-  set guioptions-=T
-
-  "
-  " No scrollbars.
-  "
-  " Right-hand scrollbar when thereis a vertically split window
-  set guioptions-=R
-  " Left-Hand scrollbar
-  set guioptions-=L
-  " Left-hand scrollbar when vertically split window
-  set guioptions-=l
-  " Bottom horizontal scrollbar
-  set guioptions-=b
-  " Habilitar o icone.
-  set guioptions=i
-  " Right-hand scrollbar
-  set guioptions+=r
-  " Right scroolbar when there are splits (NERDtree, taglist).
-  set guioptions+=R
-  set guioptions+=L
-  set guioptions+=e
+  set guioptions=
 
   set lines=45
   set columns=120
@@ -659,7 +633,7 @@ if (has('gui_running'))
 
   " set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
   " set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 14
-  set guifont=Source\ Code\ Pro\ Semi-Bold\ 13
+  set guifont=Source\ Code\ Pro\ Semi-Bold\ 14
   set linespace=2
 
   set guicursor=n-c:hor14,i:ver14,a:blinkon0

@@ -28,5 +28,6 @@
 .ghci
 .bash_profile
 .bashrc
+.inputrc
 .gmrunrc
 .config/Typora/themes/always-be-awesome.css

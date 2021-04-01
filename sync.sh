@@ -21,8 +21,9 @@ deploy () {
 
     if [ ! -L "$file" ]; then
       if [ -e "$HOME/$file" ]; then
-        printf '%s\n' "[INFO]: ~/$file exists and is not a symblink..."
+        printf '%s\n' "[SKIP]: ~/$file exists and is NOT a symblink..."
       else
+        printf '%s\n' "[SYMB]: ~/$file is bing symblinked"
         ln -sv "$dir_script/$file" "$HOME/$file"
       fi
     fi

@@ -1,3 +1,16 @@
+#
+# .inputrc
+#
+# When this file is changed, it will only reflect the changes for newly
+# opened shells. For existing shells, do:
+#
+#   $ bind --file ~/.inputrc
+#
+# Search for ‘re-read-init-file’ in ‘man bash’ and/or see this:
+#
+# http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Command-Line-Editing
+#
+
 ##
 # Expand bash aliases
 # ===================

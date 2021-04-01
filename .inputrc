@@ -1,0 +1,58 @@
+##
+# Expand bash aliases
+# ===================
+#
+# https://superuser.com/questions/247770/how-to-expand-aliases-inline-in-bash
+#
+# By using an alias we lose the hability to use shipped bash
+# completions. If we have, for example:
+#
+#   alias ls='ls --color=auto --classify'
+#
+# When we do
+#
+#   ls --<Tab><Tab>
+#
+# we DO NOT get the possible option completions. Therefore, it is
+# sometimes useful to expand the alias to the original command so the
+# shell completions kick in and we can benefit from this very useful
+# feature.
+#
+# Usage:
+#
+# 1. Create an alias like
+#
+#   $ alias dc='docker-compose '
+#
+# The trailing space in the example is on purpose so after the alias is
+# expanded, we get the space to separate the command from the remaining
+# arguments.
+#
+# 2. On the terminal running bash (not sure if it works on other
+# shells), type this:
+#
+#   $ dc Esc e
+#
+# It then expands to
+#
+#   $ docker-compose␠
+#
+# (there is a trailing space after the “e” in “compose”).
+#
+# 3. Type the rest of the command 😄. For example:
+#
+#   $ docker-compose Esc e up --build --detach
+#
+# NOTE: Spaces after the alias are NOT necessary before hitting the key
+# combination that expands the alias.
+#
+# Press ‘Esc e’ or ‘Ctrl-[ e’
+#
+"\ee": alias-expand-line
+#
+# Or press ‘Esc Tab’ or ‘Ctrl-[ Tab’.
+#
+"\e\t": alias-expand-line
+
+# vim: set tw=72:
+

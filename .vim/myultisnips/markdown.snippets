@@ -1,12 +1,23 @@
+##
+# Fenced Code Blocks with ``` is also a triple-quote Python
+# syntax thing. We need to scape them otherwise the snippet
+# expands to nothing.
+#
 snippet js "js fenced code block"
-```js
+\`\`\`js
 $1
-```
+\`\`\`
 endsnippet
 
 snippet jsx "jsx fenced code block"
-```
+\`\`\`$1
 $1
-```
+\`\`\`
+endsnippet
+
+snippet fcb "fenced code block"
+\`\`\`$1
+$2
+\`\`\`
 endsnippet
 

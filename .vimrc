@@ -63,7 +63,7 @@ Plug 'pacha/vem-tabline'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
 Plug 'altercation/vim-colors-solarized'
 Plug 'NLKNguyen/papercolor-theme'
@@ -85,6 +85,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Dropbox/vim/vim-uploader'
 Plug 'plasticboy/vim-markdown'
 Plug 'mg979/vim-visual-multi'
+Plug 'elixir-editors/vim-elixir'
+Plug 'chr4/nginx.vim'
 "Plug '~/Projects/vim/vim-tasklist-asciidoctor'
 
 "'file:///~/.vim/bundle/dbext'

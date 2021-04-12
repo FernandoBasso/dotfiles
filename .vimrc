@@ -675,8 +675,12 @@ let files_to_source = [
       \ ]
 
 for file in files_to_source
-  execute 'source' . file
+  if filereadable(expand(file))
+    execute 'source' . file
+  endif
 endfor
 
+"
 " vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:
 " vim: set textwidth=68:
+"

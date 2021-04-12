@@ -87,6 +87,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'mg979/vim-visual-multi'
 Plug 'elixir-editors/vim-elixir'
 Plug 'chr4/nginx.vim'
+Plug 'jamessan/vim-gnupg'
 "Plug '~/Projects/vim/vim-tasklist-asciidoctor'
 
 "'file:///~/.vim/bundle/dbext'

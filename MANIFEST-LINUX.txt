@@ -26,6 +26,7 @@
 .gtkrc-2.0.mine
 .csirc
 .ghci
+.iex.exs
 .bash_profile
 .bashrc
 .inputrc

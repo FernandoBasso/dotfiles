@@ -105,15 +105,15 @@ fi
 # https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue
 #
 if [ "$TILIX_ID" ] || [ "$TERMINATOR_UUID" ] ; then
-    #
-    # NOTE:
-    # If your system does not contain /etc/profile.d/vte.sh, run:
-    #
-    #   sudo ln -s \
-    #       /etc/profile.d/vte-<some-version>.sh \
-    #       /etc/profile.d/vte.sh
-    #
-    [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
+  #
+  # NOTE:
+  # If your system does not contain /etc/profile.d/vte.sh, run:
+  #
+  #   sudo ln -s \
+  #       /etc/profile.d/vte-<some-version>.sh \
+  #       /etc/profile.d/vte.sh
+  #
+  [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 fi
 
 #

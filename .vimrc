@@ -42,12 +42,10 @@ Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
 
-if !has('nvim-0.5')
-  Plug 'pangloss/vim-javascript'
-  Plug 'MaxMEllon/vim-jsx-pretty'
-  Plug 'leafgarland/typescript-vim'
-  Plug 'peitalin/vim-jsx-typescript'
-endif
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

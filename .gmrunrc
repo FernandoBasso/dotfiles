@@ -1,2 +1,7 @@
+# Set window geometry (except height)
+Width = 1480x
+Top = 300
+Left = 450
 
-Width = 960
+# History size
+History = 1024

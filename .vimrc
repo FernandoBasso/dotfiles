@@ -179,6 +179,21 @@ set list
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Conceal
+"
+"   :help 'concealcursor'
+"   :help 'conceallevel'
+"
+set concealcursor=
+set conceallevel=0
+
+""
+" NOTE: indentLine plugin seems to be overriding my conceal-related
+" settings. Checked with `:verbose set conceallevel`.
+""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " IndentLine
 "
 
@@ -189,6 +204,9 @@ let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
 " hides quotes in json files. People suggest stuff here:
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
 "
+
+let g:indentLine_concealcursor = ''
+let g:indentLine_conceallevel = 0
 
 "
 " json-vim
@@ -346,6 +364,14 @@ autocmd BufRead * if &buftype == 'quickfix'
 " https://github.com/plasticboy/vim-markdown/issues/414#issuecomment-519061229
 "
 let g:vim_markdown_folding_style_pythonic = 1
+
+""
+" The plugin indentLine seems to be messing with the conceal
+" settings... But we can override it.
+"
+" https://github.com/plasticboy/vim-markdown#syntax-concealing
+"
+let g:vim_markdown_conceal = 0
 
 
 "

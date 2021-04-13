@@ -6,9 +6,8 @@ Xcursor.theme: Vanilla-DMZ
 !!
 !  Fonts 
 !
-! #include ".Xresources.d/font-source-code-pro.xrdb"
+#include ".Xresources.d/font-source-code-pro.xrdb"
 ! #include ".Xresources.d/font-profont-windows.xrdb"
-#include ".Xresources.d/font-profont-windows.xrdb"
 
 !!
 !  Themes 

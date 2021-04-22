@@ -300,6 +300,13 @@ nnoremap cd :cd %:h<CR>:pwd<CR>
 " nnoremap <silent> <A-8> :BufferGoto 8<CR>
 " nnoremap <silent> <A-9> :BufferLast<CR>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GIT-GUTTER
+"
+" Make both vim and nvim show GitGutterPreviewHunk in a floating
+" window.
+"
+let g:gitgutter_preview_win_floating = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FUGITIVE

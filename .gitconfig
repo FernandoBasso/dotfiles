@@ -10,3 +10,5 @@
 [help]
 	htmlPath = /home/fernando/Projects/From-Other-People/git-htmldocs
 	browser = opera
+[status]
+	showUntrackedFiles = all

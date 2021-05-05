@@ -493,6 +493,7 @@ let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript', 'ruby', 'php'
 
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
+      \ 'coc-eslint',
       \ 'coc-json',
       \ 'coc-solargraph',
       \ 'coc-yaml',

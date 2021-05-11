@@ -317,7 +317,7 @@ let g:gitgutter_preview_win_floating = 1
 " case it is open so I have a two-split only layout and not a messy
 " one with NERDTree in the middle.
 "
-nnoremap <Leader>gs :NERDTreeClose \| vertical Gstatus<CR>
+nnoremap <Leader>gg :NERDTreeClose \| vertical Git<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors

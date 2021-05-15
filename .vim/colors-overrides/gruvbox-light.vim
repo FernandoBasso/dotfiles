@@ -10,6 +10,13 @@
 hi Normal ctermbg=230 ctermfg=240
 
 ""
+" Make the background of folded lines a bit more yellowish than the
+" background.
+"
+hi Folded ctermbg=229
+hi FoldColumn ctermbg=229
+
+""
 " Visual selections.
 "
 " No reverse, very light orange selection.

@@ -19,9 +19,9 @@
 #
 # EXAMPLE USAGE:
 #
-#   $ echo hello
-#   $ nvm use
-#   $ clear
+#   $ tmux-send-keys.sh echo hello
+#   $ tmux-send-keys.sh nvm use
+#   $ tmux-send-keys.sh clear
 #
 # 🔥️ DANGER 🔥️: Note that sending commands to multiple shells is
 # inherently dangerous. Terminator, Tilix and possible other programs

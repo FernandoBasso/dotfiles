@@ -338,12 +338,11 @@ if $THEME == 'dark'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
 else
-  let s:theme_name = 'solarized'
+  let s:theme_name = 'gruvbox'
   set background=light
   execute 'colorscheme' s:theme_name
 
   let g:airline_theme = 'xtermlight'
-  let g:airline_theme = 'solarized'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
 end
@@ -673,9 +672,9 @@ if (has('gui_running'))
   "set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
 
   " set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
-  " set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 14
-  set guifont=Source\ Code\ Pro\ Semi-Bold\ 14
-  set linespace=2
+  set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 15
+  " set guifont=Source\ Code\ Pro\ Semi-Bold\ 14
+  set linespace=5
 
   set guicursor=n-c:hor14,i:ver14,a:blinkon0
 endif

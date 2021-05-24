@@ -82,6 +82,17 @@ import {
 endsnippet
 
 ##
+# Create a function declaration and does a named export of it.
+#
+snippet expf "Create and name-export single function"
+function $1() {
+  ${2:// Code goes here...}
+}
+
+export { $1 };
+endsnippet
+
+##
 # For a particular case where I want all my .mjs files to
 # have a vim textwidth=72 modeline.
 #

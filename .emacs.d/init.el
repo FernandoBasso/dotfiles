@@ -205,13 +205,24 @@
   :ensure t
   :mode "\\.scm\\'")
 
+(use-package geiser-chicken
+  :ensure t
+  :mode "\\.scm\\'")
+
 (setq geiser-active-implementations '(chicken))
 
 ;(setq auto-mode-alist (append '(("\\.rkt$" . racket-mode))
 ;                              '(("\\.scm$" . geiser-mode))))
 
 (add-to-list 'auto-mode-alist '("\\.rkt$" . racket-mode))
-(add-to-list 'auto-mode-alist '("\\.scm$" . geiser-mode))
+
+;;
+; For geiser and chicken scheme, we need geiser-mode for the repl
+; goodies and scheme-mode so colors and some other thigns work as
+; expected.
+;
+(add-to-list 'auto-mode-alist '("\\.scm$" . scheme-mode))
+(add-hook 'scheme-mode-hook #'geiser-mode)
 
 ;;
 ; org-mode

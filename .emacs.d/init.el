@@ -232,8 +232,10 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-(setq org-default-notes-file "~/Dropbox/orgmode/tempnotes.org")
+(setq org-default-notes-file "~/Sync-pCloud/org-mode/tempnotes.org")
 (define-key global-map "\C-cc" 'org-capture)
+
+(setq org-agenda-files (list "~/Sync-pCloud/org-mode/"))
 
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)

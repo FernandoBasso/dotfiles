@@ -6,11 +6,15 @@
 [[ $- != *i* ]] && return
 
 
-# Arch Linux
-[[ -f /usr/share/git/completion/git-prompt.sh ]] && source '/usr/share/git/git-prompt.sh'
+git_prompt_locations=(
+	'/usr/share/git/git-prompt.sh' # Arch Linux
+	'/usr/local/Cellar/git/2.31.1/etc/bash_completion.d/git-prompt.sh' # Mac
+	'/usr/local/Cellar/git/2.31.1/etc/bash_completion.d/git-completion.bash' # Mac
+)
 
-# Fedora
-[[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]] && source '/usr/share/git-core/contrib/completion/git-prompt.sh'
+for file in "${git_prompt_locations[@]}" ; do
+  if [ -f "$file" ] ; then source "$file" ; fi
+done
 
 PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/Projects/dotfiles/bin:$HOME/local/bin"
 

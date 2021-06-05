@@ -133,10 +133,21 @@
   :config
   (editorconfig-mode 1))
 
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'global-company-mode))
+
 (use-package haskell-mode
   :ensure t)
 
+;;;
+;;; • https://wiki.haskell.org/Emacs/Inferior_Haskell_processes#Interactive_Haskell_mode
+;;; • https://github.com/haskell/haskell-mode/wiki/Haskell-Interactive-Mode-Setup
+;;;
+
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+
 
 (setq
  haskell-process-type 'stack-ghci

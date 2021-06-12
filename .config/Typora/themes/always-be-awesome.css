@@ -54,11 +54,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: #333;
+  color: #222;
   position: relative;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.4;
   cursor: text;
 }
@@ -304,7 +304,7 @@ code {
   opacity: 1;
 }
 
-.md-toc { 
+.md-toc {
   margin-top:20px;
   padding-bottom:20px;
 }

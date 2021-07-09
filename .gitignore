@@ -16,5 +16,7 @@ bash_incl/workprojs.sh
 #
 .config/zim/notebooks.list
 
+.DS_Store
+
 # vim: set tw=68:
 

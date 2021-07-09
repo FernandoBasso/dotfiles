@@ -70,3 +70,28 @@ nnoremap <Leader>rv :RGV<CR>
 
 nnoremap <Leader>f? :GF?<CR>
 
+"
+" Uses --fixed-strings (or -F) to allow string searches not requiring
+" escaping especial characters.
+"
+command! -bang -nargs=* RGVt
+  \ call fzf#vim#grep(
+  \   "rg --column --line-number --no-heading --color=always --smart-case -F -- ".shellescape(<q-args>),
+  \   1,
+  \   fzf#vim#with_preview('up:50%'),
+  \ <bang>0)
+
+"
+" Uses --fixed-strings (or -F) to allow string searches not requiring
+" escaping especial characters.
+"
+command! -bang -nargs=* RGHt
+  \ call fzf#vim#grep(
+  \   "rg --column --line-number --no-heading --color=always --smart-case -F -- ".shellescape(<q-args>),
+  \   1,
+  \   fzf#vim#with_preview('right:50%'),
+  \ <bang>0)
+
+nnoremap <Leader>rht :RGHt
+nnoremap <Leader>rvt :RGVt
+

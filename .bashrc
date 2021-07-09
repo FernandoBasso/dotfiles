@@ -8,8 +8,8 @@
 
 git_prompt_locations=(
 	'/usr/share/git/git-prompt.sh' # Arch Linux
-	'/usr/local/Cellar/git/2.31.1/etc/bash_completion.d/git-prompt.sh' # Mac
-	'/usr/local/Cellar/git/2.31.1/etc/bash_completion.d/git-completion.bash' # Mac
+	'/usr/local/Cellar/git/2.32.0/etc/bash_completion.d/git-prompt.sh' # Mac
+	'/usr/local/Cellar/git/2.32.0/etc/bash_completion.d/git-completion.bash' # Mac
 )
 
 for file in "${git_prompt_locations[@]}" ; do
@@ -32,7 +32,7 @@ export NVM_DIR="$HOME/.nvm"
 #
 # • https://wiki.archlinux.org/index.php/Java
 #
-export JAVA_HOME=/usr/lib/jvm/default
+# export JAVA_HOME=/usr/lib/jvm/default
 
 ##
 # Maven
@@ -150,6 +150,9 @@ for file in "${to_source[@]}" ; do
   fi
 done
 
+
+[ -f "/Users/fernando/.ghcup/env" ] && source "/Users/fernando/.ghcup/env" # ghcup-env
+
 #
 # https://github.com/rupa/z
 #
@@ -168,7 +171,16 @@ done
 #
 # https://github.com/junegunn/fzf#using-git
 #
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fzf_to_source=(
+  ~/.fzf.bash # From git repo
+  /usr/local/opt/fzf/shell/completion.bash # brew macos fzf
+)
+
+for file in "${fzf_to_source[@]}" ; do
+  if [ -f "$file" ] ; then
+    source "$file"
+  fi
+done
 
 # vim: set textwidth=78:
 # vim: set nowrap:

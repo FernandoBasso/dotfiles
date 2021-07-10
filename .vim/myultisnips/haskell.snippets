@@ -1,0 +1,10 @@
+snippet ini "adds basic initial stuff in a new .hs file"
+
+import Text.Pretty.Simple (pPrintLightBg)
+
+pp :: (Control.Monad.IO.Class.MonadIO m, Show a) => a -> m ()
+pp = pPrintLightBg
+
+$1
+endsnippet
+

@@ -338,7 +338,7 @@ if $THEME == 'dark'
 
   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
 else
-  let s:theme_name = 'gruvbox'
+  let s:theme_name = 'solarized'
   set background=light
   execute 'colorscheme' s:theme_name
 

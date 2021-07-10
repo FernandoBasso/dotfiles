@@ -33,6 +33,9 @@
 -- it helps.
 --
 import Text.Pretty.Simple (pPrintLightBg)
+
+pp :: (Control.Monad.IO.Class.MonadIO m, Show a) => a -> m ()
 pp = pPrintLightBg
+
 
 -- vim: set tw=78:

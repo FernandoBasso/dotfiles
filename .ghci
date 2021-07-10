@@ -1,1 +1,33 @@
+--
+-- I like this simple prompt :D
+--
 :set prompt "\nλ> "
+
+--
+-- By default, enable all warnings but disable type-defaults so we don't have to
+-- constantly do `f (1 :: Int)` to tell about concrete numeric types.
+--
+:set -Wall -Wno-type-defaults
+
+--
+-- Better visualize REPL output.
+--
+-- Example usage:
+--
+--   λ> pp $ Just ("Yoda", "The Force", 9000)
+--   Just
+--       ( "Yoda"
+--       , "The Force"
+--       , 9000
+--       )
+--
+--   λ> pp $ map (+ 10) [1..3]
+--   [ 11
+--   , 12
+--   , 13
+--   ]
+--
+import Text.Pretty.Simple (pPrintLightBg)
+pp = pPrintLightBg
+
+-- vim: set tw=78:

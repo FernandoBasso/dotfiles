@@ -91,7 +91,6 @@ Plug 'jamessan/vim-gnupg'
 
 "'file:///~/.vim/bundle/dbext'
 "'file:///~/.vim/bundle/vim-uploader'
-
 call plug#end()
 
 filetype plugin indent on
@@ -635,21 +634,6 @@ nnoremap <Leader>m :Marks<CR>
 set completefunc=gh_emoji#complete
 runtime macros/emojis.vim
 autocmd FileType * runtime macros/emoji-ab.vim
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tree Sitter
-"
-if has('nvim-0.5')
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  -- ensure_installed = "maintained",
-  highlight = {
-    enable = true,
-    disable = { "perl", "rust" },
-  },
-}
-EOF
-endif
 
 ""
 " Does not fold comments.

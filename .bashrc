@@ -150,6 +150,12 @@ for file in "${to_source[@]}" ; do
   fi
 done
 
+##
+# Kitty terminal emulator
+#
+# • https://sw.kovidgoyal.net/kitty/index.html#completion-for-kitty
+#
+source <(kitty + complete setup bash)
 
 [ -f "/Users/fernando/.ghcup/env" ] && source "/Users/fernando/.ghcup/env" # ghcup-env
 

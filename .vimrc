@@ -22,20 +22,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-"
-" Install Plug for NVIM.
-"
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-  !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-if has('nvim')
-  call plug#begin(stdpath('data') . '/plugged')
-else
-  call plug#begin('~/.vim/plugged')
-endif
+call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
@@ -51,10 +38,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/junegunn/vim-emoji'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
-
-if has('nvim-0.5')
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-endif
 
 Plug 'pacha/vem-tabline'
 " Plug 'pseewald/vim-anyfold'
@@ -303,7 +286,7 @@ nnoremap cd :cd %:h<CR>:pwd<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GIT-GUTTER
 "
-" Make both vim and nvim show GitGutterPreviewHunk in a floating
+" Make vim show GitGutterPreviewHunk in a floating
 " window.
 "
 let g:gitgutter_preview_win_floating = 1
@@ -634,12 +617,6 @@ nnoremap <Leader>m :Marks<CR>
 set completefunc=gh_emoji#complete
 runtime macros/emojis.vim
 autocmd FileType * runtime macros/emoji-ab.vim
-
-""
-" Does not fold comments.
-"
-"set foldmethod=expr
-"set foldexpr=nvim_treesitter#foldexpr()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI, GVim

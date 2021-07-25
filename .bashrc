@@ -8,8 +8,13 @@
 
 git_prompt_locations=(
 	'/usr/share/git/git-prompt.sh' # Arch Linux
-	'/usr/local/Cellar/git/2.32.0/etc/bash_completion.d/git-prompt.sh' # Mac
-	'/usr/local/Cellar/git/2.32.0/etc/bash_completion.d/git-completion.bash' # Mac
+
+	##
+	# Looks brew now places git/bash related files in a path
+	# that does not require updating with every new version.
+	#
+	'/usr/local/etc/bash_completion.d/git-prompt.sh'
+	'/usr/local/etc/bash_completion.d/git-completion.bash'
 )
 
 for file in "${git_prompt_locations[@]}" ; do

@@ -11,3 +11,43 @@
 GPG_TTY=`tty`
 export GPG_TTY
 
+##############################################################################
+# GNU Coreutils on MACOS
+# On the shell, run this:
+#
+#   $ find /usr/local/opt -type d -follow -name gnubin -print
+#
+# Then paste the output lines on this array.
+#
+# REFS:
+# • https://gist.github.com/skyzyx/3438280b18e4f7c490db8a2a2ca0b9da
+# • https://github.com/fabiomaia/linuxify
+# • https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
+#
+gnubins=(
+  '/usr/local/opt/coreutils/libexec/gnubin'
+  '/usr/local/opt/gnu-indent/libexec/gnubin'
+  '/usr/local/opt/gnu-tar/libexec/gnubin'
+  '/usr/local/opt/grep/libexec/gnubin'
+  '/usr/local/opt/gnu-sed/libexec/gnubin'
+  '/usr/local/opt/gsed/libexec/gnubin'
+  '/usr/local/opt/gawk/libexec/gnubin'
+  '/usr/local/opt/findutils/libexec/gnubin'
+)
+
+for gnubin in "${gnubins[@]}"; do
+  PATH="$gnubin:$PATH"
+done
+
+export PATH
+
+##
+# Installing bash and coreutils stuff on MacOS does not setup
+# completions automatically like it is the case on Linux.
+#
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  source $(brew --prefix)/etc/bash_completion
+fi
+
+##############################################################################
+

@@ -1,41 +1,12 @@
 --
 -- I like this simple prompt :D
 --
-:set prompt "\nλ> "
+-- :set prompt "\nλ> "
 
 --
 -- By default, enable all warnings but disable type-defaults so we don't have to
 -- constantly do `f (1 :: Int)` to tell about concrete numeric types.
 --
 :set -Wall -Wno-type-defaults
-
---
--- Better visualize REPL output.
---
--- Example usage:
---
---   λ> pp $ Just ("Yoda", "The Force", 9000)
---   Just
---       ( "Yoda"
---       , "The Force"
---       , 9000
---       )
---
---   λ> pp $ map (+ 10) [1..3]
---   [ 11
---   , 12
---   , 13
---   ]
---
--- NOTE: If you load another module later from GHCi REPL, all current bindings
--- are lost, including those defined in `~/.ghci`. One thing you can do is to
--- add the definitions below in the module you are `:load`ing. Not optimal, but
--- it helps.
---
-import Text.Pretty.Simple (pPrintLightBg)
-
-pp :: (Control.Monad.IO.Class.MonadIO m, Show a) => a -> m ()
-pp = pPrintLightBg
-
 
 -- vim: set tw=78:

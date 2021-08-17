@@ -327,7 +327,13 @@
 (use-package helm-rg
   :ensure t
   :config
-  (global-set-key (kbd "C-c h r") 'helm-rg))
+  (global-set-key (kbd "C-c h r") 'helm-rg)
+  ;;
+  ;; Looks like helm-rg searches from the pwd of the current
+  ;; open file. Until I find a better way to handle this, let's
+  ;; make it always search from the root instead.
+  ;;
+  (setq helm-rg-default-directory 'git-root))
 
 (use-package helm-projectile
   :ensure t

@@ -33,6 +33,7 @@ gnubins=(
   '/usr/local/opt/gsed/libexec/gnubin'
   '/usr/local/opt/gawk/libexec/gnubin'
   '/usr/local/opt/findutils/libexec/gnubin'
+  '/usr/local/opt/sphinx-doc/bin'
 )
 
 for gnubin in "${gnubins[@]}"; do

@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: qanda
-# key: qanda:
+# name: QandA Question and Answer container
+# key: qanda
 # --
 .. container:: qanda
 

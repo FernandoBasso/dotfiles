@@ -73,7 +73,19 @@
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
 
-
+;;
+;; The package `whitespace` comes bundled with Emacs.
+;;
+(require 'whitespace)
+(setq whitespace-style '(tabs tab-mark))
+(global-whitespace-mode 1)
+(setq
+ whitespace-display-mappings
+ '(
+   (space-mark ?\ [?\u00B7])
+   (newline-mark ?\n [?$ ?\n])
+   ;; Hard tab is ␉ followed by a normal space.
+   (tab-mark ?\t [?\u2409 ?\u0020])))
 
 
 (blink-cursor-mode -1)

@@ -179,6 +179,17 @@
   ;; This seems to have solved the problem.
   (setq yas-indent-line nil))
 
+
+;;;;
+;; Simulate global snippets using fudamental-mode snippets.
+;;
+;; https://github.com/joaotavora/yasnippet/issues/557
+;;
+(add-hook 'yas-minor-mode-hook
+          (lambda ()
+            (yas-activate-extra-mode 'fundamental-mode)))
+
+
 (use-package haskell-mode
   :ensure t)
 

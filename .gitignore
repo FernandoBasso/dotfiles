@@ -18,5 +18,10 @@ bash_incl/workprojs.sh
 
 .DS_Store
 
+#
+# YASnippet.
+#
+.yas-compiled-snippets.el
+
 # vim: set tw=68:
 

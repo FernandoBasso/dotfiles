@@ -5,4 +5,3 @@
 .. code-block:: $1
 
    ${2:code here}
-

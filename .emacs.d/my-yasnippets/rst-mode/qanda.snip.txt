@@ -6,10 +6,8 @@
 
    .. container:: question
 
-      ${0:Type the question here.}
+      ${1:Type the question here.}
 
    .. container:: answer
 
-      ${0:And the answer here...}
-
-
+      ${2:And the answer here...}

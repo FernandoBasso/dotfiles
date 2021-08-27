@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: .. code-block::
+# key: code
+# --
+.. code-block:: $1
+
+   ${2:code here}
+

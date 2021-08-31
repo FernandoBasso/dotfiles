@@ -1,8 +1,12 @@
-# Fernando Basso Dotfiles
+# Dotfiles
 
+
+* [Tmux](#tmux)
 * [Node and Deno Bash Completion](#node-and-deno-bash-completion)
 * [Git Whitespace Errors](#git-whitespace-errors)
 * [TODO](#todo)
+
+## Tmux
 
 I use [tmux-resurrect](https://github.com/tmux-plugins/tmux-resurrect) so I don't have to constantly create shell scripts or start sessions with a dozen params manually. There are a few projects I am always working on, so, I just save and restore my entire Tmux “env” with a couple of key-strokes.
 
@@ -10,10 +14,9 @@ I am not using tmux-resurrect optional saving and restoring of Vim (perhaps in t
 
 * Run Tmux by simply typing `tmux` on the terminal.
 * From that initial dummy session, I restore my previously saved session with `C-b C-r`.
-* I use a Vim wrapper [bash script](https://gitlab.com/fernandobasso/dotfiles/-/blob/master/bash_incl/wrappers.sh) and _always_ start Vim instances as servers, so, I type `v SESSION-NAME &lt;extra vim arguments&gt;.
+* I use a Vim wrapper [bash script](https://gitlab.com/fernandobasso/dotfiles/-/blob/master/bash_incl/wrappers.sh) and _always_ start Vim instances as servers, so, I type `v SESSION-NAME &<extra vim arguments&gt>`.
 * When I want to stop all sessions, reboot or shutdown the computer, I need to close all Tmux sessions, but I don't want to abruptly kill Vim, so, I send a message to all running Vim servers to quit themselves without saving. I do that with [another script](https://gitlab.com/fernandobasso/dotfiles/-/blob/master/bin/hvim.sh): `hvim.sh -k`.
 * I then save the Tmux state with `C-b C-s` (only if I changed something in any of the sessions) and kill the entire Tmux server with `C-b :kill-server`.
-
 
 
 In short:
@@ -28,8 +31,6 @@ C-b C-s          # from inside tmux, save state
 C-b :kill-server # from inside tmux, quit tmux
 
 ```
-
-
 
 ## Node and Deno Bash Completion
 

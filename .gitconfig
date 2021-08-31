@@ -5,6 +5,7 @@
 	st = status
 	co = checkout
 	lg = log --pretty='%C(yellow)%h%Creset %Cblue%an%Creset %Cgreen%cr%Creset%Cred%d%Creset %s'
+	l1 = log --oneline
 [color "diff"]
 	whitespace = red reverse
 [help]

@@ -1,41 +1,41 @@
 #!/usr/bin/env bash
 
 function usage () {
-    script_name=${0##*/}
+	script_name=${0##*/}
 
-    cat << EOF
+	cat << EOF
 
-  Lists the menus of a program which provides info pages.
+	Lists the menus of a program which provides info pages.
 
-  USAGE
+	USAGE
 
-    $script_name [OPTION]... PROGRAM
+		$script_name OPTION... PROGRAM
 
-  OPTIONS
-    --menus     A list of info PROGRAM main menus
+	OPTIONS
+		--menus     A list of info PROGRAM main menus
 
-  EXAMPLES
+	EXAMPLES
 
-    $script_name sed
-    $script_name emacs
-    $script_name find
+		$script_name sed
+		$script_name emacs
+		$script_name find
 EOF
 
-    exit 1
+	exit 1
 }
 
 
 if [ -z "$1" ] || [ -z "$2" ] ; then
-    usage
+	usage
 fi
 
 
 function titlefy () {
-    title="‘${1}’ info menu index"
-    pad=$(printf '%0.1s' ={1..120})
-    remaining=$(( 80 - "${#title}" ))
-    padlen=$(( remaining / 2 ))
-    printf '%.*s %s %.*s\n' $padlen "$pad" "$title" $padlen "$pad"
+	title="‘${1}’ info menu index"
+	pad=$(printf '%0.1s' ={1..120})
+	remaining=$(( 80 - "${#title}" ))
+	padlen=$(( remaining / 2 ))
+	printf '%.*s %s %.*s\n' $padlen "$pad" "$title" $padlen "$pad"
 }
 
 
@@ -44,34 +44,34 @@ function titlefy () {
 # of the passed string.
 #
 function linefy () {
-    printf '%s' "$1" | sed 's/./=/g'
+	printf '%s' "$1" | sed 's/./=/g'
 }
 
 
 function info_parse_index () {
-    printf '%s' "$( info "$1" --output - | grep '^\*\s.\+::' )"
+	printf '%s' "$( info "$1" --output - | grep '^\*\s.\+::' )"
 }
 
 
 function list_menus () {
-    title=$(titlefy "$1")
+	title=$(titlefy "$1")
 
-    printf '\n%s\n' "$( linefy "$title" )"
-    printf '%s\n' "$title"
-    printf '%s\n' "$( linefy "$title" )"
+	printf '\n%s\n' "$( linefy "$title" )"
+	printf '%s\n' "$title"
+	printf '%s\n' "$( linefy "$title" )"
 
-    printf '\n%s\n' "$( info_parse_index "$1" )"
+	printf '\n%s\n' "$( info_parse_index "$1" )"
 }
 
 case "$1" in
-    -h|--help)
-        usage
-        ;;
-    --menus)
-        list_menus "$2"
-        ;;
-    *)
-        usage
-        ;;
+	-h|--help)
+		usage
+		;;
+	--menus)
+		list_menus "$2"
+		;;
+	*)
+		usage
+		;;
 esac
 

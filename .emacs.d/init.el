@@ -74,6 +74,13 @@
 (setq tab-width 2)
 
 ;;
+;; Many text-related modes like markdown-mode and rst-mode also seem
+;; to trigger text-mode, so, let's use text-mode-hook to turn on
+;; auto-fill-mode by default in these types of buffer.
+;;
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+;;
 ;; The package `whitespace` comes bundled with Emacs.
 ;;
 (require 'whitespace)

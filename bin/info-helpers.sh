@@ -24,11 +24,9 @@ EOF
 	exit 1
 }
 
-
 if [ -z "$1" ] || [ -z "$2" ] ; then
 	usage
 fi
-
 
 function titlefy () {
 	title="‘${1}’ info menu index"
@@ -38,7 +36,6 @@ function titlefy () {
 	printf '%.*s %s %.*s\n' $padlen "$pad" "$title" $padlen "$pad"
 }
 
-
 #
 # Gets a string and makes a line-like string of the length
 # of the passed string.
@@ -47,11 +44,9 @@ function linefy () {
 	printf '%s' "$1" | sed 's/./=/g'
 }
 
-
 function info_parse_index () {
 	printf '%s' "$( info "$1" --output - | grep '^\*\s.\+::' )"
 }
-
 
 function list_menus () {
 	title=$(titlefy "$1")

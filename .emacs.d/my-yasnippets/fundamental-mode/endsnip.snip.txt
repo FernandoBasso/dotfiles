@@ -1,0 +1,20 @@
+# -*- mode: snippet -*-
+#
+# Simulate global snippets using fudamental-mode snippets.
+#
+# https://github.com/joaotavora/yasnippet/issues/557
+#
+# Note that the "#-- " after the first "# --" considered part of the
+# snippet and will expand to:
+#
+#     # --
+#     # Of Of Snipppet.
+#
+# In other words, everything after the first "# --" is part of the
+# content of the snippet.
+#
+# name: End Snippet
+# key: endsnip
+# --
+# --
+# End Of Snippet.

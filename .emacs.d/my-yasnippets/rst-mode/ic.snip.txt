@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Inline Code
+# key: ic
+# --
+``$1``
+

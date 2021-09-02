@@ -21,6 +21,13 @@
  ;; If there is more than one, they won't work right.
  '(flyspell-duplicate ((t (:underline (:color "#7c6f64" :style wave)))))
  '(flyspell-incorrect ((t (:underline (:color "#9d0006" :style wave)))))
+
+ ;;
+ ;; markdown-mode applies a different font to code blocks. This
+ ;; setting disables such feature, so that code blocks use the same
+ ;; font as the rest of the text.
+ ;;
+ '(markdown-code-face ((t nil)))
  '(racket-xp-def-face ((t (:inherit match :background "pale goldenrod" :foreground "dark magenta" :underline t))))
  '(racket-xp-use-face ((t (:inherit match :background "pale goldenrod" :foreground "dark magenta")))))
 

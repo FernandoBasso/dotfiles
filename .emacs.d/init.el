@@ -86,6 +86,7 @@
 ;; auto-fill-mode by default in these types of buffer.
 ;;
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'turn-on-flyspell)
 
 ;;
 ;; The package `whitespace` comes bundled with Emacs.

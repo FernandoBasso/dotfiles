@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Double Curly Quotes
+# key: dq
+# --
+“$1”$0

@@ -2,5 +2,5 @@
 # name: Inline Code
 # key: ic
 # --
-``$1``
+\`\`$1\`\`$0
 

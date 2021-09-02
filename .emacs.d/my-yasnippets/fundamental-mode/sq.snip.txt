@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Single Curly Quotes
+# key: sq
+# --
+‘$1’$0

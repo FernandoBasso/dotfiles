@@ -323,6 +323,32 @@
 (setq org-outline-path-complete-in-steps nil)
 (setq org-html-htmlize-output-type 'css)
 
+;;
+;; With this, we can set images the width we want inside org
+;; buffer. For example:
+;;
+;;  #+ATTR_ORG: :width 600
+;;  [[./images/gnu.png]]
+;;
+(setq org-image-actual-width nil)
+
+;;
+;; Hide *bold*, /italic/, ~code~, =verbatim= and +strike-through+ symbols.
+;;
+(setq org-hide-emphasis-markers t)
+
+;;
+;; Hidding the markers and having these colors look OK and readable
+;; with gruvbox-light-hard theme.
+;;
+(setq org-emphasis-alist
+      '(("*" bold)
+        ("/" italic)
+        ("_" underline)
+        ("+" (:strike-through t :foreground "gray"))
+        ("=" (:foreground "magenta"))
+        ("~" (:foreground "maroon"))))
+
 ;; Bigger Latex Fragments
 (plist-put org-format-latex-options :scale 1.5)
 

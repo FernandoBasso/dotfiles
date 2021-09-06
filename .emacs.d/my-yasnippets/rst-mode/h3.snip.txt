@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Heading Level Three
+# key: h3
+# --
+${1:Heading Level Three}
+${1:$(make-string (string-width yas-text) ?~)}

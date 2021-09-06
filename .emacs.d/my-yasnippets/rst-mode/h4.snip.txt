@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Heading Four
+# key: h4
+# --
+${1:Title}
+${1:$(make-string (string-width yas-text) ?.)}

@@ -67,5 +67,17 @@
 #
 "\e\t": alias-expand-line
 
+##
+# When there more than one match, automatically show the available
+# completions at point without requiring `Tab Tab'.
+#
+set show-all-if-ambiguous on
+
+##
+# Always insert an item at the command line. Further `Tab' presses cycle
+# between other possible completions.
+#
+TAB:menu-complete
+
 # vim: set tw=72:
 

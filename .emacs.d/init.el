@@ -145,6 +145,10 @@
   :ensure t
   :config (which-key-mode))
 
+(use-package emojify
+  :ensure t
+  :hook (after-init . global-emojify-mode))
+
 (use-package org
   :mode (("\\.org$" . org-mode))
   :ensure org-plus-contrib

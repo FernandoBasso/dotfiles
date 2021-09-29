@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Backticks `...`
+# key: bt
+# --
+\`$1\`$0

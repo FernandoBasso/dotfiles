@@ -1,8 +1,6 @@
 # -*- mode: snippet -*-
-# name: Heading Two
+# name: Heading Level Two
 # key: h2
 # --
 ${1:Title}
 ${1:$(make-string (string-width yas-text) ?\-)}
-
-${0}

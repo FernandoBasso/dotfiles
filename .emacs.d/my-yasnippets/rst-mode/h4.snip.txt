@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: Heading Four
+# name: Heading Level Four
 # key: h4
 # --
 ${1:Title}

@@ -301,11 +301,11 @@
 
 ;; Somehow started causing racket-mode not to work, even
 ;; when trying to active racket-mode manually.
-;(use-package geiser
-;  :ensure t
-;  :hook (scheme-mode . geiser-mode)
-;  :config
-;  (setq geiser-active-implementations '(racket chicken)))
+(use-package geiser
+  :ensure t
+  :hook (scheme-mode . geiser-mode)
+  :config
+  (setq geiser-active-implementations '(racket chicken)))
 
 (use-package racket-mode
   :ensure t

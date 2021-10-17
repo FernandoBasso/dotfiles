@@ -346,6 +346,16 @@
 (add-to-list 'auto-mode-alist '("\\.scm$" . scheme-mode))
 (add-hook 'scheme-mode-hook #'geiser-mode)
 
+
+(setq inferior-lisp-program "/usr/local/bin/sbcl")
+
+(use-package slime
+  :ensure t)
+
+(add-hook 'slime-repl-mode-hook
+          (lambda ()
+            (setq show-trailing-whitespace nil)))
+
 ;;
 ; org-mode
 ;

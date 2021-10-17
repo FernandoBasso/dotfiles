@@ -164,10 +164,17 @@
   :ensure t
   :hook (after-init . global-emojify-mode))
 
+(global-set-key [f6] 'org-latex-preview)
+
 (use-package org
   :mode (("\\.org$" . org-mode))
   :ensure org-plus-contrib
   :config
+  ;;
+  ;; The docs say ‘convert’, but it is clearly only working
+  ;; with ‘imagemagick’.
+  ;;
+  (setq org-preview-latex-default-process 'imagemagick)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
@@ -176,6 +183,8 @@
      (ruby . t)
      (haskell . t)
      (typescript . t))))
+
+(require 'ox-md)
 
 (use-package org-ql
   :quelpa (org-ql :fetcher github :repo "alphapapa/org-ql"

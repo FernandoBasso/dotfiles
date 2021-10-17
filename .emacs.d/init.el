@@ -239,7 +239,12 @@
   ;; For some reason, when snippets are expanded, the indentation is
   ;; messed up, even though it is correct in the snippet file/definition.
   ;; This seems to have solved the problem.
-  (setq yas-indent-line nil))
+  (setq yas-indent-line nil)
+  ;;;;
+  ;; Avoid expanded snippets to insert newlines after their expanded text.
+  ;;
+  (setq-default mode-require-final-newline nil)
+  (setq-default require-final-newline nil))
 
 
 ;;;;

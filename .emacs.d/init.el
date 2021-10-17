@@ -362,7 +362,9 @@
   :ensure t)
 
 (use-package helm-org-ql
-  :ensure t)
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c q") 'helm-org-ql-agenda-files))
 
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)

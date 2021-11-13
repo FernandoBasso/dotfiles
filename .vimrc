@@ -66,6 +66,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Dropbox/vim/vim-uploader'
 Plug 'plasticboy/vim-markdown'
 Plug 'mzlogin/vim-markdown-toc'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'mg979/vim-visual-multi'
 Plug 'elixir-editors/vim-elixir'
 Plug 'chr4/nginx.vim'

@@ -34,13 +34,20 @@ gnubins=(
   '/usr/local/opt/gawk/libexec/gnubin'
   '/usr/local/opt/findutils/libexec/gnubin'
   '/usr/local/opt/sphinx-doc/bin'
+  '/usr/local/opt/gcc/bin'
 )
 
 for gnubin in "${gnubins[@]}"; do
   PATH="$gnubin:$PATH"
 done
 
-export PATH
+##
+# From `brew install openjdk@11`.
+#
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+export JAVA_HOME='/usr/local/opt/openjdk@11'
+
+#export PATH
 
 ##
 # Installing bash and coreutils stuff on MacOS does not setup
@@ -48,6 +55,10 @@ export PATH
 #
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source $(brew --prefix)/etc/bash_completion
+fi
+
+if [ -f ~/work/local/npm-completion.bash ]; then
+  source ~/work/local/npm-completion.bash
 fi
 
 ##############################################################################

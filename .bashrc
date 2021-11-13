@@ -23,8 +23,6 @@ done
 
 PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/Projects/dotfiles/bin:$HOME/local/bin"
 
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -59,10 +57,11 @@ export FZF_DEFAULT_OPTS='--preview-window right:36%'
 export DENO_INSTALL="$HOME/.deno"
 PATH="$PATH:$DENO_INSTALL/bin"
 
-PATH="$PATH:$HOME/local/bin/chicken-5.2.0/bin"
+# PATH="$PATH:$HOME/local/bin/chicken-5.2.0/bin"
+PATH="$HOME/local/bin/chicken-5.3.0rc3/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+PATH="$PATH:$HOME/.rvm/bin"
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
@@ -79,7 +78,6 @@ if [[ $(hostname) = 'work1' ]] ; then
         fi
     fi
 fi
-
 
 #
 # BASIC SETTINGS
@@ -195,3 +193,5 @@ done
 
 # vim: set textwidth=78:
 # vim: set nowrap:
+
+export PATH="$PATH:$HOME/local/bin"

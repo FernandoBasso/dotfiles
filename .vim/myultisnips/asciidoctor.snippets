@@ -16,8 +16,19 @@ snippet iniadoc "new adoc default settings"
 ${0}
 endsnippet
 
-snippet hey "description"
-hey!
+snippet dq "double curly quotes"
+“$1”
+endsnippet
+
+snippet sq "single curly quotes"
+‘$1’
+endsnippet
+
+snippet blk "code block as plain text"
+[source,text,lineos]
+----
+$1
+----
 endsnippet
 
 snippet blksh "code block for shell script"

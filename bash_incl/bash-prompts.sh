@@ -37,6 +37,10 @@ version_node () {
   printf '%s' "$(node --version | sed 's/^v//')"
 }
 
+version_npm () {
+  printf '%s' "$(npm --version)"
+}
+
 version_bash () {
   printf '%s' "$(printf '%s' "$BASH_VERSION" | sed 's/[^0-9.]//g')"
 }
@@ -71,8 +75,14 @@ ps1sfpnl () {
 }
 
 ps1all () {
-  PS1="\n${purple}\$(make_line)\n${purple}[bash-\$(version_bash)] [git-\$(version_git)] [$(~/.rvm/bin/rvm-prompt)] [node-\$(version_node)]"
-  PS1+="\n${blue}\w $red\$(__git_ps1 '[%s]')\n${normal}${BASH_PROMPT_CHAR} "
+  PS1="\n${purple}\$(make_line)\n${purple}"
+  PS1+="[bash-\$(version_bash)]"
+  PS1+=" [git-\$(version_git)]"
+  PS1+=" [$(~/.rvm/bin/rvm-prompt)]"
+  PS1+=" [node-\$(version_node)]"
+  PS1+=" [npm-\$(version_npm)]"
+  PS1+="\n${blue}\w $red\$(__git_ps1 '[%s]')"
+  PS1+="\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ps1nodejs () {

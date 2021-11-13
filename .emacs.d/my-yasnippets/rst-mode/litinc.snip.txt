@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: literalinclude
+# key: litinc
+# --
+.. literalinclude:: /../src/$1
+   :language: $2

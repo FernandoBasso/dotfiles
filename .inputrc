@@ -77,7 +77,7 @@ set show-all-if-ambiguous on
 # Always insert an item at the command line. Further `Tab' presses cycle
 # between other possible completions.
 #
-TAB:menu-complete
+# TAB:menu-complete
 
 # vim: set tw=72:
 

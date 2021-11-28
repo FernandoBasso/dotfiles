@@ -34,6 +34,7 @@ gnubins=(
   '/usr/local/opt/gawk/libexec/gnubin'
   '/usr/local/opt/findutils/libexec/gnubin'
   '/usr/local/opt/sphinx-doc/bin'
+  '/usr/local/opt/make/libexec/gnubin'
   '/usr/local/opt/gcc/bin'
 )
 

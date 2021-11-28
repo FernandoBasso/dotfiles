@@ -56,6 +56,13 @@ $1
 ----
 endsnippet
 
+snippet blkts "code block for typescript"
+[source,typescript,lineos]
+----
+$1
+----
+endsnippet
+
 snippet blkhtml "code block for html"
 [source,html,lineos]
 ----
@@ -70,6 +77,12 @@ $1
 ----
 endsnippet
 
+snippet blkinc "code block with include source"
+[source,${1:language},lineos]
+----
+include::example$/$1/${2:num}kyu/${3:dir}/${4:filename}.ts[]
+----
+endsnippet
 
 snippet qanda "QandA"
 '''

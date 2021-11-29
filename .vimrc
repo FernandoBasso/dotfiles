@@ -484,6 +484,7 @@ let g:coc_global_extensions = [
       \ 'coc-json',
       \ 'coc-solargraph',
       \ 'coc-yaml',
+      \ 'coc-css',
       \ ]
 
 "

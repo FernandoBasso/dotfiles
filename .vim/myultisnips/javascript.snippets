@@ -41,6 +41,18 @@ it('${1:test description}', () => {
 });
 endsnippet
 
+##
+# Make a snippet like:
+#
+#   const [loading, setLoading] = useState(false);
+#            $1        $1                    $2
+#
+# Note it capitalizes "l" in for "setLoading". Very handy!
+#
+snippet useState "const [f, g] = useState();"
+const [$1, set${1/\w+/\u$0/g}] = useState(${2:initial state});
+endsnippet
+
 snippet rh "renderHook()"
 const { result } = renderHook(() => use$1($2));
 

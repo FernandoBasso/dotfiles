@@ -37,7 +37,7 @@ deploy
 #
 # mkdir -pv ~/.config/nvim/colors
 [[ ! -f ~/.config/nvim ]] \
-  && ln -sv ~/Projects/dotfiles/.config/nvim ~/.config/nvim
+  && ln -sv ~/work/src/dotfiles/.config/nvim ~/.config/nvim
 
 # [[ ! -f ~/.config/nvim/colors/mylight1.vim ]] \
 #   && ln -sv ~/.vim/colors/mylight1.vim ~/.config/nvim/colors/mylight1.vim
@@ -63,7 +63,7 @@ mkdir -pv ~/.config/kitty
 
 [[ ! -f ~/.config/kitty/kitty.conf ]] \
   && ln -sv \
-    ~/Projects/dotfiles/.config/kitty/kitty.conf \
+    ~/work/src/dotfiles/.config/kitty/kitty.conf \
     ~/.config/kitty/kitty.conf
 
 ##

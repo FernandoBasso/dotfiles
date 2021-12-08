@@ -67,7 +67,7 @@ Plug 'junegunn/vader.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'habamax/vim-asciidoctor'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug '~/Dropbox/vim/vim-uploader'
+Plug '~/Cloud/Dropbox/vim/vim-uploader'
 Plug 'plasticboy/vim-markdown'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'dhruvasagar/vim-table-mode'

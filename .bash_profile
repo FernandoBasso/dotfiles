@@ -52,12 +52,12 @@ export JAVA_HOME='/usr/local/opt/openjdk@11'
 # Installing bash and coreutils stuff on MacOS does not setup
 # completions automatically like it is the case on Linux.
 #
-if ! command -v brew &> /dev/null
+if command -v brew &> /dev/null
 then
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
     source $(brew --prefix)/etc/bash_completion
   fi
-then
+fi
 
 if [ -f ~/work/local/npm-completion.bash ]; then
   source ~/work/local/npm-completion.bash

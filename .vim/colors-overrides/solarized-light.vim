@@ -33,6 +33,8 @@ hi Folded cterm=bold
 
 hi Comment gui=NONE
 
+hi VertSplit ctermbg=NONE
+
 "
 " pacha/vem-tabline overrides
 "

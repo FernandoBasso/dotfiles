@@ -47,10 +47,3 @@ t () {
 	tree -CF "$1" | less -R
 }
 
-##
-# Sets the terminal title to just show the working directory
-# instead of user@host:pwd. Also, the working directory
-# uses a ~/ instead of verbuse /home/youruser.
-#
-PROMPT_COMMAND='echo -ne "\033]0; $(dirs +0) \007"'
-

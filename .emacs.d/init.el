@@ -61,7 +61,7 @@
 ;; For terminal non-blinking cursor. See C-h m Emacs RET m Cursor Display RET.
 (setq visible-cursor nil)
 
-(setq backup-directory-alist `(("." . "~/Projects/dotfiles/tmp/emacs_stuff"))):
+(setq backup-directory-alist `(("." . "~/work/src/dotfiles/tmp/emacs_stuff"))):
 
 (setq font-height
   (cond

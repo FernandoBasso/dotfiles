@@ -9,6 +9,11 @@ set fileencoding=utf-8
 "
 let g:dfdir = expand('~/work/src/dotfiles')
 
+""
+" Add keybinding for easy quick reloading of ~/.vimrc.
+"
+nnoremap <Leader>rr :source $MYVIMRC<Return>
+
 "
 " https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 "
@@ -26,6 +31,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
+Plug 'gutenye/json5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
 
@@ -589,7 +595,7 @@ let g:fzf_colors =
   \ 'header':  ['fg', 'Comment'] }
 
 ""
-" Popup window!
+" Popup Window
 "
 let g:fzf_layout = {
   \ 'window' : {
@@ -600,13 +606,20 @@ let g:fzf_layout = {
   \ }
 
 ""
+" Split the preview window on the right for wide terminals, at
+" the top for narrow terminals.
+"
+" NOTE: If the terminal is resized, reload vimrc with
+" `:source $MYVIMRC` to re-evaluate the condition.
+"
+let g:fzf_preview_window = winwidth(0) < 96 ? 'up:64%' : 'right:42%'
+
+""
 " Some projects I work on have a very deep hierarchy of directories
 " and making the right window shorter helps reading the filenames.
 "
-let g:fzf_preview_window = 'right:42%'
 
-silent nnoremap <Leader>f :Files
-map <Leader>f :GFiles!<CR>
+map <Leader>f :GitFiles<CR>
 map <Leader>b :Buffers<CR>
 nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
@@ -647,7 +660,7 @@ if (has('gui_running'))
   " set guifont=Source\ Code\ Pro\ Semi-Bold\ 14
   " set guifont=SauceCodeProNerdFontCompleteM-Semibold:h16
   " set guifont=Source Code Pro Semi-Bold 14
-  set guifont=SauceCodePro\ Nerd\ Font\ Semi-Bold\ 13
+  set guifont=SauceCodePro\ Nerd\ Font\ Semi-Bold\ 14
   set linespace=5
 
   set guicursor=n-c:hor14,i:ver14,a:blinkon0

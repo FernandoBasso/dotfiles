@@ -13,11 +13,9 @@ let g:dfdir = expand('~/work/src/dotfiles')
 nnoremap <Leader>rr :source $MYVIMRC<Return>
 
 "
-" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
-"
-
-"
 " Install junegunn/plug.
+"
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 "
 let data_dir = stdpath('data') . '/site'
 
@@ -44,7 +42,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'https://github.com/junegunn/vim-emoji'
 " Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 
-" Plug 'pacha/vem-tabline'
+Plug 'pacha/vem-tabline'
 " Plug 'pseewald/vim-anyfold'
 
 Plug 'SirVer/ultisnips'
@@ -329,11 +327,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 "
 " UltiSnips
 "
-" All these three combined work for my custom snippets with custom location
-" to work fine.
-"
-let g:UltiSnipsSnippetsDir = "~/work/src/dotfiles/.vim/myultisnips"
-let g:UltiSnipsSnippetDirectories = ["myultisnips"]
+let g:UltiSnipsSnippetDirectories = [$HOME . '/work/src/dotfiles/ultisnips']
 
 " Problem: on terminals, c-tab sends tab, and tab is bound to ycm.
 " s-tab doesn't work either in the terminal (urxvt at least).

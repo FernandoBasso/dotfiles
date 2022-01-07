@@ -424,11 +424,7 @@ let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 "
 " UltiSnips
 "
-" All these three combined work for my custom snippets with custom location
-" to work fine.
-"
-let g:UltiSnipsSnippetsDir = "~/work/src/dotfiles/.vim/myultisnips"
-let g:UltiSnipsSnippetDirectories = ["myultisnips"]
+let g:UltiSnipsSnippetDirectories = [$HOME . '/work/src/dotfiles/ultisnips']
 
 " Problem: on terminals, c-tab sends tab, and tab is bound to ycm.
 " s-tab doesn't work either in the terminal (urxvt at least).

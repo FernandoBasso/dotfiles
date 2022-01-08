@@ -32,37 +32,5 @@ deploy () {
 
 deploy
 
-##
-# Kitty Terminal Emulator
-#
-mkdir -pv ~/.config/kitty
-
-[[ ! -f ~/.config/kitty/kitty.conf ]] \
-  && ln -sv \
-    ~/work/src/dotfiles/.config/kitty/kitty.conf \
-    ~/.config/kitty/kitty.conf
-
-##
-# Clone or update kitty-themes repo.
-#
-if [[ -n $DOTFILES_FETCH_REPOS ]] ; then
-  if [[ -d ~/.config/kitty/kitty-themes ]] ; then
-    (
-      cd ~/.config/kitty/kitty-themes
-
-      printf '%s\n' '→ Updating kitty-themes'
-      git pull origin --rebase
-    )
-  else
-    (
-      cd ~/.config/kitty
-      git clone --depth 1 \
-        git@github.com:dexpota/kitty-themes.git \
-        ./kitty-themes
-    )
-  fi
-fi
-
-
 # vim: set tabstop=2 softtabstop=2 shiftwidth=2:
 

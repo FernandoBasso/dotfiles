@@ -179,7 +179,7 @@ set list
 "   :help 'conceallevel'
 "
 set concealcursor=
-set conceallevel=0
+set conceallevel=1
 
 ""
 " NOTE: indentLine plugin seems to be overriding my conceal-related
@@ -199,8 +199,8 @@ let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
 "
 
-let g:indentLine_concealcursor = ''
-let g:indentLine_conceallevel = 0
+"let g:indentLine_concealcursor = ''
+"let g:indentLine_conceallevel = 0
 
 "
 " json-vim

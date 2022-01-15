@@ -521,9 +521,18 @@ colorscheme gruvbox-material
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "typescript", "javascript", "jsdoc", "ruby" },
+  ensure_installed = {
+    \ "typescript",
+    \ "javascript",
+    \ "jsdoc",
+    \ "ruby",
+    \ "json",
+    \ "yaml",
+  \ },
+
   sync_install = true,
   ignore_install = { },
+
   highlight = {
     enable = true,
     disable = { "c", "rust" },

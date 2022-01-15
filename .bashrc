@@ -197,16 +197,17 @@ source ~/bin/exercism-linux/shell/exercism_completion.bash
 
 export PATH="$PATH:$HOME/local/bin"
 
-# vim: set textwidth=78:
-# vim: set nowrap:
-
-export PATH="$PATH:$HOME/local/bin"
-
-#
+##
 # Kitty on macOS
 #
 # BEGIN_KITTY_SHELL_INTEGRATION
+##
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
   then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
 fi
+#
 # END_KITTY_SHELL_INTEGRATION
+##
+
+# vim: set textwidth=78:
+# vim: set nowrap:

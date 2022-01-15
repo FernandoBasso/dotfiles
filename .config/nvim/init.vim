@@ -176,6 +176,15 @@ set list
 set concealcursor=
 set conceallevel=1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JSON/JSON5
+
+""
+" 🤬 PLEASE DO NOT BE AN ASS and hide the fucking quotes, especially
+" not by default! 🤬
+"
+let g:vim_json_conceal = 0
+
 ""
 " NOTE: indentLine plugin seems to be overriding my conceal-related
 " settings. Checked with `:verbose set conceallevel`.

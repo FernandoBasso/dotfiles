@@ -50,7 +50,7 @@ Plug 'honza/vim-snippets'
 Plug 'luisiacc/gruvbox-baby'
 Plug 'sainnhe/gruvbox-material'
 
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 " Plug 'elzr/vim-json'
 
 Plug 'vim-airline/vim-airline'
@@ -58,7 +58,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'
 " Plug 'ElmCast/elm-vim'
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
 " Plug 'tpope/vim-surround',
 " Plug 'vim-scripts/dbext.vim'
@@ -68,8 +68,9 @@ Plug 'ryanoasis/vim-devicons'
 " Plug 'habamax/vim-asciidoctor'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug '~/Cloud/Dropbox/vim/vim-uploader'
-" Plug 'plasticboy/vim-markdown'
-" Plug 'mzlogin/vim-markdown-toc'
+Plug 'plasticboy/vim-markdown'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Plug 'dhruvasagar/vim-table-mode'
 " Plug 'mg979/vim-visual-multi'
 " Plug 'elixir-editors/vim-elixir'
@@ -93,6 +94,7 @@ set hidden
 set scrolloff=3
 set timeoutlen=350
 set mouse=a
+set cursorline
 
 " Indentation with SPACES
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -173,7 +175,7 @@ set list
 "   :help 'conceallevel'
 "
 set concealcursor=
-set conceallevel=0
+set conceallevel=1
 
 ""
 " NOTE: indentLine plugin seems to be overriding my conceal-related
@@ -193,7 +195,7 @@ let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
 "
 
-let g:indentLine_concealcursor = ''
+"let g:indentLine_concealcursor = ''
 let g:indentLine_conceallevel = 0
 
 "
@@ -517,7 +519,7 @@ colorscheme gruvbox-material
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "typescript", "javascript", "ruby" },
+  ensure_installed = { "typescript", "javascript", "jsdoc", "ruby" },
   sync_install = true,
   ignore_install = { },
   highlight = {

@@ -190,6 +190,13 @@ for file in "${fzf_to_source[@]}" ; do
   fi
 done
 
+##
+# https://exercism.org/cli-walkthrough
+#
+source ~/bin/exercism-linux/shell/exercism_completion.bash
+
+export PATH="$PATH:$HOME/local/bin"
+
 # vim: set textwidth=78:
 # vim: set nowrap:
 

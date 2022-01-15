@@ -50,8 +50,7 @@ Plug 'honza/vim-snippets'
 Plug 'luisiacc/gruvbox-baby'
 Plug 'sainnhe/gruvbox-material'
 
-Plug 'Yggdroot/indentLine'
-" Plug 'elzr/vim-json'
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -184,26 +183,20 @@ set conceallevel=1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" IndentLine
+" indent-blankline
 "
-
+" NOTE: We use guifg and it works as ctermfg in nvim/indent-blankline.
+"
 " NOTE: The font ProFontIIx does not display the char “¦”.
 "
-let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
-" indentLine uses conceal stuff which together with default json.vim
-" hides quotes in json files. People suggest stuff here:
-" https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
-"
 
-"let g:indentLine_concealcursor = ''
-let g:indentLine_conceallevel = 0
-
-"
-" json-vim
-"
-" Also to help with indentLin + json.vim hiding quotes from json files.
-let g:vim_json_syntax_conceal = 0
-
+lua << EOF
+require("indent_blankline").setup {
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
+EOF
 
 "
 " NERDTree
@@ -529,6 +522,13 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOF
+
+""
+" A little less dark than Gruvbox #282828 dark background.
+"
+" IndentBlanklineChar is alias to LineNr.
+"
+highlight LineNr guifg=#353535
 
 "
 " vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:

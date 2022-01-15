@@ -23,5 +23,10 @@ bash_incl/workprojs.sh
 #
 .yas-compiled-snippets.el
 
+#
+# Neovim/packer compiled lua stuff.
+#
+.config/nvim/plugin
+
 # vim: set tw=68:
 

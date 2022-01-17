@@ -171,8 +171,22 @@ source <(kitty + complete setup bash)
 # my stuff overwrites PROMPT_COMMAND stuff from ‘z’ (check ‘man z’) and
 # it breaks ‘z’, which stops creating ‘~/.z’ and/or updating the entries.
 #
-[ -r /usr/share/z/z.sh ] && source /usr/share/z/z.sh
-[ -r ~/bin/z.sh ] && source ~/bin/z.sh
+# Installed in Arch Linux.
+#
+z_possible_paths=(
+  # Arch Linux through pacman.
+  "/usr/share/z/z.sh"
+
+  # Installed manually.
+  "$HOME/bin/z.sh"
+
+  # macOS brew.
+  "/usr/local/etc/profile.d/z.sh"
+)
+
+for z_path in "${z_possible_paths[@]}"; do
+  [ -r "$z_path" ] && source "$z_path"
+done
 
 ##
 # FZF installed manually from the GIT repo:
@@ -198,10 +212,8 @@ source ~/bin/exercism-linux/shell/exercism_completion.bash
 export PATH="$PATH:$HOME/local/bin"
 
 ##
-# Kitty on macOS
-#
 # BEGIN_KITTY_SHELL_INTEGRATION
-##
+#
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
   then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
 fi
@@ -209,5 +221,6 @@ fi
 # END_KITTY_SHELL_INTEGRATION
 ##
 
-# vim: set textwidth=78:
-# vim: set nowrap:
+#
+# vim: set textwidth=78 nowrap:
+#

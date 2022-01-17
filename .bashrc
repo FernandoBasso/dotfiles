@@ -207,7 +207,8 @@ done
 ##
 # https://exercism.org/cli-walkthrough
 #
-source ~/bin/exercism-linux/shell/exercism_completion.bash
+exercism_bin_path="$HOME/bin/exercism-linux/shell/exercism_completion.bash"
+[ -r "$exercism_bin_path" ] && source "$exercism_bin_path"
 
 export PATH="$PATH:$HOME/local/bin"
 

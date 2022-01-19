@@ -25,10 +25,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin(data_dir . '/plugged')
-
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
-
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
 Plug 'gutenye/json5.vim'
@@ -213,24 +210,25 @@ require("indent_blankline").setup {
 }
 EOF
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" nvim-tree
 "
-lua require('nvim-tree-cfg')
-
+" NERDTree
+"
+let g:NERDTreeWinSize=42
+nnoremap <F3> :NERDTreeToggle<CR>
+inoremap <F3> <Esc>:NERDTreeToggle<CR>
+nnoremap <Leader>ff :NERDTreeFind<CR>
+let NERDTreeIgnore = ['\~$', 'node_modules']
 
 "
-" Prevent seeing only nerdtree or nvim-tree window after closing or
-" deleting deleting a buffer. Use this instead of :bwipeout.
+" Prevent seeing only nerdtree window after closing or deleting a buffer.
+"
+" Use these instead of :bdelete, :bclose and :bwipeout.
 "
 nnoremap <Leader>d :bprevious<CR>:bwipeout#<CR>
 
-"
 " Save the file (some terminals get locked on ctrl-s, and ctrl-q unlocks).
 " # We don't want C-s to lock and terminal (which is unlocked with C-q).
 " `stty -ixon` on bashrc
-"
 nnoremap <C-s> :update<CR>
 inoremap <C-s> <Esc>:update<CR><Right>
 

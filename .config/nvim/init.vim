@@ -512,7 +512,7 @@ for file in files_to_source
   endif
 endfor
 
-set background=dark
+set background=light
 let g:gruvbox_material_palette = 'material'
 let g:gruvbox_material_disable_italic_comment = 1
 let g:gruvbox_material_diagnostic_text_highlight = 0
@@ -548,7 +548,7 @@ EOF
 "
 " IndentBlanklineChar is alias to LineNr.
 "
-highlight LineNr guifg=#353535
+" highlight LineNr guifg=#353535
 
 "
 " vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:

@@ -32,6 +32,9 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
 Plug 'gutenye/json5.vim'
+
+Plug 'purescript-contrib/purescript-vim'
+
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }

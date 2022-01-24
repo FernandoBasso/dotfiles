@@ -40,12 +40,15 @@ import {
 } from "$1";
 endsnippet
 
-# snippet imp "named import statement single line"
-# import { $2 } from '$1';
-# endsnippet
-#
-# snippet impnl "named import multiple lines"
-# import {
-#   $2,
-# } from '$1';
-# endsnippet
+snippet jdesc "jest describe() block"
+describe("${1:test description}", () => {
+  $2
+});
+endsnippet
+
+snippet jit "jest it() test"
+it("${1:test description}", () => {
+  $2
+});
+endsnippet
+

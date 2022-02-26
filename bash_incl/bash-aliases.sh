@@ -40,10 +40,6 @@ alias fzf=fzf --delimiter=: --preview='bat --style=numbers --color=always {1}'
 ##
 
 ##
-# ====================
-# gci: Git Commit Info
-# ====================
-#
 # Just like a `git log' but with custom options. I use this one most for
 # work related tasks where I want to save my commits to my org-mode
 # notes so I can have a reference in case the repository gets messy or I
@@ -63,33 +59,62 @@ alias fzf=fzf --delimiter=: --preview='bat --style=numbers --color=always {1}'
 alias gci="COLUMNS=78 git log --format=$'\n %s\n %h %an <%ae>' --abbrev=11 --stat"
 
 ##
-# gs: Git Status
+# Git Status.
 #
 # Usage:
 #
-# 	$ gs
+# 	$ gst
 #
-alias gc="git status"
+alias gst='git status'
 
 ##
-# Git Log
+# Git Log.
 #
 # Usage:
 #
 # 	$ gl
 # 	$ gl -3
 #
-alias gl="git log"
+alias gl='git log'
 
 ##
-# Git Log Oneline with Graph
+# Git log oneline with graph.
 #
 # Usage:
 #
 # 	$ g1l
 # 	$ g1l -5
 #
-alias g1l="git log --oneline --graph"
+alias g1l='git log --oneline --graph'
+
+##
+# Git log last 1 commit.
+#
+# Usage:
+#
+# 	$ gl1
+# 	$ gl1 --stat
+# 	$ gl1 --patch-with-stat
+#
+alias gl1='git log -1'
+
+##
+# Git log last 1 commit with stat.
+#
+# Usage:
+#
+# 	$ gl1s
+#
+alias gl1s='git log -1 --stat'
+
+##
+# Git log last 1 commit with patch and stat.
+#
+# Usage:
+#
+# 	$ gl1ps
+#
+alias gl1ps='git log -1 --patch-with-stat'
 
 #
 # End Git Aliases

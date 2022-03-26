@@ -14,6 +14,10 @@ snippet error "console.error"
 console.error($1);
 endsnippet
 
+snippet deflog "log function alias"
+const log: Console["log"] = console.log.bind(console);
+endsnippet
+
 snippet ll "console.log"
 const l = console.log.bind(console);
 endsnippet

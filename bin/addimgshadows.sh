@@ -20,13 +20,13 @@
 # $ sleep 7 && flameshot gui && addimgshadows.sh
 ##
 
-if ! command -v flameshot
+if ! command -v 1&> /dev/null flameshot
 then
 	printf '!!! Please install flameshot !!!\n' 2>&1
 	exit 1
 fi
 
-if ! command -v convert
+if ! command -v 1&> /dev/null convert
 then
 	printf '!!! Please install imagemagick !!!\n' 2>&1
 	exit 1

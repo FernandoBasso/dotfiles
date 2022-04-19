@@ -62,7 +62,7 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-rails'
-" Plug 'tpope/vim-surround',
+Plug 'tpope/vim-surround',
 " Plug 'vim-scripts/dbext.vim'
 " Plug 'jwalton512/vim-blade'
 " Plug 'junegunn/vader.vim'
@@ -73,6 +73,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'plasticboy/vim-markdown'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'simrat39/symbols-outline.nvim'
 " Plug 'dhruvasagar/vim-table-mode'
 " Plug 'mg979/vim-visual-multi'
 " Plug 'elixir-editors/vim-elixir'
@@ -345,11 +346,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " https://github.com/Valloric/YouCompleteMe/issues/420#issuecomment-55940039
 
 "
-" Vim-Uploader
-"
-let g:VimUploaderHostsFile = '~/VBSMidia/WorkDATA/vimftpconf/remote-hosts.vim'
-
-"
 " ALE
 "
 
@@ -527,6 +523,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     \ "typescript",
     \ "javascript",
+    \ "java",
     \ "jsdoc",
     \ "ruby",
     \ "json",

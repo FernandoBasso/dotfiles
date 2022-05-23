@@ -17,7 +17,7 @@
 command! -bang -nargs=* MRg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.<q-args>, 1,
-  \   fzf#vim#with_preview('up:50%'), <bang>0)
+  \   fzf#vim#with_preview('right:50%'), <bang>0)
 
 
 ""

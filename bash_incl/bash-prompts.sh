@@ -55,6 +55,10 @@ git_info () {
   printf '%s' "$red\$(__git_ps1 "[%s]")"
 }
 
+ps1simplest_nl () {
+  PS1="\n${normal}${BASH_PROMPT_CHAR} "
+}
+
 ps1simple () {
   PS1="$blue\$(curdir) $red\$(__git_ps1 '[%s]')\n$normal\$ "
 }

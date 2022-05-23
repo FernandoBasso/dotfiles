@@ -145,12 +145,13 @@
                (lambda ()
                  (setq show-trailing-whitespace nil)))
 
-
-
 (require 'package)
 
 (add-to-list 'package-archives
-           '("melpa" . "https://melpa.org/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
+
+(add-to-list 'package-archives
+             '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
 
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -316,11 +317,14 @@
 
 ;; Somehow started causing racket-mode not to work, even
 ;; when trying to active racket-mode manually.
-(use-package geiser
-  :ensure t
-  :hook (scheme-mode . geiser-mode)
-  :config
-  (setq geiser-active-implementations '(racket chicken)))
+;;(use-package geiser
+;;  :ensure t
+;;  :hook (scheme-mode . geiser-mode)
+;;  :config
+;;  (setq geiser-active-implementations '(racket chicken)))
+
+(use-package geiser-chicken
+  :ensure t)
 
 (use-package racket-mode
   :ensure t
@@ -521,7 +525,7 @@
          "WAIT(W)"
          "VERIFY(v)"
          "|"
-         "DELEGATED(D)"
+         "DELEGnATED(D)"
          "CANCELED(c)"
          "DONE(d)")))
 

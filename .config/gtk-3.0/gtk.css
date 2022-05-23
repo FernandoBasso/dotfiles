@@ -6,8 +6,8 @@
  */
 vte-terminal,
 terminal-window {
-  padding: 4px 4px 5px 4px;
-  -vte-terminal-inner-border: 4px 4px 5px 4px;
+  padding: 8px 8px 8px 8px;
+  -vte-terminal-inner-border: 12px 12px 18px 12px;
 }
 
 .termite {

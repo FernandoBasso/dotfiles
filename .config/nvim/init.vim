@@ -428,7 +428,7 @@ let g:fzf_colors =
 let g:fzf_layout = {
   \ 'window' : {
     \ 'width': 0.9,
-    \ 'height': 0.8,
+    \ 'height': 0.9,
     \ 'highlight': 'Normal'
     \ }
   \ }

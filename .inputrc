@@ -71,7 +71,7 @@
 # When there more than one match, automatically show the available
 # completions at point without requiring `Tab Tab'.
 #
-set show-all-if-ambiguous on
+set show-all-if-ambiguous off
 
 ##
 # Always insert an item at the command line. Further `Tab' presses cycle

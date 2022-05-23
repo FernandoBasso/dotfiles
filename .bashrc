@@ -13,8 +13,9 @@ git_prompt_locations=(
 	# Looks brew now places git/bash related files in a path
 	# that does not require updating with every new version.
 	#
-	'/usr/local/etc/bash_completion.d/git-prompt.sh'
-	'/usr/local/etc/bash_completion.d/git-completion.bash'
+	/usr/local/etc/bash_completion.d/git-prompt.sh
+	/usr/share/git-core/contrib/completion/git-prompt.sh
+	/usr/local/etc/bash_completion.d/git-completion.bash
 )
 
 for file in "${git_prompt_locations[@]}" ; do
@@ -42,7 +43,7 @@ export NVM_DIR="$HOME/.nvm"
 #
 # • http://maven.apache.org/
 #
-PATH="$PATH:$HOME/bin/apache-maven-3.6.3/bin"
+PATH="$PATH:$HOME/bin/apache-maven-3.8.4/bin"
 
 #
 # FZF
@@ -57,7 +58,7 @@ export FZF_DEFAULT_OPTS='--preview-window right:36%'
 export DENO_INSTALL="$HOME/.deno"
 PATH="$PATH:$DENO_INSTALL/bin"
 
-PATH="$HOME/local/bin/chicken-5.3.0/bin:$PATH"
+PATH="$PATH:$HOME/local/build/chicken-5.3.0/bin"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 PATH="$PATH:$HOME/.rvm/bin"
@@ -212,15 +213,9 @@ exercism_bin_path="$HOME/bin/exercism-linux/shell/exercism_completion.bash"
 
 export PATH="$PATH:$HOME/local/bin"
 
-##
 # BEGIN_KITTY_SHELL_INTEGRATION
-#
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
-  then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"
-fi
-#
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
-##
 
 #
 # vim: set textwidth=78 nowrap:

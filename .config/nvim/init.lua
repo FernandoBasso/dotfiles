@@ -400,7 +400,14 @@ end
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Enable the following language servers
-local servers = { 'clangd', 'pyright', 'tsserver', 'sumneko_lua', 'purescriptls' }
+local servers = {
+  'clangd',
+  'pyright',
+  'tsserver',
+  -- 'denols',
+  'sumneko_lua',
+  'purescriptls',
+}
 
 -- Ensure the servers above are installed
 require('nvim-lsp-installer').setup {
@@ -441,6 +448,22 @@ require('lspconfig').purescriptls.setup {
   --
   root_dir = util.root_pattern('output')
 }
+
+-- require('lspconfig').denols.setup {
+--   cmd = { 'deno', 'lsp' },
+--   root_dir = util.root_pattern("deno.json", "deno.jsonc"),
+--   on_attach = on_attach,
+--   init_options = {
+--     enable = true,
+--     importMap = './import-map.json',
+--     unstable = true,
+--   },
+-- }
+
+-- require('lspconfig').tsserver.setup {
+--   on_attach = on_attach,
+--   root_dir = util.root_pattern("package.json"),
+-- }
 
 -- Example custom configuration for lua
 --

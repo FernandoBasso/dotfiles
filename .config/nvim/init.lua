@@ -253,6 +253,9 @@ require('gitsigns').setup {
 -- See `:help telesceope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
+    layout_config = {
+      horizontal = { width = 0.98, height = 0.98 },
+    },
     mappings = {
       i = {
         ['<C-u>'] = false,

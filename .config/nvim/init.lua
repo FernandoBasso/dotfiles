@@ -49,6 +49,8 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
+  use 'simrat39/symbols-outline.nvim'
+
   if is_bootstrap then
     require('packer').sync()
   end

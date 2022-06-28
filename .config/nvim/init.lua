@@ -568,6 +568,15 @@ end
 
 vim.keymap.set('n', '<Leader>gg', vert_git)
 
+local grep_ts = function()
+  require('telescope.builtin').live_grep({
+    serch_dirs = 'src/endpoints',
+    type_filter = 'ts',
+  })
+end
+
+vim.keymap.set('n', '<Leader>\\gt', grep_ts)
+
 --
 -- vim: tw=72 ts=2 sts=2 sw=2 et
 --

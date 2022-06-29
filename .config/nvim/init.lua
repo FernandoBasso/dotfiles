@@ -54,6 +54,13 @@ require('packer').startup(function(use)
 
   use 'simrat39/symbols-outline.nvim'
 
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+
+  use 'preservim/vim-markdown'
+
   if is_bootstrap then
     require('packer').sync()
   end
@@ -252,7 +259,9 @@ require('gitsigns').setup {
   end
 }
 
--- [[ ConfigureTelescope ]]
+------------------------------------------------------------------------------
+-- Telescope
+--
 -- See `:help telesceope` and `:help telescope.setup()`
 require('telescope').setup {
   defaults = {
@@ -292,16 +301,32 @@ vim.keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer]' })
 
 vim.keymap.set('n', '<leader>\\f', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>\\g', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>\\h', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>\\w', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>\\g', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>\\d', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+
+----
+-- Shows a list of modified files.
+--
+vim.keymap.set(
+  'n',
+  '<leader>gs',
+  require('telescope.builtin').git_status,
+  { desc = '[G]it [S]tatus files' }
+)
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'lua', 'typescript', 'javascript', 'python', 'haskell' },
+  ensure_installed = {
+    'lua',
+    'typescript',
+    'javascript',
+    'python',
+    'haskell',
+  },
 
   highlight = { enable = true },
   indent = { enable = true },
@@ -579,6 +604,42 @@ local grep_ts = function()
 end
 
 vim.keymap.set('n', '<Leader>\\gt', grep_ts)
+
+------------------------------------------------------------------------------
+-- BarBar
+--
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+-- Move to previous/next
+map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+-- Re-order to previous/next
+map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
+-- Pin/unpin buffer
+map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
+-- Close buffer
+map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+-- Wipeout buffer
+--                 :BufferWipeout
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+-- Magic buffer-picking mode
+map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
+-- Sort automatically by...
+map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
+map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
+map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
+map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+
+-- Other:
+-- :BarbarEnable - enables barbar (enabled by default)
+-- :BarbarDisable - very bad command, should never be used
 
 --
 -- vim: tw=72 ts=2 sts=2 sw=2 et

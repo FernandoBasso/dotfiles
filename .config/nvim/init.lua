@@ -133,7 +133,7 @@ vim.cmd [[
 vim.o.termguicolors = true
 vim.cmd [[
   set background=light
-  let g:gruvbox_material_background = 'soft'
+  let g:gruvbox_material_background = 'hard'
   let g:gruvbox_material_palette = 'material'
   let g:gruvbox_material_disable_italic_comment = 1
   let g:gruvbox_material_diagnostic_text_highlight = 0
@@ -438,6 +438,7 @@ local servers = {
   -- 'denols',
   'sumneko_lua',
   'purescriptls',
+  'solargraph',
 }
 
 -- Ensure the servers above are installed

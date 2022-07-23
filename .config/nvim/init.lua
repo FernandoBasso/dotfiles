@@ -412,6 +412,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+  nmap('<leader>KK', vim.lsp.diagnostic.show_line_diagnostics, 'Get Line Diagnostics')
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality

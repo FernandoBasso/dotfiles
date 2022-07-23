@@ -326,6 +326,7 @@ require('nvim-treesitter.configs').setup {
     'javascript',
     'python',
     'haskell',
+    'ruby',
   },
 
   highlight = { enable = true },

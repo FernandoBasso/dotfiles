@@ -1,0 +1,253 @@
+" UTF-8: 💩 λ ‽ ✔
+set encoding=utf-8
+set fileencoding=utf-8
+
+" **** BASIC **** "
+
+"
+" Dotfiles dir.
+"
+let g:dfdir = expand('~/work/src/dotfiles')
+
+""
+" Add keybinding for easy quick reloading of ~/.vimrc.
+"
+nnoremap <Leader>rr :source $MYVIMRC<Return>
+
+"
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+"
+
+"
+" Install plug for VIM.
+"
+if empty(glob('~/.vim/autoload/plug.vim'))
+  !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+call plug#end()
+
+filetype plugin indent on
+syntax on
+set nocompatible
+packadd! matchit
+set omnifunc=syntaxcomplete#Complete
+set number norelativenumber
+set ruler
+set showcmd
+set hidden
+set scrolloff=3
+set timeoutlen=350
+set mouse=a
+
+" Indentation with SPACES
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+
+set breakindent
+
+""
+" I like a more “expected” backspace behaviour.
+"
+"   :help 'backspace'
+"   :help fixdel
+"
+set backspace=indent,start,eol
+
+
+set history=8192
+set undolevels=199
+
+" All three settings are necessary to avoid noise... "
+set noerrorbells
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
+set backup
+set backupdir=~/Temp/vim_bkp/
+set backupext=.vimbkp
+set directory=~/Temp/vim_tmp//
+
+" Restore cursor position (:help restore-cursor).
+autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+" set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
+" set listchars=tab:▸\ ,trail:·
+set listchars=tab:␉\ ,trail:·
+set list
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Conceal
+"
+"   :help 'concealcursor'
+"   :help 'conceallevel'
+"
+set concealcursor=
+set conceallevel=1
+
+"
+" json-vim
+"
+" Also to help with indentLin + json.vim hiding quotes from json files.
+let g:vim_json_syntax_conceal = 0
+
+
+"
+" NERDTree
+"
+let g:NERDTreeWinSize=42
+nnoremap <F3> :NERDTreeToggle<CR>
+inoremap <F3> <Esc>:NERDTreeToggle<CR>
+nnoremap <Leader>ff :NERDTreeFind<CR>
+let NERDTreeIgnore = ['\~$', 'node_modules']
+
+"
+" Prevent seeing only nerdtree window after closing or deleting a buffer.
+"
+" Use these instead of :bdelete, :bclose and :bwipeout.
+"
+nnoremap <Leader>d :bprevious<CR>:bwipeout#<CR>
+
+" Save the file (some terminals get locked on ctrl-s, and ctrl-q unlocks).
+" # We don't want C-s to lock and terminal (which is unlocked with C-q).
+" `stty -ixon` on bashrc
+nnoremap <C-s> :update<CR>
+inoremap <C-s> <Esc>:update<CR><Right>
+
+inoremap <C-Space> <C-x><C-o>
+
+" Mapping for buffer next/prev "
+map <Leader>n :bnext<Return>
+map <Leader>p :bprevious<Return>
+
+" Insert a nice formated data and time:
+inoremap <F2> <C-r>=strftime('%A, %H:%M - %B %d - %Y')
+
+" Clears the current search
+nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+
+" Change directory to the path of current file/buffer.
+nnoremap cd :cd %:h<CR>:pwd<CR>
+
+""
+" Opens Gstatus in a vertical split on the left. Closes NERDTree in
+" case it is open so I have a two-split only layout and not a messy
+" one with NERDTree in the middle.
+"
+nnoremap <Leader>gg :NERDTreeClose \| vertical Git<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colors
+"
+
+" let &t_Cs = "\e[4:3m"
+" let &t_Ce = "\e[4:0m"
+"
+" let g:gruvbox_bold = 0
+" let g:gruvbox_italic = 0
+" let g:solarized_italic = 0
+"
+" if $THEME == 'dark'
+"   let s:theme_name = 'gruvbox'
+"   set background=dark
+"   execute 'colorscheme' s:theme_name
+"
+"   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
+" else
+"   "
+"   " For light themes, either gruvbox or solarized are well
+"   " configured on my setup (with color-overrides/* stuff).
+"   "
+"   let s:theme_name = 'gruvbox'
+"   set background=light
+"   execute 'colorscheme' s:theme_name
+"
+"   let g:airline_theme = 'xtermlight'
+"
+"   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
+" end
+
+let html_no_rendering = 1
+autocmd BufReadPost *.twig set filetype=html
+
+""
+" :Man
+"
+" :execute "normal! \<C-w>H"
+"
+autocmd BufRead * if &buftype == 'quickfix'
+      \ && w:quickfix_title == 'Man TOC'
+      \ | wincmd H
+      \ | vertical resize 36
+      \ | endif
+
+
+"
+" UltiSnips
+"
+let g:UltiSnipsSnippetDirectories = [$HOME . '/work/src/dotfiles/ultisnips']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI, GVim
+"
+if (has('gui_running'))
+  set guioptions=
+
+  set lines=45
+  set columns=120
+
+  "
+  " The font ProFontIIx does not display the char “¦”.
+  "
+  "set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
+
+  " set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
+  " set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 15
+  " set guifont=Source\ Code\ Pro\ Semi-Bold\ 14
+  " set guifont=SauceCodeProNerdFontCompleteM-Semibold:h16
+  " set guifont=Source Code Pro Semi-Bold 14
+  set guifont=SauceCodePro\ Nerd\ Font\ Semi-Bold\ 13
+  set linespace=5
+
+  set guicursor=n-c:hor14,i:ver14,a:blinkon0
+endif
+
+
+""
+" Build and run the C file from current buffer.
+"
+" Check <dotfiles>/bash_incl/c-helpers.sh
+"
+" NOTE: In NeoVim, pressing C-F5 while in the buffer automatically
+" converts to <F29>, but then it doesn't seem to work on Vim. This
+" <C-F5> thing seems to work on both Vim and NeoVim.
+"
+" NOTE: Looks like one mapping doesn't work for Vim, and the other
+" doesn't work for NeoVim, so I mapped both.
+"
+nnoremap <C-F5> :execute '!C_brf %' <CR>
+nnoremap <F29> :execute '!C_brf %' <CR>
+
+
+let files_to_source = [
+      \ '~/work/local/libdev.vim',
+      \ '~/work/src/dotfiles/vim-utils.vim',
+      \ '~/work/src/dotfiles/.vim/digraphs.vim'
+      \ ]
+
+for file in files_to_source
+  if filereadable(expand(file))
+    execute 'source' . file
+  endif
+endfor
+
+"
+" vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab:
+" vim: set textwidth=68:
+"

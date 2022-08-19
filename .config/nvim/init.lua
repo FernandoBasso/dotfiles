@@ -18,8 +18,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
-local util = require('lspconfig.util')
-
 -- stylua: ignore start
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'                                                    -- Package manager
@@ -31,21 +29,11 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'                                                     -- "gc" to comment visual regions/lines
   use 'nvim-treesitter/nvim-treesitter'                                           -- Highlight, edit, and navigate code
   use 'nvim-treesitter/nvim-treesitter-textobjects'                               --  Additional textobjects for treesitter
-  use 'neovim/nvim-lspconfig'                                                     -- Collection of configurations for built-in LSP client
-  use 'williamboman/nvim-lsp-installer'                                           -- Automatically install language servers to stdpath
-  use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp' } }               -- Autocompletion
-  use { 'L3MON4D3/LuaSnip', requires = { 'saadparwaiz1/cmp_luasnip' } }           -- Snippet Engine and Snippet Expansion
   use 'sainnhe/gruvbox-material'
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
   }
-  -- use 'lukas-reineke/indent-blankline.nvim'                                       -- Add indentation guides even on blank lines
-  use 'tpope/vim-sleuth'                                                          -- Detect tabstop and shiftwidth automatically
-  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- Fuzzy Finder (files, lsp, etc)
-
-  -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
-  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
 
   --
   -- Looks like we don't have purescript treesitter parser yet (2022).
@@ -56,6 +44,17 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
   use 'simrat39/symbols-outline.nvim'
+
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release'
+  }
+
+  use {
+    'junegunn/fzf',
+    run = function() vim.fn['fzf#install']() end
+  }
+  use 'junegunn/fzf.vim'
 
   use {
     'romgrk/barbar.nvim',
@@ -140,7 +139,7 @@ vim.cmd [[
   autocmd BufRead * autocmd FileType <buffer> ++once
     \ if &ft !~# 'commit\|rebase' && line("'\"") > 1
     \ && line("'\"") <= line("$")
-    \ | exe 'normal! g`"' 
+    \ | exe 'normal! g`"'
     \ | endif
 ]]
 
@@ -277,62 +276,7 @@ require('gitsigns').setup {
   end
 }
 
-------------------------------------------------------------------------------
--- Telescope
---
--- See `:help telesceope` and `:help telescope.setup()`
-require('telescope').setup {
-  defaults = {
-    layout_config = {
-      horizontal = { width = 0.98, height = 0.98 },
-    },
-    mappings = {
-      i = {
-        ['<C-u>'] = false,
-        ['<C-d>'] = false,
-      },
-    },
-  },
-}
-
 require("nvim-tree").setup()
-
---
--- Enable telescope fzf native, if installed
---
-pcall(require('telescope').load_extension, 'fzf')
-
---
--- See `:help telescope.builtin`
---
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader>b', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  --
-  -- You can pass additional configuration to telescope to change theme,
-  -- layout, etc.
-  --
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer]' })
-
-vim.keymap.set('n', '<leader>\\f', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>\\g', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>\\h', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>\\w', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>\\d', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-
-----
--- Shows a list of modified files.
---
-vim.keymap.set(
-  'n',
-  '<leader>gs',
-  require('telescope.builtin').git_status,
-  { desc = '[G]it [S]tatus files' }
-)
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -345,16 +289,16 @@ require('nvim-treesitter.configs').setup {
     'python',
     'haskell',
     'ruby',
+    'C',
   },
 
   highlight = { enable = true },
-  indent = { enable = true },
+  indent = { enable = false },
   incremental_selection = {
     enable = true,
     keymaps = {
       init_selection = '<c-space>',
       node_incremental = '<c-space>',
-      -- TODO: I'm not sure for this one.
       scope_incremental = '<c-s>',
       node_decremental = '<c-backspace>',
     },
@@ -403,188 +347,60 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
+------------------------------------------------------------------------
+-- CoC — Conquer of Completion
+-- ---------------------------
+vim.cmd [[
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-eslint',
+      \ 'coc-json',
+      \ 'coc-solargraph',
+      \ 'coc-yaml',
+      \ 'coc-css',
+      \ ]
 
--- LSP settings.
--- This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
-  local nmap = function(keys, func, desc)
-    if desc then
-      desc = 'LSP: ' .. desc
-    end
+"
+" “Go To” code navigation.
+"
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
-  end
+"
+" Suggest semantic completions with Ctrl+Tab. Works really well,
+" and handles suggestions of object properties. Example:
+"
+" type TParams {
+"   url: string,
+"   method: string,
+" }
+"
+" Now, typing “const params: TParams { <C-Space>” displays
+" url, method, and their types and even documentation,
+" if available.
+"
+inoremap <silent><expr> <C-Space> coc#refresh()
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]tion')
+"
+" Display diagnostics (errors and warnings) and documentation.
+" Type uppercase ‘K’ to activate, and any motion (like ‘j’, ‘k’,
+" ‘h’, ‘b’, ‘<C-o>’, ‘<C-i>’, etc.) to deactivate.
+"
+nnoremap <silent> K :call CocAction('doHover')<CR>
 
-  nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-  nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-  nmap('gr', require('telescope.builtin').lsp_references)
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-  nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+"
+" Navigate to next/prev errors.
+"
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-  -- See `:help K` for why this keymap
-  nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<leader>KK', vim.lsp.diagnostic.show_line_diagnostics, 'Get Line Diagnostics')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-
-  -- Lesser used LSP functionality
-  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type Definition')
-  nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
-  nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
-  nmap('<leader>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, '[W]orkspace [L]ist Folders')
-
-  -- Create a command `:Format` local to the LSP buffer
-  vim.api.nvim_buf_create_user_command(bufnr, 'Format', vim.lsp.buf.format or vim.lsp.buf.formatting, { desc = 'Format current buffer with LSP' })
-end
-
--- nvim-cmp supports additional completion capabilities
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
--- Enable the following language servers
-local servers = {
-  'clangd',
-  'pyright',
-  'tsserver',
-  -- 'denols',
-  'sumneko_lua',
-  'purescriptls',
-  'solargraph',
-}
-
--- Ensure the servers above are installed
-require('nvim-lsp-installer').setup {
-  ensure_installed = servers,
-}
-
-for _, lsp in ipairs(servers) do
-  require('lspconfig')[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-end
-
---
--- FIXME: Find a way to do this somehown inside the loop above.
---
--- • https://github.com/nwolverson/purescript-language-server
--- • https://github.com/neovim/nvim-lspconfig/issues/1736
--- • https://github.com/nwolverson/purescript-language-server/issues/176
---
-require('lspconfig').purescriptls.setup {
-  on_attach = on_attach,
-  settings = {
-    purescript = {
-      addSpagoSources = true,
-      --
-      -- Without this, LSP commands like gd and error and warning
-      -- diagnostics do not work with PureScript.
-      --
-      addNpmPath = true,
-    }
-  },
-  flags = {
-    debounce_text_changes = 150,
-  },
-  --
-  -- Also required for gd and diagnostics to work.
-  --
-  root_dir = util.root_pattern('output')
-}
-
--- require('lspconfig').denols.setup {
---   cmd = { 'deno', 'lsp' },
---   root_dir = util.root_pattern("deno.json", "deno.jsonc"),
---   on_attach = on_attach,
---   init_options = {
---     enable = true,
---     importMap = './import-map.json',
---     unstable = true,
---   },
--- }
-
--- require('lspconfig').tsserver.setup {
---   on_attach = on_attach,
---   root_dir = util.root_pattern("package.json"),
--- }
-
--- Example custom configuration for lua
---
--- Make runtime files discoverable to the server
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua')
-
-require('lspconfig').sumneko_lua.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = runtime_path,
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = { library = vim.api.nvim_get_runtime_file('', true) },
-    },
-  },
-}
-
--- nvim-cmp setup
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-
-cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
-}
+"
+" Rename symbol
+"
+nmap <leader>rn <Plug>(coc-rename)
+]]
 
 ------------------------------------------------------------------------------
 -- nvim-tree
@@ -661,6 +477,74 @@ map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
+
+------------------------------------------------------------------------
+-- FZF
+--
+
+vim.cmd [[
+
+let g:fzf_colors =
+  \ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+""
+" Popup Window
+"
+let g:fzf_layout = {
+  \ 'window' : {
+    \ 'width': 0.9,
+    \ 'height': 0.9,
+    \ 'highlight': 'Normal'
+    \ }
+  \ }
+
+""
+" Split the preview window on the right for wide terminals, at
+" the top for narrow terminals.
+"
+" NOTE: If the terminal is resized, reload vimrc with
+" `:source $MYVIMRC` to re-evaluate the condition.
+"
+let g:fzf_preview_window = winwidth(0) < 96 ? 'up:64%' : 'right:42%'
+
+""
+" Search files.
+"
+map <Leader>sf :GitFiles<CR>
+
+""
+" Search buffers.
+"
+map <Leader>b :Buffers<CR>
+nnoremap <Leader>rg :Rg!<CR>
+nnoremap <Leader>t :Tags<CR>
+nnoremap <Leader>m :Marks<CR>
+
+let files_to_source = [
+      \ '~/work/local/libdev.vim',
+      \ '~/work/src/dotfiles/vim-utils.vim',
+      \ '~/work/src/dotfiles/.vim/digraphs.vim'
+      \ ]
+
+for file in files_to_source
+  if filereadable(expand(file))
+    execute 'source' . file
+  endif
+endfor
+]]
+
 
 --
 -- vim: tw=72 ts=2 sts=2 sw=2 et

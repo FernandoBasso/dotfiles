@@ -352,11 +352,12 @@ require('nvim-treesitter.configs').setup {
 -- ---------------------------
 vim.cmd [[
 let g:coc_global_extensions = [
+      \ 'coc-diagnostic',
+      \ 'coc-json',
+      \ 'coc-yaml',
       \ 'coc-tsserver',
       \ 'coc-eslint',
-      \ 'coc-json',
       \ 'coc-solargraph',
-      \ 'coc-yaml',
       \ 'coc-css',
       \ ]
 

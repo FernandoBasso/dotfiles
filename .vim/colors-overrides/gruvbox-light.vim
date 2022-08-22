@@ -51,6 +51,7 @@ hi GitGutterChange ctermbg=229
 hi ColorColumn ctermbg=229
 hi Pmenu ctermbg=229
 hi PmenuSel ctermbg=3 ctermfg=229
+hi CocMenuSel ctermbg=3 ctermfg=229
 
 ""
 " wfxr/minimap.vim

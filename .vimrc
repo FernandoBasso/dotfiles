@@ -94,7 +94,7 @@ syntax on
 set nocompatible
 packadd! matchit
 set omnifunc=syntaxcomplete#Complete
-set number relativenumber
+set number norelativenumber
 set ruler
 set showcmd
 set hidden
@@ -195,7 +195,7 @@ set conceallevel=1
 
 " NOTE: The font ProFontIIx does not display the char “¦”.
 "
-let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
+" let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
 " indentLine uses conceal stuff which together with default json.vim
 " hides quotes in json files. People suggest stuff here:
 " https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
@@ -207,7 +207,7 @@ let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
 "
 " json-vim
 "
-" Also to help with indentLin + json.vim hiding quotes from json files.
+" Also to help with indentLine + json.vim hiding quotes from json files.
 let g:vim_json_syntax_conceal = 0
 
 

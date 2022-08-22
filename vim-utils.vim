@@ -68,7 +68,7 @@ nnoremap <Leader>rg :MRg! -t
 nnoremap <Leader>rh :RGH<CR>
 nnoremap <Leader>rv :RGV<CR>
 
-nnoremap <Leader>f? :GF?<CR>
+nnoremap <Leader>gs :GF?<CR>
 
 "
 " Uses --fixed-strings (or -F) to allow string searches not requiring

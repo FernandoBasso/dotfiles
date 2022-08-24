@@ -5,3 +5,16 @@ Dotfiles
 dhall
 spago
 intellisense
+JSON
+nvim
+lua
+init
+config
+linter
+rubocop
+CoC
+LSP
+RSpec
+STDOUT
+formatter
+literalinclude

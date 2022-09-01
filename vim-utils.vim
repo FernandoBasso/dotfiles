@@ -95,3 +95,7 @@ command! -bang -nargs=* RGHt
 nnoremap <Leader>rht :RGHt
 nnoremap <Leader>rvt :RGVt
 
+""
+" https://prettier.io/docs/en/vim.html
+"
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')

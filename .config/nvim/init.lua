@@ -63,6 +63,8 @@ require('packer').startup(function(use)
 
   use 'preservim/vim-markdown'
 
+  use 'L3MON4D3/LuaSnip'
+
   if is_bootstrap then
     require('packer').sync()
   end
@@ -286,6 +288,7 @@ require('nvim-treesitter.configs').setup {
     'lua',
     'typescript',
     'javascript',
+    'jsdoc',
     'python',
     'haskell',
     'ruby',
@@ -293,7 +296,7 @@ require('nvim-treesitter.configs').setup {
   },
 
   highlight = { enable = true },
-  indent = { enable = false },
+  indent = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -550,6 +553,50 @@ for file in files_to_source
 endfor
 ]]
 
+
+
+vim.cmd [[
+" press <Tab> to expand or jump in a snippet. These can also be mapped
+" separately via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+
+" -1 for jumping backwards.
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+]]
+
+local ls = require("luasnip")
+local s = ls.snippet
+local sn = ls.snippet_node
+local isn = ls.indent_snippet_node
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
+local c = ls.choice_node
+local d = ls.dynamic_node
+local r = ls.restore_node
+
+ls.add_snippets('javascript', {
+  s('ternary', {
+    i(1, 'cond'), t(' ? '), i(2, 'then'), t(' : '), i(3, 'else')
+  }),
+
+  s('doc', {
+    t({'/**', ''}),
+    t({' * '}), i(1, 'Function info...'), t({'', ''}),
+    t({' *', ''}),
+    t({' * @param '}), i(2, '...'), t({'', ''}),
+    t({' * @returns '}), i(3, '...'), t({'', ''}),
+    t({' */', ''}),
+  })
+}, { key = 'js' })
 
 --
 -- vim: tw=72 ts=2 sts=2 sw=2 et

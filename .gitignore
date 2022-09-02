@@ -29,6 +29,11 @@ bash_incl/workprojs.sh
 .config/nvim/plugin
 
 #
+# Some nvim/lua stuff which I'm not sure yet I should commit.
+#
+.luarc.json
+
+#
 # Old nvim configs. Do away with this once my new setup
 # is complete.
 #

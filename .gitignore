@@ -34,6 +34,11 @@ bash_incl/workprojs.sh
 .luarc.json
 
 #
+# Kitty auto-generated config backup.
+#
+.config/kitty/kitty.conf.bak
+
+#
 # Old nvim configs. Do away with this once my new setup
 # is complete.
 #

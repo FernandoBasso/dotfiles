@@ -572,7 +572,6 @@ let g:javascript_plugin_jsdoc = 1
 "    endif
 "augroup END
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " FZF
 "
@@ -617,8 +616,11 @@ let g:fzf_preview_window = winwidth(0) < 96 ? 'up:64%' : 'right:42%'
 " and making the right window shorter helps reading the filenames.
 "
 
-map <Leader>f :GitFiles<CR>
-map <Leader>b :Buffers<CR>
+""
+" Search Files
+"
+map <Leader>sf :GitFiles<CR>
+map <Leader>sb :Buffers<CR>
 nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>

@@ -45,10 +45,12 @@ require('packer').startup(function(use)
 
   use 'simrat39/symbols-outline.nvim'
 
-  use {
-    'neoclide/coc.nvim',
-    branch = 'release'
-  }
+  -- use {
+  --   'neoclide/coc.nvim',
+  --   branch = 'release'
+  -- }
+
+  use 'neovim/nvim-lspconfig'
 
   use {
     'junegunn/fzf',
@@ -56,10 +58,10 @@ require('packer').startup(function(use)
   }
   use 'junegunn/fzf.vim'
 
-  use {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
+  -- use {
+  --   'romgrk/barbar.nvim',
+  --   requires = {'kyazdani42/nvim-web-devicons'}
+  -- }
 
   use 'preservim/vim-markdown'
 
@@ -583,7 +585,7 @@ let g:fzf_layout = {
 " NOTE: If the terminal is resized, reload vimrc with
 " `:source $MYVIMRC` to re-evaluate the condition.
 "
-let g:fzf_preview_window = winwidth(0) < 96 ? 'up:64%' : 'right:42%'
+let g:fzf_preview_window = winwidth(0) < 86 ? 'up:64%' : 'right:48%'
 
 ""
 " Search files.

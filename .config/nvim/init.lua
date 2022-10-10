@@ -412,6 +412,9 @@ require('nvim-treesitter.configs').setup {
 -- lsp-config
 --
 --
+
+local lsp = require('lspconfig');
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -451,12 +454,28 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+lsp.denols.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  root_dir = lsp.util.root_pattern('deno.json'),
+
+  --
+  -- https://deno.land/manual@v1.26.1/language_server/overview
+  --
+  init_options = {
+    enable = true,
+    lint = true,
+    importMap = './import_map.json',
+  },
+}
+
 require('lspconfig')['tsserver'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
+  root_dir = lsp.util.root_pattern('package.json'),
 }
 
-require('lspconfig')['purescriptls'].setup {
+lsp.purescriptls.setup {
   on_attach = on_attach,
   settings = {
     purescript = {

@@ -6,6 +6,7 @@
 	co = checkout
 	lg = log --pretty='%C(yellow)%h%Creset %Cblue%an%Creset %Cgreen%cr%Creset%Cred%d%Creset %s'
 	l1 = log --oneline
+	up = push origin --set-upstream HEAD
 [color "diff"]
 	whitespace = red reverse
 [help]

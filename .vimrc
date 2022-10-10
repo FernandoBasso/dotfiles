@@ -51,7 +51,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/junegunn/vim-emoji'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 
-Plug 'pacha/vem-tabline'
+" Plug 'pacha/vem-tabline'
 " Plug 'pseewald/vim-anyfold'
 
 Plug 'SirVer/ultisnips'

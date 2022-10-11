@@ -415,6 +415,10 @@ require('nvim-treesitter.configs').setup {
 
 local lsp = require('lspconfig');
 
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }

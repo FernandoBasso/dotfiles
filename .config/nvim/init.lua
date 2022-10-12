@@ -102,6 +102,7 @@ vim.o.hlsearch = true
 
 vim.wo.number = true
 vim.o.cursorline = true
+vim.cmd [[ set colorcolumn=72,80 ]]
 
 --
 -- If another plugin (like indent-blankline) is already using a cell

@@ -45,12 +45,10 @@ require('packer').startup(function(use)
 
   use 'simrat39/symbols-outline.nvim'
 
-  -- use {
-  --   'neoclide/coc.nvim',
-  --   branch = 'release'
-  -- }
-
-  use 'neovim/nvim-lspconfig'
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release'
+  }
 
   use {
     'junegunn/fzf',
@@ -64,8 +62,6 @@ require('packer').startup(function(use)
   -- }
 
   use 'preservim/vim-markdown'
-
-  use 'L3MON4D3/LuaSnip'
 
   if is_bootstrap then
     require('packer').sync()
@@ -356,142 +352,57 @@ require('nvim-treesitter.configs').setup {
 ------------------------------------------------------------------------
 -- CoC — Conquer of Completion
 -- ---------------------------
--- vim.cmd [[
--- let g:coc_global_extensions = [
---       \ 'coc-diagnostic',
---       \ 'coc-json',
---       \ 'coc-yaml',
---       \ 'coc-tsserver',
---       \ 'coc-eslint',
---       \ 'coc-solargraph',
---       \ 'coc-css',
---       \ ]
---
--- "
--- " “Go To” code navigation.
--- "
--- nmap <silent> gd <Plug>(coc-definition)
--- nmap <silent> gy <Plug>(coc-type-definition)
--- nmap <silent> gi <Plug>(coc-implementation)
--- nmap <silent> gr <Plug>(coc-references)
---
--- "
--- " Suggest semantic completions with Ctrl+Tab. Works really well,
--- " and handles suggestions of object properties. Example:
--- "
--- " type TParams {
--- "   url: string,
--- "   method: string,
--- " }
--- "
--- " Now, typing “const params: TParams { <C-Space>” displays
--- " url, method, and their types and even documentation,
--- " if available.
--- "
--- inoremap <silent><expr> <C-Space> coc#refresh()
---
--- "
--- " Display diagnostics (errors and warnings) and documentation.
--- " Type uppercase ‘K’ to activate, and any motion (like ‘j’, ‘k’,
--- " ‘h’, ‘b’, ‘<C-o>’, ‘<C-i>’, etc.) to deactivate.
--- "
--- nnoremap <silent> K :call CocAction('doHover')<CR>
---
--- "
--- " Navigate to next/prev errors.
--- "
--- nmap <silent> [g <Plug>(coc-diagnostic-prev)
--- nmap <silent> ]g <Plug>(coc-diagnostic-next)
---
--- "
--- " Rename symbol
--- "
--- nmap <leader>rn <Plug>(coc-rename)
--- ]]
+vim.cmd [[
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-eslint',
+      \ 'coc-json',
+      \ 'coc-solargraph',
+      \ 'coc-yaml',
+      \ 'coc-css',
+      \ ]
 
-------------------------------------------------------------------------
--- lsp-config
---
---
+"
+" “Go To” code navigation.
+"
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-local lsp = require('lspconfig');
+"
+" Suggest semantic completions with Ctrl+Tab. Works really well,
+" and handles suggestions of object properties. Example:
+"
+" type TParams {
+"   url: string,
+"   method: string,
+" }
+"
+" Now, typing “const params: TParams { <C-Space>” displays
+" url, method, and their types and even documentation,
+" if available.
+"
+inoremap <silent><expr> <C-Space> coc#refresh()
 
-vim.diagnostic.config({
-  virtual_text = false,
-})
+"
+" Display diagnostics (errors and warnings) and documentation.
+" Type uppercase ‘K’ to activate, and any motion (like ‘j’, ‘k’,
+" ‘h’, ‘b’, ‘<C-o>’, ‘<C-i>’, etc.) to deactivate.
+"
+nnoremap <silent> K :call CocAction('doHover')<CR>
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
-vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+"
+" Navigate to next/prev errors.
+"
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<space>wl', function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
-  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
-end
-
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-
-lsp.denols.setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  root_dir = lsp.util.root_pattern('deno.json'),
-
-  --
-  -- https://deno.land/manual@v1.26.1/language_server/overview
-  --
-  init_options = {
-    enable = true,
-    lint = true,
-    importMap = './import_map.json',
-  },
-}
-
-require('lspconfig')['tsserver'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  root_dir = lsp.util.root_pattern('package.json'),
-}
-
-lsp.purescriptls.setup {
-  on_attach = on_attach,
-  settings = {
-    purescript = {
-      addSpagoSources = true,
-      buildCommand = 'npx spago build --purs-args --json-errors',
-    },
-  },
-  flags = {
-    debounce_text_changes = 150,
-  }
-}
+"
+" Rename symbol
+"
+nmap <leader>rn <Plug>(coc-rename)
+]]
 
 ------------------------------------------------------------------------------
 -- nvim-tree
@@ -500,10 +411,6 @@ lsp.purescriptls.setup {
 vim.keymap.set('n', '<Leader>ff', ':NvimTreeFindFile')
 
 ------------------------------------------------------------------------------
--- Symbols-Outline
---
-require('symbols-outline').setup()
-----
 -- Toggle Nvim Tree and Symbols outline
 --
 vim.keymap.set('n', '<F3>', function() vim.api.nvim_command('NvimTreeToggle') end)
@@ -536,42 +443,6 @@ local grep_ts = function()
 end
 
 vim.keymap.set('n', '<Leader>\\gt', grep_ts)
-
-------------------------------------------------------------------------------
--- BarBar
---
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
-
--- Move to previous/next
-map('n', '<A-p>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-n>', '<Cmd>BufferNext<CR>', opts)
--- Re-order to previous/next
-map('n', '<A-,>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A-.>', '<Cmd>BufferMoveNext<CR>', opts)
--- Pin/unpin buffer
--- map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
--- Close buffer
-map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
--- Wipeout buffer
---                 :BufferWipeout
--- Close commands
---                 :BufferCloseAllButCurrent
---                 :BufferCloseAllButPinned
---                 :BufferCloseAllButCurrentOrPinned
---                 :BufferCloseBuffersLeft
---                 :BufferCloseBuffersRight
--- Magic buffer-picking mode
-map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
--- Sort automatically by...
-map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
-map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
-
--- Other:
--- :BarbarEnable - enables barbar (enabled by default)
--- :BarbarDisable - very bad command, should never be used
 
 ------------------------------------------------------------------------
 -- FZF
@@ -612,7 +483,7 @@ let g:fzf_layout = {
 " NOTE: If the terminal is resized, reload vimrc with
 " `:source $MYVIMRC` to re-evaluate the condition.
 "
-let g:fzf_preview_window = winwidth(0) < 86 ? 'up:64%' : 'right:48%'
+let g:fzf_preview_window = winwidth(0) < 96 ? 'up:52%' : 'right:52%'
 
 ""
 " Search files.
@@ -640,8 +511,6 @@ for file in files_to_source
 endfor
 ]]
 
-
-
 vim.cmd [[
 " press <Tab> to expand or jump in a snippet. These can also be mapped
 " separately via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
@@ -659,31 +528,31 @@ imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 ]]
 
-local ls = require("luasnip")
-local s = ls.snippet
-local sn = ls.snippet_node
-local isn = ls.indent_snippet_node
-local t = ls.text_node
-local i = ls.insert_node
-local f = ls.function_node
-local c = ls.choice_node
-local d = ls.dynamic_node
-local r = ls.restore_node
-
-ls.add_snippets('javascript', {
-  s('ternary', {
-    i(1, 'cond'), t(' ? '), i(2, 'then'), t(' : '), i(3, 'else')
-  }),
-
-  s('doc', {
-    t({'/**', ''}),
-    t({' * '}), i(1, 'Function info...'), t({'', ''}),
-    t({' *', ''}),
-    t({' * @param '}), i(2, '...'), t({'', ''}),
-    t({' * @returns '}), i(3, '...'), t({'', ''}),
-    t({' */', ''}),
-  })
-}, { key = 'js' })
+-- local ls = require("luasnip")
+-- local s = ls.snippet
+-- local sn = ls.snippet_node
+-- local isn = ls.indent_snippet_node
+-- local t = ls.text_node
+-- local i = ls.insert_node
+-- local f = ls.function_node
+-- local c = ls.choice_node
+-- local d = ls.dynamic_node
+-- local r = ls.restore_node
+--
+-- ls.add_snippets('javascript', {
+--   s('ternary', {
+--     i(1, 'cond'), t(' ? '), i(2, 'then'), t(' : '), i(3, 'else')
+--   }),
+--
+--   s('doc', {
+--     t({'/**', ''}),
+--     t({' * '}), i(1, 'Function info...'), t({'', ''}),
+--     t({' *', ''}),
+--     t({' * @param '}), i(2, '...'), t({'', ''}),
+--     t({' * @returns '}), i(3, '...'), t({'', ''}),
+--     t({' */', ''}),
+--   })
+-- }, { key = 'js' })
 
 --
 -- vim: tw=72 ts=2 sts=2 sw=2 et

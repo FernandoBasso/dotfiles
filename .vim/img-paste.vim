@@ -20,7 +20,7 @@ let g:mdip_imgdir_bufname = 1
 function! g:AsciidocPasteImage(relpath)
     execute "normal! iimage::./" . a:relpath . "[I"
     let ipos = getcurpos()
-    execute "normal! a" . "mage Description]"
+    execute "normal! a" . "esc]"
     call setpos('.', ipos)
     execute "normal! vi[\<C-g>"
 endfunction

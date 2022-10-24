@@ -75,7 +75,7 @@ Plug 'junegunn/vader.vim'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'habamax/vim-asciidoctor'
-Plug '~/work/src/projects/md-img-paste.vim'
+Plug '/Users/fernando/work/src/projects/md-img-paste.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Cloud/Dropbox/vim/vim-uploader'

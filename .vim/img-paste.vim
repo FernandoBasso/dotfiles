@@ -1,9 +1,9 @@
 "
-" https://github.com/md-img-paste-devs/md-img-paste.vim
+" https://github.com/img-paste-devs/img-paste.vim
 "
 
 "
-" Image dir based on buffer name, like Typora.
+" Image dir based on buffer name.
 "
 " This allows moving the document with its assets without any problems
 " with broken asset links.
@@ -18,11 +18,11 @@ let g:mdip_imgdir_bufname = 1
 "   image::./img/<name>[Image Description]
 "
 function! g:AsciidocPasteImage(relpath)
-    execute "normal! iimage::" . a:relpath . "[I"
+    execute "normal! iimage::./" . a:relpath . "[I"
     let ipos = getcurpos()
     execute "normal! a" . "mage Description]"
     call setpos('.', ipos)
-    execute "normal! ve\<C-g>"
+    execute "normal! vi[\<C-g>"
 endfunction
 
 autocmd FileType asciidoctor let g:PasteImageFunction = 'g:AsciidocPasteImage'
@@ -30,5 +30,7 @@ autocmd FileType asciidoctor let g:PasteImageFunction = 'g:AsciidocPasteImage'
 "
 " Type <Leader>p (\p) to paste the image.
 "
-autocmd FileType asciidoctor nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+autocmd FileType asciidoctor
+      \ nmap <buffer><silent> <leader>p
+      \ :call mdip#MarkdownClipboardImage()<CR>
 

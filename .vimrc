@@ -73,7 +73,10 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/vader.vim'
 Plug 'ryanoasis/vim-devicons'
+
 Plug 'habamax/vim-asciidoctor'
+Plug '~/work/src/projects/md-img-paste.vim'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug '~/Cloud/Dropbox/vim/vim-uploader'
 Plug 'plasticboy/vim-markdown'

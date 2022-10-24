@@ -3,6 +3,16 @@
 "
 
 "
+" Image dir based on buffer name, like Typora.
+"
+" This allows moving the document with its assets without any problems
+" with broken asset links.
+"
+" If buffer/file is intro.adoc, assets dir will be `intro.assets`.
+"
+let g:mdip_imgdir_bufname = 1
+
+"
 " Paste image inside .adoc (Asciidoc[tor]) document.
 "
 "   image::./img/<name>[Image Description]

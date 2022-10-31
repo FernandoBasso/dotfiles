@@ -20,8 +20,7 @@ nnoremap <Leader>rr :source $MYVIMRC<Return>
 " Install plug for VIM.
 "
 if empty(glob('~/.vim/autoload/plug.vim'))
- !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+ !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -40,16 +39,12 @@ Plug 'peitalin/vim-jsx-typescript'
 
 Plug 'purescript-contrib/purescript-vim'
 
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install --production',
-  \ 'for': ['javascript', 'javascriptreact', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
-
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'https://github.com/junegunn/vim-emoji'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 
-" Plug 'pacha/vem-tabline'
+Plug 'pacha/vem-tabline'
 " Plug 'pseewald/vim-anyfold'
 
 Plug 'SirVer/ultisnips'
@@ -59,8 +54,6 @@ Plug 'elzr/vim-json'
 Plug 'altercation/vim-colors-solarized'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
@@ -71,15 +64,9 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/vader.vim'
 Plug 'ryanoasis/vim-devicons'
-
 Plug 'habamax/vim-asciidoctor'
-Plug '~/work/src/projects/img-paste.vim'
-
-if $SIMPLE != 1
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
-
-Plug '~/Cloud/Dropbox/vim/vim-uploader'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug '~/Cloud/Dropbox/vim/vim-uploader'
 Plug 'plasticboy/vim-markdown'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'dhruvasagar/vim-table-mode'
@@ -326,34 +313,10 @@ nnoremap <Leader>gg :NERDTreeClose \| vertical Git<CR>
 let &t_Cs = "\e[4:3m"
 let &t_Ce = "\e[4:0m"
 
-if $SIMPLE != 1
-  let g:gruvbox_bold = 0
-  let g:gruvbox_italic = 0
-  let g:solarized_italic = 0
+let g:gruvbox_bold = 0
+let g:gruvbox_italic = 0
+let g:solarized_italic = 0
 
-  if $THEME == 'dark'
-    let s:theme_name = 'gruvbox'
-    set background=dark
-    execute 'colorscheme' s:theme_name
-
-    execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
-  else
-    "
-    " For light themes, either gruvbox or solarized are well
-    " configured on my setup (with color-overrides/* stuff).
-    "
-    let s:theme_name = 'gruvbox'
-    set background=light
-    execute 'colorscheme' s:theme_name
-
-    let g:airline_theme = 'xtermlight'
-
-    execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
-  end
-endif
-
-let html_no_rendering = 1
-autocmd BufReadPost *.twig set filetype=html
 
 ""
 " :Man
@@ -366,6 +329,7 @@ autocmd BufRead * if &buftype == 'quickfix'
       \ | vertical resize 36
       \ | endif
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown
 " --------
@@ -374,7 +338,7 @@ autocmd BufRead * if &buftype == 'quickfix'
 " Problem with constant folding and unfolding.
 " https://github.com/plasticboy/vim-markdown/issues/414#issuecomment-519061229
 "
-"let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_style_pythonic = 1
 
 ""
 " The plugin indentLine seems to be messing with the conceal
@@ -382,13 +346,15 @@ autocmd BufRead * if &buftype == 'quickfix'
 "
 " https://github.com/plasticboy/vim-markdown#syntax-concealing
 "
-"let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal = 0
+
 
 "
 " Number sections #[Qn]# to #[Q1]#, #[Q2]#, #[Q3]#, etc.
 " Also for id='Qn' and <<Qn>>.
 "
 function! NumberQuestions()
+
     "let i = 1 | g/#\[Q.\+\]#/s//\='#[Q'.i.']#'/ | let i = i + 1
 
     "
@@ -407,17 +373,24 @@ function! NumberQuestions()
     let i = 1 | g/<<Q.\+>>/s//\="<<Q".i.">>"/ | let i = i + 1
 
     update
+
 endfunction
+
 
 "
 " AIRLINE
 "
 set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
 
-if $SIMPLE != 1
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 0
-endif
+"
+" YCM
+"
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+"let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "
 " UltiSnips
@@ -461,6 +434,7 @@ let g:ale_pattern_options = {
     \ '.*\.h$': { 'ale_enabled': 0 },
 \ }
 
+
 "
 " habamax/vim-asciidoctor
 "
@@ -473,65 +447,6 @@ let g:asciidoctor_fold_options = 1
 
 let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript', 'ruby', 'php', 'elm', 'haskell', 'bash', 'sh']
 
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CoC — Conquer of Completion
-" ---------------------------
-"
-
-if $SIMPLE != 1
-    let g:coc_global_extensions = [
-          \ 'coc-tsserver',
-          \ 'coc-eslint',
-          \ 'coc-json',
-          \ 'coc-solargraph',
-          \ 'coc-yaml',
-          \ 'coc-css',
-          \ ]
-
-    "
-    " “Go To” code navigation.
-    "
-    nmap <silent> gd <Plug>(coc-definition)
-    nmap <silent> gy <Plug>(coc-type-definition)
-    nmap <silent> gi <Plug>(coc-implementation)
-    nmap <silent> gr <Plug>(coc-references)
-    nmap <Leader>\ <Plug>(coc-codeaction)
-
-  "
-  " Suggest semantic completions with Ctrl+Tab. Works really well,
-  " and handles suggestions of object properties. Example:
-  "
-  " type TParams {
-  "   url: string,
-  "   method: string,
-  " }
-  "
-  " Now, typing “const params: TParams { <C-Space>” displays
-  " url, method, and their types and even documentation,
-  " if available.
-  "
-  inoremap <silent><expr> <C-Space> coc#refresh()
-
-  "
-  " Display diagnostics (errors and warnings) and documentation.
-  " Type uppercase ‘K’ to activate, and any motion (like ‘j’, ‘k’,
-  " ‘h’, ‘b’, ‘<C-o>’, ‘<C-i>’, etc.) to deactivate.
-  "
-  nnoremap <silent> K :call CocAction('doHover')<CR>
-
-  "
-  " Navigate to next/prev errors.
-  "
-  nmap <silent> [g <Plug>(coc-diagnostic-prev)
-  nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-  "
-  " Rename symbol
-  "
-  nmap <leader>rn <Plug>(coc-rename)
-endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " React, TypeScript, JavaScript
@@ -613,12 +528,9 @@ let g:fzf_preview_window = winwidth(0) < 96 ? 'up:64%' : 'right:42%'
 "
 
 ""
-" Search For Stuff
+" Search Files
 "
-
-nnoremap <Leader>f :Files<CR>
 map <Leader>sf :GitFiles<CR>
-nnoremap <Leader>gs :GF?<CR>
 map <Leader>sb :Buffers<CR>
 nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
@@ -695,8 +607,7 @@ nnoremap <F29> :execute '!C_brf %' <CR>
 
 let files_to_source = [
       \ '~/work/local/libdev.vim',
-      \ '~/work/src/dotfiles/.vim/vim-utils.vim',
-      \ '~/work/src/dotfiles/.vim/md-img-paste.vim',
+      \ '~/work/src/dotfiles/vim-utils.vim',
       \ '~/work/src/dotfiles/.vim/digraphs.vim'
       \ ]
 

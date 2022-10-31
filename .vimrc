@@ -696,7 +696,7 @@ nnoremap <F29> :execute '!C_brf %' <CR>
 let files_to_source = [
       \ '~/work/local/libdev.vim',
       \ '~/work/src/dotfiles/.vim/vim-utils.vim',
-      \ '~/work/src/dotfiles/.vim/md-img-paste.vim',
+      \ '~/work/src/dotfiles/.vim/img-paste.vim',
       \ '~/work/src/dotfiles/.vim/digraphs.vim'
       \ ]
 

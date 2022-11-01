@@ -105,6 +105,7 @@ set hidden
 set scrolloff=3
 set timeoutlen=350
 set mouse=a
+set cursorline
 
 " Indentation with SPACES
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab

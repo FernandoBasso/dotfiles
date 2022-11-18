@@ -42,10 +42,10 @@ flameshot gui && (
 		-out > "$imgorig"
 
 	convert "$imgorig" \
-		\( +clone -background black -shadow 12x10+0+2 \) \
+		\( +clone -background black -shadow 8x8+0+0 \) \
 		+swap \
 		-bordercolor none \
-		-border 10 \
+		-border 0 \
 		-background none \
 		-layers merge \
 		+repage \

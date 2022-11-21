@@ -56,11 +56,16 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'Yggdroot/indentLine'
 Plug 'elzr/vim-json'
-Plug 'altercation/vim-colors-solarized'
-Plug 'NLKNguyen/papercolor-theme'
+" Plug 'altercation/vim-colors-solarized'
+" Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+
+""
+" Airline causes random chars to show up if running vim on
+" Kitty, but not on other terminals or tmux.
+"
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'

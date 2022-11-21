@@ -488,19 +488,17 @@ let g:fzf_preview_window = winwidth(0) < 96 ? 'up:52%' : 'right:52%'
 ""
 " Search files.
 "
+nnoremap <Leader>f :Files<CR>
 map <Leader>sf :GitFiles<CR>
-
-""
-" Search buffers.
-"
-map <Leader>b :Buffers<CR>
+nnoremap <Leader>gs :GF?<CR>
+map <Leader>sb :Buffers<CR>
 nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>
 
 let files_to_source = [
       \ '~/work/local/libdev.vim',
-      \ '~/work/src/dotfiles/vim-utils.vim',
+      \ '~/work/src/dotfiles/.vim/vim-utils.vim',
       \ '~/work/src/dotfiles/.vim/digraphs.vim'
       \ ]
 

@@ -647,6 +647,15 @@ set completefunc=gh_emoji#complete
 runtime macros/emojis.vim
 autocmd FileType * runtime macros/emoji-ab.vim
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Prettier
+"
+" let g:prettier#config#parser = 'babylon'
+"
+" • https://github.com/prettier/vim-prettier/issues/268
+let g:prettier#config#single_quote = 'true'
+let g:prettier#config#trailing_comma = 'all'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GUI, GVim
 "

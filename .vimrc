@@ -494,6 +494,7 @@ if $SIMPLE != 1
           \ 'coc-solargraph',
           \ 'coc-yaml',
           \ 'coc-css',
+          \ 'coc-clangd',
           \ ]
 
     "

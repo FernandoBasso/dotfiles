@@ -11,6 +11,6 @@ terminator \
   --profile GruvboxLight \
 	--working-directory ~/Public \
   --geometry=400x500-0-0 \
-	-e 'node --interactive'
+	-e 'deno repl'
 	# -e 'stack ghci'
 

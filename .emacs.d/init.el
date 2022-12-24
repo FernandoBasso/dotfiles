@@ -84,8 +84,26 @@
 (setq visual-line-fringe-indicators
       '(left-curly-arrow right-curly-arrow))
 
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "epiphany")
+(setq browse-url-browser-function browse-url-firefox-program)
+
+
+;;;;
+;; This logic depends on ~/bin/firefox-dev.sh:
+;;
+;;   $ cat ~/bin/firefox-dev.sh
+;;   #!/usr/bin/env bash
+;;
+;;   open -a "Firefox Developer Edition" "$@"
+;;
+;; Make sure to make the script executable by the user:
+;;
+;;   $ chmod u+x ~/bin/firefox-dev.sh
+;;
+(if (eq system-type 'darwin)
+    (setq browse-url-browser-function 'browse-url-generic
+          browse-url-generic-program "firefox-dev.sh")
+  (setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program "epiphany"))
 
 (global-display-line-numbers-mode t)
 (setq linum-format "%4d \u2502")

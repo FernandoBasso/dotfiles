@@ -45,6 +45,8 @@ require('packer').startup(function(use)
 
   use 'simrat39/symbols-outline.nvim'
 
+  use 'Olical/conjure'
+
   use {
     'neoclide/coc.nvim',
     branch = 'release'
@@ -415,6 +417,14 @@ vim.keymap.set('n', '<Leader>ff', ':NvimTreeFindFile')
 --
 vim.keymap.set('n', '<F3>', function() vim.api.nvim_command('NvimTreeToggle') end)
 vim.keymap.set('n', '<F4>', function() vim.api.nvim_command('SymbolsOutline') end)
+
+------------------------------------------------------------------------
+-- Conjure
+--
+vim.cmd [[
+  let g:conjure#client#scheme#stdio#command = "csi -quiet -:c"
+  let g:conjure#client#scheme#stdio#prompt_pattern = "\n-#;%d-> "
+]]
 
 ------------------------------------------------------------------------------
 -- Vim Fugitive Goodies

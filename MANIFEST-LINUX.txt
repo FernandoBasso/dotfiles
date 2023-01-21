@@ -16,6 +16,7 @@
 .vim/helpers
 .vim/syntax
 .vim/myultisnips
+.vim/spell
 .config/bashrun
 .gitconfig
 .fu.conf

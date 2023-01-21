@@ -14,7 +14,8 @@
 ;; An unfinished (unclosed) JSDoc will cause the indentantion to
 ;; behave incorrectly.
 ;;
-[
-  (comment)
-  (template_string)
-] @auto
+(comment) @auto
+; [
+;   (comment)
+;   (template_string)
+; ] @auto

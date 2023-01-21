@@ -45,6 +45,8 @@ require('packer').startup(function(use)
 
   use 'simrat39/symbols-outline.nvim'
 
+  use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+
   use 'Olical/conjure'
 
   use {
@@ -297,7 +299,7 @@ require('nvim-treesitter.configs').setup {
   },
 
   highlight = { enable = true },
-  indent = { enable = true },
+  indent = { enable = false },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -558,6 +560,23 @@ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 --     t({' */', ''}),
 --   })
 -- }, { key = 'js' })
+
+function _G.javascript_indent()
+  local line = vim.fn.getline(vim.v.lnum)
+  local prev_line = vim.fn.getline(vim.v.lnum - 1)
+  if line:match('^%s*[%*/]%s*') then
+    if prev_line:match('^%s*%*%s*') then
+      return vim.fn.indent(vim.v.lnum - 1)
+    end
+    if prev_line:match('^%s*/%*%*%s*$') then
+      return vim.fn.indent(vim.v.lnum - 1) + 1
+    end
+  end
+
+  return vim.fn['GetJavascriptIndent']()
+end
+
+vim.cmd[[autocmd FileType javascript setlocal indentexpr=v:lua.javascript_indent()]]
 
 --
 -- vim: tw=72 ts=2 sts=2 sw=2 et

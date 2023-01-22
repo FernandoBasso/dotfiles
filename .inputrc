@@ -78,6 +78,18 @@ set show-all-if-ambiguous off
 # between other possible completions.
 #
 # TAB:menu-complete
+##
+
+##
+# Clear scrollback and redraw current line.
+#
+# • https://github.com/gnome-terminator/terminator/issues/703
+#
+# We can do this, but C-M-l already exists that does the same so I'll
+# leave the defaults, which are good enough.
+#
+# "\C-l": clear-display
+##
 
 # vim: set tw=72:
 

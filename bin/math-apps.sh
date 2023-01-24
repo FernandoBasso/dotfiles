@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dir="$HOME/Cloud/pCloud/Handwritten-Notes/Math/Algebra 1"
+dir="$HOME/Cloud/pCloud/Handwritten-Notes/Math"
 
 gnome-calculator &
 

@@ -30,6 +30,7 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'                                           -- Highlight, edit, and navigate code
   use 'nvim-treesitter/nvim-treesitter-textobjects'                               --  Additional textobjects for treesitter
   use 'sainnhe/gruvbox-material'
+  use { "ellisonleao/gruvbox.nvim" }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -152,18 +153,41 @@ vim.cmd [[
 -- Set colorscheme
 --
 vim.o.termguicolors = true
-vim.cmd [[
-  set background=light
-  let g:gruvbox_material_background = 'hard'
-  let g:gruvbox_material_palette = 'material'
-  let g:gruvbox_material_disable_italic_comment = 1
-  let g:gruvbox_material_diagnostic_text_highlight = 0
-  let g:gruvbox_material_diagnostic_line_highlight = 0
-  let g:gruvbox_material_diagnostic_virtual_text = 'colored'
+-- vim.cmd [[
+--   set background=light
+--   let g:gruvbox_material_background = 'hard'
+--   let g:gruvbox_material_palette = 'material'
+--   let g:gruvbox_material_disable_italic_comment = 1
+--   let g:gruvbox_material_diagnostic_text_highlight = 0
+--   let g:gruvbox_material_diagnostic_line_highlight = 0
+--   let g:gruvbox_material_diagnostic_virtual_text = 'colored'
+--
+--   colorscheme gruvbox-material
+-- ]]
 
-  colorscheme gruvbox-material
-]]
-
+----
+-- Gruvbox colorscheme
+--
+-- Setup must be called before loading the colorscheme.
+--
+require("gruvbox").setup({
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = false,
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  inverse = true, -- invert background for search, diffs, statuslines and errors
+  contrast = "", -- can be "hard", "soft" or empty string
+  palette_overrides = {},
+  overrides = {},
+  dim_inactive = false,
+  transparent_mode = false,
+})
+vim.cmd("colorscheme gruvbox")
 --
 -- Set completeopt to have a better completion experience.
 --

@@ -153,17 +153,17 @@ vim.cmd [[
 -- Set colorscheme
 --
 vim.o.termguicolors = true
--- vim.cmd [[
---   set background=light
---   let g:gruvbox_material_background = 'hard'
---   let g:gruvbox_material_palette = 'material'
---   let g:gruvbox_material_disable_italic_comment = 1
---   let g:gruvbox_material_diagnostic_text_highlight = 0
---   let g:gruvbox_material_diagnostic_line_highlight = 0
---   let g:gruvbox_material_diagnostic_virtual_text = 'colored'
---
---   colorscheme gruvbox-material
--- ]]
+vim.cmd [[
+  set background=light
+  let g:gruvbox_material_background = 'hard'
+  let g:gruvbox_material_palette = 'material'
+  let g:gruvbox_material_disable_italic_comment = 1
+  let g:gruvbox_material_diagnostic_text_highlight = 0
+  let g:gruvbox_material_diagnostic_line_highlight = 0
+  let g:gruvbox_material_diagnostic_virtual_text = 'colored'
+
+  colorscheme gruvbox-material
+]]
 
 ----
 -- Gruvbox colorscheme
@@ -193,7 +193,29 @@ require("gruvbox").setup({
     light1 = "#f9f5c7",
   },
 })
+
 vim.cmd("colorscheme gruvbox")
+
+-- require("gruvbox").setup({
+--   undercurl = true,
+--   underline = true,
+--   bold = true,
+--   italic = false,
+--   strikethrough = true,
+--   invert_selection = false,
+--   invert_signs = false,
+--   invert_tabline = false,
+--   invert_intend_guides = false,
+--   inverse = true, -- invert background for search, diffs, statuslines and errors
+--   contrast = "", -- can be "hard", "soft" or empty string
+--   palette_overrides = {},
+--   overrides = {},
+--   dim_inactive = false,
+--   transparent_mode = false,
+-- })
+--
+-- vim.cmd("colorscheme gruvbox")
+
 --
 -- Set completeopt to have a better completion experience.
 --
@@ -549,8 +571,8 @@ nnoremap <Leader>m :Marks<CR>
 
 let files_to_source = [
       \ '~/work/local/libdev.vim',
-      \ '~/work/src/dotfiles/vim-utils.vim',
-      \ '~/work/src/dotfiles/.vim/digraphs.vim'
+      \ '~/work/src/dotfiles/nvim-utils.vim',
+      \ '~/work/src/dotfiles/digraphs.vim'
       \ ]
 
 for file in files_to_source

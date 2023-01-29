@@ -713,7 +713,7 @@ let files_to_source = [
       \ '~/work/local/libdev.vim',
       \ '~/work/src/dotfiles/.vim/vim-utils.vim',
       \ '~/work/src/dotfiles/.vim/img-paste.vim',
-      \ '~/work/src/dotfiles/.vim/digraphs.vim'
+      \ '~/work/src/dotfiles/digraphs.vim'
       \ ]
 
 for file in files_to_source

@@ -442,7 +442,7 @@ nmap <leader>rn <Plug>(coc-rename)
 -- nvim-tree
 --
 -- vim.keymap.set('n', '<F3>', ':NvimTreeToggle<CR>')
-vim.keymap.set('n', '<Leader>ff', ':NvimTreeFindFile')
+vim.keymap.set('n', '<Leader>ff', ':NvimTreeFindFile<CR>')
 
 ------------------------------------------------------------------------------
 -- Toggle Nvim Tree and Symbols outline
@@ -535,12 +535,12 @@ nnoremap <Leader>f :Files<CR>
 ""
 " Only files tracked by git.
 "
-nnoremap <Leader>ff :GitFiles<CR>
+nnoremap <Leader>gf :GitFiles<CR>
 
 ""
 " Files that show up with `git status`.
 "
-nnoremap <Leader>gg :GF?<CR>
+nnoremap <Leader>g? :GF?<CR>
 
 nnoremap <Leader>bb :Buffers<CR>
 nnoremap <Leader>rg :Rg!<CR>

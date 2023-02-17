@@ -69,6 +69,7 @@ Plug 'morhetz/gruvbox'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround',

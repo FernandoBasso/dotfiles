@@ -14,7 +14,7 @@
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
   '(package-selected-packages
-     '(slime quelpa ob-typescript emojify helm-org-ql org-ql imenu-list markdown-mode yasnippet helm-rg helm-projectile helm-ag helm heml sublimity-scroll sublimity-attractive sublimity diff-hl git-gutter solarized-theme typescript-mode editorconfig geiser gruvbox-theme projectile neotree paredit haskell-mode org-plus-contrib magit htmlize zenburn-theme color-theme which-key racket-mode use-package))
+     '(slime quelpa emojify helm-org-ql org-ql imenu-list markdown-mode yasnippet helm-rg helm-projectile helm-ag helm heml sublimity-scroll sublimity-attractive sublimity diff-hl git-gutter solarized-theme typescript-mode editorconfig geiser gruvbox-theme projectile neotree paredit haskell-mode org-plus-contrib magit htmlize zenburn-theme color-theme which-key racket-mode use-package))
   '(safe-local-variable-values
      '((org-blank-before-new-entry
          (heading . auto)
@@ -203,8 +203,7 @@
    (shell . t)
    (scheme . t)
    (ruby . t)
-   (haskell . t)
-   (typescript . t)))
+   (haskell . t)))
 
 (require 'ox-md)
 
@@ -220,9 +219,6 @@
   :ensure t
   :config
   (setq-default typescript-indent-level 2))
-
-(use-package ob-typescript
-  :ensure t)
 
 (use-package editorconfig
   :ensure t

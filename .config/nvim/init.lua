@@ -187,10 +187,13 @@ require("gruvbox").setup({
   transparent_mode = false,
   palette_overrides = {
     -- Background color.
-    light0_hard = "#f9f5d7",
-
-    -- CursorColumn, CursorColumn.
-    light1 = "#f9f5c7",
+    -- light0_hard = "#f9f5d7",
+    --
+    -- -- CursorColumn, CursorColumn.
+    -- light1 = "#f9f5c7",
+    --
+    -- light2 = "#f9f5c7",
+    -- faded_blue = "#ca8212",
   },
 })
 
@@ -552,7 +555,7 @@ let g:fzf_preview_window = winwidth(0) < 96 ? 'up:52%' : 'right:52%'
 ""
 " All files, including vendored stuff, git ignored, etc.
 "
-nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>af :Files<CR>
 
 ""
 " Only files tracked by git.

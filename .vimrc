@@ -508,19 +508,10 @@ if $SIMPLE != 1
     nmap <Leader>\ <Plug>(coc-codeaction)
 
   "
-  " Suggest semantic completions with Ctrl+Tab. Works really well,
-  " and handles suggestions of object properties. Example:
+  " coc#refresh() is intellisense completion.  For some reason
+  " <C-Space> does not work in vim.
   "
-  " type TParams {
-  "   url: string,
-  "   method: string,
-  " }
-  "
-  " Now, typing “const params: TParams { <C-Space>” displays
-  " url, method, and their types and even documentation,
-  " if available.
-  "
-  inoremap <silent><expr> <C-Space> coc#refresh()
+  inoremap <silent><expr> <c-@> coc#refresh()
 
   "
   " Display diagnostics (errors and warnings) and documentation.

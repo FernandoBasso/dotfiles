@@ -51,3 +51,6 @@ exercism
 dir
 ascii
 param
+RuboCop
+utils
+wday

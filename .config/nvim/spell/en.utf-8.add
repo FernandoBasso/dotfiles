@@ -18,3 +18,5 @@ RSpec
 STDOUT
 formatter
 literalinclude
+param
+memoization

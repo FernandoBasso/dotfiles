@@ -44,5 +44,10 @@ bash_incl/workprojs.sh
 #
 .config/nvim-bkp
 
+#
+# Temp files for firewords.sh script.
+#
+words.txt
+
 # vim: set tw=68:
 

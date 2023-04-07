@@ -29,11 +29,11 @@ digraphs OO 9702
 "
 digraphs oO 183
 
-"
-" vim: set tw=72:
-"
-
 ""
 " ‽ Interrobang.
 "
 digraphs ?! 8253
+
+"
+" vim: set tw=72:
+"

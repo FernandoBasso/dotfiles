@@ -1,8 +1,14 @@
 arg
 Asciidoc
 Asciidoctor
+bools
+concat
+concatable
+concating
+Concating
 const
 Const
+containery
 decompositions
 defs
 Deno
@@ -21,6 +27,7 @@ Memoization
 merriam
 Monoid
 Monoids
+NOK
 OpenGroup
 param
 pubkey
@@ -56,6 +63,7 @@ TypeScript
 undirected
 Undirected
 Unicode
+unnest
 uuid
 Variadic
 webster

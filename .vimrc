@@ -616,9 +616,9 @@ let g:fzf_preview_window = winwidth(0) < 96 ? 'up:64%' : 'right:42%'
 "
 
 nnoremap <Leader>f :Files<CR>
-map <Leader>sf :GitFiles<CR>
-nnoremap <Leader>gs :GF?<CR>
-map <Leader>sb :Buffers<CR>
+nnoremap <Leader>gf :GitFiles<CR>
+nnoremap <Leader>g? :GF?<CR>
+nnoremap <Leader>bb :Buffers<CR>
 nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>

@@ -30,7 +30,8 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'                                           -- Highlight, edit, and navigate code
   use 'nvim-treesitter/nvim-treesitter-textobjects'                               --  Additional textobjects for treesitter
   use 'sainnhe/gruvbox-material'
-  use { "ellisonleao/gruvbox.nvim" }
+  use { 'ellisonleao/gruvbox.nvim' }
+  use { 'sonph/onehalf', rtp = 'vim' }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -174,7 +175,11 @@ require("gruvbox").setup({
   undercurl = true,
   underline = true,
   bold = true,
-  italic = false,
+  italic = {
+    strings = false,
+    operators = false,
+    comments = false,
+  },
   strikethrough = true,
   invert_selection = false,
   invert_signs = false,

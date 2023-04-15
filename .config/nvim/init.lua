@@ -552,21 +552,9 @@ let g:fzf_layout = {
 "
 let g:fzf_preview_window = winwidth(0) < 96 ? 'up:52%' : 'right:52%'
 
-""
-" All files, including vendored stuff, git ignored, etc.
-"
-nnoremap <Leader>af :Files<CR>
-
-""
-" Only files tracked by git.
-"
+nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>gf :GitFiles<CR>
-
-""
-" Files that show up with `git status`.
-"
 nnoremap <Leader>g? :GF?<CR>
-
 nnoremap <Leader>bb :Buffers<CR>
 nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>

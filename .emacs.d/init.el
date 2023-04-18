@@ -293,11 +293,16 @@
  ;; https://github.com/haskell/haskell-mode/issues/1695
  haskell-interactive-types-for-show-ambiguous nil)
 
+
+;;;;
+;; Enabling eval-expression-minibuffer-setup-hook causes
+;; <CR> on minibuffer eval expressions just to create a
+;; newline without actually running the code.
+;;
 (use-package paredit
   :ensure t
   :config
   (dolist (m '(emacs-lisp-mode-hook
-               eval-expression-minibuffer-setup-hook
                ielm-mode-hook
                lisp-mode-hook
                lisp-interaction-mode-hook
@@ -305,8 +310,12 @@
                racket-mode-hook))
     (add-hook m #'paredit-mode))
 
-  (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-  (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+ (autoload
+   'enable-paredit-mode
+   "paredit"
+   "Turn on pseudo-structural editing of Lisp code."
+   t)
+
   (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
   (show-paren-mode 1))
 

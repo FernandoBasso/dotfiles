@@ -215,6 +215,17 @@
   :quelpa (helm-org-ql :fetcher github :repo "alphapapa/org-ql"
                        :files ("helm-org-ql.el")))
 
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory "~/RoamNotes")
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert))
+  :config
+  (setq-default )
+  (org-roam-setup))
+
 (use-package typescript-mode
   :ensure t
   :config
@@ -319,6 +330,16 @@
   (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
   (show-paren-mode 1))
 
+;;;;
+;; Open org links on the same window, not on the left
+;; or right existing ones.
+;;
+(setq org-link-frame-setup
+      '((file . find-file)
+        (vm . vm-visit-folder-other-frame)
+        (vm-imap . vm-visit-imap-folder-other-frame)
+        (gnus . org-gnus-no-new-news)
+        (wl . wl-other-frame)))
 
 ;; Ask (t) or don't ask (nil) for confirmation to evaluate?
 (setq org-confirm-babel-evaluate nil)

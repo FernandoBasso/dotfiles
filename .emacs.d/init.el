@@ -296,13 +296,13 @@
 
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
-
 (setq
  haskell-process-type 'stack-ghci
  haskell-interactive-popup-errors nil
  haskell-process-path-ghci "stack"
  ;; https://github.com/haskell/haskell-mode/issues/1695
- haskell-interactive-types-for-show-ambiguous nil)
+ haskell-interactive-types-for-show-ambiguous nil
+ haskell-stylish-on-save t)
 
 
 ;;;;

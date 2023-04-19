@@ -7,6 +7,7 @@
 	lg = log --pretty='%C(yellow)%h%Creset %Cblue%an%Creset %Cgreen%cr%Creset%Cred%d%Creset %s'
 	l1 = log --oneline
 	up = push origin --set-upstream HEAD
+	ane = commit --amend --no-edit
 [color "diff"]
 	whitespace = red reverse
 [help]

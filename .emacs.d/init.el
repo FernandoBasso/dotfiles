@@ -251,7 +251,12 @@
    org-download-timestamp "org_%Y%m%d-%H%M%S_"
    org-download-heading-lvl nil)
   :custom
-  (org-download-screenshot-method "xclip -selection clipboard -t image/png -o > '%s'")
+  (org-download-screenshot-method
+   (cond
+    ((eq system-type 'gnu/linux)
+     "xclip -selection clipboard -t image/png -o > '%s'")
+    ((eq system-type 'darwin)
+     "pngpaste %s")))
   :bind
   (:map org-mode-map
         (("C-M-y" . org-download-screenshot)

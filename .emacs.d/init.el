@@ -157,6 +157,9 @@
              '("melpa" . "https://melpa.org/packages/") t)
 
 (add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/"))
+
+(add-to-list 'package-archives
              '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
 
 (unless (package-installed-p 'use-package)

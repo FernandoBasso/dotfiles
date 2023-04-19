@@ -229,6 +229,23 @@
   (setq-default )
   (org-roam-setup))
 
+(use-package org-download
+  :ensure t
+  :after org
+  :config
+  (setq-default
+   org-download-image-dir "assets"
+   ;; Basename setting seems to be simply ignored.
+   org-download-screenshot-basename ".org.png"
+   org-download-timestamp "org_%Y%m%d-%H%M%S_"
+   org-download-heading-lvl nil)
+  :custom
+  (org-download-screenshot-method "xclip -selection clipboard -t image/png -o > '%s'")
+  :bind
+  (:map org-mode-map
+        (("C-M-y" . org-download-screenshot)
+         ("s-y" . org-download-yank))))
+
 (use-package typescript-mode
   :ensure t
   :config

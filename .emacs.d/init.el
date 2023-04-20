@@ -229,6 +229,11 @@
   (setq-default )
   (org-roam-setup))
 
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode))
+
 (use-package deft
   :ensure t
   :after org

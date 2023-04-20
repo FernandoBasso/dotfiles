@@ -226,13 +226,13 @@
          ("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert))
   :config
-  (setq-default )
   (org-roam-setup))
 
 (use-package vertico
   :ensure t
   :init
-  (vertico-mode))
+  (vertico-mode)
+  (vertico-buffer-mode))
 
 (use-package deft
   :ensure t

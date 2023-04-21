@@ -91,7 +91,7 @@
           browse-url-generic-program "open"
           browse-url-generic-args '("-a" "Firefox Developer Edition"))
   (setq browse-url-browser-function 'browse-url-generic
-        browse-url-generic-program "epiphany"))
+        browse-url-generic-program "firefox-dev"))
 
 (global-display-line-numbers-mode t)
 (setq linum-format "%4d \u2502")

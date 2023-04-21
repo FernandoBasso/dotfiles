@@ -612,3 +612,47 @@
   :ensure t
   :config (global-diff-hl-mode))
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Some hachish stuff to experiment with hiding and
+;; showing src blocks interactively in org files.
+;;
+
+(defvar my/bg-block "#fbf2d3")
+(defvar my/bg-line "#f9f0cf")
+(defvar my/fg-line "#c8b882")
+
+(set-face-attribute 'org-block nil
+                    :background my/bg-block)
+
+(defun blkhide ()
+  (interactive)
+  (set-face-attribute
+   'org-block-begin-line nil
+   :background my/bg-block
+   :foreground my/bg-block)
+
+    (set-face-attribute
+   'org-block-end-line nil
+   :background my/bg-block
+   :foreground my/bg-block))
+
+(defun blkshow ()
+  (interactive)
+  (set-face-attribute
+   'org-block-begin-line nil
+   :background my/bg-line
+   :foreground my/fg-line)
+
+    (set-face-attribute
+   'org-block-end-line nil
+   :background my/bg-line
+   :foreground my/fg-line))
+
+(global-set-key (kbd "C-c c h") #'blkhide)
+(global-set-key (kbd "C-c c s") #'blkshow)
+
+(set-face-attribute
+ 'org-block nil
+ :background "#fbf2d3")
+

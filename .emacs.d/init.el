@@ -297,6 +297,16 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode))
 
+;;;;
+;; With this package, it is possible to run org-roam-node-find in a
+;; case insensitive (ignore case) style.
+;;
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles basic partial-completion)))))
+
 (use-package yasnippet
   :ensure t
   :config

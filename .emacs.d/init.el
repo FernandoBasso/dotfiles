@@ -622,6 +622,9 @@
   :ensure t
   :config (global-diff-hl-mode))
 
+(use-package expand-region
+  :ensure t
+  :bind ("C-=" . er/expand-region))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; JavaScript

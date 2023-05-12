@@ -63,19 +63,18 @@
 
 (setq backup-directory-alist `(("." . "~/work/src/dotfiles/tmp/emacs_stuff"))):
 
-(setq font-height
-  (cond
-    ((eq system-type 'gnu/linux) 135)
-    ((eq system-type 'darwin) 175)
-    (t 150)))
-
 (set-face-attribute 'default nil
-                    :family "Source Code Pro"
-                    :height font-height
+                    ;:family "Source Code Pro"
+                    :family "CaskaydiaCove Nerd Font"
+                    :height (cond
+                             ((eq system-type 'gnu/linux) 135)
+                             ((eq system-type 'darwin) 175)
+                             (t 150))
                     :weight 'semibold
                     :width 'normal)
 
-(setq-default line-spacing 0.0)
+(setq-default line-spacing 0.1)
+
 
 (set-face-italic 'font-lock-comment-face nil)
 

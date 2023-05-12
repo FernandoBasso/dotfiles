@@ -92,7 +92,12 @@
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "firefox-dev"))
 
-(global-display-line-numbers-mode t)
+;;;;
+;; I prefer to enable line numbers manually only in certain
+;; situations.
+;;
+(setq global-display-line-numbers nil)
+(setq display-line-numbers nil)
 (setq linum-format "%4d \u2502")
 
 (setq show-trailing-whitespace t)

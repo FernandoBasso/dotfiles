@@ -317,7 +317,7 @@
   ;;;;
   ;; We need to set `yas-snippet-dirs' BEFORE enabling the global mode.
   ;; https://emacs.stackexchange.com/questions/10523/yasnippet-configuration-does-not-persist-across-emacs-runs/10531#10531
-  (setq yas-snippet-dirs '("~/Projects/dotfiles/.emacs.d/my-yasnippets"))
+  (setq yas-snippet-dirs '("~/work/src/dotfiles/.emacs.d/my-yasnippets"))
   (yas-global-mode 1)
   ;;;;
   ;; For some reason, when snippets are expanded, the indentation is

@@ -160,8 +160,6 @@ done
 #
 source <(kitty + complete setup bash)
 
-[ -f "/Users/fernando/.ghcup/env" ] && source "/Users/fernando/.ghcup/env" # ghcup-env
-
 #
 # https://github.com/rupa/z
 #
@@ -216,6 +214,8 @@ export PATH="$PATH:$HOME/local/bin"
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+
+[ -f "/home/fernando/.ghcup/env" ] && source "/home/fernando/.ghcup/env"
 
 #
 # vim: set textwidth=78 nowrap:

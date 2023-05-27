@@ -563,6 +563,22 @@
   (global-set-key [f4] 'neotree-toggle)
   (setq neo-window-width 32))
 
+(use-package treemacs
+  :ensure t
+  :defer t)
+
+(use-package treemacs-projectile
+  :after (treemacs projectile)
+  :ensure t)
+
+(use-package treemacs-icons-dired
+  :hook (dired-mode . treemacs-icons-dired-enable-once)
+  :ensure t)
+
+(use-package treemacs-magit
+  :after (treemacs magit)
+  :ensure t)
+
 (use-package magit
   :ensure t
   :config

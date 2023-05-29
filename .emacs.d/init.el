@@ -70,7 +70,10 @@
                              ((eq system-type 'gnu/linux) 135)
                              ((eq system-type 'darwin) 175)
                              (t 150))
-                    :weight 'semibold
+                    :weight (cond
+                              ((eq system-type 'gnu/linux) 'semibold)
+                              ((eq system-type 'darwin) 'normal)
+                              (t 'normal))
                     :width 'normal)
 
 (setq-default line-spacing 0.1)

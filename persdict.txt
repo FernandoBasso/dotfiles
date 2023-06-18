@@ -22,6 +22,7 @@ fn
 Functors
 Github
 Gitlab
+HackerRank
 inode
 lookahead
 memoization

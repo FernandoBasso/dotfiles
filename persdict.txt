@@ -36,10 +36,12 @@ NOK
 OpenGroup
 param
 params
+psql
 pubkey
 PureScript
 radix
 Ramda’s
+readline
 REPL
 repo
 Résumé
@@ -62,6 +64,7 @@ Subshell
 subshells
 Subshells
 substring
+tbl
 TLS
 transpilation
 txt

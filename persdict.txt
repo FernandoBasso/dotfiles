@@ -59,6 +59,8 @@ STDOUT
 subproblem
 subproblems
 Subproblems
+subqueries
+subselects
 subshell
 Subshell
 subshells

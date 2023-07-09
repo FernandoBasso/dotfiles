@@ -485,6 +485,8 @@ vim.keymap.set('n', '<Leader>ff', ':NvimTreeFindFile<CR>')
 ------------------------------------------------------------------------------
 -- Toggle Nvim Tree and Symbols outline
 --
+require("symbols-outline").setup()
+
 vim.keymap.set('n', '<F3>', function() vim.api.nvim_command('NvimTreeToggle') end)
 vim.keymap.set('n', '<F4>', function() vim.api.nvim_command('SymbolsOutline') end)
 

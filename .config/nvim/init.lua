@@ -107,6 +107,14 @@ vim.o.cursorline = true
 vim.cmd [[ set colorcolumn=72,80 ]]
 
 --
+-- preservim/vim-markdown/issues/558
+--
+vim.cmd [[
+  let g:vim_markdown_folding_disabled = 1
+  let g:markdown_folding = 1
+]]
+
+--
 -- If another plugin (like indent-blankline) is already using a cell
 -- to display some character, then listchars will not be able to print
 -- a character in that same cell and listchars will appear to not be

@@ -20,3 +20,4 @@ formatter
 literalinclude
 param
 memoization
+REPL

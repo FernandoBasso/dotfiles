@@ -111,7 +111,7 @@ vim.cmd [[ set colorcolumn=72,80 ]]
 --
 vim.cmd [[
   let g:vim_markdown_folding_disabled = 1
-  let g:markdown_folding = 1
+  let g:markdown_folding = 0
 ]]
 
 --

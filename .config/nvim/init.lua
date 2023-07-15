@@ -411,6 +411,53 @@ require('gitsigns').setup {
   end
 }
 
+------------------------------------------------------------------------------
+-- coc-git
+--
+vim.cmd [[
+  call coc#config('git.addGBlameToVirtualText', v:true)
+]]
+
+--
+-- Temporary until I find better way of doing it. To toggle git line
+-- git blame, run this in nvim command line mode:
+--
+--   :lua toggle_coc_vim_blame()
+--
+toggle_coc_vim_blame = function ()
+  local showing = vim.g.coc_git_hide_blame_virtual_text
+
+  vim.g.coc_git_hide_blame_virtual_text = not showing
+
+  return showing
+end
+
+--
+-- Call it once so we disable it by default when opening nvim.
+--
+toggle_coc_vim_blame()
+
+--
+-- Toggle git line blame with <leader>tgb keybinding.
+--
+vim.keymap.set(
+  'n',
+  '<Leader>y',
+  function()
+    local showing = toggle_coc_vim_blame()
+
+    -- local showing = vim.g.coc_git_hide_blame_virtual_text
+
+    print(
+      string.format(
+        'MSG «coc-git»: Git line blame %s.',
+        showing and 'enabled' or 'disabled'
+      )
+    )
+  end,
+  { desc = 'Toggle coc-vim virutal text line blame' }
+)
+
 require("nvim-tree").setup()
 
 -- [[ Configure Treesitter ]]
@@ -494,6 +541,7 @@ let g:coc_global_extensions = [
       \ 'coc-solargraph',
       \ 'coc-yaml',
       \ 'coc-css',
+      \ 'coc-git',
       \ ]
 
 "

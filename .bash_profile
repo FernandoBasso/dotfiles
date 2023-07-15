@@ -63,3 +63,8 @@ if [ -f ~/work/local/npm-completion.bash ]; then
   source ~/work/local/npm-completion.bash
 fi
 
+##
+# Rust stuff.
+#
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+

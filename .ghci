@@ -1,7 +1,7 @@
 --
 -- I like this simple prompt :D
 --
--- :set prompt "\nλ> "
+:set prompt "\nλ> "
 
 --
 -- By default, enable all warnings but disable type-defaults so we don't have to

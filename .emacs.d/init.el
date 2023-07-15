@@ -67,7 +67,7 @@
                     ;:family "Source Code Pro"
                     :family "CaskaydiaCove Nerd Font"
                     :height (cond
-                             ((eq system-type 'gnu/linux) 135)
+                             ((eq system-type 'gnu/linux) 130)
                              ((eq system-type 'darwin) 175)
                              (t 150))
                     :weight (cond

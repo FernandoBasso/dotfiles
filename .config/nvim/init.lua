@@ -188,9 +188,13 @@ vim.cmd [[
   let g:gruvbox_material_transparent_background = 1
 
   colorscheme gruvbox-material
+
   call gruvbox_material#highlight('CursorLine', ['NONE', 'NONE'], ['#fffac2', '140'])
   call gruvbox_material#highlight('CursorLineNr', ['NONE', 'NONE'], ['#fffac2', '140'])
   call gruvbox_material#highlight('ColorColumn', ['NONE', 'NONE'], ['#fffac2', '140'])
+
+  call gruvbox_material#highlight('Pmenu', ['NONE', 'NONE'], ['#fffac5', '140'])
+  call gruvbox_material#highlight('PmenuSel', ['NONE', 'NONE'], ['#fffa55', '140'])
 ]]
 
 ----

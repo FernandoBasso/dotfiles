@@ -182,7 +182,15 @@ vim.cmd [[
   let g:gruvbox_material_diagnostic_line_highlight = 0
   let g:gruvbox_material_diagnostic_virtual_text = 'colored'
 
+  "
+  " Let's make bg transparent so it uses my terminal bg color.
+  "
+  let g:gruvbox_material_transparent_background = 1
+
   colorscheme gruvbox-material
+  call gruvbox_material#highlight('CursorLine', ['NONE', 'NONE'], ['#fffac2', '140'])
+  call gruvbox_material#highlight('CursorLineNr', ['NONE', 'NONE'], ['#fffac2', '140'])
+  call gruvbox_material#highlight('ColorColumn', ['NONE', 'NONE'], ['#fffac2', '140'])
 ]]
 
 ----

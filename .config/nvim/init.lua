@@ -30,6 +30,7 @@ require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }       -- Add git related info in the signs columns and popups
   use 'numToStr/Comment.nvim'                                                     -- "gc" to comment visual regions/lines
   use 'nvim-treesitter/nvim-treesitter'                                           -- Highlight, edit, and navigate code
+  use 'nvim-treesitter/playground'
   use 'nvim-treesitter/nvim-treesitter-textobjects'                               --  Additional textobjects for treesitter
   use 'sainnhe/gruvbox-material'
   use { 'ellisonleao/gruvbox.nvim' }
@@ -202,36 +203,36 @@ vim.cmd [[
 --
 -- Setup must be called before loading the colorscheme.
 --
-require("gruvbox").setup({
-  undercurl = true,
-  underline = true,
-  bold = true,
-  italic = {
-    strings = false,
-    operators = false,
-    comments = false,
-  },
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
-  inverse = true, -- invert background for search, diffs, statuslines and errors
-  contrast = "hard", -- can be "hard", "soft" or empty string
-  overrides = {},
-  dim_inactive = false,
-  transparent_mode = false,
-  palette_overrides = {
-    -- Background color.
-    -- light0_hard = "#f9f5d7",
-    --
-    -- -- CursorColumn, CursorColumn.
-    -- light1 = "#f9f5c7",
-    --
-    -- light2 = "#f9f5c7",
-    -- faded_blue = "#ca8212",
-  },
-})
+-- require("gruvbox").setup({
+--   undercurl = true,
+--   underline = true,
+--   bold = true,
+--   italic = {
+--     strings = false,
+--     operators = false,
+--     comments = false,
+--   },
+--   strikethrough = true,
+--   invert_selection = false,
+--   invert_signs = false,
+--   invert_tabline = false,
+--   invert_intend_guides = false,
+--   inverse = true, -- invert background for search, diffs, statuslines and errors
+--   contrast = "hard", -- can be "hard", "soft" or empty string
+--   overrides = {},
+--   dim_inactive = false,
+--   transparent_mode = false,
+--   palette_overrides = {
+--     -- Background color.
+--     -- light0_hard = "#f9f5d7",
+--     --
+--     -- -- CursorColumn, CursorColumn.
+--     -- light1 = "#f9f5c7",
+--     --
+--     -- light2 = "#f9f5c7",
+--     -- faded_blue = "#ca8212",
+--   },
+-- })
 
 -- vim.cmd("colorscheme gruvbox")
 
@@ -421,6 +422,30 @@ require('gitsigns').setup {
     -- Text object
     map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
   end
+}
+
+------------------------------------------------------------------------
+-- treesitter-playground
+--
+require "nvim-treesitter.configs".setup {
+  playground = {
+    enable = true,
+    disable = {},
+    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+    persist_queries = false, -- Whether the query persists across vim sessions
+    keybindings = {
+      toggle_query_editor = 'o',
+      toggle_hl_groups = 'i',
+      toggle_injected_languages = 't',
+      toggle_anonymous_nodes = 'a',
+      toggle_language_display = 'I',
+      focus_language = 'f',
+      unfocus_language = 'F',
+      update = 'R',
+      goto_node = '<cr>',
+      show_help = '?',
+    },
+  }
 }
 
 ------------------------------------------------------------------------------

@@ -726,48 +726,43 @@ for file in files_to_source
 endfor
 ]]
 
-vim.cmd [[
-" press <Tab> to expand or jump in a snippet. These can also be mapped
-" separately via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
-
-imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
-
-" -1 for jumping backwards.
-inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
-
-snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
-snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
-
-" For changing choices in choiceNodes (not strictly necessary for a basic setup).
-imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-]]
-
--- local ls = require("luasnip")
--- local s = ls.snippet
--- local sn = ls.snippet_node
--- local isn = ls.indent_snippet_node
--- local t = ls.text_node
--- local i = ls.insert_node
--- local f = ls.function_node
--- local c = ls.choice_node
--- local d = ls.dynamic_node
--- local r = ls.restore_node
+------------------------------------------------------------------------
+-- LuaSnip
 --
--- ls.add_snippets('javascript', {
---   s('ternary', {
---     i(1, 'cond'), t(' ? '), i(2, 'then'), t(' : '), i(3, 'else')
---   }),
+-- Take a look at ~/work/src/dotfiles/.config/nvim/after/plugin/luasnip.lua
 --
---   s('doc', {
---     t({'/**', ''}),
---     t({' * '}), i(1, 'Function info...'), t({'', ''}),
---     t({' *', ''}),
---     t({' * @param '}), i(2, '...'), t({'', ''}),
---     t({' * @returns '}), i(3, '...'), t({'', ''}),
---     t({' */', ''}),
---   })
--- }, { key = 'js' })
+
+local ls = require("luasnip")
+
+ls.config.set_config {
+  history = true,
+  updateevents = 'TextChanged,TextChangedI',
+  enable_autosnippets = true,
+}
+
+vim.keymap.set({ 'i', 's' }, '<c-k>', function()
+  if ls.expand_or_jumpable() then
+    ls.expand_or_jump()
+  end
+end, { silent = true })
+
+vim.keymap.set({ 'i', 's' }, '<c-j>', function()
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  end
+end, { silent = true })
+
+vim.keymap.set('i', '<c-l>', function()
+  if ls.choice_active() then
+    ls.change_choice()
+  end
+end, { silent = true })
+
+vim.keymap.set(
+  'n',
+  '<leader><leader>s',
+  '<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>'
+)
 
 function _G.javascript_indent()
   local line = vim.fn.getline(vim.v.lnum)

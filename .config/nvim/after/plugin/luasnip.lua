@@ -15,6 +15,12 @@ ls.add_snippets('lua', {
   s('req', fmt("local {} require('{}')", { i(1), rep(1) }))
 })
 
+ls.add_snippets('all', {
+  s('bt', fmt('`{}`', { i(1) })),
+  s('sq', fmt('‘{}’', { i(1) })),
+  s('dq', fmt('“{}”', { i(1) })),
+})
+
 ls.add_snippets('javascript', {
   s('ternary', {
     i(1, 'cond'), t(' ? '), i(2, 'then'), t(' : '), i(3, 'else')

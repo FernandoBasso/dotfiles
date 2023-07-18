@@ -195,9 +195,11 @@ vim.cmd [[
 
   colorscheme gruvbox-material
 
-  call gruvbox_material#highlight('CursorLine', ['NONE', 'NONE'], ['#fffac2', '140'])
-  call gruvbox_material#highlight('CursorLineNr', ['NONE', 'NONE'], ['#fffac2', '140'])
-  call gruvbox_material#highlight('ColorColumn', ['NONE', 'NONE'], ['#fffac2', '140'])
+  let light_yellow = '#fdf5c0'
+
+  call gruvbox_material#highlight('CursorLine', ['NONE', 'NONE'], [light_yellow, '140'])
+  call gruvbox_material#highlight('CursorLineNr', ['NONE', 'NONE'], [light_yellow, '140'])
+  call gruvbox_material#highlight('ColorColumn', ['NONE', 'NONE'], [light_yellow, '140'])
 
   " call gruvbox_material#highlight('PMenu', ['NONE', 'NONE'], ['#fffac5', '140'])
   " call gruvbox_material#highlight('PmenuSel', ['NONE', 'NONE'], ['#fffa55', '140'])

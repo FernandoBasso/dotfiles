@@ -16,6 +16,12 @@ ht.start_or_attach {
       vim.keymap.set('n', '<leader>hh', ht.hoogle.hoogle_signature, opts)
       vim.keymap.set('n', '<leader>ea', ht.lsp.buf_eval_all, opts)
     end,
+
+    settings = {
+      haskell = {
+        formattingProvider = 'ormolu'
+      },
+    },
   },
 }
 

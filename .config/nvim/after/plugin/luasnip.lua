@@ -19,6 +19,25 @@ ls.add_snippets('all', {
   s('bt', fmt('`{}`', { i(1) })),
   s('sq', fmt('‘{}’', { i(1) })),
   s('dq', fmt('“{}”', { i(1) })),
+
+  --
+  -- Markdown Fenced Code Block
+  --
+  --    ```lang
+  --    ... code goes here ...
+  --    ```
+  --
+  s('fcb', fmt('```{}\n{}\n```', { i(1), i(2) })),
+
+  --
+  -- Asciidoc Code Block
+  --
+  --    [source,lang,extra-attrs]
+  --    ----
+  --    ... code goes here ...
+  --    ----
+  --
+  s('blk', fmt('[source,{}]\n----\n{}\n----', { i(1), i(2) }))
 })
 
 ls.add_snippets('javascript', {

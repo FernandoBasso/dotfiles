@@ -195,14 +195,37 @@ vim.cmd [[
 
   colorscheme gruvbox-material
 
-  let light_yellow = '#fdf5c0'
+  let yellow1 = '#fdf5c0'
+  let yellow2 = '#fdf5b0'
+  let yellow3 = '#fdf5a0'
+  let yellow4 = '#fdf590'
+  let yellow5 = '#fbe77d'
+  let orange1 = '#f7d598'
+  let orange2 = '#ecc682'
 
-  call gruvbox_material#highlight('CursorLine', ['NONE', 'NONE'], [light_yellow, '140'])
-  call gruvbox_material#highlight('CursorLineNr', ['NONE', 'NONE'], [light_yellow, '140'])
-  call gruvbox_material#highlight('ColorColumn', ['NONE', 'NONE'], [light_yellow, '140'])
+  call gruvbox_material#highlight('CursorLine', ['NONE', 'NONE'], [yellow1, '140'])
+  call gruvbox_material#highlight('CursorLineNr', ['NONE', 'NONE'], [yellow1, '140'])
+  call gruvbox_material#highlight('ColorColumn', ['NONE', 'NONE'], [yellow1, '140'])
 
-  " call gruvbox_material#highlight('PMenu', ['NONE', 'NONE'], ['#fffac5', '140'])
-  " call gruvbox_material#highlight('PmenuSel', ['NONE', 'NONE'], ['#fffa55', '140'])
+  "
+  " CoC completion popup, :buffer list.
+  "
+  call gruvbox_material#highlight('Pmenu', ['NONE', 'NONE'], [yellow1, '140'])
+  call gruvbox_material#highlight('CocFloating', ['NONE', 'NONE'], [yellow1, '140'])
+  call gruvbox_material#highlight('PmenuSel', ['NONE', 'NONE'], [yellow5, '140'])
+
+  "
+  " Sidebar on CocFloating popop.
+  "
+  call gruvbox_material#highlight('CocFloatSbar', ['NONE', 'NONE'], [orange1, '140'])
+  call gruvbox_material#highlight('CocFloatThumb', ['NONE', 'NONE'], [orange2, '140'])
+
+  call gruvbox_material#highlight('CocSearch', ['NONE', 'NONE'], [yellow1, '140'])
+
+  "
+  " Visual selection.
+  "
+  call gruvbox_material#highlight('Visual', ['NONE', 'NONE'], [yellow3, '140'])
 ]]
 
 ----

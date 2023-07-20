@@ -765,13 +765,21 @@ ls.config.set_config {
   enable_autosnippets = true,
 }
 
-vim.keymap.set({ 'i', 's' }, '<Tab>', function()
+--
+-- I actually use digraphs quite often so instead of <C-k> as suggested
+-- in the docs I'll go with <C-j> to insert a snippet or jump forward
+-- to the next node.
+--
+vim.keymap.set({ 'i', 's' }, '<C-j>', function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   end
 end, { silent = true })
 
-vim.keymap.set({ 'i', 's' }, '<s-Tab>', function()
+--
+-- <S-Tab> to jump back on snippet nodes.
+--
+vim.keymap.set({ 'i', 's' }, '<S-Tab>', function()
   if ls.jumpable(-1) then
     ls.jump(-1)
   end

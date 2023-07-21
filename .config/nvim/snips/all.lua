@@ -1,3 +1,7 @@
+--
+-- LuaSnip snippets that apply to all filetypes.
+--
+
 local ls = require('luasnip')
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -11,16 +15,33 @@ local r = ls.restore_node
 local fmt = require('luasnip.extras.fmt').fmt
 local rep = require('luasnip.extras').rep
 
-ls.add_snippets('lua', {
-  s('req', fmt("local {} require('{}')", { i(1), rep(1) }))
-})
-
 ls.add_snippets('all', {
-  s('bt', fmt('`{}`', { i(1) })),
+  -----
+  -- Date like ‘DATETIME: 2023-07-19 20:11’.
+  --
+  s(
+    'dt',
+    f(function()
+      return os.date "DATETIME: %Y-%m-%d %H:%M"
+    end)
+  ),
+
+  -----
+  -- Single curly quotes: ‘...’
+  --
   s('sq', fmt('‘{}’', { i(1) })),
+
+  -----
+  -- Double curly quotes: “...”
+  --
   s('dq', fmt('“{}”', { i(1) })),
 
+  -----
+  -- Backticks: `...`
   --
+  s('bt', fmt('`{}`', { i(1) })),
+
+  -----
   -- Markdown Fenced Code Block
   --
   --    ```lang
@@ -29,7 +50,7 @@ ls.add_snippets('all', {
   --
   s('fcb', fmt('```{}\n{}\n```', { i(1), i(2) })),
 
-  --
+  -----
   -- Asciidoc Code Block
   --
   --    [source,lang,extra-attrs]
@@ -38,19 +59,8 @@ ls.add_snippets('all', {
   --    ----
   --
   s('blk', fmt('[source,{}]\n----\n{}\n----', { i(1), i(2) }))
+}, {
+  key = 'all'
 })
 
-ls.add_snippets('javascript', {
-  s('ternary', {
-    i(1, 'cond'), t(' ? '), i(2, 'then'), t(' : '), i(3, 'else')
-  }),
 
-  s('doc', {
-    t({'/**', ''}),
-    t({' * '}), i(1, 'Function info...'), t({'', ''}),
-    t({' *', ''}),
-    t({' * @param '}), i(2, '...'), t({'', ''}),
-    t({' * @returns '}), i(3, '...'), t({'', ''}),
-    t({' */', ''}),
-  })
-}, { key = 'js' })

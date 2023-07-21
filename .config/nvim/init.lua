@@ -754,8 +754,6 @@ endfor
 ------------------------------------------------------------------------
 -- LuaSnip
 --
--- Take a look at ~/work/src/dotfiles/.config/nvim/after/plugin/luasnip.lua
---
 
 local ls = require("luasnip")
 
@@ -791,11 +789,9 @@ vim.keymap.set('i', '<c-l>', function()
   end
 end, { silent = true })
 
-vim.keymap.set(
-  'n',
-  '<leader><leader>s',
-  '<cmd>source ~/.config/nvim/after/plugin/luasnip.lua<CR>'
-)
+require('luasnip.loaders.from_lua').load({
+  paths = '~/.config/nvim/snips/'
+})
 
 function _G.javascript_indent()
   local line = vim.fn.getline(vim.v.lnum)

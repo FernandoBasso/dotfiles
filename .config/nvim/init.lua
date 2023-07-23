@@ -199,13 +199,19 @@ vim.cmd [[
 
   colorscheme gruvbox-material
 
-  let yellow1 = '#fdf5c0'
+  let yellow0 = '#ffffd8'
+  let yellow1 = '#fdfec0'
   let yellow2 = '#fdf5b0'
   let yellow3 = '#fdf5a0'
   let yellow4 = '#fdf590'
   let yellow5 = '#fbe77d'
   let orange1 = '#f7d598'
   let orange2 = '#ecc682'
+
+  "
+  " Very light yellow bg color.
+  "
+  call gruvbox_material#highlight('Normal', ['NONE', 'NONE'], [yellow0, '140'])
 
   call gruvbox_material#highlight('CursorLine', ['NONE', 'NONE'], [yellow1, '140'])
   call gruvbox_material#highlight('CursorLineNr', ['NONE', 'NONE'], [yellow1, '140'])

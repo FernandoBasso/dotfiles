@@ -32,6 +32,9 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'                                           -- Highlight, edit, and navigate code
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/nvim-treesitter-textobjects'                               --  Additional textobjects for treesitter
+
+  use 'uga-rosa/ccc.nvim'
+
   use 'sainnhe/gruvbox-material'
   use { 'ellisonleao/gruvbox.nvim' }
   use { 'sonph/onehalf', rtp = 'vim' }
@@ -458,6 +461,18 @@ require "nvim-treesitter.configs".setup {
     },
   }
 }
+
+------------------------------------------------------------------------
+-- uga-rosa/ccc.vim
+--
+local ccc = require("ccc")
+
+ccc.setup({
+  highlighter = {
+    auto_enable = true,
+    lsp = true,
+  },
+})
 
 ------------------------------------------------------------------------------
 -- coc-git

@@ -178,7 +178,8 @@ vim.cmd [[
   set background=light
 
   ""
-  " Let's make bg transparent so it uses my terminal bg color.
+  " Let's make bg not transparent so it works better accross
+  " different terminal emulators and including tmux.
   "
   let g:gruvbox_material_transparent_background = 1
 

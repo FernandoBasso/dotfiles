@@ -36,6 +36,9 @@ require('packer').startup(function(use)
   use 'uga-rosa/ccc.nvim'
 
   use 'sainnhe/gruvbox-material'
+  use 'shaunsingh/solarized.nvim'
+
+
   use { 'ellisonleao/gruvbox.nvim' }
   use { 'sonph/onehalf', rtp = 'vim' }
   use {
@@ -177,104 +180,22 @@ vim.cmd [[
 -- Set colorscheme
 --
 vim.o.termguicolors = true
-vim.cmd [[
-  set background=light
 
-  ""
-  " Let's make bg not transparent so it works better accross
-  " different terminal emulators and including tmux.
-  "
-  let g:gruvbox_material_transparent_background = 1
-
-  ""
-  " Probably doesn't make any difference with transparent bg.
-  "
-  let g:gruvbox_material_background = 'hard'
-
-  let g:gruvbox_material_palette = 'material'
-  let g:gruvbox_material_disable_italic_comment = 1
-  let g:gruvbox_material_diagnostic_text_highlight = 0
-  let g:gruvbox_material_diagnostic_line_highlight = 0
-  let g:gruvbox_material_diagnostic_virtual_text = 'colored'
-
-  colorscheme gruvbox-material
-
-  let yellow0 = '#ffffd8'
-  let yellow1 = '#fdfec0'
-  let yellow2 = '#fdf5b0'
-  let yellow3 = '#fdf5a0'
-  let yellow4 = '#fdf590'
-  let yellow5 = '#fbe77d'
-  let orange1 = '#f7d598'
-  let orange2 = '#ecc682'
-
-  "
-  " Very light yellow bg color.
-  "
-  call gruvbox_material#highlight('Normal', ['NONE', 'NONE'], [yellow0, '140'])
-
-  call gruvbox_material#highlight('CursorLine', ['NONE', 'NONE'], [yellow1, '140'])
-  call gruvbox_material#highlight('CursorLineNr', ['NONE', 'NONE'], [yellow1, '140'])
-  call gruvbox_material#highlight('ColorColumn', ['NONE', 'NONE'], [yellow1, '140'])
-
-  "
-  " CoC completion popup, :buffer list.
-  "
-  call gruvbox_material#highlight('Pmenu', ['NONE', 'NONE'], [yellow1, '140'])
-  call gruvbox_material#highlight('CocFloating', ['NONE', 'NONE'], [yellow1, '140'])
-  call gruvbox_material#highlight('PmenuSel', ['NONE', 'NONE'], [yellow5, '140'])
-
-  "
-  " Sidebar on CocFloating popop.
-  "
-  call gruvbox_material#highlight('CocFloatSbar', ['NONE', 'NONE'], [orange1, '140'])
-  call gruvbox_material#highlight('CocFloatThumb', ['NONE', 'NONE'], [orange2, '140'])
-
-  call gruvbox_material#highlight('CocSearch', ['NONE', 'NONE'], [yellow1, '140'])
-
-  "
-  " Visual selection.
-  "
-  call gruvbox_material#highlight('Visual', ['NONE', 'NONE'], [yellow3, '140'])
-]]
-
-----
--- Gruvbox colorscheme
+------------------------------------------------------------------------
+-- shaunsingh/solarized.nvim
 --
--- Setup must be called before loading the colorscheme.
---
--- require("gruvbox").setup({
---   undercurl = true,
---   underline = true,
---   bold = true,
---   italic = {
---     strings = false,
---     operators = false,
---     comments = false,
---   },
---   strikethrough = true,
---   invert_selection = false,
---   invert_signs = false,
---   invert_tabline = false,
---   invert_intend_guides = false,
---   inverse = true, -- invert background for search, diffs, statuslines and errors
---   contrast = "hard", -- can be "hard", "soft" or empty string
---   overrides = {},
---   dim_inactive = false,
---   transparent_mode = false,
---   palette_overrides = {
---     -- Background color.
---     light0_hard = "#f9f5d7",
---
---     -- CursorColumn, CursorColumn.
---     light1 = "#f9f5c7",
---
---     light2 = "#f9f5c7",
---     faded_blue = "#ca8212",
---   },
--- })
 
--- vim.cmd("colorscheme gruvbox")
+-- vim.g.solarized_italic_comments = false
+-- vim.g.solarized_italic_keywords = false
+-- vim.g.solarized_italic_functions = false
+-- vim.g.solarized_italic_variables = false
+-- vim.g.solarized_contrast = true
+-- vim.g.solarized_borders = false
+-- vim.g.solarized_disable_background = false
+--
+-- require('solarized').set()
+
+vim.cmd("source $HOME/work/src/dotfiles/.config/nvim/themes/gruvbox-material-light.vim")
 
 --
 -- Set completeopt to have a better completion experience.

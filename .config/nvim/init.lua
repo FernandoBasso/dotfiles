@@ -119,12 +119,12 @@ vim.o.cursorline = true
 vim.cmd [[ set colorcolumn=72,80 ]]
 
 --
--- preservim/vim-markdown/issues/558
+-- Indentation with spaces, width of 2 for everything by default.
 --
-vim.cmd [[
-  let g:vim_markdown_folding_disabled = 1
-  let g:markdown_folding = 0
-]]
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
 
 --
 -- If another plugin (like indent-blankline) is already using a cell

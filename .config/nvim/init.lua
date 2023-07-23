@@ -768,6 +768,18 @@ endfor
 ]]
 
 ------------------------------------------------------------------------
+-- prevervim/markdown
+--
+
+--
+-- • https://github.com/preservim/vim-markdown/issues/558
+--
+vim.cmd [[
+  let g:vim_markdown_folding_disabled = 1
+  let g:markdown_folding = 0
+]]
+
+------------------------------------------------------------------------
 -- LuaSnip
 --
 

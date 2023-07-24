@@ -11,7 +11,10 @@ local r = ls.restore_node
 local fmt = require('luasnip.extras.fmt').fmt
 local rep = require('luasnip.extras').rep
 
-ls.add_snippets('javascript', {
+--
+-- For JS, TS, JSX and TSX.
+--
+local jsts_snips = {
   -----
   -- console.log('==== <desc>', data);
   --
@@ -45,5 +48,10 @@ ls.add_snippets('javascript', {
     t({' * @returns '}), i(3, '...'), t({'', ''}),
     t({' */', ''}),
   })
-}, { key = 'js' })
+}
+
+ls.add_snippets('javascript', jsts_snips, { key = 'js' })
+ls.add_snippets('typescript', jsts_snips, { key = 'ts' })
+ls.add_snippets('javascriptreact', jsts_snips, { key = 'jsx' })
+ls.add_snippets('typescriptreact', jsts_snips, { key = 'tsx' })
 

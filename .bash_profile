@@ -43,6 +43,12 @@ for gnubin in "${gnubins[@]}"; do
 done
 
 ##
+# Export current hostname to an env var. Useful to allow some tools
+# to rely on env vars to do specific configs based on the hostname.
+#
+export HOSTNAME="$(hostname)"
+
+##
 # From `brew install openjdk@11`.
 #
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"

@@ -15,8 +15,6 @@ local r = ls.restore_node
 local fmt = require('luasnip.extras.fmt').fmt
 local rep = require('luasnip.extras').rep
 
-
-
 local hrini = [=[
 ---
 title: {} :: HackerRank {} Challenge
@@ -33,6 +31,11 @@ local md_snips = {
   s(
     'hrini',
     fmt(hrini, { i(1), i(2), rep(1), rep(1), rep(1), rep(2), i(3) })
+  ),
+
+  s(
+    'hrsql',
+    fmt('## {}\n\n- [{} :: HackerRank {} SQL Challenge]({})\n', { i(1), rep(1), i(2), i(3) })
   ),
 }
 

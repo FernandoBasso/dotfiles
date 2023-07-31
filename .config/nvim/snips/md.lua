@@ -18,7 +18,7 @@ local rep = require('luasnip.extras').rep
 local hrini = [=[
 ---
 title: {} :: HackerRank {} Challenge
-description: Solutions with notes and explanations for the {} HackerRank Challenge in a few different programming languages
+description: Solutions with notes and explanations for the {} HackerRank challenge in a few different programming languages
 ---
 
 # {}
@@ -26,11 +26,26 @@ description: Solutions with notes and explanations for the {} HackerRank Challen
 - [{} :: HackerRank {} Challenge]({})
 ]=]
 
+local cwini = [=[
+---
+title: {} :: {}kyu Codewars Challenge
+description: Solutions with notes and explanations for the {} {}kyu Codewars challenge in a few different programming languages
+---
+
+# {}
+
+- [{} :: Codewars {}kyu Challenge]({})
+]=]
 
 local md_snips = {
   s(
     'hrini',
     fmt(hrini, { i(1), i(2), rep(1), rep(1), rep(1), rep(2), i(3) })
+  ),
+
+  s(
+    'cwini',
+    fmt(cwini, { i(1),  i(2), rep(1), rep(2), rep(1), rep(1), rep(2), i(3)})
   ),
 
   s(

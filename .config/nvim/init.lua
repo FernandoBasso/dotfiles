@@ -95,6 +95,8 @@ require('packer').startup(function(use)
   --   requires = {'kyazdani42/nvim-web-devicons'}
   -- }
 
+  use 'habamax/vim-asciidoctor'
+
   use 'preservim/vim-markdown'
 
   if is_bootstrap then
@@ -727,6 +729,11 @@ for file in files_to_source
   endif
 endfor
 ]]
+
+------------------------------------------------------------------------
+-- habamax/vim-asciidoctor
+--
+vim.g.asciidoctor_folding = 1
 
 ------------------------------------------------------------------------
 -- prevervim/markdown

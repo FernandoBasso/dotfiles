@@ -64,8 +64,8 @@ Plug 'morhetz/gruvbox'
 " Airline causes random chars to show up if running vim on
 " Kitty, but not on other terminals or tmux.
 "
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ElmCast/elm-vim'
@@ -424,6 +424,7 @@ set laststatus=2
 if $SIMPLE != 1
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 0
+  let g:airline_theme = 'gruvbox'
 endif
 
 "

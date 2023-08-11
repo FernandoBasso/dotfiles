@@ -475,8 +475,6 @@ vim.keymap.set(
   { desc = 'Toggle coc-vim virutal text line blame' }
 )
 
-require("nvim-tree").setup()
-
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {

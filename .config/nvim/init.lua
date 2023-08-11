@@ -604,8 +604,16 @@ nmap <leader>rn <Plug>(coc-rename)
 ------------------------------------------------------------------------------
 -- nvim-tree
 --
--- vim.keymap.set('n', '<F3>', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', '<Leader>ff', ':NvimTreeFindFile<CR>')
+
+require("nvim-tree").setup({
+  view = {
+    width = {
+      min = 36,
+      max = 48,
+    },
+  },
+})
 
 ------------------------------------------------------------------------------
 -- Toggle Nvim Tree and Symbols outline

@@ -189,6 +189,13 @@ vim.cmd [[
 ]]
 
 --
+-- Change to the directory of the current buffer.
+--
+vim.cmd [[
+  nnoremap cd :cd %:h<CR>:pwd<CR>
+]]
+
+--
 -- Set colorscheme
 --
 vim.o.termguicolors = true

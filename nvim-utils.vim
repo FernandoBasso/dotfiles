@@ -93,6 +93,19 @@ command! -bang -nargs=* RGHt
 nnoremap <Leader>rht :RGHt
 nnoremap <Leader>rvt :RGVt
 
+"
+" FZF Buffers with --keep-right so lines are trimmed to the left
+" instead of to the right when they don't fit on the available space.
+" It helps to see the actually filenames and their extensions.
+"
+command! -bang -nargs=* FZFBufKeepRight
+  \ call fzf#vim#buffers(
+  \   <q-args>,
+  \   fzf#vim#with_preview({'options': ['--keep-right']}),
+  \ <bang>0)
+
+nnoremap <Leader>mb :FZFBufKeepRight<CR>
+
 ""
 " https://prettier.io/docs/en/vim.html
 "

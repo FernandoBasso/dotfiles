@@ -699,8 +699,8 @@ let g:fzf_colors =
 "
 let g:fzf_layout = {
   \ 'window' : {
-    \ 'width': 0.9,
-    \ 'height': 0.9,
+    \ 'width': 1,
+    \ 'height': 1,
     \ 'highlight': 'Normal'
     \ }
   \ }
@@ -712,7 +712,14 @@ let g:fzf_layout = {
 " NOTE: If the terminal is resized, reload vimrc with
 " `:source $MYVIMRC` to re-evaluate the condition.
 "
-let g:fzf_preview_window = winwidth(0) < 96 ? 'up:52%' : 'right:52%'
+" let g:fzf_preview_window = winwidth(0) < 96 ? 'up:52%' : 'right:52%'
+
+"
+" Opens preview to the right, unless less than 80 cols, in which case
+" preview upens up. Ctrl-\ to toggle preview visibility, which is
+" shown by default.
+"
+let g:fzf_preview_window = ['right,52%,<80(up,52%)', 'ctrl-\']
 
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>gf :GitFiles<CR>

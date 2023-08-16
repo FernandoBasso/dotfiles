@@ -6,6 +6,9 @@ ht.start_or_attach {
     log = {
       level = vim.log.levels.DEBUG,
     },
+    hover = {
+      stylize_markdown = true,
+    },
   },
   hls = {
     on_attach = function(client, bufnr)
@@ -16,10 +19,15 @@ ht.start_or_attach {
       vim.keymap.set('n', '<leader>hh', ht.hoogle.hoogle_signature, opts)
       vim.keymap.set('n', '<leader>ea', ht.lsp.buf_eval_all, opts)
     end,
-
     settings = {
       haskell = {
-        formattingProvider = 'ormolu'
+        formattingProvider = 'ormolu',
+        plugin = {
+          hlint = {
+            codeActionsOn = true,
+            diagnosticsOn = true,
+          },
+        }
       },
     },
   },

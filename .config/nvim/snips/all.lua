@@ -51,16 +51,33 @@ ls.add_snippets('all', {
   s('fcb', fmt('```{}\n{}\n```', { i(1), i(2) })),
 
   -----
-  -- Asciidoc Code Block
+  -- AsciiDoc Code Block
   --
   --    [source,lang,extra-attrs]
   --    ----
   --    ... code goes here ...
   --    ----
   --
-  s('blk', fmt('[source,{}]\n----\n{}\n----', { i(1), i(2) }))
+  s('blk', fmt('[source,{}]\n----\n{}\n----', { i(1), i(2) })),
+
+  -----
+  -- AsciiDoc Shell Session Code Block
+  --
+  --    [source,shell-session]
+  --    ----
+  --    ... code goes here ...
+  --    ----
+  --
+  s('blksh', fmt('[source,bash]\n----\n{}\n----', { i(1) })),
+  s('blkshs', fmt('[source,shell-session]\n----\n{}\n----', { i(1) })),
+
+  -----
+  -- AsciiDoc inline STEM. Example:
+  --
+  --   The expression stem:[x + 2 = 5].
+  --
+  s('sti', fmt('stem:[{}]', i(1))),
 }, {
   key = 'all'
 })
-
 

@@ -31,6 +31,8 @@ let yellow2 = '#fdf5b0'
 let yellow3 = '#fdf5a0'
 let yellow4 = '#fdf590'
 let yellow5 = '#fbe77d'
+let yellow6 = '#f9f977'
+let yellow7 = '#fbfb00'
 let orange1 = '#f7d598'
 let orange2 = '#ecc682'
 
@@ -57,6 +59,10 @@ call gruvbox_material#highlight('CocFloatSbar', ['NONE', 'NONE'], [orange1, '140
 call gruvbox_material#highlight('CocFloatThumb', ['NONE', 'NONE'], [orange2, '140'])
 
 call gruvbox_material#highlight('CocSearch', ['NONE', 'NONE'], [yellow1, '140'])
+
+call gruvbox_material#highlight('Search', ['NONE', 'NONE'], [yellow6, '120'])
+call gruvbox_material#highlight('CurSearch', ['NONE', 'NONE'], [yellow7, '120'])
+call gruvbox_material#highlight('IncSearch', ['NONE', 'NONE'], [yellow7, '120'])
 
 "
 " Visual selection.

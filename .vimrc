@@ -326,6 +326,15 @@ let g:gitgutter_preview_win_floating = 1
 "
 nnoremap <Leader>gg :NERDTreeClose \| vertical Git<CR>
 
+""
+" To navigate the items on the quickfix list. For example, with
+" fugitive, one can do :0Gclog to open all revisions for the current
+" buffer/file into the quickfix list. Then [q or ]q to go back and
+" forth on the result list.
+"
+nnoremap [q ':cprev<CR>'
+nnoremap ]q ':cnext<CR>'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 "
@@ -700,7 +709,6 @@ nnoremap <F5> :execute '!C_bf %' <CR>
 "
 nnoremap <C-F5> :execute '!C_brf %' <CR>
 nnoremap <F29> :execute '!C_brf %' <CR>
-
 
 let files_to_source = [
       \ '~/work/local/libdev.vim',

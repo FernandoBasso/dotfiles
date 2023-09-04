@@ -20,14 +20,20 @@ end
 
 -- stylua: ignore start
 require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'                                                    -- Package manager
+  use 'wbthomason/packer.nvim'
 
   use 'neovim/nvim-lspconfig'
 
   use 'gpanders/editorconfig.nvim'
 
-  use 'tpope/vim-fugitive'                                                        -- Git commands in nvim
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }       -- Add git related info in the signs columns and popups
+  use 'tpope/vim-fugitive'
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+  }
 
   use({
     "kdheepak/lazygit.nvim",
@@ -242,6 +248,15 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 vim.keymap.set('n', '<C-s>', ':update<CR>')
 vim.keymap.set('i', '<C-s>', '<Esc>:update<CR>')
+
+----
+-- To navigate the items on the quickfix list. For example, with
+-- fugitive, one can do :0Gclog to open all revisions for the current
+-- buffer/file into the quickfix list. Then [q or ]q to go back and
+-- forth on the result list.
+--
+vim.keymap.set('n', '[q', ':cprev<CR>')
+vim.keymap.set('n', ']q', ':cnext<CR>')
 
 
 -- [[ Highlight on yank ]]

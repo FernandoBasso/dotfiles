@@ -104,7 +104,15 @@ command! -bang -nargs=* FZFBufKeepRight
   \   fzf#vim#with_preview({'options': ['--keep-right']}),
   \ <bang>0)
 
-nnoremap <Leader>mb :FZFBufKeepRight<CR>
+nnoremap <Leader>gb :FZFBufKeepRight<CR>
+
+command! -bang -nargs=* FZFFilesKeepRight
+  \ call fzf#vim#files(
+  \   <q-args>,
+  \   fzf#vim#with_preview({'options': ['--keep-right']}),
+  \ <bang>0)
+
+nnoremap <Leader>gf :FZFFilesKeepRight
 
 ""
 " https://prettier.io/docs/en/vim.html

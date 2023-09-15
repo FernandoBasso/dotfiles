@@ -98,13 +98,21 @@ nnoremap <Leader>rvt :RGVt
 " instead of to the right when they don't fit on the available space.
 " It helps to see the actually filenames and their extensions.
 "
-command! -bang -nargs=* FZFBufKeepRight
+command! -bang -nargs=* FZFBuffersKeepRight
   \ call fzf#vim#buffers(
   \   <q-args>,
   \   fzf#vim#with_preview({'options': ['--keep-right']}),
   \ <bang>0)
 
-nnoremap <Leader>gb :FZFBufKeepRight<CR>
+nnoremap <Leader>bb :FZFBufKeepRight<CR>
+
+command! -bang -nargs=* FZFGitFilesKeepRight
+  \ call fzf#vim#gitfiles(
+  \   <q-args>,
+  \   fzf#vim#with_preview({'options': ['--keep-right']}),
+  \ <bang>0)
+
+nnoremap <Leader>gf :FZFGitFilesKeepRight<CR>
 
 command! -bang -nargs=* FZFFilesKeepRight
   \ call fzf#vim#files(
@@ -112,7 +120,7 @@ command! -bang -nargs=* FZFFilesKeepRight
   \   fzf#vim#with_preview({'options': ['--keep-right']}),
   \ <bang>0)
 
-nnoremap <Leader>gf :FZFFilesKeepRight
+nnoremap <Leader>f :FZFFilesKeepRight<CR>
 
 ""
 " https://prettier.io/docs/en/vim.html

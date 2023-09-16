@@ -94,6 +94,15 @@ nnoremap <Leader>rht :RGHt
 nnoremap <Leader>rvt :RGVt
 
 "
+" NOTE on --keep-right
+"
+" Somtimes it may seem --keep-right is not working, when in fact, the
+" pattern being searched for appears far to the left so fzf has to
+" keep that pattern visible, thus not showing the right portion of
+" the matches.
+"
+
+"
 " FZF Buffers with --keep-right so lines are trimmed to the left
 " instead of to the right when they don't fit on the available space.
 " It helps to see the actually filenames and their extensions.
@@ -104,7 +113,7 @@ command! -bang -nargs=* FZFBuffersKeepRight
   \   fzf#vim#with_preview({'options': ['--keep-right']}),
   \ <bang>0)
 
-nnoremap <Leader>bb :FZFBufKeepRight<CR>
+nnoremap <Leader>bb :FZFBuffersKeepRight<CR>
 
 command! -bang -nargs=* FZFGitFilesKeepRight
   \ call fzf#vim#gitfiles(
@@ -120,7 +129,7 @@ command! -bang -nargs=* FZFFilesKeepRight
   \   fzf#vim#with_preview({'options': ['--keep-right']}),
   \ <bang>0)
 
-nnoremap <Leader>f :FZFFilesKeepRight<CR>
+nnoremap <Leader>\f :FZFFilesKeepRight<CR>
 
 ""
 " https://prettier.io/docs/en/vim.html

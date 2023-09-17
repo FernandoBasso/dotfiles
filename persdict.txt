@@ -3,6 +3,8 @@ arg
 Asciidoc
 Asciidoctor
 bools
+cambridge
+cambridge-en-pt
 concat
 concatable
 concating
@@ -15,6 +17,7 @@ defs
 Deno
 dev
 devs
+dicts
 dir
 disjunction
 englishexperts
@@ -24,6 +27,7 @@ Github
 Gitlab
 HackerRank
 inode
+javascript
 lookahead
 memoization
 Memoization

@@ -84,3 +84,6 @@ OOS
 const
 eval
 foldl
+acc
+Num
+latexmath

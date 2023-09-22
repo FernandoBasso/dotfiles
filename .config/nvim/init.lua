@@ -89,11 +89,6 @@ require('packer').startup(function(use)
   use 'Olical/conjure'
 
   use {
-    'neoclide/coc.nvim',
-    branch = 'release'
-  }
-
-  use {
     'junegunn/fzf',
     run = function() vim.fn['fzf#install']() end
   }
@@ -458,52 +453,6 @@ ccc.setup({
   },
 })
 
-------------------------------------------------------------------------------
--- coc-git
---
-vim.cmd [[
-  call coc#config('git.addGBlameToVirtualText', v:true)
-]]
-
---
--- Temporary until I find better way of doing it. To toggle git line
--- git blame, run this in nvim command line mode:
---
---   :lua toggle_coc_vim_blame()
---
-toggle_coc_vim_blame = function ()
-  local showing = vim.g.coc_git_hide_blame_virtual_text
-
-  vim.g.coc_git_hide_blame_virtual_text = not showing
-
-  return showing
-end
-
---
--- Call it once so we disable it by default when opening nvim.
---
-toggle_coc_vim_blame()
-
---
--- Toggle git line blame with <leader>tgb keybinding.
---
-vim.keymap.set(
-  'n',
-  '<Leader>y',
-  function()
-    local showing = toggle_coc_vim_blame()
-
-    -- local showing = vim.g.coc_git_hide_blame_virtual_text
-
-    print(
-      string.format(
-        'MSG «coc-git»: Git line blame %s.',
-        showing and 'enabled' or 'disabled'
-      )
-    )
-  end,
-  { desc = 'Toggle coc-vim virutal text line blame' }
-)
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -574,62 +523,6 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
-
-------------------------------------------------------------------------
--- CoC — Conquer of Completion
--- ---------------------------
-vim.cmd [[
-let g:coc_global_extensions = [
-      \ 'coc-tsserver',
-      \ 'coc-eslint',
-      \ 'coc-json',
-      \ 'coc-solargraph',
-      \ 'coc-yaml',
-      \ 'coc-css',
-      \ 'coc-git',
-      \ ]
-
-"
-" “Go To” code navigation.
-"
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-"
-" Suggest semantic completions with Ctrl+Tab. Works really well,
-" and handles suggestions of object properties. Example:
-"
-" type TParams {
-"   url: string,
-"   method: string,
-" }
-"
-" Now, typing “const params: TParams { <C-Space>” displays
-" url, method, and their types and even documentation,
-" if available.
-"
-inoremap <silent><expr> <C-Space> coc#refresh()
-
-"
-" Display diagnostics (errors and warnings) and documentation.
-" Type uppercase ‘K’ to activate, and any motion (like ‘j’, ‘k’,
-" ‘h’, ‘b’, ‘<C-o>’, ‘<C-i>’, etc.) to deactivate.
-"
-nnoremap <silent> K :call CocAction('doHover')<CR>
-
-"
-" Navigate to next/prev errors.
-"
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-"
-" Rename symbol
-"
-nmap <leader>rn <Plug>(coc-rename)
-]]
 
 ------------------------------------------------------------------------------
 -- nvim-tree

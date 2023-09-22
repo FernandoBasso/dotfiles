@@ -24,6 +24,10 @@ require('packer').startup(function(use)
 
   use 'neovim/nvim-lspconfig'
 
+  use {
+    'williamboman/mason.nvim'
+  }
+
   use 'gpanders/editorconfig.nvim'
 
   use 'tpope/vim-fugitive'
@@ -291,8 +295,13 @@ require('Comment').setup()
 --   show_trailing_blankline_indent = false,
 -- }
 
+------------------------------------------------------------------------
+-- mason
+--
+require("mason").setup()
 
 local lspconfig = require('lspconfig')
+
 -- lspconfig.pyright.setup {}
 -- lspconfig.tsserver.setup {}
 -- lspconfig.rust_analyzer.setup {

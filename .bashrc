@@ -217,6 +217,16 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
 
 [ -f "/home/fernando/.ghcup/env" ] && source "/home/fernando/.ghcup/env"
 
+##
+# For my C stuff.
+#
+# Check my notes on C and Criterion setup:
+#
+# • https://github.com/devhowto/devnotes/blob/main/C/README.adoc
+#
+export CLIBS="$HOME/local/clibs"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CLIBS/criterion/lib"
+
 #
 # vim: set textwidth=78 nowrap:
 #

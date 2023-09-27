@@ -24,6 +24,14 @@ require('packer').startup(function(use)
 
   use 'neovim/nvim-lspconfig'
 
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+
   use {
     'williamboman/mason.nvim'
   }
@@ -377,6 +385,72 @@ require'treesitter-context'.setup{
 }
 
 ------------------------------------------------------------------------------
+-- nvim-cmp
+--
+local cmp = require'cmp'
+
+cmp.setup({
+  snippet = {
+    -- REQUIRED - you must specify a snippet engine
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body)
+    end,
+  },
+
+    mapping = cmp.mapping.preset.insert({
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+
+      ----
+      -- Accept currently selected item. Set `select` to `false` to only
+      -- confirm explicitly selected items.
+      --
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'nvim_lsp_signature_help' },
+  }, {
+    { name = 'buffer' },
+  }),
+});
+
+--
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`,
+-- this won't work anymore).
+--
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+--
+-- Use cmdline & path source for ':' (if you enabled `native_menu`,
+-- this won't work anymore).
+--
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
+})
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+require('lspconfig')['tsserver'].setup {
+  capabilities = capabilities
+}
+
+------------------------------------------------------------------------------
 -- ## Gitsigns
 --
 -- • https://github.com/lewis6991/gitsigns.nvim
@@ -417,6 +491,7 @@ require('gitsigns').setup {
     -- Actions
     map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
     map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+    map({'n', 'v'}, '<leader>bl', ':Gitsigns blame_line<CR>');
     map('n', '<leader>hS', gs.stage_buffer)
     map('n', '<leader>hu', gs.undo_stage_hunk)
     map('n', '<leader>hR', gs.reset_buffer)

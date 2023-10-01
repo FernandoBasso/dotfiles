@@ -1,30 +1,40 @@
 # vim: set filetype=sh:
 
+########################################################################
+# ls INI
+#
 alias ls='ls --color=auto --classify'
 alias l1='ls --color=auto --classify -1'
 alias l1d='ls --color=auto --classofy -1 --group-directories-first'
 alias ll='ls --color=auto --classify --human-readable --almost-all -o'
 alias lsd='ls --group-directories-first'
 alias P='pacman-color'
+#
+# ls END
+########################################################################
 
+########################################################################
+# cp INI
 #
 # Let's use ‘--interactive’ by default to avoid unwittingly
 # overwriting files. Better safe than sorry.
 #
 alias cp='cp --verbose --interactive'
+#
+# cp END
+########################################################################
 
-#
-# Vim-related aliases.
-#
-#
-# For this alias, also see tmux/themes/tmux-light.conf.
-#
-alias vimlight='vim -c "colorscheme mylight1" -c "AirlineTheme xtermlight"'
-
-alias fzf=fzf --delimiter=: --preview='bat --style=numbers --color=always {1}'
 
 ########################################################################
-# Git Aliases
+# fzf INI
+#
+alias fzf=fzf --delimiter=: --preview='bat --style=numbers --color=always {1}'
+#
+# fzf END
+########################################################################
+
+########################################################################
+# Git END
 #
 # Git mechanism for aliases is helpful, but it has some shortcomings. For
 # one thing, we just type `git <some command>'. We can't have something
@@ -117,11 +127,11 @@ alias gl1s='git log -1 --stat'
 alias gl1ps='git log -1 --patch-with-stat'
 
 #
-# End Git Aliases
+# Git END
 ########################################################################
 
 ########################################################################
-# Virtual Box Aliases INI
+# VirtualBox INI
 #
 
 alias vboxm=VBoxManage
@@ -131,5 +141,5 @@ alias vbox_nbsdc='VBoxManage startvm nbsdC --type headless'
 alias vbox_debc='VBoxManage startvm DebC --type headless'
 
 #
-# Virtual Box Aliases END
+# VirtualBox END
 ########################################################################

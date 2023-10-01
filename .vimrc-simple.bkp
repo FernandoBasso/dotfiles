@@ -2,6 +2,8 @@
 set encoding=utf-8
 set fileencoding=utf-8
 
+" **** BASIC **** "
+
 "
 " Dotfiles dir.
 "
@@ -54,12 +56,14 @@ set breakindent
 "
 set backspace=indent,start,eol
 
+
 set history=8192
 set undolevels=199
 
 " All three settings are necessary to avoid noise... "
 set noerrorbells
 set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
 
 set backup
 set backupdir=~/Temp/vim_bkp/
@@ -92,6 +96,7 @@ set conceallevel=1
 "
 " Also to help with indentLin + json.vim hiding quotes from json files.
 let g:vim_json_syntax_conceal = 0
+
 
 "
 " NERDTree
@@ -141,13 +146,77 @@ nnoremap <Leader>gg :NERDTreeClose \| vertical Git<CR>
 " Colors
 "
 
+" let &t_Cs = "\e[4:3m"
+" let &t_Ce = "\e[4:0m"
+"
+" let g:gruvbox_bold = 0
+" let g:gruvbox_italic = 0
+" let g:solarized_italic = 0
+"
+" if $THEME == 'dark'
+"   let s:theme_name = 'gruvbox'
+"   set background=dark
+"   execute 'colorscheme' s:theme_name
+"
+"   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
+" else
+"   "
+"   " For light themes, either gruvbox or solarized are well
+"   " configured on my setup (with color-overrides/* stuff).
+"   "
+"   let s:theme_name = 'gruvbox'
+"   set background=light
+"   execute 'colorscheme' s:theme_name
+"
+"   let g:airline_theme = 'xtermlight'
+"
+"   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
+" end
+
 let html_no_rendering = 1
 autocmd BufReadPost *.twig set filetype=html
+
+""
+" :Man
+"
+" :execute "normal! \<C-w>H"
+"
+autocmd BufRead * if &buftype == 'quickfix'
+      \ && w:quickfix_title == 'Man TOC'
+      \ | wincmd H
+      \ | vertical resize 36
+      \ | endif
+
 
 "
 " UltiSnips
 "
 let g:UltiSnipsSnippetDirectories = [$HOME . '/work/src/dotfiles/ultisnips']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GUI, GVim
+"
+if (has('gui_running'))
+  set guioptions=
+
+  set lines=45
+  set columns=120
+
+  "
+  " The font ProFontIIx does not display the char “¦”.
+  "
+  "set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
+
+  " set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
+  " set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 15
+  " set guifont=Source\ Code\ Pro\ Semi-Bold\ 14
+  " set guifont=SauceCodeProNerdFontCompleteM-Semibold:h16
+  " set guifont=Source Code Pro Semi-Bold 14
+  set guifont=SauceCodePro\ Nerd\ Font\ Semi-Bold\ 13
+  set linespace=5
+
+  set guicursor=n-c:hor14,i:ver14,a:blinkon0
+endif
 
 
 ""

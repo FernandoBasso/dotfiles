@@ -24,7 +24,7 @@ alias vimlight='vim -c "colorscheme mylight1" -c "AirlineTheme xtermlight"'
 alias fzf=fzf --delimiter=: --preview='bat --style=numbers --color=always {1}'
 
 ########################################################################
-# Git related aliases.
+# Git Aliases
 #
 # Git mechanism for aliases is helpful, but it has some shortcomings. For
 # one thing, we just type `git <some command>'. We can't have something
@@ -118,4 +118,18 @@ alias gl1ps='git log -1 --patch-with-stat'
 
 #
 # End Git Aliases
+########################################################################
+
+########################################################################
+# Virtual Box Aliases INI
+#
+
+alias vboxm=VBoxManage
+
+alias vbox_nbsdc='VBoxManage startvm nbsdC --type headless'
+
+alias vbox_debc='VBoxManage startvm DebC --type headless'
+
+#
+# Virtual Box Aliases END
 ########################################################################

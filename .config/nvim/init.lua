@@ -60,7 +60,7 @@ require('packer').startup(function(use)
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/nvim-treesitter-textobjects'                               --  Additional textobjects for treesitter
 
-  use 'nvim-treesitter/nvim-treesitter-context'
+  -- use 'nvim-treesitter/nvim-treesitter-context'
 
   use 'uga-rosa/ccc.nvim'
 
@@ -92,6 +92,13 @@ require('packer').startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
   use 'simrat39/symbols-outline.nvim'
+
+  use({
+    'Bekaboo/dropbar.nvim',
+  --   -- requires = {
+  --   --   'nvim-telescope/telescope-fzf-native'
+  --   -- }
+  })
 
   use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 
@@ -372,18 +379,18 @@ require'lspconfig'.eslint.setup{}
 ------------------------------------------------------------------------
 -- nvim-treesitter/nvim-treesitter-context
 --
-require'treesitter-context'.setup{
-  enable = true,
-  max_lines = 0,
-  min_window_height = 0,
-  line_numbers = true,
-  multiline_threshold = 20,
-  trim_scope = 'outer',
-  mode = 'cursor',
-  separator = nil,
-  zindex = 20,
-  on_attach = nil,
-}
+-- require'treesitter-context'.setup{
+--   enable = true,
+--   max_lines = 0,
+--   min_window_height = 0,
+--   line_numbers = true,
+--   multiline_threshold = 20,
+--   trim_scope = 'outer',
+--   mode = 'cursor',
+--   separator = nil,
+--   zindex = 20,
+--   on_attach = nil,
+-- }
 
 ------------------------------------------------------------------------------
 -- nvim-cmp
@@ -436,14 +443,14 @@ cmp.setup.cmdline({ '/', '?' }, {
 -- Use cmdline & path source for ':' (if you enabled `native_menu`,
 -- this won't work anymore).
 --
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' },
-  }, {
-    { name = 'cmdline' }
-  })
-})
+-- cmp.setup.cmdline(':', {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = cmp.config.sources({
+--     { name = 'path' },
+--   }, {
+--     { name = 'cmdline' }
+--   })
+-- })
 
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()

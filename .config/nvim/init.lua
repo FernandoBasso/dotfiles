@@ -93,12 +93,12 @@ require('packer').startup(function(use)
 
   use 'simrat39/symbols-outline.nvim'
 
-  use({
-    'Bekaboo/dropbar.nvim',
-  --   -- requires = {
-  --   --   'nvim-telescope/telescope-fzf-native'
-  --   -- }
-  })
+  -- use({
+  --   'Bekaboo/dropbar.nvim',
+  -- --   -- requires = {
+  -- --   --   'nvim-telescope/telescope-fzf-native'
+  -- --   -- }
+  -- })
 
   use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 
@@ -423,9 +423,15 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'buffname' },
-  }, {
-    { name = 'buffer' },
-  }),
+    {
+      name = "buffer",
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end,
+      },
+    },
+  })
 });
 
 --

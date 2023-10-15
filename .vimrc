@@ -26,7 +26,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
+
 Plug 'tomtom/tcomment_vim'
 Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
 Plug 'gutenye/json5.vim'

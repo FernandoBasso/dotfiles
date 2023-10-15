@@ -138,6 +138,7 @@ to_source=(
   "$path_incl/bash-prompts.sh"
   "$path_incl/bash-aliases.sh"
   "$path_incl/bash-utils.sh"
+  "$path_incl/bash-functions.sh"
   "$path_incl/gen-passwords.sh"
   "$path_incl/git-helpers.sh"
   "$path_incl/wrappers.sh"

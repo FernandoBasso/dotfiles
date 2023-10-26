@@ -673,7 +673,9 @@ if (has('gui_running'))
   " set guifont=Source\ Code\ Pro\ Semi-Bold\ 14
   " set guifont=SauceCodeProNerdFontCompleteM-Semibold:h16
   " set guifont=Source Code Pro Semi-Bold 14
-  set guifont=SauceCodePro\ Nerd\ Font\ Semi-Bold\ 13
+  " set guifont=SauceCodePro\ Nerd\ Font\ Semi-Bold\ 13
+  set guifont=SauceCodeProNFM:h18
+
   set linespace=5
 
   set guicursor=n-c:hor14,i:ver14,a:blinkon0

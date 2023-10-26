@@ -123,6 +123,14 @@ command! -bang -nargs=* FZFGitFilesKeepRight
 
 nnoremap <Leader>gf :FZFGitFilesKeepRight<CR>
 
+command! -bang -nargs=* FZFGitFilesChangesKeepRight
+  \ call fzf#vim#gitfiles(
+  \   '?',
+  \   fzf#vim#with_preview({'options': ['--keep-right']}),
+  \ <bang>0)
+
+nnoremap <Leader>g? :FZFGitFilesChangesKeepRight<CR>
+
 command! -bang -nargs=* FZFFilesKeepRight
   \ call fzf#vim#files(
   \   <q-args>,

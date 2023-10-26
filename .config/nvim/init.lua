@@ -745,7 +745,7 @@ let g:fzf_preview_window = ['right,52%,<80(up,52%)', 'ctrl-\']
 nnoremap <Leader>f :Files<CR>
 " nnoremap <Leader>gf :GitFiles<CR>
 " nnoremap <Leader>bb :Buffers<CR>
-nnoremap <Leader>g? :GF?<CR>
+" nnoremap <Leader>g? :GF?<CR>
 nnoremap <Leader>rg :Rg!<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <Leader>m :Marks<CR>

@@ -16,6 +16,7 @@ decompositions
 defs
 Deno
 dev
+devnotes
 devs
 dicts
 dir

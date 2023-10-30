@@ -377,6 +377,11 @@ require'lspconfig'.clangd.setup{}
 require'lspconfig'.eslint.setup{}
 
 ------------------------------------------------------------------------
+-- lsp-config solargraph
+--
+require'lspconfig'.solargraph.setup{}
+
+------------------------------------------------------------------------
 -- nvim-treesitter/nvim-treesitter-context
 --
 -- require'treesitter-context'.setup{

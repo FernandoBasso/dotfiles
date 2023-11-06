@@ -93,12 +93,12 @@ require('packer').startup(function(use)
 
   use 'simrat39/symbols-outline.nvim'
 
-  -- use({
-  --   'Bekaboo/dropbar.nvim',
+  use({
+    'Bekaboo/dropbar.nvim',
   -- --   -- requires = {
   -- --   --   'nvim-telescope/telescope-fzf-native'
   -- --   -- }
-  -- })
+  })
 
   use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 

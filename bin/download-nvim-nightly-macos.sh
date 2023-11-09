@@ -11,5 +11,7 @@
 
   rm -rv ./nvim-macos.tar.gz
 
+	rm -v ~/bin/nv
+
   ln -sv ~/bin/nvim-macos/bin/nvim ~/bin/nv
 }

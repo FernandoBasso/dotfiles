@@ -402,9 +402,37 @@ require'lspconfig'.solargraph.setup{}
 --
 local cmp = require'cmp'
 
+--
+-- nvim cmp turned off by default.
+--
+vim.g.cmp_toggle = false
+
+local cmp = require('cmp')
+
+vim.keymap.set(
+  'n',
+  '<Leader><Leader>c',
+  function ()
+    vim.g.cmp_toggle = not vim.g.cmp_toggle
+    local status
+
+    if vim.g.cmp_toggle then
+      status = 'ENABLED'
+    else
+      status = 'DISABLED'
+    end
+
+    print('nvim-cmp', status)
+  end,
+  { desc = 'toggle nvim-cmp' }
+)
+
 cmp.setup({
+  enabled = function()
+    return vim.g.cmp_toggle
+  end,
+
   snippet = {
-    -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
     end,

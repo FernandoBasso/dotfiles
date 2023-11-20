@@ -20,7 +20,7 @@ local jsts_snips = {
   --
   s(
     'log',
-    fmt("console.log('==== {}', {});", { i(1), i(2) })
+    fmt("console.log(\"==== {}\", {});", { i(1), i(2) })
   ),
 
   -----

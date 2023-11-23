@@ -273,6 +273,13 @@ vim.keymap.set('n', '[q', ':cprev<CR>')
 vim.keymap.set('n', ']q', ':cnext<CR>')
 
 
+----
+-- Navigate to next and previous buffes more easily.
+--
+vim.keymap.set('n', '<Leader><Leader>n', ':bnext<CR>')
+vim.keymap.set('n', '<Leader><Leader>p', ':bprev<CR>')
+
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })

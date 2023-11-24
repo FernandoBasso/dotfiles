@@ -55,7 +55,8 @@ require('packer').startup(function(use)
     },
   })
 
-  use 'numToStr/Comment.nvim'                                                     -- "gc" to comment visual regions/lines
+  use 'numToStr/Comment.nvim'
+
   use 'nvim-treesitter/nvim-treesitter'                                           -- Highlight, edit, and navigate code
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/nvim-treesitter-textobjects'                               --  Additional textobjects for treesitter

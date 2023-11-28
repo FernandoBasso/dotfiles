@@ -65,10 +65,11 @@
 
 (set-face-attribute 'default nil
                     ;:family "Source Code Pro"
-                    :family "CaskaydiaCove Nerd Font"
+                    ;:family "CaskaydiaCove Nerd Font"
+                    :family "SauceCodePro NFM SemiBold"
                     :height (cond
                              ((eq system-type 'gnu/linux) 130)
-                             ((eq system-type 'darwin) 175)
+                             ((eq system-type 'darwin) 165)
                              (t 150))
                     :weight (cond
                               ((eq system-type 'gnu/linux) 'semibold)

@@ -79,7 +79,6 @@
 
 (setq-default line-spacing 0.1)
 
-
 (set-face-italic 'font-lock-comment-face nil)
 
 (global-visual-line-mode t)

@@ -93,3 +93,5 @@ adoc
 VirtualBox
 psql
 msg
+struct
+c99

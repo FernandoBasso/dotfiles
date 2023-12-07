@@ -57,6 +57,12 @@ require('packer').startup(function(use)
 
   use 'numToStr/Comment.nvim'
 
+  use {
+    'akinsho/bufferline.nvim',
+    tag = "*",
+    requires = 'nvim-tree/nvim-web-devicons'
+  }
+
   use 'nvim-treesitter/nvim-treesitter'                                           -- Highlight, edit, and navigate code
   use 'nvim-treesitter/playground'
   use 'nvim-treesitter/nvim-treesitter-textobjects'                               --  Additional textobjects for treesitter
@@ -529,6 +535,36 @@ vim.keymap.set(
   end,
   { desc = 'Toggle LSP Inlay Hints' }
 )
+
+------------------------------------------------------------------------------
+-- bufferline
+--
+require("bufferline").setup {
+  options = {
+    mode = "buffers",
+    numbers = "ordinal",
+    diagnostics = "nvim_lsp",
+  }
+}
+
+vim.cmd [[
+  nnoremap <silent><leader>1 <Cmd>BufferLineGoToBuffer 1<CR>
+  nnoremap <silent><leader>2 <Cmd>BufferLineGoToBuffer 2<CR>
+  nnoremap <silent><leader>3 <Cmd>BufferLineGoToBuffer 3<CR>
+  nnoremap <silent><leader>4 <Cmd>BufferLineGoToBuffer 4<CR>
+  nnoremap <silent><leader>5 <Cmd>BufferLineGoToBuffer 5<CR>
+  nnoremap <silent><leader>6 <Cmd>BufferLineGoToBuffer 6<CR>
+  nnoremap <silent><leader>7 <Cmd>BufferLineGoToBuffer 7<CR>
+  nnoremap <silent><leader>8 <Cmd>BufferLineGoToBuffer 8<CR>
+  nnoremap <silent><leader>9 <Cmd>BufferLineGoToBuffer 9<CR>
+  nnoremap <silent><leader>$ <Cmd>BufferLineGoToBuffer -1<CR>
+
+  nnoremap <silent><Leader>n :BufferLineCycleNext<CR>
+  nnoremap <silent><Leader>p :BufferLineCyclePrev<CR>
+
+  nnoremap <silent><Leader>mn :BufferLineMoveNext<CR>
+  nnoremap <silent><Leader>mp :BufferLineMovePrev<CR>
+]]
 
 ------------------------------------------------------------------------------
 -- ## Gitsigns

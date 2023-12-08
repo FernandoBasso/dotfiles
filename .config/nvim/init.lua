@@ -114,6 +114,11 @@ require('packer').startup(function(use)
   }
   use 'junegunn/fzf.vim'
 
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+
   -- use {
   --   'romgrk/barbar.nvim',
   --   requires = {'kyazdani42/nvim-web-devicons'}
@@ -558,32 +563,22 @@ vim.keymap.set(
 ------------------------------------------------------------------------------
 -- bufferline
 --
-require("bufferline").setup {
+local bufferline = require('bufferline')
+
+bufferline.setup {
   options = {
+    style_preset = {
+      bufferline.style_preset.no_italic,
+    },
     mode = "buffers",
     numbers = "ordinal",
     show_buffer_close_icons = false,
     diagnostics = "nvim_lsp",
   },
   highlights = {
-    -- fill = {
-    --   bg = '#ffffd8',
-    -- },
-    -- background = {
-    --   bg = '#f4f4b4',
-    -- },
-    -- buffer_selected = {
-    --   bg = '#ffffd8',
-    -- },
-    -- numbers = {
-    --   bg = '#f4f4b4',
-    -- },
-    -- numbers_visible = {
-    --   bg = '#ffffd8',
-    -- },
-    -- numbers_selected = {
-    --   bg = '#ffffd8',
-    -- }
+    fill = {
+      bg = '#f9f5d7',
+    },
   }
 }
 

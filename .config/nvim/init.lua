@@ -72,11 +72,15 @@ require('packer').startup(function(use)
   use 'uga-rosa/ccc.nvim'
 
   use 'sainnhe/gruvbox-material'
-  use 'shaunsingh/solarized.nvim'
 
+  use {
+    'maxmx03/solarized.nvim',
+    config = function()
+      vim.o.background = 'light'
+      vim.cmd.colorscheme 'solarized'
+    end
+  }
 
-  use { 'ellisonleao/gruvbox.nvim' }
-  use { 'sonph/onehalf', rtp = 'vim' }
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -240,7 +244,7 @@ vim.o.termguicolors = true
 --
 -- require('solarized').set()
 
-vim.cmd("source $HOME/work/src/dotfiles/.config/nvim/themes/gruvbox-material-light.vim")
+-- vim.cmd("source $HOME/work/src/dotfiles/.config/nvim/themes/gruvbox-material-light.vim")
 
 --
 -- Set completeopt to have a better completion experience.

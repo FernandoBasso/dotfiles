@@ -510,6 +510,26 @@ require('lspconfig')['tsserver'].setup {
   capabilities = capabilities
 }
 
+----
+-- Toggle LSP Inlay Hints
+--
+vim.keymap.set(
+  'n',
+  '<Leader>ih',
+  function ()
+    vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled())
+
+    if vim.lsp.inlay_hint.is_enabled() then
+      status = 'ENABLED'
+    else
+      status = 'DISABLED'
+    end
+
+    print('Inlay Hints', status)
+  end,
+  { desc = 'Toggle LSP Inlay Hints' }
+)
+
 ------------------------------------------------------------------------------
 -- ## Gitsigns
 --

@@ -73,13 +73,7 @@ require('packer').startup(function(use)
 
   use 'sainnhe/gruvbox-material'
 
-  use {
-    'maxmx03/solarized.nvim',
-    config = function()
-      vim.o.background = 'light'
-      vim.cmd.colorscheme 'solarized'
-    end
-  }
+  use { 'ellisonleao/gruvbox.nvim' }
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -225,26 +219,48 @@ vim.cmd [[
   nnoremap cd :cd %:h<CR>:pwd<CR>
 ]]
 
---
--- Set colorscheme
+------------------------------------------------------------------------
+-- ellisonleao/gruvbox.nvim
 --
 vim.o.termguicolors = true
 
-------------------------------------------------------------------------
--- shaunsingh/solarized.nvim
---
+vim.o.background = 'light'
 
--- vim.g.solarized_italic_comments = false
--- vim.g.solarized_italic_keywords = false
--- vim.g.solarized_italic_functions = false
--- vim.g.solarized_italic_variables = false
--- vim.g.solarized_contrast = true
--- vim.g.solarized_borders = false
--- vim.g.solarized_disable_background = false
---
--- require('solarized').set()
+require("gruvbox").setup({
+  terminal_colors = true,
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = {
+    strings = false,
+    emphasis = false,
+    comments = false,
+    operators = false,
+    folds = false,
+  },
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
 
--- vim.cmd("source $HOME/work/src/dotfiles/.config/nvim/themes/gruvbox-material-light.vim")
+   -- Invert background for search, diffs, statuslines and errors.
+  inverse = false,
+
+   -- Can be "hard", "soft" or empty string.
+  contrast = "hard",
+
+  palette_overrides = {},
+  overrides = {
+    ColorColumn = { bg = '#f4efcb' },
+    CursorLine = { bg = '#f4efcb' },
+    Search = { bg = 'yellow' }
+  },
+  dim_inactive = false,
+  transparent_mode = false,
+})
+
+vim.cmd("colorscheme gruvbox")
 
 --
 -- Set completeopt to have a better completion experience.
@@ -301,14 +317,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- Set lualine as statusline
+----
+-- Set lualine as statusline.
 -- See `:help lualine.txt`
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox-material',
-    -- component_separators = '|',
-    -- section_separators = '',
+    theme = 'auto',
   },
   sections = {
     lualine_c = {
@@ -551,24 +566,24 @@ require("bufferline").setup {
     diagnostics = "nvim_lsp",
   },
   highlights = {
-    fill = {
-      bg = '#ffffd8',
-    },
-    background = {
-      bg = '#f4f4b4',
-    },
-    buffer_selected = {
-      bg = '#ffffd8',
-    },
-    numbers = {
-      bg = '#f4f4b4',
-    },
-    numbers_visible = {
-      bg = '#ffffd8',
-    },
-    numbers_selected = {
-      bg = '#ffffd8',
-    }
+    -- fill = {
+    --   bg = '#ffffd8',
+    -- },
+    -- background = {
+    --   bg = '#f4f4b4',
+    -- },
+    -- buffer_selected = {
+    --   bg = '#ffffd8',
+    -- },
+    -- numbers = {
+    --   bg = '#f4f4b4',
+    -- },
+    -- numbers_visible = {
+    --   bg = '#ffffd8',
+    -- },
+    -- numbers_selected = {
+    --   bg = '#ffffd8',
+    -- }
   }
 }
 
@@ -829,7 +844,7 @@ let g:fzf_colors =
   \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'Yellow'],
+  \ 'fg+':     ['fg', 'Error'],
   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
   \ 'hl+':     ['fg', 'Statement'],
   \ 'info':    ['fg', 'PreProc'],

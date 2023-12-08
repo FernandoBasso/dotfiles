@@ -543,7 +543,28 @@ require("bufferline").setup {
   options = {
     mode = "buffers",
     numbers = "ordinal",
+    show_buffer_close_icons = false,
     diagnostics = "nvim_lsp",
+  },
+  highlights = {
+    fill = {
+      bg = '#ffffd8',
+    },
+    background = {
+      bg = '#f4f4b4',
+    },
+    buffer_selected = {
+      bg = '#ffffd8',
+    },
+    numbers = {
+      bg = '#f4f4b4',
+    },
+    numbers_visible = {
+      bg = '#ffffd8',
+    },
+    numbers_selected = {
+      bg = '#ffffd8',
+    }
   }
 }
 

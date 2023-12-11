@@ -284,6 +284,15 @@ require("gruvbox").setup({
 
 vim.cmd("colorscheme gruvbox")
 
+vim.cmd [[
+  ""
+  " Fix for dropbar strange bg colors.
+  "
+  " • https://github.com/Bekaboo/dropbar.nvim/issues/118
+  "
+  highlight WinBar guibg=NONE
+]]
+
 --
 -- Set completeopt to have a better completion experience.
 --

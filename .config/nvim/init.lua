@@ -301,6 +301,26 @@ vim.o.completeopt = 'menuone,noselect'
 vim.g.mapleader = '\\'
 vim.g.maplocalleader = '\\'
 
+----
+-- Reload $MYVIMRC.
+--
+vim.keymap.set(
+  'n',
+  '<Leader>cr',
+  function ()
+    vim.api.nvim_cmd(
+      {
+        cmd = 'source',
+        args = {
+          vim.fn.expand '$MYVIMRC'
+        },
+      },
+      {}
+    )
+    print('Reloaded nvim config!')
+  end
+)
+
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })

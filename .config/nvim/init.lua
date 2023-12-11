@@ -231,7 +231,7 @@ vim.o.termguicolors = true
 
 vim.o.background = 'light'
 
-local c_bg = '#fbf1c7'
+local c_bg = '#ffffd8' -- '#fbf1c7'
 local c_color_column = '#f6ebbc' -- '#fbf7c5' -- '#fff3c3' -- '#fef6ba'
 local c_cursor_line = c_color_column
 local c_string = '#d22626'
@@ -245,7 +245,6 @@ local yellow6 = '#f9f977'
 local yellow7 = '#fbfb00'
 local orange1 = '#f7d598'
 local orange2 = '#ecc682'
-
 require("gruvbox").setup({
   terminal_colors = true,
   undercurl = true,
@@ -273,8 +272,8 @@ require("gruvbox").setup({
   palette_overrides = {},
   overrides = {
     Normal = { bg = c_bg },
-    ColorColumn = { bg = c_color_column },
-    CursorLine = { bg = c_cursor_line },
+    ColorColumn = { bg = yellow1 },
+    CursorLine = { bg = yellow1 },
     Search = { bg = 'yellow' },
     -- String = { fg = c_string },
     Visual = { bg = yellow4 },

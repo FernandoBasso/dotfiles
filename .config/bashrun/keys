@@ -1,8 +1,8 @@
 ################################################################################
-# 
+#
 # bashrun keyboard configuration file
-# 
-# The current keymap can be set using 
+#
+# The current keymap can be set using
 #    KEYMAP <keymap>
 #
 # Keybindings are defined using
@@ -11,9 +11,9 @@
 # - supported keymaps: "emacs", "vi-insert" or "vi-command".
 # - keyseq: valid readline keyseq (see readline(1))
 # - keyname: optional description for keyseqs like \e[11~ etc.
-# 
+#
 # The following keyseqs are reserved by bashrun for internal use:
-#     
+#
 #    \C-x[0-9][...]
 #    \20[0-9]
 #
@@ -21,32 +21,32 @@
 
 KEYMAP emacs
 
-quit  \C-q 
-abort \C-g 
-pass  \ew  
-run   \C-m 
-run   \C-j 
+quit  \C-q
+abort \C-g
+pass  \ew
+run   \C-m
+run   \C-j
 
-term-run  \e\C-m 
-term-run  \e\C-j 
-term-hold \eh 
-term-page \e+ 
+term-run  \e\C-m
+term-run  \e\C-j
+term-hold \eh
+term-page \e+
 
 su-run       \esu
 su-term-run  \es\C-m
 su-term-run  \es\C-j
-su-term-hold \esh  
+su-term-hold \esh
 su-term-page \es+
 
-show-manual \e? 
-show-info   \e\C-? 
+show-manual \e?
+show-info   \e\C-?
 show-help   \C-x?
 
 copy        \ex
 copy-paste  \e\C-x
 
 filter \ea
-filter-paste \e\C-a 
+filter-paste \e\C-a
 
 browse        \e\C-b
 google-search \e\C-g
@@ -56,7 +56,7 @@ bashrun-bindings \eOP   F1
 bashrun-bindings \e[11~ F1
 
 bashrun-manual   \eOQ   F2
-bashrun-manual   \e[12~ F2 
+bashrun-manual   \e[12~ F2
 
 bashrun-handlers \eOR   F3
 bashrun-handlers \e[13~ F3
@@ -107,16 +107,16 @@ run   \C-j
 
 term-run  \e\C-m
 term-run  \e\C-j
-term-hold \eh 
-term-page \e+ 
+term-hold \eh
+term-page \e+
 
 su-run       \esu
 su-term-run  \es\C-m
 su-term-run  \es\C-j
-su-term-hold \esh  
+su-term-hold \esh
 su-term-page \es+
 
-show-manual \e? 
+show-manual \e?
 show-info   \ei
 show-help   \eh
 
@@ -124,7 +124,7 @@ copy        \ec
 copy-paste  \ev
 
 filter \ea
-filter-paste \e\C-a 	   
+filter-paste \e\C-a
 
 browse        \eb
 google-search \eg

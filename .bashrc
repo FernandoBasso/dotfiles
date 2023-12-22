@@ -58,7 +58,7 @@ export FZF_DEFAULT_OPTS='--preview-window right:36%'
 export DENO_INSTALL="$HOME/.deno"
 PATH="$PATH:$DENO_INSTALL/bin"
 
-PATH="$PATH:$HOME/local/build/chicken-5.3.0/bin"
+PATH="$HOME/local/chicken-5.3.0/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 PATH="$PATH:$HOME/.rvm/bin"
@@ -216,7 +216,7 @@ export PATH="$PATH:$HOME/local/bin"
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
 
-[ -f "/home/fernando/.ghcup/env" ] && source "/home/fernando/.ghcup/env"
+[ -f "/home/deveng/.ghcup/env" ] && source "/home/deveng/.ghcup/env"
 
 ##
 # For my C stuff.

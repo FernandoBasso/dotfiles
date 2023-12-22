@@ -416,6 +416,9 @@
 (use-package geiser-chicken
   :ensure t)
 
+(use-package geiser-guile
+  :ensure t)
+
 (use-package racket-mode
   :ensure t
   :mode "\\.rkt\\'")

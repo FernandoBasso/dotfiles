@@ -59,9 +59,9 @@ export -f C_brf
 #
 # @params $1 Path to the .c file to compile.
 #
-mycc () {
+function mycc () {
 	src="$1"
-	out="${file%.c}.run"
+	out="${src%.c}.run"
 
 	set -x
 
@@ -81,6 +81,8 @@ mycc () {
 
 	set +x;
 }
+
+export -f mycc
 
 #
 # vim: set tw=72:

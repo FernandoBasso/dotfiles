@@ -53,6 +53,35 @@ function C_brf () {
 
 export -f C_brf
 
+##
+# Compiles a single C source file <file>.c into <file>.run using a
+# few strict flags to help catch problems.
+#
+# @params $1 Path to the .c file to compile.
+#
+mycc () {
+	src="$1"
+	out="${file%.c}.run"
+
+	set -x
+
+	gcc \
+		-std=c99 \
+		-g \
+		-Wall \
+		-Wextra \
+		-pedantic \
+		-Werror \
+		-Wmissing-declarations \
+		-fsanitize=address,undefined \
+		-fno-common \
+		-fno-omit-frame-pointer \
+		"$src" \
+		-o "$out"
+
+	set +x;
+}
+
 #
 # vim: set tw=72:
 #

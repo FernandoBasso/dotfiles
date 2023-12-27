@@ -1,8 +1,7 @@
 /* file: ~/.config/gtk-3.0/gtk.css */
 
-/*
- * Works for gnome-terminal, mate-terminal, xfce4-terminal and probably others.
- * rxvt-unicde uses something else (look at Xresource).
+/**
+ * Works for Gtk and VTE-based terminal emulators.
  */
 vte-terminal,
 terminal-window {

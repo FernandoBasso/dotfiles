@@ -143,6 +143,7 @@ to_source=(
   "$path_incl/git-helpers.sh"
   "$path_incl/wrappers.sh"
   "$path_incl/c-helpers.sh"
+  "$path_incl/adoc-helpers.sh"
   ~/work/local/local.bash
   ~/local/lib/node-completions.sh
   ~/local/lib/deno-completions.sh

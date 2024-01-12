@@ -31,10 +31,28 @@ local cwini = [=[
 * link:{}[{} :: Codewars {}kyu Challenge^]
 ]=]
 
+local exercismle = [=[
+= {}
+:page-subtitle: Exercism Learning Exercise :: {}
+:page-tags: {}
+:icons: font
+:sectlinks:
+:sectnums!:
+:toclevels: 6
+:toc: left
+
+* link:{}[{} Exercism {} learning exercise^]
+]=]
+
 local adoc_snips = {
   s(
     'cwini',
     fmt(cwini, { i(1), i(2), i(3), rep(1), rep(2) })
+  ),
+
+  s(
+    'exercismle',
+    fmt(exercismle, { i(1), i(2), i(3), i(4), rep(1), rep(2) })
   ),
 }
 

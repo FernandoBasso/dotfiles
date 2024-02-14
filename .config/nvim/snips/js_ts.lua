@@ -24,6 +24,14 @@ local jsts_snips = {
   ),
 
   -----
+  -- def log
+  --
+  s(
+    'deflog',
+    t("const log = console.log.bind(console);")
+  ),
+
+  -----
   -- bool ? then : else
   --
   s('ternary', {

@@ -816,6 +816,32 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
+-----
+-- Prettier
+--
+-- https://prettier.io/docs/en/vim.html#running-manually
+--
+-- Basically:
+--
+--   $ nvm install --lts
+--   $ npm install --global prettier
+--   $ nvim file.ts
+--
+-- In normal mode: <Leader>gp
+-- Buffer should be prettified now, but not saved.
+--
+
+-- vim.keymap.set('n', '<Leader>gp', ':%!prettier --stdin-filepath %<CR>')
+vim.keymap.set('n', '<Leader>gp', function ()
+  -- local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+  -- vim.api.nvim_buf_set_mark(0, 'p', row, col, {})
+  -- file = vim.api.nvim_buf_get_name(0)
+  vim.cmd('normal mp')
+  vim.cmd('%!prettier --stdin-filepath %')
+  vim.cmd('normal `p')
+  -- vim.api.nvim_win_set_cursor(0, ...?)
+end)
+
 ------------------------------------------------------------------------------
 -- nvim-tree
 --

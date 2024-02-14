@@ -741,8 +741,13 @@ ccc.setup({
 })
 
 
--- [[ Configure Treesitter ]]
+------------------------------------------------------------------------
+-- TreeSitter
 -- See `:help nvim-treesitter`
+--
+-- Also see ~/.config/nvim/after/queries/ecma/indents.scm
+--
+
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = {

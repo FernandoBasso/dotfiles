@@ -8,9 +8,9 @@ thunar "$dir" &
 
 terminator \
   --title 'MATH REPL' \
-  --profile GruvboxLight \
+  --profile default \
 	--working-directory ~/Public \
   --geometry=400x500-0-0 \
-	-e 'deno repl'
+	-e 'node -i'
 	# -e 'stack ghci'
 

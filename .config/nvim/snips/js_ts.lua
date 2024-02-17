@@ -32,6 +32,22 @@ local jsts_snips = {
   ),
 
   -----
+  -- Functional Component TSX
+  --
+  s(
+    'fcts',
+    fmt(
+      [[
+        function {} ({}): JSX.Element {{
+          {}
+        }}
+      ]], {
+        i(1), i(2), i(3)
+      }
+    )
+  ),
+
+  -----
   -- bool ? then : else
   --
   s('ternary', {

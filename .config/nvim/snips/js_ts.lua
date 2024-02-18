@@ -32,22 +32,6 @@ local jsts_snips = {
   ),
 
   -----
-  -- Functional Component TSX
-  --
-  s(
-    'fcts',
-    fmt(
-      [[
-        function {} ({}): JSX.Element {{
-          {}
-        }}
-      ]], {
-        i(1), i(2), i(3)
-      }
-    )
-  ),
-
-  -----
   -- bool ? then : else
   --
   s('ternary', {
@@ -71,7 +55,55 @@ local jsts_snips = {
     t({' * @param '}), i(2, '...'), t({'', ''}),
     t({' * @returns '}), i(3, '...'), t({'', ''}),
     t({' */', ''}),
-  })
+  }),
+
+  -----
+  -- TSX Functional Component
+  --
+  s(
+    'tsxfc',
+    fmt(
+      [[
+        function {} ({}): JSX.Element {{
+          {}
+        }}
+      ]], {
+        i(1), i(2), i(3)
+      }
+    )
+  ),
+
+  -----
+  -- Component Render return function.
+  --
+  s(
+    'render',
+    fmt(
+      [[
+        return (
+          {}
+        );
+      ]], {
+        i(1)
+      }
+    )
+  ),
+
+  -----
+  -- React useEffect()
+  --
+  s(
+    'ueff',
+    fmt(
+      [[
+        useEffect(() => {{
+          {}
+        }});
+      ]], {
+        i(1)
+      }
+    )
+  ),
 }
 
 ls.add_snippets('javascript', jsts_snips, { key = 'js' })

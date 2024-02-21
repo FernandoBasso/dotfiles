@@ -450,6 +450,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 ------------------------------------------------------------------------
+-- LSP diagnostics
+--
+vim.diagnostic.config({
+  virtual_text = false
+});
+
+------------------------------------------------------------------------
 -- lsp-config typescript-language-server
 --
 require'lspconfig'.tsserver.setup{}

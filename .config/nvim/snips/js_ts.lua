@@ -64,7 +64,7 @@ local jsts_snips = {
     'tsxfc',
     fmt(
       [[
-        function {} ({}): JSX.Element {{
+        function {}({}): JSX.Element {{
           {}
         }}
       ]], {

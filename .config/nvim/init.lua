@@ -623,6 +623,17 @@ vim.keymap.set(
   { desc = 'Toggle LSP Inlay Hints' }
 )
 
+------------------------------------------------------------------------
+-- Telescope
+--
+vim.keymap.set(
+  'n',
+  '<Space>t',
+  function ()
+    vim.cmd('Telescope lsp_dynamic_workspace_symbols')
+  end
+)
+
 ------------------------------------------------------------------------------
 -- bufferline
 --

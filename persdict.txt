@@ -33,6 +33,7 @@ lookahead
 memoization
 Memoization
 merriam
+minify
 monadic
 Monads
 Monoid
@@ -75,6 +76,9 @@ substring
 tbl
 TLS
 transpilation
+transpile
+transpilers
+TSBuild
 txt
 typeclass-constrained
 Typeclass-constrained
@@ -89,5 +93,6 @@ Unicode
 unnest
 uuid
 Variadic
+Webpack
 webster
 whitespace

@@ -89,6 +89,21 @@ ps1all () {
   PS1+="\n${normal}${BASH_PROMPT_CHAR} "
 }
 
+##
+# Similar to ps1all, except shows only the last path part of the
+# current directory.
+#
+ps1all_curdir () {
+  PS1="\n${purple}\$(make_line)\n${purple}"
+  PS1+="[bash-\$(version_bash)]"
+  PS1+=" [git-\$(version_git)]"
+  PS1+=" [$(~/.rvm/bin/rvm-prompt)]"
+  PS1+=" [node-\$(version_node)]"
+  PS1+=" [npm-\$(version_npm)]"
+	PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')"
+  PS1+="\n${normal}${BASH_PROMPT_CHAR} "
+}
+
 ps1nodejs () {
   PS1="\n${blue}\$(curdir) ${purple}[node-\$(version_node)] $(git_info)\n${normal}${BASH_PROMPT_CHAR} "
 }

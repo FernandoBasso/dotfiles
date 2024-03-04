@@ -39,6 +39,16 @@ local jsts_snips = {
   }),
 
   -----
+  -- Import single line, double quotes.
+  --
+  --   import { parse } from "./lib/parse.ts";
+  --
+  s(
+    'impsd',
+    fmt('import {{ {} }} from "{}";', { i(2), i(1) })
+  ),
+
+  -----
   -- JSDoc
   --
   --   /**

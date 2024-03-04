@@ -13,8 +13,10 @@ const
 Const
 containery
 decompositions
+DefinitelyTyped
 defs
 Deno
+desctructuring
 dev
 devnotes
 devs
@@ -77,6 +79,7 @@ tbl
 TLS
 transpilation
 transpile
+transpiler
 transpilers
 TSBuild
 txt

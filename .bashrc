@@ -179,7 +179,7 @@ z_possible_paths=(
   "/usr/share/z/z.sh"
 
   # Installed manually.
-  "$HOME/bin/z.sh"
+  "$HOME/bin/z/z.sh"
 
   # macOS brew.
   "/usr/local/etc/profile.d/z.sh"
@@ -229,6 +229,12 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
 export CLIBS="$HOME/local/clibs"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CLIBS/criterion/lib"
 
+##
+# Haskell GHC stuff.
+#
+[ -f "/home/deveng/.ghcup/env" ] && . "/home/deveng/.ghcup/env"
+
 #
 # vim: set textwidth=78 nowrap:
 #
+

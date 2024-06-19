@@ -74,3 +74,9 @@ fi
 #
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
+
+##
+# Coursier Scala tools.
+#
+export PATH="$PATH:/home/deveng/.local/share/coursier/bin"
+

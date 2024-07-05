@@ -238,3 +238,6 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CLIBS/criterion/lib"
 # vim: set textwidth=78 nowrap:
 #
 
+
+[ -f "/home/deveng/.ghcup/env" ] && . "/home/deveng/.ghcup/env" # ghcup-env
+

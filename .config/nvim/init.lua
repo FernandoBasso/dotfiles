@@ -282,7 +282,7 @@ vim.o.background = 'dark'
 --   transparent_mode = false,
 -- })
 
-vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme gruvbox-material")
 
 vim.cmd [[
   ""
@@ -290,7 +290,7 @@ vim.cmd [[
   "
   " • https://github.com/Bekaboo/dropbar.nvim/issues/118
   "
-  highlight WinBar guibg=NONE
+  " highlight WinBar guibg=NONE
 ]]
 
 --
@@ -649,11 +649,11 @@ bufferline.setup {
     show_buffer_close_icons = false,
     diagnostics = "nvim_lsp",
   },
-  highlights = {
-    fill = {
-      bg = '#f9f5d7',
-    },
-  }
+  -- highlights = {
+  --   fill = {
+  --     bg = '#f9f5d7',
+  --   },
+  -- }
 }
 
 vim.cmd [[

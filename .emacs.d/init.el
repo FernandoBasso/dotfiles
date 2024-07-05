@@ -225,15 +225,15 @@
   :quelpa (helm-org-ql :fetcher github :repo "alphapapa/org-ql"
                        :files ("helm-org-ql.el")))
 
-(use-package org-roam
-  :ensure t
-  :custom
-  (org-roam-directory "~/Cloud/pCloud/OrgRoamNotes")
-  :bind (("C-c n l" . org-roam-buffer-toggle)
-         ("C-c n f" . org-roam-node-find)
-         ("C-c n i" . org-roam-node-insert))
-  :config
-  (org-roam-setup))
+;;(use-package org-roam
+;;  :ensure t
+;;  :custom
+;;  (org-roam-directory "~/Cloud/pCloud/OrgRoamNotes")
+;;  :bind (("C-c n l" . org-roam-buffer-toggle)
+;;         ("C-c n f" . org-roam-node-find)
+;;         ("C-c n i" . org-roam-node-insert))
+;;  :config
+;;  (org-roam-setup))
 
 (use-package vertico
   :ensure t
@@ -536,7 +536,7 @@
 ;; Sets org-publish-project-alist, agenda files and a few other
 ;; related things.
 ;;
-(load "~/work/local/emacs.d/org-mode.el")
+;;(load "~/work/local/emacs.d/org-mode.el")
 
 (use-package htmlize
   :ensure t)

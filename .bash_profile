@@ -70,13 +70,16 @@ if [ -f ~/work/local/npm-completion.bash ]; then
 fi
 
 ##
-# Rust stuff.
-#
-[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
-
-
-##
 # Coursier Scala tools.
 #
 export PATH="$PATH:/home/deveng/.local/share/coursier/bin"
 
+##
+# If some tool installer for a given operating system adds lines to
+# the end of this ~/.bash_profile file, move those to the sourced
+# files instead.
+#
+if [ -f "$HOME/.bash_profile_${HOSTNAME}.rc ]
+then
+  source "$HOME/.bash_profile${HOSTNAME}.rc
+fi

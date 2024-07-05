@@ -229,58 +229,58 @@ vim.cmd [[
 --
 vim.o.termguicolors = true
 
-vim.o.background = 'light'
+vim.o.background = 'dark'
 
-local c_bg = '#ffffd8' -- '#fbf1c7'
-local c_color_column = '#f6ebbc' -- '#fbf7c5' -- '#fff3c3' -- '#fef6ba'
-local c_cursor_line = c_color_column
-local c_string = '#d22626'
-local yellow0 = '#ffffd8'
-local yellow1 = '#fdfec0'
-local yellow2 = '#fdf5b0'
-local yellow3 = '#fdf5a0'
-local yellow4 = '#fdf590'
-local yellow5 = '#fbe77d'
-local yellow6 = '#f9f977'
-local yellow7 = '#fbfb00'
-local orange1 = '#f7d598'
-local orange2 = '#ecc682'
-require("gruvbox").setup({
-  terminal_colors = true,
-  undercurl = true,
-  underline = true,
-  bold = true,
-  italic = {
-    strings = false,
-    emphasis = false,
-    comments = false,
-    operators = false,
-    folds = false,
-  },
-  strikethrough = true,
-  invert_selection = false,
-  invert_signs = false,
-  invert_tabline = false,
-  invert_intend_guides = false,
-
-   -- Invert background for search, diffs, statuslines and errors.
-  inverse = false,
-
-   -- Can be "hard", "soft" or empty string.
-  contrast = "hard",
-
-  palette_overrides = {},
-  overrides = {
-    Normal = { bg = c_bg },
-    ColorColumn = { bg = yellow1 },
-    CursorLine = { bg = yellow1 },
-    Search = { bg = 'yellow' },
-    -- String = { fg = c_string },
-    Visual = { bg = yellow4 },
-  },
-  dim_inactive = false,
-  transparent_mode = false,
-})
+-- local c_bg = '#ffffd8' -- '#fbf1c7'
+-- local c_color_column = '#f6ebbc' -- '#fbf7c5' -- '#fff3c3' -- '#fef6ba'
+-- local c_cursor_line = c_color_column
+-- local c_string = '#d22626'
+-- local yellow0 = '#ffffd8'
+-- local yellow1 = '#fdfec0'
+-- local yellow2 = '#fdf5b0'
+-- local yellow3 = '#fdf5a0'
+-- local yellow4 = '#fdf590'
+-- local yellow5 = '#fbe77d'
+-- local yellow6 = '#f9f977'
+-- local yellow7 = '#fbfb00'
+-- local orange1 = '#f7d598'
+-- local orange2 = '#ecc682'
+-- require("gruvbox").setup({
+--   terminal_colors = true,
+--   undercurl = true,
+--   underline = true,
+--   bold = true,
+--   italic = {
+--     strings = false,
+--     emphasis = false,
+--     comments = false,
+--     operators = false,
+--     folds = false,
+--   },
+--   strikethrough = true,
+--   invert_selection = false,
+--   invert_signs = false,
+--   invert_tabline = false,
+--   invert_intend_guides = false,
+--
+--    -- Invert background for search, diffs, statuslines and errors.
+--   inverse = false,
+--
+--    -- Can be "hard", "soft" or empty string.
+--   contrast = "hard",
+--
+--   palette_overrides = {},
+--   overrides = {
+--     Normal = { bg = c_bg },
+--     ColorColumn = { bg = yellow1 },
+--     CursorLine = { bg = yellow1 },
+--     Search = { bg = 'yellow' },
+--     -- String = { fg = c_string },
+--     Visual = { bg = yellow4 },
+--   },
+--   dim_inactive = false,
+--   transparent_mode = false,
+-- })
 
 vim.cmd("colorscheme gruvbox")
 

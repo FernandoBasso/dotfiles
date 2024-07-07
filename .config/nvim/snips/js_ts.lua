@@ -111,6 +111,54 @@ local jsts_snips = {
   ),
 
   -----
+  -- Jest describe block
+  --
+  s(
+    'desc',
+    fmt(
+      [[
+        describe("{}", () => {{
+          {}
+        }});
+      ]], {
+        i(1), i(2)
+      }
+    )
+  ),
+
+  -----
+  -- Jest it block
+  --
+  s(
+    'it',
+    fmt(
+      [[
+        it("{}", () => {{
+          {}
+        }});
+      ]], {
+        i(1), i(2)
+      }
+    )
+  ),
+
+  -----
+  -- Jest test block
+  --
+  s(
+    'test',
+    fmt(
+      [[
+        it("{}", () => {{
+          {}
+        }});
+      ]], {
+        i(1), i(2)
+      }
+    )
+  ),
+
+  -----
   -- React useEffect()
   --
   s(

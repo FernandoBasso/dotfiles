@@ -67,6 +67,17 @@ local jsts_snips = {
     t({' */', ''}),
   }),
 
+  s(
+    'slc',
+    fmt(
+      [[
+        //
+        // {}
+        //
+      ]], { i(1) }
+    )
+  ),
+
   -----
   -- TSX Functional Component
   --

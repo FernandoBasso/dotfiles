@@ -282,8 +282,10 @@ vim.o.background = 'light'
 --   transparent_mode = false,
 -- })
 
+vim.g.gruvbox_material_foreground = 'material'
 vim.g.gruvbox_material_enable_italic = 0
 vim.g.gruvbox_material_disable_italic_comment = 1
+
 vim.cmd.colorscheme('gruvbox-material')
 
 vim.cmd [[
@@ -629,6 +631,11 @@ function toggle_diagnostics()
 
   print('Diagnostics', status)
 end
+
+--
+-- Disable by default.
+--
+vim.diagnostic.disable()
 
 vim.keymap.set(
   'n',

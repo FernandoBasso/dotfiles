@@ -79,7 +79,7 @@ export PATH="$PATH:/home/deveng/.local/share/coursier/bin"
 # the end of this ~/.bash_profile file, move those to the sourced
 # files instead.
 #
-if [ -f "$HOME/.bash_profile_${HOSTNAME}.rc ]
+if [ -f "$HOME/.bash_profile_${HOSTNAME}.rc" ]
 then
-  source "$HOME/.bash_profile${HOSTNAME}.rc
+  source "$HOME/.bash_profile_${HOSTNAME}.rc"
 fi

@@ -229,7 +229,7 @@ vim.cmd [[
 --
 vim.o.termguicolors = true
 
-vim.o.background = 'dark'
+vim.o.background = 'light'
 
 -- local c_bg = '#ffffd8' -- '#fbf1c7'
 -- local c_color_column = '#f6ebbc' -- '#fbf7c5' -- '#fff3c3' -- '#fef6ba'
@@ -784,6 +784,7 @@ require('nvim-treesitter.configs').setup {
     'lua',
     'typescript',
     'javascript',
+    'tsx',
     'jsdoc',
     'python',
     'haskell',

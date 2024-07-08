@@ -605,6 +605,42 @@ require('lspconfig')['tsserver'].setup {
   capabilities = capabilities
 }
 
+------------------------------------------------------------------------
+-- Toggle Diagnostics
+--
+-- Diagnostics like:
+--
+--   “File is a CommonJS module; it may be converted to an ES module.”
+--
+vim.g['diagnostics_active'] = false
+
+function toggle_diagnostics()
+  local status = 'DISABLED'
+
+  if vim.g.diagnostics_active then
+    vim.g.diagnostics_active = false
+    vim.diagnostic.disable()
+    status = 'DISABLED'
+  else
+    vim.g.diagnostics_active = true
+    vim.diagnostic.enable()
+    status = 'ENABLED'
+  end
+
+  print('Diagnostics', status)
+end
+
+vim.keymap.set(
+  'n',
+  '<leader>td',
+  toggle_diagnostics,
+  {
+    noremap = true,
+    silent = true,
+    desc = 'Toggle vim diagnostics'
+  }
+)
+
 ----
 -- Toggle LSP Inlay Hints
 --

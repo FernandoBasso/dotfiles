@@ -15,3 +15,5 @@
 	browser = opera
 [status]
 	showUntrackedFiles = all
+[init]
+	defaultBranch = main

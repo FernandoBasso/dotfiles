@@ -481,7 +481,12 @@ require'lspconfig'.tsserver.setup{}
 ------------------------------------------------------------------------
 -- https://github.com/ray-x/go.nvim
 --
-require('go').setup()
+require('go').setup({
+  lsp_cfg = true,
+  lsp_inlay_hints = {
+    enable = false,
+  },
+})
 
 ------------------------------------------------------------------------
 -- lsp-config clangd

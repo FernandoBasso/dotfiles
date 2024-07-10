@@ -37,6 +37,9 @@ require('packer').startup(function(use)
     'williamboman/mason.nvim'
   }
 
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua'
+
   use 'gpanders/editorconfig.nvim'
 
   use 'tpope/vim-fugitive'
@@ -476,6 +479,11 @@ end
 require'lspconfig'.tsserver.setup{}
 
 ------------------------------------------------------------------------
+-- https://github.com/ray-x/go.nvim
+--
+require('go').setup()
+
+------------------------------------------------------------------------
 -- lsp-config clangd
 --
 require'lspconfig'.clangd.setup{}
@@ -829,6 +837,7 @@ require('nvim-treesitter.configs').setup {
     'javascript',
     'tsx',
     'jsdoc',
+    'go',
     'python',
     'haskell',
     'ruby',

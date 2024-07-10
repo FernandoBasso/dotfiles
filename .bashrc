@@ -1,4 +1,8 @@
+#
 # ~/.bashrc utf8=✔ 💩 ‽ λ
+#
+# vim: set textwidth=78 nowrap:
+#
 
 # shellcheck source=/dev/null
 
@@ -234,10 +238,13 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CLIBS/criterion/lib"
 #
 [ -f "/home/deveng/.ghcup/env" ] && . "/home/deveng/.ghcup/env"
 
+##
+# Installed go from Arch Linux official repos.
 #
-# vim: set textwidth=78 nowrap:
+# https://wiki.archlinux.org/title/Go#Install_directory
 #
+export GOBIN="$HOME/go/bin"
+export GOPATH=$(go env GOPATH)
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
-
-[ -f "/home/deveng/.ghcup/env" ] && . "/home/deveng/.ghcup/env" # ghcup-env
-
+[ -f "/home/deveng/.ghcup/env" ] && . "/home/deveng/.ghcup/env"

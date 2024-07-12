@@ -41,6 +41,10 @@ version_npm () {
   printf '%s' "$(npm --version)"
 }
 
+version_go () {
+	printf '%s' "$(go version | cut -d ' ' -f 3 | sed 's/^go/&-/')"
+}
+
 version_bash () {
   printf '%s' "$(printf '%s' "$BASH_VERSION" | sed 's/[^0-9.]//g')"
 }
@@ -100,6 +104,25 @@ ps1all_curdir () {
   PS1+=" [$(~/.rvm/bin/rvm-prompt)]"
   PS1+=" [node-\$(version_node)]"
   PS1+=" [npm-\$(version_npm)]"
+	PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')"
+  PS1+="\n${normal}${BASH_PROMPT_CHAR} "
+}
+
+##
+# PS1 with go version and git branch
+ps1go () {
+  PS1="\n${blue}\$(curdir) ${purple}[\$(version_go)] $(git_info)\n${normal}${BASH_PROMPT_CHAR} "
+}
+
+##
+# Similar to ps1all, except shows only the last path part of the
+# current directory.
+#
+ps1_bash_git_go () {
+  PS1="\n${purple}\$(make_line)\n${purple}"
+  PS1+="[bash-\$(version_bash)]"
+  PS1+=" [git-\$(version_git)]"
+  PS1+=" [\$(version_go)]"
 	PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')"
   PS1+="\n${normal}${BASH_PROMPT_CHAR} "
 }

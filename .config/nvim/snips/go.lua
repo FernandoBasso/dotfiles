@@ -34,6 +34,20 @@ local go_snips = {
     'pl',
     fmt('fmt.Println({})', { i(1) })
   ),
+
+  ----
+  -- for
+  --
+  s(
+    'for',
+    fmt(
+      [[
+        for {} {{
+          {}
+        }}
+      ]], { i(1), i(2) }
+    )
+  ),
 }
 
 

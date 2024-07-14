@@ -26,6 +26,14 @@ local go_snips = {
       ]], { i(1), i(2) }
     )
   ),
+
+  ----
+  -- fmt.Println() (assumes import "fmt" in the module)
+  --
+  s(
+    'pl',
+    fmt('fmt.Println({})', { i(1) })
+  ),
 }
 
 

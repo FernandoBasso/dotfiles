@@ -1,6 +1,10 @@
 ----
--- Set <space> as the leader key.
+-- Disable netrw to avoid conflicting with nvim-tree.
 --
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+----
 -- Must happen before plugins are loaded (otherwise wrong leader
 -- will be used).
 --

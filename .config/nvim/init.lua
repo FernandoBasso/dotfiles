@@ -252,20 +252,16 @@ vim.opt.rtp:prepend(lazypath)
 -- Start installing and configuring plugins with lazy.
 --
 require('lazy').setup({
-  ----
-  -- Adds git related signs to the gutter, as well as utilities for
-  -- managing changes.
-  --
-  {
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
+  spec = {
+    { import = 'plugins' },
   },
+  checker = { enabled = true }
+
+  ----
+  -- Adds git commands.
+  --
+  -- {
+  --   'tpope/vim-fugitive',
+  --   opts = {}
+  -- }
 })

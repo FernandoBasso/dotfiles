@@ -10,6 +10,13 @@ vim.g.mapleader = '\\'
 vim.g.maplocalleader = '\\'
 
 ----
+-- Probably not strictly necessary...
+--
+-- • :help 'termguicolors'
+--
+vim.o.termguicolors = true
+
+----
 --
 --
 -- Set to true if you have a Nerd Font installed and selected in the
@@ -24,7 +31,7 @@ vim.opt.relativenumber = false
 
 ----
 -- Enable mouse, not too much for navigating the code, but to help
--- resizing windows in a more naturall way.
+-- resizing windows in a more natural way.
 --
 vim.opt.mouse = 'a'
 
@@ -252,11 +259,33 @@ vim.opt.rtp:prepend(lazypath)
 -- Start installing and configuring plugins with lazy.
 --
 require('lazy').setup({
+  {
+    'sainnhe/gruvbox-material',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.o.background = 'light'
+      vim.g.gruvbox_material_foreground = 'material'
+      vim.g.gruvbox_material_enable_italic = false
+      vim.g.gruvbox_material_enable_italic = 0
+      vim.g.gruvbox_material_disable_italic_comment = 1
+      vim.cmd.colorscheme('gruvbox-material')
+    end
+  },
+
   spec = {
     { import = 'plugins' },
+    {
+      'sainnhe/gruvbox-material',
+      lazy = false,
+      priority = 1000,
+      config = function()
+        vim.g.gruvbox_material_enable_italic = false
+        vim.cmd.colorscheme('gruvbox-material')
+      end
+    }
   },
-  checker = { enabled = true }
-
+  checker = { enabled = false }
   ----
   -- Adds git commands.
   --

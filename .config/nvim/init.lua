@@ -263,16 +263,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Start installing and configuring plugins with lazy.
 --
 require('lazy').setup({
-  -- {
-  --   'sainnhe/gruvbox-material',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     vim.o.background = 'light'
-  --     vim.cmd.colorscheme('gruvbox-material')
-  --   end
-  -- },
-
   spec = {
     { import = 'plugins' },
     {
@@ -289,12 +279,9 @@ require('lazy').setup({
       end
     }
   },
-  checker = { enabled = false }
-  ----
-  -- Adds git commands.
-  --
-  -- {
-  --   'tpope/vim-fugitive',
-  --   opts = {}
-  -- }
+  checker = { enabled = false },
+  install = {
+    missing = true,
+    colorscheme = { 'gruvbox-material' },
+  }
 })

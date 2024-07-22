@@ -35,11 +35,35 @@ return { -- Autocompletion
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
       luasnip.config.setup {}
-      -- luasnip.loaders.from_lua.load({
-      --   paths = '~/.config/nvim/snips/'
-      -- })
+
+      ----
+      -- nvim cmp turned off by default.
+      --
+      vim.g.cmp_toggle = false
+
+      vim.keymap.set(
+        'n',
+        '<Leader><Leader>c',
+        function ()
+          vim.g.cmp_toggle = not vim.g.cmp_toggle
+          local status
+
+          if vim.g.cmp_toggle then
+            status = 'ENABLED'
+          else
+            status = 'DISABLED'
+          end
+
+          print('nvim-cmp', status)
+        end,
+        { desc = 'toggle nvim-cmp' }
+      )
 
       cmp.setup {
+        enabled = function()
+          return vim.g.cmp_toggle
+        end,
+
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
@@ -88,17 +112,18 @@ return { -- Autocompletion
           -- <c-l> will move you to the right of each of the expansion
           -- locations.
           -- <c-h> is similar, except moving you backwards.
+          --
           ['<C-l>'] = cmp.mapping(function()
             if luasnip.expand_or_locally_jumpable() then
               luasnip.expand_or_jump()
             end
           end, { 'i', 's' }),
+
           ['<C-h>'] = cmp.mapping(function()
             if luasnip.locally_jumpable(-1) then
               luasnip.jump(-1)
             end
           end, { 'i', 's' }),
-
         },
         sources = {
           { name = 'nvim_lsp' },

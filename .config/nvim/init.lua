@@ -263,19 +263,15 @@ vim.opt.rtp:prepend(lazypath)
 -- Start installing and configuring plugins with lazy.
 --
 require('lazy').setup({
-  {
-    'sainnhe/gruvbox-material',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.o.background = 'light'
-      vim.g.gruvbox_material_foreground = 'material'
-      vim.g.gruvbox_material_enable_italic = false
-      vim.g.gruvbox_material_enable_italic = 0
-      vim.g.gruvbox_material_disable_italic_comment = 1
-      vim.cmd.colorscheme('gruvbox-material')
-    end
-  },
+  -- {
+  --   'sainnhe/gruvbox-material',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.o.background = 'light'
+  --     vim.cmd.colorscheme('gruvbox-material')
+  --   end
+  -- },
 
   spec = {
     { import = 'plugins' },
@@ -284,7 +280,11 @@ require('lazy').setup({
       lazy = false,
       priority = 1000,
       config = function()
+        -- vim.g.gruvbox_material_enable_italic = false
+        vim.g.gruvbox_material_foreground = 'material'
         vim.g.gruvbox_material_enable_italic = false
+        vim.g.gruvbox_material_enable_italic = 0
+        vim.g.gruvbox_material_disable_italic_comment = 1
         vim.cmd.colorscheme('gruvbox-material')
       end
     }

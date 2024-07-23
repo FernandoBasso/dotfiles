@@ -43,11 +43,12 @@ return {
         -- Toggle LSP Inlay Hints
         --
         map(
-          '<Leader>ih',
+          '<Leader><Leader>h',
           function ()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
+            local status = 'DISABLED'
 
-            if vim.lsp.inlay_hint.is_enabled() then
+            if vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }) then
               status = 'ENABLED'
             else
               status = 'DISABLED'
@@ -55,11 +56,11 @@ return {
 
             print('Inlay Hints', status)
           end,
-          'Toggle LSP [I]nlay [H]ints'
+          'Toggle LSP Inlay [H]ints'
         )
 
         map(
-          '<leader>td',
+          '<Leader><Leader>d',
           (function()
             local diag_status = 1
             return function()
@@ -96,7 +97,7 @@ return {
         -- • http://lua-users.org/wiki/CopyTable
         --
         map(
-          '<leader>vt',
+          '<Leader><Leader>v',
           (function()
             local vt = false
             return function()

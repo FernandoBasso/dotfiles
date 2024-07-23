@@ -10,7 +10,13 @@ return {
   config = function()
     require('nvim-tree').setup({
       filters = {
-        dotfiles = true,
+        dotfiles = false,
+      },
+      view = {
+        width = {
+          min = 36,
+          max = 42,
+        },
       },
     })
   end,

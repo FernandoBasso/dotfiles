@@ -51,9 +51,12 @@ return {
     -- interact with nvim-treesitter. You should go explore a few and
     -- see what interests you:
     --
-    -- • Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-    -- • Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-    -- • Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+    -- • Incremental selection: Included, see
+    --   `:help nvim-treesitter-incremental-selection-mod`
+    -- • Show your current context:
+    --   https://github.com/nvim-treesitter/nvim-treesitter-context
+    -- • Treesitter + textobjects:
+    --   https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     --
   end
 }

@@ -43,7 +43,7 @@ return { -- Autocompletion
 
       vim.keymap.set(
         'n',
-        '<Leader><Leader>c',
+        '<Leader>tc',
         function ()
           vim.g.cmp_toggle = not vim.g.cmp_toggle
           local status
@@ -56,7 +56,7 @@ return { -- Autocompletion
 
           print('nvim-cmp', status)
         end,
-        { desc = 'toggle nvim-cmp' }
+        { desc = '[T]oggle [C]completion' }
       )
 
       cmp.setup {

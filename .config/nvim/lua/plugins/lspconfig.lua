@@ -40,6 +40,91 @@ return {
         end
 
         ----
+        -- Toggle LSP Inlay Hints
+        --
+        map(
+          '<Leader>ih',
+          function ()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+
+            if vim.lsp.inlay_hint.is_enabled() then
+              status = 'ENABLED'
+            else
+              status = 'DISABLED'
+            end
+
+            print('Inlay Hints', status)
+          end,
+          'Toggle LSP [I]nlay [H]ints'
+        )
+
+        map(
+          '<leader>td',
+          (function()
+            local diag_status = 1
+            return function()
+              if diag_status == 1 then
+                diag_status = 0
+                vim.diagnostic.hide()
+              else
+                diag_status = 1
+                vim.diagnostic.show()
+              end
+            end
+          end)(),
+          '[T]oggle LSP [D]iagnostics'
+        )
+
+        ----
+        -- Virtual Text Configs.
+        --
+        local defaultDiagnosticsConfig = {
+          virtual_text = false,
+          signs = true,
+          underline = true,
+          update_in_insert = false,
+          severity_sort = false,
+        }
+
+        vim.diagnostic.config(defaultDiagnosticsConfig)
+
+        --
+        -- FIXME: We are mutating defaultDiagnosticsConfig inside the
+        -- if/else block as we are not doing a real copy, but just
+        -- assigning reference. We can implement this at some point:
+        --
+        -- • http://lua-users.org/wiki/CopyTable
+        --
+        map(
+          '<leader>vt',
+          (function()
+            local vt = false
+            return function()
+              if vt == true then
+                vt = false
+                local newOpts = defaultDiagnosticsConfig
+                newOpts.virtual_text = false
+                vim.diagnostic.config(newOpts)
+                print('LSP Virtual Text DISABLED')
+              else
+                vt = true
+                local newOpts = defaultDiagnosticsConfig
+                newOpts.virtual_text = true
+                vim.diagnostic.config(newOpts)
+                print('LSP Virtual Text ENABLED')
+              end
+            end
+          end)(),
+          'Toggle [V]irtual [T]ext'
+        )
+
+        local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+        for type, icon in pairs(signs) do
+          local hl = "DiagnosticSign" .. type
+          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        end
+
+        ----
         -- Jump to the definition of the word under your cursor. This is
         -- where a variable was first declared, or where a function is
         -- defined, etc. To jump back, press <C-t>.
@@ -187,26 +272,6 @@ return {
       'force',
       capabilities,
       require('cmp_nvim_lsp').default_capabilities()
-    )
-
-    ----
-    -- Toggle LSP Inlay Hints
-    --
-    vim.keymap.set(
-      'n',
-      '<Leader>ih',
-      function ()
-        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-
-        if vim.lsp.inlay_hint.is_enabled() then
-          status = 'ENABLED'
-        else
-          status = 'DISABLED'
-        end
-
-        print('Inlay Hints', status)
-      end,
-      { desc = 'Toggle LSP Inlay Hints' }
     )
 
     ----

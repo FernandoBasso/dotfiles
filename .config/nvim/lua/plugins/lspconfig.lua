@@ -7,16 +7,23 @@ return {
     ----
     -- Automatically install LSPs and related tools to stdpath for Neovim.
     --
-    { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+    -- Mason must be loaded before dependants.
+    --
+    { 'williamboman/mason.nvim', config = true },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
 
+    ----
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+    --
     { 'j-hui/fidget.nvim', opts = {} },
 
-    -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-    -- used for completion, annotations and signatures of Neovim apis
+    ----
+    -- `neodev` configures Lua LSP for your Neovim config, runtime and
+    -- plugins used for completion, annotations and signatures of Neovim
+    -- apis.
+    --
     { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
@@ -183,6 +190,26 @@ return {
     )
 
     ----
+    -- Toggle LSP Inlay Hints
+    --
+    vim.keymap.set(
+      'n',
+      '<Leader>ih',
+      function ()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+
+        if vim.lsp.inlay_hint.is_enabled() then
+          status = 'ENABLED'
+        else
+          status = 'DISABLED'
+        end
+
+        print('Inlay Hints', status)
+      end,
+      { desc = 'Toggle LSP Inlay Hints' }
+    )
+
+    ----
     -- Enable the following language servers Feel free to add/remove any
     -- LSPs that you want here. They will automatically be installed.
     --
@@ -262,4 +289,3 @@ return {
     }
   end,
 }
-

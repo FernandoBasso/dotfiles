@@ -269,7 +269,10 @@ vim.opt.rtp:prepend(lazypath)
 --
 require('lazy').setup({
   spec = {
-    { import = 'plugins' },
+    {
+      'gpanders/editorconfig.nvim',
+      lazy = false,
+    },
     {
       'sainnhe/gruvbox-material',
       lazy = false,

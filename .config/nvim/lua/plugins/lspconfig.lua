@@ -296,6 +296,7 @@ return {
       tsserver = {},
       clangd = {},
       gopls = {},
+      bashls = {},
       -- pyright = {},
       -- rust_analyzer = {},
       --

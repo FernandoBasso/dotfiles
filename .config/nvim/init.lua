@@ -106,7 +106,7 @@ vim.opt.updatetime = 250
 --
 -- • :help 'timeoutlen'
 --
-vim.opt.timeoutlen = 250
+vim.opt.timeoutlen = 350
 
 ----
 -- Sets how to visually display certain whitespace-like special chars.

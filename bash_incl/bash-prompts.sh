@@ -109,8 +109,16 @@ ps1all_curdir () {
 }
 
 ##
-# PS1 with go version and git branch
-ps1go () {
+# PS1 with curdir go version.
+#
+ps1go0 () {
+  PS1="\n${blue}\$(curdir) ${purple}[\$(version_go)]\n${normal}${BASH_PROMPT_CHAR} "
+}
+
+##
+# PS1 with curdir, go version and git branch.
+#
+ps1go1 () {
   PS1="\n${blue}\$(curdir) ${purple}[\$(version_go)] $(git_info)\n${normal}${BASH_PROMPT_CHAR} "
 }
 

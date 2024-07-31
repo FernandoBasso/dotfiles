@@ -297,6 +297,7 @@ return {
       clangd = {},
       gopls = {},
       bashls = {},
+      eslint = {},
       -- pyright = {},
       -- rust_analyzer = {},
       --

@@ -16,11 +16,19 @@ local rep = require('luasnip.extras').rep
 --
 local jsts_snips = {
   -----
-  -- console.log('==== <desc>', data);
+  -- console.log("==== <desc>", data);
   --
   s(
     'log',
     fmt("console.log(\"==== {}\", {});", { i(1), i(2) })
+  ),
+
+  -----
+  -- console.log('==== <desc>', data);
+  --
+  s(
+    'cls',
+    fmt("console.log('==== {}\', {});", { i(1), i(2) })
   ),
 
   -----

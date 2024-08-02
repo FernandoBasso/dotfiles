@@ -62,6 +62,20 @@ local go_snips = {
       ]], { i(1), i(2) }
     )
   ),
+
+  ----
+  -- t.Run subtest
+  --
+  s(
+    'tr',
+    fmt(
+      [[
+        t.Run("{}", func(t *testing.T) {{
+          {}
+        }}
+      ]], { i(1), i(2) }
+    )
+  ),
 }
 
 

@@ -8,4 +8,8 @@ Main custom keymaps:
 * kbd:[<leader>+<leader>+d]: [T]oggle LSP [D]iagnostics
 * kbd:[<leader>+<leader>+h]: [T]oggle Inlay [H]ints
 * kbd:[<leader>+<leader>+v]: [T]oggle [Virtual] Text
-* kbd:[<leader>+<leader>+c]: [T]oggle CMP [Co]mpletions
+* kbd:[<leader>+<leader>+c]: [T]oggle CMP [C]ompletions
+
+Buffers:
+
+* kbd:[<leader>o]: Keep [O]nly the current buffer open (close all others).

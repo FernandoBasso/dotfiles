@@ -64,7 +64,21 @@ local go_snips = {
   ),
 
   ----
-  -- t.Run subtest
+  -- Create [U]nit [T]est a Test
+  --
+  s(
+    'ut',
+    fmt(
+      [[
+        func Test{}(t *testing.T) {{
+          {}
+        }}
+      ]], { i(1), i(2) }
+    )
+  ),
+
+  ----
+  -- Create [t].[R]un subtest
   --
   s(
     'tr',

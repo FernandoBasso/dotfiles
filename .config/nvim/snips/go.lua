@@ -72,7 +72,7 @@ local go_snips = {
       [[
         t.Run("{}", func(t *testing.T) {{
           {}
-        }}
+        }})
       ]], { i(1), i(2) }
     )
   ),

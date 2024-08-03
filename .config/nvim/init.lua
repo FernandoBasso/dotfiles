@@ -285,6 +285,13 @@ require('lazy').setup({
         vim.g.gruvbox_material_disable_italic_comment = 1
         vim.cmd.colorscheme('gruvbox-material')
 
+        ----
+        -- Run prettier on the current buffer with gpp.
+        --
+        -- Does not restore the cursor position. Go back to the exact
+        -- cursor position with `' (that's a backtick followed by a
+        -- single quote).
+        --
         vim.cmd [[
           nnoremap gpp :silent %!npx prettier --stdin-filepath %<CR>
         ]]

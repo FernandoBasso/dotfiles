@@ -13,3 +13,7 @@ Main custom keymaps:
 Buffers:
 
 * kbd:[<leader>o]: Keep [O]nly the current buffer open (close all others).
+
+Formatters:
+
+* kbd:[_gf]: Run [G]o[F]mt on the current buffer.

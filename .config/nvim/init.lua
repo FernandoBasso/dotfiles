@@ -297,6 +297,13 @@ require('lazy').setup({
         ]]
 
         ----
+        -- Run gofmt on the current buffer.
+        --
+        vim.cmd [[
+          nnoremap _gf :silent !gofmt -w %<CR>
+        ]]
+
+        ----
         -- Close all buffers except the current one.
         --
         -- In native vim, something like this would do:

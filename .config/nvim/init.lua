@@ -286,21 +286,21 @@ require('lazy').setup({
         vim.cmd.colorscheme('gruvbox-material')
 
         ----
-        -- Run prettier on the current buffer with gpp.
+        -- Run prettier on the current buffer.
         --
         -- Does not restore the cursor position. Go back to the exact
         -- cursor position with `' (that's a backtick followed by a
         -- single quote).
         --
         vim.cmd [[
-          nnoremap gpp :silent %!npx prettier --stdin-filepath %<CR>
+          nnoremap _fp :silent %!npx prettier --stdin-filepath %<CR>
         ]]
 
         ----
         -- Run gofmt on the current buffer.
         --
         vim.cmd [[
-          nnoremap _gf :silent !gofmt -w %<CR>
+          nnoremap _fg :silent !gofmt -w %<CR>
         ]]
 
         ----

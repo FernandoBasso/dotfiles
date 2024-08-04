@@ -16,4 +16,5 @@ Buffers:
 
 Formatters:
 
-* kbd:[_gf]: Run [G]o[F]mt on the current buffer.
+* kbd:[_fp]: [F]ormat current buffer with [p]rettier.
+* kbd:[_fg]: [F]ormat current buffer with [g]ofmt.

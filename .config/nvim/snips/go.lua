@@ -28,6 +28,24 @@ local go_snips = {
   ),
 
   ----
+  -- func method
+  --
+  -- func (v SomeType) funcName(params) returnType {
+  --
+  -- }
+  --
+  s(
+    'mth',
+    fmt(
+      [[
+        func ({}) {}({}){} {{
+          {}
+        }}
+      ]], { i(1), i(2), i(3), i(4), i(5) }
+    )
+  ),
+
+  ----
   -- fmt.Println() (assumes import "fmt" in the module)
   --
   s(

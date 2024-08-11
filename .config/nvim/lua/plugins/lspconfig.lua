@@ -295,9 +295,10 @@ return {
     local servers = {
       tsserver = {},
       clangd = {},
-      gopls = {},
       bashls = {},
       eslint = {},
+
+      -- gopls is not needed as I'm using ray-x/go.nvim
       -- pyright = {},
       -- rust_analyzer = {},
       --

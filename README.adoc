@@ -3,18 +3,23 @@
 
 == nvim
 
-Main custom keymaps:
+=== Main custom keymaps
 
 * kbd:[<leader>+<leader>+d]: [T]oggle LSP [D]iagnostics
 * kbd:[<leader>+<leader>+h]: [T]oggle Inlay [H]ints
 * kbd:[<leader>+<leader>+v]: [T]oggle [Virtual] Text
 * kbd:[<leader>+<leader>+c]: [T]oggle CMP [C]ompletions
 
-Buffers:
+=== Buffers
 
 * kbd:[<leader>o]: Keep [O]nly the current buffer open (close all others).
 
-Formatters:
+=== Formatters
 
 * kbd:[_fp]: [F]ormat current buffer with [p]rettier.
 * kbd:[_fg]: [F]ormat current buffer with [g]ofmt.
+
+=== Go
+
+* kbd:[<leader>;]: Go to alternate buffer.
+* kbd:[<leader><leader>;]: Got to alternate buffer, and create it if it does not already exist.

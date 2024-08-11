@@ -82,6 +82,34 @@ local go_snips = {
   ),
 
   ----
+  -- Interface
+  --
+  s(
+    'itf',
+    fmt(
+      [[
+        type {} interface {{
+          {}
+        }}
+      ]], { i(1, { 'Name' }), i(2) }
+    )
+  ),
+
+  ----
+  -- Struct
+  --
+  s(
+    'stt',
+    fmt(
+      [[
+        type {} struct {{
+          {}
+        }}
+      ]], { i(1, { 'Name' }), i(2) }
+    )
+  ),
+
+  ----
   -- Create [U]nit [T]est a Test
   --
   s(

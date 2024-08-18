@@ -23,3 +23,12 @@
 
 * kbd:[<leader>;]: Go to alternate buffer.
 * kbd:[<leader><leader>;]: Got to alternate buffer, and create it if it does not already exist.
+
+=== LSP
+
+kbd:[Shift+k] (uppercase ‘K’) opens the hover popup (documentation,
+diagnostics, etc.).
+To focus it, perform kbd:[Ctrl+w] twice.
+From there, it is possible to navigate the contents inside the popup.
+When the cursor is over a URL/link, it kbd:[gx] opens the URL/link in
+the browser.

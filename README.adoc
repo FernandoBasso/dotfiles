@@ -49,3 +49,8 @@ To focus it, perform kbd:[Ctrl+w] twice.
 From there, it is possible to navigate the contents inside the popup.
 When the cursor is over a URL/link, it kbd:[gx] opens the URL/link in
 the browser.
+
+* kbd:[<Leader>ds]: [D]ocument [S]symbols.
+* kbd:[<Leader>ws]: [W]orkspace [S]ymbols.
+* kbd:[<Leader>gr]: [G]o to [R]eferences.
+* kbd:[<Leader>gI]: [G]o to [I]mplementation.

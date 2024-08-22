@@ -35,7 +35,19 @@ return {
       --
       additional_vim_regex_highlighting = { 'ruby' },
     },
-    indent = { enable = true, disable = { 'ruby' } },
+    indent = {
+      enable = true,
+      disable = {
+        'ruby',
+
+        ----
+        -- Somehow not working well with ray-x/go.nvim and causing
+        -- wrong indentation on Enter, o or O, etc. Disabling as
+        -- it is working fine without it so far.
+        --
+        'go'
+      },
+    },
   },
   config = function(_, opts)
     ----

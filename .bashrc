@@ -248,3 +248,14 @@ export GOPATH=$(go env GOPATH)
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 [ -f "/home/deveng/.ghcup/env" ] && . "/home/deveng/.ghcup/env"
+
+##
+# Exercism
+#
+# • https://exercism.org/cli-walkthrough
+# • https://github.com/exercism/cli/releases/latest
+#
+if [[ -f $HOME/bin/exercism-bin/shell/exercism_completion.bash ]]
+then
+  source "$HOME/bin/exercism-bin/shell/exercism_completion.bash"
+fi

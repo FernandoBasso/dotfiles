@@ -265,6 +265,63 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 ----
+-- Run prettier on the current buffer.
+--
+-- Does not restore the cursor position. Go back to the exact
+-- cursor position with `' (that's a backtick followed by a
+-- single quote).
+--
+vim.cmd [[
+  nnoremap _fp :silent %!npx prettier --stdin-filepath %<CR>
+]]
+
+----
+-- Run gofmt on the current buffer.
+--
+vim.cmd [[
+  nnoremap _fg :silent !gofmt -w %<CR>
+]]
+
+----
+-- Close all buffers except the current one.
+--
+-- In native vim, something like this would do:
+--
+--   nnoremap \o :%bd! \| edit # \| buffer # \| bdelete!<CR>
+--
+-- Ideas from here:
+--
+-- • https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one
+--
+
+local close_all_buffers_except_current = function()
+  local current_buf = vim.fn.bufnr()
+  local current_win = vim.fn.win_getid()
+  local bufs = vim.fn.getbufinfo({buflisted = 1})
+
+  for _, buf in ipairs(bufs) do
+    if buf.bufnr ~= current_buf then
+      vim.cmd("silent! bdelete " .. buf.bufnr)
+    end
+  end
+
+  vim.fn.win_gotoid(current_win)
+end
+
+----
+-- ‘o’ is for ‘only’.
+--
+vim.keymap.set(
+  'n',
+  '<Leader>o',
+  close_all_buffers_except_current,
+  {
+    silent = true,
+    desc = 'Close all buffers except the current active one',
+  }
+)
+
+----
 -- Start installing and configuring plugins with lazy.
 --
 require('lazy').setup({
@@ -284,63 +341,6 @@ require('lazy').setup({
         vim.g.gruvbox_material_enable_italic = 0
         vim.g.gruvbox_material_disable_italic_comment = 1
         vim.cmd.colorscheme('gruvbox-material')
-
-        ----
-        -- Run prettier on the current buffer.
-        --
-        -- Does not restore the cursor position. Go back to the exact
-        -- cursor position with `' (that's a backtick followed by a
-        -- single quote).
-        --
-        vim.cmd [[
-          nnoremap _fp :silent %!npx prettier --stdin-filepath %<CR>
-        ]]
-
-        ----
-        -- Run gofmt on the current buffer.
-        --
-        vim.cmd [[
-          nnoremap _fg :silent !gofmt -w %<CR>
-        ]]
-
-        ----
-        -- Close all buffers except the current one.
-        --
-        -- In native vim, something like this would do:
-        --
-        --   nnoremap \o :%bd! \| edit # \| buffer # \| bdelete!<CR>
-        --
-        -- Ideas from here:
-        --
-        -- • https://stackoverflow.com/questions/4545275/vim-close-all-buffers-but-this-one
-        --
-
-        local close_all_buffers_except_current = function()
-          local current_buf = vim.fn.bufnr()
-          local current_win = vim.fn.win_getid()
-          local bufs = vim.fn.getbufinfo({buflisted = 1})
-
-          for _, buf in ipairs(bufs) do
-            if buf.bufnr ~= current_buf then
-              vim.cmd("silent! bdelete " .. buf.bufnr)
-            end
-          end
-
-          vim.fn.win_gotoid(current_win)
-        end
-
-        ----
-        -- ‘o’ is for ‘only’.
-        --
-        vim.keymap.set(
-          'n',
-          '<Leader>o',
-          close_all_buffers_except_current,
-          {
-            silent = true,
-            desc = 'Close all buffers except the current active one',
-          }
-        )
       end
     },
     { import = 'plugins' },

@@ -34,6 +34,13 @@ bash_incl/workprojs.sh
 .luarc.json
 
 #
+# Committing lazy lock file every time has become a bore. Will
+# remove and ignore it for now and reconsider if I actually
+# feel I need to keep it committed in the future.
+#
+.config/nvim/lazy-lock.json
+
+#
 # Kitty auto-generated config backup.
 #
 .config/kitty/kitty.conf.bak

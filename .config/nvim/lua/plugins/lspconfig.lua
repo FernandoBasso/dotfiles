@@ -293,7 +293,14 @@ return {
     --  https://luals.github.io/wiki/settings/
     --
     local servers = {
-      tsserver = {},
+      ----
+      -- Installed vtsls due to getting warning that tsserver
+      -- was deprecated in favor of ts_ls, but there is no ts_ls
+      -- package. Thread with more info:
+      --
+      -- • https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
+      --
+      vtsls = {},
       clangd = {},
       bashls = {},
       eslint = {},

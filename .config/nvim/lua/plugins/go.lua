@@ -42,7 +42,18 @@ return {
       }
     )
 
-    require('go').setup()
+    require('mason').setup()
+    require('mason-lspconfig').setup()
+    require('go').setup({
+      lsp_config = true,
+      lsp_inlay_hints = {
+        enable = true,
+      },
+    })
+
+    local cfg = require'go.lsp'.config()
+
+    require('lspconfig').gopls.setup(cfg)
   end,
 
   event = {'CmdlineEnter'},

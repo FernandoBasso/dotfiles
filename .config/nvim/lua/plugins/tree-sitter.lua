@@ -16,7 +16,12 @@ return {
       'markdown_inline',
       'query',
       'vim',
-      'vimdoc'
+      'vimdoc',
+      'git_config',
+      'git_rebase',
+      'gitattributes',
+      'gitcommit',
+      'gitignore',
     },
 
     ----

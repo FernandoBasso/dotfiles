@@ -8,6 +8,7 @@ return {
       'go',
       'typescript',
       'javascript',
+      'jsdoc',
       'diff',
       'html',
       'lua',

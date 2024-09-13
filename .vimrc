@@ -5,7 +5,7 @@ set fileencoding=utf-8
 "
 " Dotfiles dir.
 "
-let g:dfdir = expand('~/work/src/dotfiles')
+let g:dfdir = expand('~/source/dotfiles')
 
 ""
 " Add keybinding for easy quick reloading of ~/.vimrc.
@@ -77,7 +77,7 @@ Plug 'vim-scripts/dbext.vim'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'habamax/vim-asciidoctor'
-Plug '~/work/src/projects/img-paste.vim'
+" Plug '~/source/projects/img-paste.vim'
 
 if $SIMPLE != 1
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -435,7 +435,7 @@ endif
 "
 " UltiSnips
 "
-let g:UltiSnipsSnippetDirectories = [$HOME . '/work/src/dotfiles/ultisnips']
+let g:UltiSnipsSnippetDirectories = [$HOME . '/source/dotfiles/ultisnips']
 
 " Problem: on terminals, c-tab sends tab, and tab is bound to ycm.
 " s-tab doesn't work either in the terminal (urxvt at least).
@@ -710,9 +710,9 @@ nnoremap <F29> :execute '!C_brf %' <CR>
 
 let files_to_source = [
       \ '~/work/local/libdev.vim',
-      \ '~/work/src/dotfiles/.vim/vim-utils.vim',
-      \ '~/work/src/dotfiles/.vim/img-paste.vim',
-      \ '~/work/src/dotfiles/digraphs.vim'
+      \ '~/source/dotfiles/.vim/vim-utils.vim',
+      \ '~/source/dotfiles/.vim/img-paste.vim',
+      \ '~/source/dotfiles/digraphs.vim'
       \ ]
 
 for file in files_to_source

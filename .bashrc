@@ -26,7 +26,7 @@ for file in "${git_prompt_locations[@]}" ; do
   if [ -f "$file" ] ; then source "$file" ; fi
 done
 
-PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/work/src/dotfiles/bin:$HOME/local/bin"
+PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/source/dotfiles/bin:$HOME/local/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -135,7 +135,7 @@ fi
 #
 # Path for files that are sourced.
 #
-path_incl=~/work/src/dotfiles/bash_incl
+path_incl=~/source/dotfiles/bash_incl
 
 to_source=(
   "$path_incl/bash-colors.sh"

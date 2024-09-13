@@ -20,7 +20,7 @@ symblink_files () {
 			if [ -e "$HOME/$file" ]; then
 				printf '%s\n' "[SKIP]: ~/$file exists and is NOT a symblink..."
 			else
-				printf '%s\n' "[SYMB]: ~/$file is bing symblinked"
+				printf '%s\n' "[SYMB]: ~/$file is being symblinked"
 				ln -sv "$dir_script/$file" "$HOME/$file"
 			fi
 		fi

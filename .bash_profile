@@ -79,7 +79,16 @@ export PATH="$PATH:/home/deveng/.local/share/coursier/bin"
 # the end of this ~/.bash_profile file, move those to the sourced
 # files instead.
 #
-if [ -f "$HOME/.bash_profile_${HOSTNAME}.rc" ]
+if [ -f "$HOME/.bash_macos" ]
 then
-  source "$HOME/.bash_profile_${HOSTNAME}.rc"
+  source "$HOME/.bash_macos"
 fi
+
+##
+# https://github.com/go-nv/goenv
+#
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"

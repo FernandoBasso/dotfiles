@@ -1,0 +1,808 @@
+find: /usr/sbin/authserver: Permission denied
+find: /Library/Application Support/Apple/ParentalControls/Users: Permission denied
+find: /Library/Application Support/Apple/AssetCache/Data: Permission denied
+find: /Library/Application Support/ApplePushService: Permission denied
+find: /Library/Application Support/CrowdStrike/Falcon/Falcon4IT: Permission denied
+find: /Library/Application Support/CrowdStrike/Falcon/SPS: Permission denied
+find: /Library/Application Support/CrowdStrike/Falcon/Packages: Permission denied
+find: /Library/Application Support/CrowdStrike/Falcon/Downloads: Permission denied
+find: /Library/Application Support/JAMF/usage_reports: Permission denied
+find: /Library/Application Support/JAMF/run: Permission denied
+find: /Library/Application Support/JAMF/Downloads: Permission denied
+find: /Library/Application Support/JAMF/tmp: Permission denied
+find: /Library/Trial: Operation not permitted
+find: /Library/Ossec: Permission denied
+find: /Library/Caches/com.apple.amsengagementd.classicdatavault: Operation not permitted
+find: /Library/Caches/com.apple.aneuserd: Operation not permitted
+find: /Library/Caches/com.apple.iconservices.store: Permission denied
+find: /Library/Caches/com.apple.aned: Operation not permitted
+find: /System/Library/DirectoryServices/DefaultLocalDB/Default: Permission denied
+find: /System/Library/Templates/Data/Library/Application Support/Apple/ParentalControls/Users: Permission denied
+find: /System/Library/Templates/Data/private/etc/cups/certs: Permission denied
+find: /System/Library/Templates/Data/private/var/install: Permission denied
+find: /System/Library/Templates/Data/private/var/ma: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/mqueue: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/saved: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/trace: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/defer: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/flush: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/deferred: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/corrupt: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/public: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/private: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/incoming: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/active: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/maildrop: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/hold: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/postfix/bounce: Permission denied
+find: /System/Library/Templates/Data/private/var/spool/cups: Permission denied
+find: /System/Library/Templates/Data/private/var/jabberd: Permission denied
+find: /System/Library/Templates/Data/private/var/audit: Permission denied
+find: /System/Library/Templates/Data/private/var/root: Permission denied
+find: /System/Library/Templates/Data/private/var/lib/postfix: Permission denied
+find: /System/Library/Templates/Data/private/var/db/appinstalld: Permission denied
+find: /System/Library/Templates/Data/private/var/db/diskimagesiod: Permission denied
+find: /System/Library/Templates/Data/private/var/db/locationd: Permission denied
+find: /System/Library/Templates/Data/private/var/db/sysdiagnose/com.apple.sysdiagnose: Permission denied
+find: /System/Library/Templates/Data/private/var/db/analyticsd: Permission denied
+find: /System/Library/Templates/Data/private/var/db/rmd: Permission denied
+find: /System/Library/Templates/Data/private/var/db/knowledgegraphd: Permission denied
+find: /System/Library/Templates/Data/private/var/db/coreml: Permission denied
+find: /System/Library/Templates/Data/private/var/db/nsurlsessiond: Permission denied
+find: /System/Library/Templates/Data/private/var/db/fpsd: Permission denied
+find: /System/Library/Templates/Data/private/var/db/hidd: Permission denied
+find: /System/Library/Templates/Data/private/var/db/installcoordinationd: Permission denied
+find: /System/Library/Templates/Data/private/var/db/geod: Permission denied
+find: /System/Library/Templates/Data/private/var/db/reportmemoryexception: Permission denied
+find: /System/Library/Templates/Data/private/var/db/Sandbox: Permission denied
+find: /System/Library/Templates/Data/private/var/db/lockdown: Permission denied
+find: /System/Library/Templates/Data/private/var/db/biome: Permission denied
+find: /System/Library/Templates/Data/private/var/db/datadetectors: Permission denied
+find: /System/Library/Templates/Data/private/var/db/cmiodalassistants: Permission denied
+find: /System/Library/Templates/Data/private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied
+find: /System/Library/Templates/Data/private/var/db/dslocal/nodes/Default: Permission denied
+find: /System/Library/Templates/Data/private/var/db/nearbyd: Permission denied
+find: /System/Library/Templates/Data/private/var/db/mmaintenanced: Permission denied
+find: /System/Library/Templates/Data/private/var/db/timed: Permission denied
+find: /System/Library/Templates/Data/private/var/db/applepay: Permission denied
+find: /System/Library/Templates/Data/private/var/db/darwindaemon: Permission denied
+find: /System/Library/Templates/Data/private/var/db/securityagent: Permission denied
+find: /System/Library/Templates/Data/private/var/db/accessoryupdater: Permission denied
+find: /System/Library/Templates/Data/private/var/db/ConfigurationProfiles/Store: Permission denied
+find: /System/Library/Templates/Data/private/var/db/caches/opendirectory: Permission denied
+find: /System/Library/Templates/Data/private/var/at/tabs: Permission denied
+find: /System/Library/Templates/Data/private/var/at/tmp: Permission denied
+find: /System/Library/Templates/Data/private/var/backups: Permission denied
+find: /System/Library/Templates/Data/private/var/agentx: Permission denied
+find: /System/Library/Caches/com.apple.coresymbolicationd: Permission denied
+find: /System/Volumes/Update/Hardware: Permission denied
+find: /System/Volumes/Update/Controller: Permission denied
+find: /System/Volumes/Update/mnt1/usr/sbin/authserver: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/DirectoryServices/DefaultLocalDB/Default: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/Library/Application Support/Apple/ParentalControls/Users: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/etc/cups/certs: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/install: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/ma: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/mqueue: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/saved: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/trace: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/defer: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/flush: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/deferred: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/corrupt: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/public: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/private: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/incoming: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/active: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/maildrop: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/hold: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/postfix/bounce: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/spool/cups: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/jabberd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/audit: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/root: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/lib/postfix: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/appinstalld: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/diskimagesiod: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/locationd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/sysdiagnose/com.apple.sysdiagnose: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/analyticsd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/rmd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/knowledgegraphd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/coreml: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/nsurlsessiond: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/fpsd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/hidd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/installcoordinationd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/geod: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/reportmemoryexception: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/Sandbox: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/lockdown: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/biome: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/datadetectors: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/cmiodalassistants: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/dslocal/nodes/Default: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/nearbyd: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/mmaintenanced: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/timed: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/applepay: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/darwindaemon: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/securityagent: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/accessoryupdater: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/ConfigurationProfiles/Store: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/db/caches/opendirectory: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/at/tabs: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/at/tmp: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/backups: Permission denied
+find: /System/Volumes/Update/mnt1/System/Library/Templates/Data/private/var/agentx: Permission denied
+find: /System/Volumes/Update/.TemporaryItems: Operation not permitted
+find: /System/Volumes/Preboot/.TemporaryItems: Operation not permitted
+find: /System/Volumes/Preboot/com.apple.security.cryptexd: Operation not permitted
+find: /System/Volumes/Data/.Spotlight-V100: No such file or directory
+find: /System/Volumes/Data/Library/Application Support/Apple/ParentalControls/Users: Permission denied
+find: /System/Volumes/Data/Library/Application Support/Apple/AssetCache/Data: Permission denied
+find: /System/Volumes/Data/Library/Application Support/ApplePushService: Permission denied
+find: /System/Volumes/Data/Library/Application Support/CrowdStrike/Falcon/Falcon4IT: Permission denied
+find: /System/Volumes/Data/Library/Application Support/CrowdStrike/Falcon/SPS: Permission denied
+find: /System/Volumes/Data/Library/Application Support/CrowdStrike/Falcon/Packages: Permission denied
+find: /System/Volumes/Data/Library/Application Support/CrowdStrike/Falcon/Downloads: Permission denied
+find: /System/Volumes/Data/Library/Application Support/JAMF/usage_reports: Permission denied
+find: /System/Volumes/Data/Library/Application Support/JAMF/run: Permission denied
+find: /System/Volumes/Data/Library/Application Support/JAMF/Downloads: Permission denied
+find: /System/Volumes/Data/Library/Application Support/JAMF/tmp: Permission denied
+find: /System/Volumes/Data/Library/Trial: Operation not permitted
+find: /System/Volumes/Data/Library/Ossec: Permission denied
+find: /System/Volumes/Data/Library/Caches/com.apple.amsengagementd.classicdatavault: Operation not permitted
+find: /System/Volumes/Data/Library/Caches/com.apple.aneuserd: Operation not permitted
+find: /System/Volumes/Data/Library/Caches/com.apple.iconservices.store: Permission denied
+find: /System/Volumes/Data/Library/Caches/com.apple.aned: Operation not permitted
+find: /System/Volumes/Data/MobileSoftwareUpdate: No such file or directory
+find: /System/Volumes/Data/System/Library/DirectoryServices/DefaultLocalDB/Default: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/Library/Application Support/Apple/ParentalControls/Users: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/etc/cups/certs: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/install: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/ma: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/mqueue: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/saved: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/trace: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/defer: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/flush: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/deferred: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/corrupt: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/public: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/private: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/incoming: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/active: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/maildrop: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/hold: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/postfix/bounce: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/spool/cups: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/jabberd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/audit: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/root: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/lib/postfix: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/appinstalld: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/diskimagesiod: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/locationd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/sysdiagnose/com.apple.sysdiagnose: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/analyticsd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/rmd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/knowledgegraphd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/coreml: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/nsurlsessiond: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/fpsd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/hidd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/installcoordinationd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/geod: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/reportmemoryexception: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/Sandbox: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/lockdown: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/biome: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/datadetectors: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/cmiodalassistants: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/dslocal/nodes/Default: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/nearbyd: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/mmaintenanced: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/timed: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/applepay: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/darwindaemon: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/securityagent: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/accessoryupdater: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/ConfigurationProfiles/Store: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/db/caches/opendirectory: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/at/tabs: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/at/tmp: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/backups: Permission denied
+find: /System/Volumes/Data/System/Library/Templates/Data/private/var/agentx: Permission denied
+find: /System/Volumes/Data/System/Library/Caches/com.apple.coresymbolicationd: Permission denied
+find: /System/Volumes/Data/mnt: No such file or directory
+find: /System/Volumes/Data/.fseventsd: No such file or directory
+find: /System/Volumes/Data/private/etc/cups/certs: Permission denied
+find: /System/Volumes/Data/private/var/networkd/Library: Permission denied
+find: /System/Volumes/Data/private/var/networkd/db: Operation not permitted
+find: /System/Volumes/Data/private/var/install: Permission denied
+find: /System/Volumes/Data/private/var/ma: Permission denied
+find: /System/Volumes/Data/private/var/spool/mqueue: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/saved: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/trace: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/defer: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/flush: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/deferred: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/corrupt: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/public: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/private: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/incoming: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/active: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/maildrop: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/hold: Permission denied
+find: /System/Volumes/Data/private/var/spool/postfix/bounce: Permission denied
+find: /System/Volumes/Data/private/var/spool/cups: Permission denied
+find: /System/Volumes/Data/private/var/jabberd: Permission denied
+find: /System/Volumes/Data/private/var/OOPJit: Operation not permitted
+find: /System/Volumes/Data/private/var/audit: Permission denied
+find: /System/Volumes/Data/private/var/root: Permission denied
+find: /System/Volumes/Data/private/var/lib/postfix: Permission denied
+find: /System/Volumes/Data/private/var/db/appinstalld: Operation not permitted
+find: /System/Volumes/Data/private/var/db/diskimagesiod: Permission denied
+find: /System/Volumes/Data/private/var/db/ExtensibleSSO/Configuration: Operation not permitted
+find: /System/Volumes/Data/private/var/db/os_eligibility: Operation not permitted
+find: /System/Volumes/Data/private/var/db/Spotlight: Operation not permitted
+find: /System/Volumes/Data/private/var/db/locationd: Permission denied
+find: /System/Volumes/Data/private/var/db/appstore/Library/Preferences: Permission denied
+find: /System/Volumes/Data/private/var/db/sysdiagnose/com.apple.sysdiagnose: Operation not permitted
+find: /System/Volumes/Data/private/var/db/DumpPanic: Operation not permitted
+find: /System/Volumes/Data/private/var/db/analyticsd: Permission denied
+find: /System/Volumes/Data/private/var/db/rmd: Permission denied
+find: /System/Volumes/Data/private/var/db/knowledgegraphd: Permission denied
+find: /System/Volumes/Data/private/var/db/coreml: Permission denied
+find: /System/Volumes/Data/private/var/db/nsurlsessiond: Permission denied
+find: /System/Volumes/Data/private/var/db/com.apple.backgroundtaskmanagement: Operation not permitted
+find: /System/Volumes/Data/private/var/db/softwareupdate/Library/WebKit: Permission denied
+find: /System/Volumes/Data/private/var/db/softwareupdate/Library/Preferences: Permission denied
+find: /System/Volumes/Data/private/var/db/fpsd: Permission denied
+find: /System/Volumes/Data/private/var/db/hidd: Permission denied
+find: /System/Volumes/Data/private/var/db/installcoordinationd: Operation not permitted
+find: /System/Volumes/Data/private/var/db/Spotlight-V100: Operation not permitted
+find: /System/Volumes/Data/private/var/db/geod: Permission denied
+find: /System/Volumes/Data/private/var/db/oah: Operation not permitted
+find: /System/Volumes/Data/private/var/db/reportmemoryexception: Permission denied
+find: /System/Volumes/Data/private/var/db/Sandbox: Operation not permitted
+find: /System/Volumes/Data/private/var/db/lockdown: Operation not permitted
+find: /System/Volumes/Data/private/var/db/biome: Operation not permitted
+find: /System/Volumes/Data/private/var/db/datadetectors: Permission denied
+find: /System/Volumes/Data/private/var/db/cmiodalassistants: Permission denied
+find: /System/Volumes/Data/private/var/db/DifferentialPrivacy: Operation not permitted
+find: /System/Volumes/Data/private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied
+find: /System/Volumes/Data/private/var/db/dslocal/nodes/Default: Permission denied
+find: /System/Volumes/Data/private/var/db/com.apple.findmy.findmybeaconingd: Permission denied
+find: /System/Volumes/Data/private/var/db/sudo: Permission denied
+find: /System/Volumes/Data/private/var/db/nearbyd: Permission denied
+find: /System/Volumes/Data/private/var/db/MobileIdentityService: Operation not permitted
+find: /System/Volumes/Data/private/var/db/mmaintenanced: Permission denied
+find: /System/Volumes/Data/private/var/db/dhcpclient: Permission denied
+find: /System/Volumes/Data/private/var/db/timed: Permission denied
+find: /System/Volumes/Data/private/var/db/applepay: Permission denied
+find: /System/Volumes/Data/private/var/db/darwindaemon: Permission denied
+find: /System/Volumes/Data/private/var/db/audiomxd/Library: Permission denied
+find: /System/Volumes/Data/private/var/db/securityagent: Permission denied
+find: /System/Volumes/Data/private/var/db/accessoryupdater: Permission denied
+find: /System/Volumes/Data/private/var/db/searchparty: Operation not permitted
+find: /System/Volumes/Data/private/var/db/CoreDuet: Operation not permitted
+find: /System/Volumes/Data/private/var/db/ConfigurationProfiles/Store: Operation not permitted
+find: /System/Volumes/Data/private/var/db/fseventsd: Permission denied
+find: /System/Volumes/Data/private/var/db/caches/opendirectory: Permission denied
+find: /System/Volumes/Data/private/var/at/tabs: Permission denied
+find: /System/Volumes/Data/private/var/at/tmp: Permission denied
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.ScreenTimeAgent/Store: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.lockoutagent: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.exchangesync: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.LaunchServices.dv: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/dmd: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.nsurlsessiond: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.SharedWebCredentials: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.routined/dv: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.syncdefaultsd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.triald/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.ap.promotedcontentd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.desktopservices.ArchiveService/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.ManagedSettingsAgent/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.parsec-fbf/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.nsurlsessiond/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.chrono/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.calaccessd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.remindd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.studentd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.parsecd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.sharingd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/homed/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.quicklook.ThumbnailsAgent/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.pluginkit/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.AUHelperService/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.donotdisturbd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.imagent/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.imdpersistence.IMDPersistenceAgent/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.amsengagementd/TemporaryItems: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.siriactionsd/ShortcutsSandboxCache: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.WebKit.WebContent.Sandbox: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.WebKit.Networking.Sandbox: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.WebKit.GPU.Sandbox: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/s7/dgnnq0ps4gl_spgbt1z_b5kc0000gp/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/s7/dgnnq0ps4gl_spgbt1z_b5kc0000gp/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/C: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000044000011/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000044000011/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/0/com.apple.nsurlsessiond: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.ScreenTimeAgent: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.lockoutagent: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.exchangesync: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.Spotlight: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/dmd: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.notificationcenter: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.nsurlsessiond: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.routined/dv: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond/com.apple.revisiond.temp: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.Spotlight: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.LaunchServices.dv: Operation not permitted
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.icloud.searchpartyd/KeyMaps: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/C: Permission denied
+find: /System/Volumes/Data/private/var/folders/th/hkmnh0n57zg6l_8k6w81fn100000gq/T: Permission denied
+find: /System/Volumes/Data/private/var/folders/th/hkmnh0n57zg6l_8k6w81fn100000gq/C: Permission denied
+find: /System/Volumes/Data/private/var/indebtedadmin/Music: Permission denied
+find: /System/Volumes/Data/private/var/indebtedadmin/Pictures: Permission denied
+find: /System/Volumes/Data/private/var/indebtedadmin/Desktop: Permission denied
+find: /System/Volumes/Data/private/var/indebtedadmin/Library: Permission denied
+find: /System/Volumes/Data/private/var/indebtedadmin/Public/Drop Box: Permission denied
+find: /System/Volumes/Data/private/var/indebtedadmin/Movies: Permission denied
+find: /System/Volumes/Data/private/var/indebtedadmin/Documents: Permission denied
+find: /System/Volumes/Data/private/var/indebtedadmin/Downloads: Permission denied
+find: /System/Volumes/Data/private/var/run/jamf: Permission denied
+find: /System/Volumes/Data/private/var/run/mds: Permission denied
+find: /System/Volumes/Data/private/var/protected/trustd/private: Operation not permitted
+find: /System/Volumes/Data/private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA00000059: Permission denied
+find: /System/Volumes/Data/private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA00000106: Permission denied
+find: /System/Volumes/Data/private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA00000116: Permission denied
+find: /System/Volumes/Data/private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA000000CD: Permission denied
+find: /System/Volumes/Data/private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA000000F8: Permission denied
+find: /System/Volumes/Data/private/var/dirs_cleaner: Permission denied
+find: /System/Volumes/Data/private/var/backups: Permission denied
+find: /System/Volumes/Data/private/var/agentx: Permission denied
+find: /System/Volumes/Data/private/tmp/msu-target-kejEdneZ: Permission denied
+find: /System/Volumes/Data/private/tmp/tmp-mount-gOYI6d: Permission denied
+find: /System/Volumes/Data/private/tmp/tmp-mount-vgriHS: Permission denied
+find: /System/Volumes/Data/.DocumentRevisions-V100: No such file or directory
+find: /System/Volumes/Data/Users/indev/Library/Application Support/CallHistoryTransactions: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Application Support/com.apple.sharedfilelist: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Application Support/Knowledge: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Application Support/com.apple.TCC: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Application Support/FileProvider: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Application Support/FaceTime: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Application Support/CallHistoryDB: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Assistant/SiriVocabulary: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Daemon Containers: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Autosave Information: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/IdentityServices: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Calendars: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Messages: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/HomeKit: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Sharing: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/com.apple.aiml.instrumentation: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Mail: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Trial: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/AppleMediaServices: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/DuetExpertCenter: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Accounts: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Safari: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Biome: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/IntelligencePlatform: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Shortcuts: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Suggestions: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Weather: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.feedback: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.accessibility.voicebanking: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.stocks: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.secure-control-center-preferences: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.chronod: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.private.translation: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.calendar: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.siri.userfeedbacklearning: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.tips: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.spotlight: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.sharingd: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.weather: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/com.apple.systempreferences.cache: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.feedbacklogger: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.notes: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.tipsnext: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.transparency: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.reminders: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.mail: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.iCloudDrive: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.AppleSpell: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.mlhost: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Group Containers/group.com.apple.PegasusConfiguration: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.archiveutility: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.Maps/Data/Maps: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.Home: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.Safari: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.mail: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.MobileSMS: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.Notes: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Containers/com.apple.stocks: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/ContainerManager: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/PersonalizationPortrait: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Metadata/CoreSpotlight: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Cookies: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/CoreFollowUp: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/StatusKit: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/DoNotDisturb: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Caches/com.apple.HomeKit: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Caches/CloudKit: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Caches/com.apple.containermanagerd: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Caches/com.apple.homed: Operation not permitted
+find: /System/Volumes/Data/Users/indev/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted
+find: /System/Volumes/Data/Users/indev/.Trash: Operation not permitted
+find: /System/Volumes/Data/Users/indebtianadmin/Music: Permission denied
+find: /System/Volumes/Data/Users/indebtianadmin/Pictures: Permission denied
+find: /System/Volumes/Data/Users/indebtianadmin/Desktop: Permission denied
+find: /System/Volumes/Data/Users/indebtianadmin/Library: Permission denied
+find: /System/Volumes/Data/Users/indebtianadmin/Public/Drop Box: Permission denied
+find: /System/Volumes/Data/Users/indebtianadmin/Movies: Permission denied
+find: /System/Volumes/Data/Users/indebtianadmin/Documents: Permission denied
+find: /System/Volumes/Data/Users/indebtianadmin/Downloads: Permission denied
+find: /System/Volumes/Data/.TemporaryItems: No such file or directory
+find: /System/Volumes/iSCPreboot: No such file or directory
+find: /System/DriverKit: No such file or directory
+find: /private/etc/cups/certs: Permission denied
+find: /private/var/networkd/Library: Permission denied
+find: /private/var/networkd/db: Operation not permitted
+find: /private/var/install: Permission denied
+find: /private/var/ma: Permission denied
+find: /private/var/spool/mqueue: Permission denied
+find: /private/var/spool/postfix/saved: Permission denied
+find: /private/var/spool/postfix/trace: Permission denied
+find: /private/var/spool/postfix/defer: Permission denied
+find: /private/var/spool/postfix/flush: Permission denied
+find: /private/var/spool/postfix/deferred: Permission denied
+find: /private/var/spool/postfix/corrupt: Permission denied
+find: /private/var/spool/postfix/public: Permission denied
+find: /private/var/spool/postfix/private: Permission denied
+find: /private/var/spool/postfix/incoming: Permission denied
+find: /private/var/spool/postfix/active: Permission denied
+find: /private/var/spool/postfix/maildrop: Permission denied
+find: /private/var/spool/postfix/hold: Permission denied
+find: /private/var/spool/postfix/bounce: Permission denied
+find: /private/var/spool/cups: Permission denied
+find: /private/var/jabberd: Permission denied
+find: /private/var/OOPJit: Operation not permitted
+find: /private/var/audit: Permission denied
+find: /private/var/root: Permission denied
+find: /private/var/lib/postfix: Permission denied
+find: /private/var/db/appinstalld: Operation not permitted
+find: /private/var/db/diskimagesiod: Permission denied
+find: /private/var/db/ExtensibleSSO/Configuration: Operation not permitted
+find: /private/var/db/os_eligibility: Operation not permitted
+find: /private/var/db/Spotlight: Operation not permitted
+find: /private/var/db/locationd: Permission denied
+find: /private/var/db/appstore/Library/Preferences: Permission denied
+find: /private/var/db/sysdiagnose/com.apple.sysdiagnose: Operation not permitted
+find: /private/var/db/DumpPanic: Operation not permitted
+find: /private/var/db/analyticsd: Permission denied
+find: /private/var/db/rmd: Permission denied
+find: /private/var/db/knowledgegraphd: Permission denied
+find: /private/var/db/coreml: Permission denied
+find: /private/var/db/nsurlsessiond: Permission denied
+find: /private/var/db/com.apple.backgroundtaskmanagement: Operation not permitted
+find: /private/var/db/softwareupdate/Library/WebKit: Permission denied
+find: /private/var/db/softwareupdate/Library/Preferences: Permission denied
+find: /private/var/db/fpsd: Permission denied
+find: /private/var/db/hidd: Permission denied
+find: /private/var/db/installcoordinationd: Operation not permitted
+find: /private/var/db/Spotlight-V100: Operation not permitted
+find: /private/var/db/geod: Permission denied
+find: /private/var/db/oah: Operation not permitted
+find: /private/var/db/reportmemoryexception: Permission denied
+find: /private/var/db/Sandbox: Operation not permitted
+find: /private/var/db/lockdown: Operation not permitted
+find: /private/var/db/biome: Operation not permitted
+find: /private/var/db/datadetectors: Permission denied
+find: /private/var/db/cmiodalassistants: Permission denied
+find: /private/var/db/DifferentialPrivacy: Operation not permitted
+find: /private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied
+find: /private/var/db/dslocal/nodes/Default: Permission denied
+find: /private/var/db/com.apple.findmy.findmybeaconingd: Permission denied
+find: /private/var/db/sudo: Permission denied
+find: /private/var/db/nearbyd: Permission denied
+find: /private/var/db/MobileIdentityService: Operation not permitted
+find: /private/var/db/mmaintenanced: Permission denied
+find: /private/var/db/dhcpclient: Permission denied
+find: /private/var/db/timed: Permission denied
+find: /private/var/db/applepay: Permission denied
+find: /private/var/db/darwindaemon: Permission denied
+find: /private/var/db/audiomxd/Library: Permission denied
+find: /private/var/db/securityagent: Permission denied
+find: /private/var/db/accessoryupdater: Permission denied
+find: /private/var/db/searchparty: Operation not permitted
+find: /private/var/db/CoreDuet: Operation not permitted
+find: /private/var/db/ConfigurationProfiles/Store: Operation not permitted
+find: /private/var/db/fseventsd: Permission denied
+find: /private/var/db/caches/opendirectory: Permission denied
+find: /private/var/at/tabs: Permission denied
+find: /private/var/at/tmp: Permission denied
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.ScreenTimeAgent/Store: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.lockoutagent: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.exchangesync: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.LaunchServices.dv: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/dmd: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.nsurlsessiond: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.SharedWebCredentials: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/0/com.apple.routined/dv: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.syncdefaultsd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.triald/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.ap.promotedcontentd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.desktopservices.ArchiveService/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.ManagedSettingsAgent/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.parsec-fbf/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.nsurlsessiond/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.chrono/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.calaccessd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.remindd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.studentd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.parsecd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.sharingd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/homed/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.quicklook.ThumbnailsAgent/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.pluginkit/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.AUHelperService/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.donotdisturbd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.imagent/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.imdpersistence.IMDPersistenceAgent/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/T/com.apple.amsengagementd/TemporaryItems: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.siriactionsd/ShortcutsSandboxCache: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.WebKit.WebContent.Sandbox: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.WebKit.Networking.Sandbox: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache: Operation not permitted
+find: /private/var/folders/5q/9j0dq5_92n14lwm6_fsd33ww0000gn/C/com.apple.WebKit.GPU.Sandbox: Operation not permitted
+find: /private/var/folders/s7/dgnnq0ps4gl_spgbt1z_b5kc0000gp/T: Permission denied
+find: /private/var/folders/s7/dgnnq0ps4gl_spgbt1z_b5kc0000gp/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/C: Operation not permitted
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000044000011/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000044000011/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/0/com.apple.nsurlsessiond: Operation not permitted
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.ScreenTimeAgent: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.lockoutagent: Operation not permitted
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.exchangesync: Operation not permitted
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.Spotlight: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/dmd: Operation not permitted
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.notificationcenter: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.nsurlsessiond: Operation not permitted
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.routined/dv: Operation not permitted
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond/com.apple.revisiond.temp: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.Spotlight: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.LaunchServices.dv: Operation not permitted
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.icloud.searchpartyd/KeyMaps: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/T: Permission denied
+find: /private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/C: Permission denied
+find: /private/var/folders/th/hkmnh0n57zg6l_8k6w81fn100000gq/T: Permission denied
+find: /private/var/folders/th/hkmnh0n57zg6l_8k6w81fn100000gq/C: Permission denied
+find: /private/var/indebtedadmin/Music: Permission denied
+find: /private/var/indebtedadmin/Pictures: Permission denied
+find: /private/var/indebtedadmin/Desktop: Permission denied
+find: /private/var/indebtedadmin/Library: Permission denied
+find: /private/var/indebtedadmin/Public/Drop Box: Permission denied
+find: /private/var/indebtedadmin/Movies: Permission denied
+find: /private/var/indebtedadmin/Documents: Permission denied
+find: /private/var/indebtedadmin/Downloads: Permission denied
+find: /private/var/run/jamf: Permission denied
+find: /private/var/run/mds: Permission denied
+find: /private/var/protected/trustd/private: Operation not permitted
+find: /private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA00000059: Permission denied
+find: /private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA00000106: Permission denied
+find: /private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA00000116: Permission denied
+find: /private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA000000CD: Permission denied
+find: /private/var/protected/sfanalytics/FFFFEEEE-DDDD-CCCC-BBBB-AAAA000000F8: Permission denied
+find: /private/var/dirs_cleaner: Permission denied
+find: /private/var/backups: Permission denied
+find: /private/var/agentx: Permission denied
+find: /private/tmp/msu-target-kejEdneZ: Permission denied
+find: /private/tmp/tmp-mount-gOYI6d: Permission denied
+find: /private/tmp/tmp-mount-vgriHS: Permission denied
+find: /Users/indev/Library/Application Support/CallHistoryTransactions: Operation not permitted
+find: /Users/indev/Library/Application Support/com.apple.sharedfilelist: Operation not permitted
+find: /Users/indev/Library/Application Support/Knowledge: Operation not permitted
+find: /Users/indev/Library/Application Support/com.apple.TCC: Operation not permitted
+find: /Users/indev/Library/Application Support/FileProvider: Operation not permitted
+find: /Users/indev/Library/Application Support/FaceTime: Operation not permitted
+find: /Users/indev/Library/Application Support/CallHistoryDB: Operation not permitted
+find: /Users/indev/Library/Assistant/SiriVocabulary: Operation not permitted
+find: /Users/indev/Library/Daemon Containers: Operation not permitted
+find: /Users/indev/Library/Autosave Information: Operation not permitted
+find: /Users/indev/Library/IdentityServices: Operation not permitted
+find: /Users/indev/Library/Calendars: Operation not permitted
+find: /Users/indev/Library/Messages: Operation not permitted
+find: /Users/indev/Library/HomeKit: Operation not permitted
+find: /Users/indev/Library/Sharing: Operation not permitted
+find: /Users/indev/Library/com.apple.aiml.instrumentation: Operation not permitted
+find: /Users/indev/Library/Mail: Operation not permitted
+find: /Users/indev/Library/Trial: Operation not permitted
+find: /Users/indev/Library/AppleMediaServices: Operation not permitted
+find: /Users/indev/Library/DuetExpertCenter: Operation not permitted
+find: /Users/indev/Library/Accounts: Operation not permitted
+find: /Users/indev/Library/Safari: Operation not permitted
+find: /Users/indev/Library/Biome: Operation not permitted
+find: /Users/indev/Library/IntelligencePlatform: Operation not permitted
+find: /Users/indev/Library/Shortcuts: Operation not permitted
+find: /Users/indev/Library/Suggestions: Operation not permitted
+find: /Users/indev/Library/Weather: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.feedback: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.accessibility.voicebanking: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.stocks: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.secure-control-center-preferences: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.chronod: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.private.translation: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.calendar: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.siri.userfeedbacklearning: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.tips: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.spotlight: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.sharingd: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.weather: Operation not permitted
+find: /Users/indev/Library/Group Containers/com.apple.systempreferences.cache: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.feedbacklogger: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.notes: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.tipsnext: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.transparency: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.reminders: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.mail: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.iCloudDrive: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.AppleSpell: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.mlhost: Operation not permitted
+find: /Users/indev/Library/Group Containers/group.com.apple.PegasusConfiguration: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.archiveutility: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.Maps/Data/Maps: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.Home: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.Safari: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.CloudDocs.MobileDocumentsFileProvider: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.mail: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.MobileSMS: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.Notes: Operation not permitted
+find: /Users/indev/Library/Containers/com.apple.stocks: Operation not permitted
+find: /Users/indev/Library/ContainerManager: Operation not permitted
+find: /Users/indev/Library/PersonalizationPortrait: Operation not permitted
+find: /Users/indev/Library/Metadata/CoreSpotlight: Operation not permitted
+find: /Users/indev/Library/Cookies: Operation not permitted
+find: /Users/indev/Library/CoreFollowUp: Operation not permitted
+find: /Users/indev/Library/StatusKit: Operation not permitted
+find: /Users/indev/Library/DoNotDisturb: Operation not permitted
+find: /Users/indev/Library/Caches/com.apple.HomeKit: Operation not permitted
+find: /Users/indev/Library/Caches/CloudKit: Operation not permitted
+find: /Users/indev/Library/Caches/com.apple.containermanagerd: Operation not permitted
+find: /Users/indev/Library/Caches/com.apple.homed: Operation not permitted
+find: /Users/indev/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted
+find: /Users/indev/.Trash: Operation not permitted
+find: /Users/indebtianadmin/Music: Permission denied
+find: /Users/indebtianadmin/Pictures: Permission denied
+find: /Users/indebtianadmin/Desktop: Permission denied
+find: /Users/indebtianadmin/Library: Permission denied
+find: /Users/indebtianadmin/Public/Drop Box: Permission denied
+find: /Users/indebtianadmin/Movies: Permission denied
+find: /Users/indebtianadmin/Documents: Permission denied
+find: /Users/indebtianadmin/Downloads: Permission denied
+find: /dev/fd/3: Not a directory
+find: /dev/fd/4: Not a directory
+find: /dev/fd/6: Not a directory

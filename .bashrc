@@ -9,28 +9,28 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 git_prompt_locations=(
-	'/usr/share/git/git-prompt.sh' # Arch Linux
+  '/usr/share/git/git-prompt.sh' # Arch Linux
 
-	##
-	# Looks brew now places git/bash related files in a path
-	# that does not require updating with every new version.
-	#
-	/usr/local/etc/bash_completion.d/git-prompt.sh
-	/usr/share/git-core/contrib/completion/git-prompt.sh
-	/usr/local/etc/bash_completion.d/git-completion.bash
+  ##
+  # Looks brew now places git/bash related files in a path
+  # that does not require updating with every new version.
+  #
+  /usr/local/etc/bash_completion.d/git-prompt.sh
+  /usr/local/etc/bash_completion.d/git-completion.bash
+  /opt/homebrew/etc/bash_completion.d/git-prompt.sh
+  /opt/homebrew/etc/bash_completion.d/git-completion.bash
 )
 
 for file in "${git_prompt_locations[@]}" ; do
   if [ -f "$file" ] ; then source "$file" ; fi
 done
 
-PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/work/src/dotfiles/bin:$HOME/local/bin"
+PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/source/dotfiles/bin:$HOME/local/bin"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 ##
 # Java, JDK
@@ -47,7 +47,7 @@ export NVM_DIR="$HOME/.nvm"
 #
 # • http://maven.apache.org/
 #
-PATH="$PATH:$HOME/bin/apache-maven-3.8.4/bin"
+# PATH="$PATH:$HOME/bin/apache-maven-3.8.4/bin"
 
 #
 # FZF
@@ -71,16 +71,16 @@ PATH="$PATH:$HOME/.rvm/bin"
 
 
 if [[ $(hostname) = 'work1' ]] ; then
-    # enable programmable completion features (you don't need to enable
-    # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-    # sources /etc/bash.bashrc).
-    if ! shopt -oq posix; then
-        if [ -f /usr/share/bash-completion/bash_completion ]; then
-            source /usr/share/bash-completion/bash_completion
-        elif [ -f /etc/bash_completion ]; then
-            source /etc/bash_completion
-        fi
+  # enable programmable completion features (you don't need to enable
+  # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+  # sources /etc/bash.bashrc).
+  if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+      source /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+      source /etc/bash_completion
     fi
+  fi
 fi
 
 #
@@ -135,7 +135,7 @@ fi
 #
 # Path for files that are sourced.
 #
-path_incl=~/work/src/dotfiles/bash_incl
+path_incl=~/source/dotfiles/bash_incl
 
 to_source=(
   "$path_incl/bash-colors.sh"
@@ -148,7 +148,7 @@ to_source=(
   "$path_incl/wrappers.sh"
   "$path_incl/c-helpers.sh"
   "$path_incl/adoc-helpers.sh"
-  ~/work/local/local.bash
+  ~/source/local/local.bash
   ~/local/lib/node-completions.sh
   ~/local/lib/deno-completions.sh
 )
@@ -158,13 +158,6 @@ for file in "${to_source[@]}" ; do
     source "$file"
   fi
 done
-
-##
-# Kitty terminal emulator
-#
-# • https://sw.kovidgoyal.net/kitty/index.html#completion-for-kitty
-#
-source <(kitty + complete setup bash)
 
 #
 # https://github.com/rupa/z
@@ -186,7 +179,7 @@ z_possible_paths=(
   "$HOME/bin/z/z.sh"
 
   # macOS brew.
-  "/usr/local/etc/profile.d/z.sh"
+  /opt/homebrew/etc/profile.d/z.sh
 )
 
 for z_path in "${z_possible_paths[@]}"; do
@@ -218,8 +211,15 @@ exercism_bin_path="$HOME/bin/exercism-linux/shell/exercism_completion.bash"
 export PATH="$PATH:$HOME/local/bin"
 
 # BEGIN_KITTY_SHELL_INTEGRATION
-if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+
+##
+# Kitty terminal emulator
+#
+# • https://sw.kovidgoyal.net/kitty/index.html#completion-for-kitty
+#
+# source <(kitty + complete setup bash)
 
 [ -f "/home/deveng/.ghcup/env" ] && source "/home/deveng/.ghcup/env"
 
@@ -243,9 +243,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CLIBS/criterion/lib"
 #
 # https://wiki.archlinux.org/title/Go#Install_directory
 #
-export GOBIN="$HOME/go/bin"
-export GOPATH=$(go env GOPATH)
-export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+# export GOBIN="$HOME/go/bin"
+# export GOPATH=$(go env GOPATH)
+# export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 [ -f "/home/deveng/.ghcup/env" ] && . "/home/deveng/.ghcup/env"
 
@@ -259,3 +259,13 @@ if [[ -f $HOME/bin/exercism-bin/shell/exercism_completion.bash ]]
 then
   source "$HOME/bin/exercism-bin/shell/exercism_completion.bash"
 fi
+
+function cur_aws_vlt() {
+  if [ -n "${AWS_VAULT}" ]; then
+    echo "${AWS_VAULT} "
+  fi
+}
+
+export PROMPT="%{$fg[yellow]%}$(cur_aws_vlt)%{$reset_color%}$PROMPT"
+
+alias v="aws-vault exec --debug --duration=1h"

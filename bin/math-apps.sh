@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-dir="$HOME/Cloud/pCloud/Handwritten-Notes/Math"
+dir="$HOME/Cloud/pCloud/SRC-Studies/Handwritten-Notes/Math"
 
 gnome-calculator &
 
@@ -10,7 +10,7 @@ terminator \
   --title 'MATH REPL' \
   --profile default \
 	--working-directory ~/Public \
-  --geometry=400x500-0-0 \
-	-e 'node -i'
+  --geometry=440x480-0-0
+	# -e 'node -i'
 	# -e 'stack ghci'
 

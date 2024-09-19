@@ -160,3 +160,6 @@ jsdoc
 JSDoc
 argv
 NodeJS
+src
+postgresql
+localhost

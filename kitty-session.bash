@@ -32,13 +32,13 @@ work_dir="$PWD"
 kitty @ launch \
   --type=tab \
   --cwd "$work_dir" \
-  --tab-title vim \
+  --tab-title NVIM \
   --title "$win_title"
 
 kitty @ launch \
   --type=tab \
   --cwd "$work_dir" \
-  --tab-title shell \
+  --tab-title SHELL \
   --title "$win_title"
 
 kitty @ launch \

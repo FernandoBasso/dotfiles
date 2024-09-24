@@ -53,15 +53,15 @@ return {
     nnoremap <Leader>f :Files<CR>
      nnoremap <Leader>gf :GitFiles<CR>
     " nnoremap <Leader>bb :Buffers<CR>
-     nnoremap <Leader>g? :GF?<CR>
+    nnoremap <Leader>g? :GF?<CR>
     nnoremap <Leader>rg :Rg!<CR>
     nnoremap <Leader>t :Tags<CR>
     nnoremap <Leader>m :Marks<CR>
 
     let files_to_source = [
           \ '~/work/local/libdev.vim',
-          \ '~/work/src/dotfiles/nvim-utils.vim',
-          \ '~/work/src/dotfiles/digraphs.vim'
+          \ '~/source/dotfiles/nvim-utils.vim',
+          \ '~/source/dotfiles/digraphs.vim'
           \ ]
 
     for file in files_to_source

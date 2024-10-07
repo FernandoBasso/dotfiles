@@ -47,7 +47,7 @@ return {
     require('go').setup({
       lsp_config = true,
       lsp_inlay_hints = {
-        enable = true,
+        enable = false,
       },
     })
 

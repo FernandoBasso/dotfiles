@@ -248,7 +248,7 @@
   :after org
   :config
   (setq-default
-   org-download-image-dir "assets"
+   org-download-image-dir "__assets"
    ;; Basename setting seems to be simply ignored.
    org-download-screenshot-basename ".org.png"
    org-download-timestamp "org_%Y%m%d-%H%M%S_"

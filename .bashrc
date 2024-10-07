@@ -181,7 +181,7 @@ z_possible_paths=(
   "$HOME/bin/z/z.sh"
 
   # macOS brew.
-  "/usr/local/etc/profile.d/z.sh"
+  /opt/homebrew/etc/profile.d/z.sh
 )
 
 for z_path in "${z_possible_paths[@]}"; do

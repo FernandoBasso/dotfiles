@@ -224,7 +224,8 @@
          ("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert))
   :config
-  (org-roam-setup))
+  (org-roam-setup)
+  (require 'org-roam-export))
 
 (use-package vertico
   :ensure t

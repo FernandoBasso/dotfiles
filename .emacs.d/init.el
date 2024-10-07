@@ -219,7 +219,7 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory "~/Cloud/pCloud/SRC-Studies/OrgRoamNotes")
+  (org-roam-directory "~/source/mynotes/dev-how-to/org-roam-notes")
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n i" . org-roam-node-insert))

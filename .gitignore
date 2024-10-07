@@ -2,6 +2,9 @@
 # the repo's .gitignore.
 tmp/
 .emacs.bkp
+.emacs.d/quelpa
+.emacs.d/history
+.emacs.d/places
 
 #
 # Work-related stuff that I am better off not sharing.

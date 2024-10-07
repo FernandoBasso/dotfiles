@@ -1,4 +1,4 @@
-.emacs.d
+.emacs.d/init.el
 .config/gtk-3.0/gtk.css
 .config/zim/accelmap
 .config/zim/dates.list

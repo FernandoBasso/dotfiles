@@ -57,6 +57,7 @@
 ;;
 (setq custom-file "~/source/local/emacs.d/emacs-custom.el")
 (load "~/source/local/emacs.d/emacs-custom.el")
+(load "~/source/local/emacs.d/org-mode.el")
 
 ;; For terminal non-blinking cursor. See C-h m Emacs RET m Cursor Display RET.
 (setq visible-cursor nil)

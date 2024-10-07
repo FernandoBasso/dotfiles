@@ -4,6 +4,31 @@
 # ~/.bash_profile by default.
 [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
 
+export HOSTNAME="$(hostname)"
+
+##
+# Use coreutils tools instead of macos default ones.
+#
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
+##
+# Installed go from Arch Linux official repos.
+#
+# https://wiki.archlinux.org/title/Go#Install_directory
+#
+# export GOBIN="$HOME/sdk/go1.22.3/bin"
+# export GOPATH="$(/Users/indev/sdk/go1.22.3/bin/go env GOPATH)"
+# export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+
+##
+# https://github.com/go-nv/goenv
+#
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
 ##
 # Seems to be required with some terminal applications. In my case, it was
 # necessary with [n]vim + vim-gnupg.
@@ -79,7 +104,7 @@ export PATH="$PATH:/home/deveng/.local/share/coursier/bin"
 # the end of this ~/.bash_profile file, move those to the sourced
 # files instead.
 #
-if [ -f "$HOME/.bash_profile_${HOSTNAME}.rc" ]
+if [ -f "$HOME/.bash_profile_macos" ]
 then
-  source "$HOME/.bash_profile_${HOSTNAME}.rc"
+  source "$HOME/.bash_profile_macos"
 fi

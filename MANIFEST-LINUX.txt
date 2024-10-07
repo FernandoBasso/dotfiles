@@ -1,5 +1,4 @@
-.emacs.d/init.el
-.emacs.d/myinit.org
+.emacs.d
 .config/gtk-3.0/gtk.css
 .config/zim/accelmap
 .config/zim/dates.list

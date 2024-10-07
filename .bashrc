@@ -20,6 +20,8 @@ git_prompt_locations=(
 	/usr/local/etc/bash_completion.d/git-prompt.sh
 	/usr/share/git-core/contrib/completion/git-prompt.sh
 	/usr/local/etc/bash_completion.d/git-completion.bash
+  /opt/homebrew/etc/bash_completion.d/git-prompt.sh
+  /opt/homebrew/etc/bash_completion.d/git-completion.bash
 )
 
 for file in "${git_prompt_locations[@]}" ; do
@@ -148,7 +150,7 @@ to_source=(
   "$path_incl/wrappers.sh"
   "$path_incl/c-helpers.sh"
   "$path_incl/adoc-helpers.sh"
-  ~/source/local.bash
+  ~/source/local/local.bash
   ~/local/lib/node-completions.sh
   ~/local/lib/deno-completions.sh
 )
@@ -158,13 +160,6 @@ for file in "${to_source[@]}" ; do
     source "$file"
   fi
 done
-
-##
-# Kitty terminal emulator
-#
-# • https://sw.kovidgoyal.net/kitty/index.html#completion-for-kitty
-#
-source <(kitty + complete setup bash)
 
 #
 # https://github.com/rupa/z
@@ -243,9 +238,9 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CLIBS/criterion/lib"
 #
 # https://wiki.archlinux.org/title/Go#Install_directory
 #
-export GOBIN="$HOME/go/bin"
-export GOPATH=$(go env GOPATH)
-export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+# export GOBIN="$HOME/go/bin"
+# export GOPATH=$(go env GOPATH)
+# export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 [ -f "/home/deveng/.ghcup/env" ] && . "/home/deveng/.ghcup/env"
 

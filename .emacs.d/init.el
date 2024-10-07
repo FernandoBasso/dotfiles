@@ -62,7 +62,7 @@
 ;; For terminal non-blinking cursor. See C-h m Emacs RET m Cursor Display RET.
 (setq visible-cursor nil)
 
-(setq backup-directory-alist `(("." . "~/work/src/dotfiles/tmp/emacs_stuff"))):
+(setq backup-directory-alist `(("." . "~/Temp/Emacs"))):
 
 (set-face-attribute 'default nil
                     ;:family "Source Code Pro"
@@ -70,7 +70,7 @@
                     :family "SauceCodePro NFM SemiBold"
                     :height (cond
                              ((eq system-type 'gnu/linux) 130)
-                             ((eq system-type 'darwin) 165)
+                             ((eq system-type 'darwin) 145)
                              (t 150))
                     :weight (cond
                               ((eq system-type 'gnu/linux) 'semibold)

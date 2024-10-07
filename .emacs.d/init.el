@@ -170,16 +170,6 @@
 (add-to-list 'package-archives
              '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(setq package-enable-at-startup nil)
-
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
 (unless (package-installed-p 'quelpa)
   (with-temp-buffer
     (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")

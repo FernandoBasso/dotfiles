@@ -360,8 +360,15 @@
  haskell-interactive-types-for-show-ambiguous nil
  haskell-stylish-on-save t)
 
+;;;;
+;; https://github.com/bbatsov/adoc-mode
+;;
 (use-package adoc-mode
-  :ensure t)
+  :ensure t
+  :custom-face
+  (adoc-title-0-face ((t (:height 1.2 :weight bold))))
+  (adoc-title-1-face ((t (:height 1.1 :weight bold))))
+  (adoc-title-2-face ((t (:height 1.0 :weight bold)))))
 
 ;;;;
 ;; Enabling eval-expression-minibuffer-setup-hook causes

@@ -646,10 +646,10 @@
          "DONE(d)")))
 
 
-(use-package gruvbox-theme
-  :ensure t
-  :config
-  (load-theme 'gruvbox-light-hard))
+;;(use-package gruvbox-theme
+;;  :ensure t
+;;  :config
+;;  (load-theme 'gruvbox-light-hard))
 
 (use-package diff-hl
   :ensure t

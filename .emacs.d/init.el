@@ -749,7 +749,19 @@
 ;    :config
 ;    (load-theme 'mindre t))
 
-;(use-package ef-themes
-;  :ensure t
-;  :config
-;  (load-theme 'ef-day t))
+(use-package ef-themes
+  :ensure t
+  :config
+  (load-theme 'ef-day t)
+  (set-face-italic-p 'italic nil)
+  (set-face-italic 'font-lock-comment-face nil)
+  (setq ef-themes-headings ; read the manual's entry or the doc string
+      '((0 variable-pitch light 1.2)
+        (1 variable-pitch light 1.1)
+        (2 variable-pitch regular 1.0)
+        (3 variable-pitch regular 1.0)
+        (4 variable-pitch regular 1.0)
+        (5 variable-pitch 1.4) ; absence of weight means `bold'
+        (6 variable-pitch 1.3)
+        (7 variable-pitch 1.2)
+        (t variable-pitch 1.1))))

@@ -1,4 +1,4 @@
-; Added by Package.el.  This must come before configurations of
+;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
@@ -154,9 +154,6 @@
   (require 'saveplace)
   (setq-default save-place t))
 (save-place-mode 1))
-
-
-
 
 ;;
 ; Disable show-trailing-whitespace on Info mode because we sometimes
@@ -363,6 +360,8 @@
  haskell-interactive-types-for-show-ambiguous nil
  haskell-stylish-on-save t)
 
+(use-package adoc-mode
+  :ensure t)
 
 ;;;;
 ;; Enabling eval-expression-minibuffer-setup-hook causes
@@ -521,13 +520,13 @@
 ;; Hidding the markers and having these colors look OK and readable
 ;; with gruvbox-light-hard theme.
 ;;
-(setq org-emphasis-alist
-      '(("*" bold)
-        ("/" italic)
-        ("_" underline)
-        ("+" (:strike-through t :foreground "gray"))
-        ("=" (:foreground "magenta"))
-        ("~" (:foreground "maroon"))))
+;; (setq org-emphasis-alist
+;;       '(("*" bold)
+;;         ("/" italic)
+;;         ("_" underline)
+;;         ("+" (:strike-through t :foreground "gray"))
+;;         ("=" (:foreground "magenta"))
+;;         ("~" (:foreground "maroon"))))
 
 ;; Bigger Latex Fragments
 (plist-put org-format-latex-options :scale 1.5)
@@ -641,9 +640,9 @@
 
 
 (use-package gruvbox-theme
-  :ensure t)
-
-(load-theme 'gruvbox-light-hard)
+  :ensure t
+  :config
+  (load-theme 'gruvbox-light-hard))
 
 (use-package diff-hl
   :ensure t
@@ -682,8 +681,8 @@
 (defvar my/bg-line "#f9f0cf")
 (defvar my/fg-line "#c8b882")
 
-(set-face-attribute 'org-block nil
-                    :background my/bg-block)
+;(set-face-attribute 'org-block nil
+;                    :background my/bg-block)
 
 (defun blkhide ()
   (interactive)
@@ -712,9 +711,9 @@
 (global-set-key (kbd "C-c c h") #'blkhide)
 (global-set-key (kbd "C-c c s") #'blkshow)
 
-(set-face-attribute
- 'org-block nil
- :background "#fbf2d3")
+;(set-face-attribute
+; 'org-block nil
+; :background "#fbf2d3")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; tree-sitter
@@ -728,3 +727,22 @@
 
 (global-tree-sitter-mode)
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
+;(use-package solo-jazz-theme
+;  :ensure t
+;  :config
+;  (load-theme 'solo-jazz t))
+
+
+;(use-package mindre-theme
+;    :ensure t
+;    :custom
+;    (mindre-use-more-bold nil)
+;    (mindre-use-faded-lisp-parens t)
+;    :config
+;    (load-theme 'mindre t))
+
+;(use-package ef-themes
+;  :ensure t
+;  :config
+;  (load-theme 'ef-day t))

@@ -5,6 +5,14 @@
 [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
 
 export HOSTNAME="$(hostname)"
+OSFAMILY=linux
+
+if [[ $OSTYPE =~ darwin ]]
+then
+  OSFAMILY=darwin
+fi
+
+export OSFAMILY
 
 ##
 # Use coreutils tools instead of macos default ones.

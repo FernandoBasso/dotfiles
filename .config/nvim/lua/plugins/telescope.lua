@@ -64,9 +64,12 @@ return {
       -- the info you're looking for is in :help telescope.setup().
       --
       defaults = {
-        path_display = { 'truncate' }
+        path_display = { 'truncate' },
+        layout_config = {
+          width = 0.98,
+          height = 0.96,
+        },
       },
-      -- pickers = {}
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),

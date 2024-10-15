@@ -52,6 +52,13 @@ return {
       lsp_inlay_hints = {
         enable = false,
       },
+      verbose_tests = true,
+      run_in_floaterm = false,
+      floaterm = {
+        position = 'auto',
+        width = 0.96,
+        height = 0.96,
+      },
     })
 
     local cfg = require'go.lsp'.config()

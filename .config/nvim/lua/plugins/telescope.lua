@@ -78,6 +78,19 @@ return {
     }
 
     ----
+    -- When some fold method is enable, telescope results sometimes come
+    -- folded as well, making it hard or impossible to swift through
+    -- the results. This config disables folding for telescope results
+    -- in the pop up window.
+    --
+    -- • https://github.com/nvim-telescope/telescope-file-browser.nvim/issues/249
+    --
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'TelescopeResults',
+      command = 'setlocal nofoldenable',
+    })
+
+    ----
     -- Enable Telescope extensions if they are installed
     --
     pcall(require('telescope').load_extension, 'fzf')

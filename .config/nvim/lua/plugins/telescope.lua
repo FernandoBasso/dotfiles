@@ -96,6 +96,12 @@ return {
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
 
+    ----
+    -- Trigger :Telescope.
+    --
+    vim.cmd [[ nnoremap <Leader>t :Telescope<CR> ]]
+    vim.cmd [[ nnoremap <Leader>tl :Telescope lsp_<C-d> ]]
+
     --
     -- • :help telescope.builtin
     --

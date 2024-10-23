@@ -57,23 +57,23 @@ export GPG_TTY
 # • https://github.com/fabiomaia/linuxify
 # • https://apple.stackexchange.com/questions/69223/how-to-replace-mac-os-x-utilities-with-gnu-core-utilities
 #
-gnubins=(
-  '/usr/local/opt/coreutils/libexec/gnubin'
-  '/usr/local/opt/gnu-indent/libexec/gnubin'
-  '/usr/local/opt/gnu-tar/libexec/gnubin'
-  '/usr/local/opt/grep/libexec/gnubin'
-  '/usr/local/opt/gnu-sed/libexec/gnubin'
-  '/usr/local/opt/gsed/libexec/gnubin'
-  '/usr/local/opt/gawk/libexec/gnubin'
-  '/usr/local/opt/findutils/libexec/gnubin'
-  '/usr/local/opt/sphinx-doc/bin'
-  '/usr/local/opt/make/libexec/gnubin'
-  '/usr/local/opt/gcc/bin'
-)
+# gnubins=(
+#   '/usr/local/opt/coreutils/libexec/gnubin'
+#   '/usr/local/opt/gnu-indent/libexec/gnubin'
+#   '/usr/local/opt/gnu-tar/libexec/gnubin'
+#   '/usr/local/opt/grep/libexec/gnubin'
+#   '/usr/local/opt/gnu-sed/libexec/gnubin'
+#   '/usr/local/opt/gsed/libexec/gnubin'
+#   '/usr/local/opt/gawk/libexec/gnubin'
+#   '/usr/local/opt/findutils/libexec/gnubin'
+#   '/usr/local/opt/sphinx-doc/bin'
+#   '/usr/local/opt/make/libexec/gnubin'
+#   '/usr/local/opt/gcc/bin'
+# )
 
-for gnubin in "${gnubins[@]}"; do
-  PATH="$gnubin:$PATH"
-done
+# for gnubin in "${gnubins[@]}"; do
+#   PATH="$gnubin:$PATH"
+# done
 
 ##
 # Export current hostname to an env var. Useful to allow some tools

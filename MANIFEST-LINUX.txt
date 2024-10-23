@@ -31,6 +31,7 @@
 .ghci
 .iex.exs
 .bash_profile
+.bash_profile_macos
 .bashrc
 .inputrc
 .gmrunrc

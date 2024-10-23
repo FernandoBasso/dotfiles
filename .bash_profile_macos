@@ -1,0 +1,53 @@
+LANG="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+##
+# $ brew install bash-completion@2
+#
+# This config was just copy and pasted from the notes after the install.
+# View those instructions again with `brew info bash-completion@2`.
+#
+ [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && \
+   . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+
+##
+# Use coreutils tools instead of macos default ones.
+#
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
+##
+# Installed go from Arch Linux official repos.
+#
+# https://wiki.archlinux.org/title/Go#Install_directory
+#
+# export GOBIN="$HOME/sdk/go1.22.3/bin"
+# export GOPATH="$(/Users/indev/sdk/go1.22.3/bin/go env GOPATH)"
+# export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+
+##
+# https://github.com/go-nv/goenv
+#
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
+##
+# Kitty terminal emulator
+#
+# • https://sw.kovidgoyal.net/kitty/index.html#completion-for-kitty
+#
+source <(kitty + complete setup bash)
+
+#
+# vim: set filetype=sh:
+#

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+##
+# ft: file tags
+#
+# Find files matching one or more tags in an _and_ operation.
+#
+# A lot of my study and notes contains strings describring multiple
+# tags the content can be attributed to. Some examples:
+#
+#   tags: ruby enums
+#   tags: hashell function-composition
+#   tags: c pointers arrays
+#
+# Make sure `rg` (ripgrep) is installed in in PATH.
+##
+
+# function ft () {
+# 	rg "tags: .*$1"
+# }
+
+cmd=(ugrep -e "tags: .*\b$1\b")
+shift 1
+
+for tag in "$@"
+do
+	cmd+=(--and "tags: .*\b$tag\b")
+done
+
+"${cmd[@]}"

@@ -99,8 +99,8 @@ return {
     ----
     -- Trigger :Telescope.
     --
-    vim.cmd [[ nnoremap <Leader>t :Telescope<CR> ]]
-    vim.cmd [[ nnoremap <Leader>tl :Telescope lsp_<C-d> ]]
+    vim.cmd [[nnoremap <Leader>t :Telescope <C-d>]]
+    vim.cmd [[nnoremap <Leader>tl :Telescope lsp_<C-d>]]
 
     --
     -- • :help telescope.builtin

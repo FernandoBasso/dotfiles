@@ -64,7 +64,8 @@ return {
       -- the info you're looking for is in :help telescope.setup().
       --
       defaults = {
-        path_display = { 'truncate' },
+        layout_strategy = 'horizontal',
+        path_display = { 'shorten' },
         layout_config = {
           width = 0.98,
           height = 0.96,

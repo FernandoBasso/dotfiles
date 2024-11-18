@@ -48,6 +48,11 @@ export PATH="$PATH:$GOPATH/bin"
 #
 source <(kitty + complete setup bash)
 
+if [ -f $HOME/local/bash_profile_work.sh ]
+then
+  . $HOME/local/bash_profile_work.sh
+fi
+
 #
 # vim: set filetype=sh:
 #

@@ -46,6 +46,15 @@ return {
       }
     )
 
+    vim.keymap.set(
+      'n',
+      '<Leader>gt',
+      function ()
+        vim.cmd('GoTestFile')
+      end,
+      { desc = '[G]o[T]estFile' }
+    )
+
     require('mason').setup()
     require('mason-lspconfig').setup()
     require('go').setup({

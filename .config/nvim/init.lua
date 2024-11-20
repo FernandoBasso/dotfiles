@@ -192,6 +192,18 @@ vim.keymap.set(
 )
 
 ----
+-- Close the quickfix window.
+--
+vim.keymap.set(
+  'n',
+  '<Leader>cq',
+  function ()
+    vim.cmd('cclose')
+  end,
+  { desc = '[C]lose [Q]uickfix window' }
+)
+
+----
 -- Diagnostic keymaps.
 --
 vim.keymap.set(

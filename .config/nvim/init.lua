@@ -349,6 +349,25 @@ vim.keymap.set(
 )
 
 ----
+-- Add command to copy current buffer/file relative path to
+-- the clipboard.
+--
+vim.api.nvim_create_user_command('CopyRelativePath', function()
+  local path = vim.fn.expand('%:h:p')
+  vim.fn.setreg('+', path)
+  vim.notify('Path ‘' .. path .. '’ copied to the clipboard')
+end, {})
+
+vim.keymap.set(
+  'n',
+  '<Leader>yp',
+  function()
+    vim.cmd('CopyRelativePath')
+  end,
+  { desc = 'Copy current buffer/file relative path to the clipboard' }
+)
+
+----
 -- Start installing and configuring plugins with lazy.
 --
 require('lazy').setup({

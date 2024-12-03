@@ -69,7 +69,6 @@ local adoc_snips = {
         :toclevels: 6
         :toc: left
         :source-highlighter: highlight.js
-        :imagesdir: __assets
         :stem: latexmath
         ifdef::env-github[]
         :tip-caption: :bulb:

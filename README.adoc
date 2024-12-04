@@ -64,3 +64,6 @@ I am currently using NvimTree _and_ Oil (use one or the other depending on what 
 * kbd:[<Leader>E]: Toggle NvimTree.
 * kbd:[<Leader>ff]: NvimTreeFindFileToggle (open nvim tree if not already open and focus the current open file).
 * kbd:[<Leader>e]: Open Oil explorer.
+
+
+// vim: set textwidth=0:

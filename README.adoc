@@ -56,3 +56,11 @@ the browser.
 * kbd:[<Leader>gI]: [G]o to [I]mplementation.
 * kbd:[<Leader>t]: [T]elescope.
 * kbd:[<Leader>tl]: to trigger [T]elescope [l]sp_<C-d>, as this one prompts for specific lsp-related stuff.
+
+=== Tree View (File Explorer)
+
+I am currently using NvimTree _and_ Oil (use one or the other depending on what I am doing.
+
+* kbd:[<Leader>E]: Toggle NvimTree.
+* kbd:[<Leader>ff]: NvimTreeFindFileToggle (open nvim tree if not already open and focus the current open file).
+* kbd:[<Leader>e]: Open Oil explorer.

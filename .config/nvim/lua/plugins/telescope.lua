@@ -210,5 +210,13 @@ return {
     vim.keymap.set('n', '<leader>sn', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
     end, { desc = '[S]earch [N]eovim files' })
+
+    ----
+    -- Commands
+    --
+    vim.keymap.set('n', '<leader>tc', function()
+      builtin.commands{}
+      end
+    )
   end
 }

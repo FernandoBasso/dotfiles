@@ -54,8 +54,12 @@ the browser.
 * kbd:[<Leader>ws]: [W]orkspace [S]ymbols.
 * kbd:[<Leader>gr]: [G]o to [R]eferences.
 * kbd:[<Leader>gI]: [G]o to [I]mplementation.
-* kbd:[<Leader>t]: [T]elescope.
-* kbd:[<Leader>tl]: to trigger [T]elescope [l]sp_<C-d>, as this one prompts for specific lsp-related stuff.
+
+=== Telescope
+
+* kbd:[<Leader>t]: Telescope.
+* kbd:[<Leader>tc]: Telescope commands.
+* kbd:[<Leader>tl]: Trigger [T]elescope [l]sp_<C-d>, as this one prompts for specific lsp-related stuff.
 
 === Tree View (File Explorer)
 

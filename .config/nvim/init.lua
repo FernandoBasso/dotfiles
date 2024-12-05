@@ -144,6 +144,8 @@ vim.opt.cursorline = true
 --
 vim.opt.scrolloff = 6
 
+vim.opt.clipboard = 'unnamed,unnamedplus'
+
 ------------------------------------------------------------------------
 -- Restore cursor position.
 --

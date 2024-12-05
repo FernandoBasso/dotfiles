@@ -90,8 +90,8 @@ command! -bang -nargs=* RGHt
   \   fzf#vim#with_preview('right:50%'),
   \ <bang>0)
 
-nnoremap <Leader>rht :RGHt
-nnoremap <Leader>rvt :RGVt
+nnoremap <Leader>rht :RGHt<Space>
+nnoremap <Leader>rvt :RGVt<Space>
 
 "
 " NOTE on --keep-right

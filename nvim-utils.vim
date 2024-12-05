@@ -92,6 +92,7 @@ command! -bang -nargs=* RGHt
 
 nnoremap <Leader>rht :RGHt<Space>
 nnoremap <Leader>rvt :RGVt<Space>
+nnoremap <Leader>s :RGVt<Space>
 
 "
 " NOTE on --keep-right

@@ -82,10 +82,10 @@ local go_snips = {
   ),
 
   ----
-  -- Interface
+  -- Type Interface
   --
   s(
-    'itf',
+    'tyi',
     fmt(
       [[
         type {} interface {{
@@ -96,10 +96,10 @@ local go_snips = {
   ),
 
   ----
-  -- Struct
+  -- Type Struct
   --
   s(
-    'stt',
+    'tys',
     fmt(
       [[
         type {} struct {{

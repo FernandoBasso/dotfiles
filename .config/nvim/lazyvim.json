@@ -1,5 +1,7 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.coding.luasnip",
+    "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.lang.ruby"
   ],
   "news": {

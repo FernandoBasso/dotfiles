@@ -59,6 +59,34 @@ git_info () {
   printf '%s' "$red\$(__git_ps1 "[%s]")"
 }
 
+##
+# Get AWS CLI/Vault env information.
+#
+function aws_env_info () {
+	##
+	# Assume a normal shell will be level 1, and if AWS Vault started a
+	# new, authenticated shell, it will be level 2.
+	#
+	if [[ $SHLVL = 1 ]]
+	then
+		printf ''
+		return 0
+	fi
+
+	##
+	# Replace newlines with ' ', then drop the last trailing ' '.
+	#
+	aws_env="$(aws-vault list | grep sso | cut -d ' ' -f 1 | tr '\n' ' ' | sed 's/ $//')"
+
+	if [[ -z $aws_env ]]
+	then
+		printf ''
+		return 0
+	fi
+
+	printf '%s' "(AWS $aws_env)"
+}
+
 ps1simplest_nl () {
   PS1="\n${normal}${BASH_PROMPT_CHAR} "
 }
@@ -119,7 +147,7 @@ ps1go0 () {
 # PS1 with curdir, go version and git branch.
 #
 ps1go1 () {
-  PS1="\n${blue}\$(curdir) ${purple}[\$(version_go)] $(git_info)\n${normal}${BASH_PROMPT_CHAR} "
+	PS1="\n${blue}\$(curdir) ${purple}[\$(version_go)] $(git_info) \$(aws_env_info)\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ##

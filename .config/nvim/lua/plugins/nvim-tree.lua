@@ -9,6 +9,10 @@ return {
   },
   config = function()
     require('nvim-tree').setup({
+      update_focused_file = {
+        enable = true,
+      },
+
       on_attach = function(bufnr)
         local api = require 'nvim-tree.api'
 
@@ -18,7 +22,7 @@ return {
             buffer = bufnr,
             noremap = true,
             silent = true,
-            nowait = true
+            nowait = true,
           }
         end
 

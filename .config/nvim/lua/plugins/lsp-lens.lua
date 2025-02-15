@@ -5,7 +5,7 @@ return {
     local SymbolKind = vim.lsp.protocol.SymbolKind
 
     require'lsp-lens'.setup({
-      enable = true,
+      enable = false,
       include_declaration = false,      -- Reference include declaration
       sections = {
         definition = function(count)

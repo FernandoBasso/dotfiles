@@ -20,6 +20,17 @@ endif::[]
 
 == nvim
 
+Start a fresh install:
+
+[source,bash]
+----
+rm -rf \
+  ~/.config/nvim \
+  ~/.local/share/nvim \
+  ~/.local/state/nvim \
+  ~/.cache/nvim
+----
+
 === Main custom keymaps
 
 * kbd:[<leader>+<leader>+d]: [T]oggle LSP [D]iagnostics

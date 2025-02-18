@@ -21,10 +21,9 @@ vim.g.maplocalleader = '\\'
 vim.o.termguicolors = true
 
 ----
---
---
 -- Set to true if you have a Nerd Font installed and selected in the
 -- terminal; false otherwise.
+--
 vim.g.have_nerd_font = true
 
 ----

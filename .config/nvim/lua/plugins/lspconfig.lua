@@ -33,89 +33,90 @@ return {
     --  associated with an lsp.
     --
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+      group = vim.api.nvim_create_augroup('custom-lsp-attach', { clear = true }),
       callback = function(event)
-        local map = function(keys, func, desc)
-          vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-        end
 
-        ----
-        -- Toggle LSP Inlay Hints
-        --
-        map(
-          '<Leader><Leader>h',
-          function ()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
-            local status = 'DISABLED'
+      local map = function(keys, func, desc)
+        vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+      end
 
-            if vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }) then
-              status = 'ENABLED'
+      ----
+      -- Toggle LSP Inlay Hints
+      --
+      map(
+        '<Leader><Leader>h',
+        function ()
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
+          local status = 'DISABLED'
+
+          if vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }) then
+            status = 'ENABLED'
+          else
+            status = 'DISABLED'
+          end
+
+          print('Inlay Hints', status)
+        end,
+        'Toggle LSP Inlay [H]ints'
+      )
+
+      map(
+        '<Leader><Leader>d',
+        (function()
+          local diag_status = 1
+          return function()
+            if diag_status == 1 then
+              diag_status = 0
+              vim.diagnostic.hide()
             else
-              status = 'DISABLED'
+              diag_status = 1
+              vim.diagnostic.show()
             end
+          end
+        end)(),
+        '[T]oggle LSP [D]iagnostics'
+      )
 
-            print('Inlay Hints', status)
-          end,
-          'Toggle LSP Inlay [H]ints'
-        )
+      ----
+      -- Virtual Text Configs.
+      --
+      local defaultDiagnosticsConfig = {
+        virtual_text = false,
+        signs = true,
+        underline = true,
+        update_in_insert = false,
+        severity_sort = false,
+      }
 
-        map(
-          '<Leader><Leader>d',
-          (function()
-            local diag_status = 1
-            return function()
-              if diag_status == 1 then
-                diag_status = 0
-                vim.diagnostic.hide()
-              else
-                diag_status = 1
-                vim.diagnostic.show()
-              end
+      vim.diagnostic.config(defaultDiagnosticsConfig)
+
+      --
+      -- FIXME: We are mutating defaultDiagnosticsConfig inside the
+      -- if/else block as we are not doing a real copy, but just
+      -- assigning reference. We can implement this at some point:
+      --
+      -- • http://lua-users.org/wiki/CopyTable
+      --
+      map(
+        '<Leader><Leader>v',
+        (function()
+          local vt = false
+          return function()
+            if vt == true then
+              vt = false
+              local newOpts = defaultDiagnosticsConfig
+              newOpts.virtual_text = false
+              vim.diagnostic.config(newOpts)
+              print('LSP Virtual Text DISABLED')
+            else
+              vt = true
+              local newOpts = defaultDiagnosticsConfig
+              newOpts.virtual_text = true
+              vim.diagnostic.config(newOpts)
+              print('LSP Virtual Text ENABLED')
             end
-          end)(),
-          '[T]oggle LSP [D]iagnostics'
-        )
-
-        ----
-        -- Virtual Text Configs.
-        --
-        local defaultDiagnosticsConfig = {
-          virtual_text = false,
-          signs = true,
-          underline = true,
-          update_in_insert = false,
-          severity_sort = false,
-        }
-
-        vim.diagnostic.config(defaultDiagnosticsConfig)
-
-        --
-        -- FIXME: We are mutating defaultDiagnosticsConfig inside the
-        -- if/else block as we are not doing a real copy, but just
-        -- assigning reference. We can implement this at some point:
-        --
-        -- • http://lua-users.org/wiki/CopyTable
-        --
-        map(
-          '<Leader><Leader>v',
-          (function()
-            local vt = false
-            return function()
-              if vt == true then
-                vt = false
-                local newOpts = defaultDiagnosticsConfig
-                newOpts.virtual_text = false
-                vim.diagnostic.config(newOpts)
-                print('LSP Virtual Text DISABLED')
-              else
-                vt = true
-                local newOpts = defaultDiagnosticsConfig
-                newOpts.virtual_text = true
-                vim.diagnostic.config(newOpts)
-                print('LSP Virtual Text ENABLED')
-              end
-            end
-          end)(),
+          end
+        end)(),
           'Toggle [V]irtual [T]ext'
         )
 

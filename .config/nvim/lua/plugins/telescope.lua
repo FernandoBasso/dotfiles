@@ -66,7 +66,7 @@ return {
       defaults = {
         layout_strategy = 'vertical',
         dynamic_preview_title = true,
-        path_display = 'truncate',
+        path_display = { 'truncate' },
         layout_config = {
           width = 0.98,
           height = 0.96,

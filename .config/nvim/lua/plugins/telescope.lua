@@ -111,6 +111,20 @@ return {
 
     vim.keymap.set(
       'n',
+      '<leader>gr',
+      builtin.lsp_references,
+      { desc = 'Go to references' }
+    )
+
+    vim.keymap.set(
+      'n',
+      '<leader>gi',
+      builtin.lsp_implementations,
+      { desc = 'Go to references' }
+    )
+
+    vim.keymap.set(
+      'n',
       '<leader>sh',
       builtin.help_tags,
       { desc = '[S]earch [H]elp' }

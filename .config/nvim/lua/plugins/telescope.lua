@@ -4,7 +4,6 @@
 return {
   'nvim-telescope/telescope.nvim',
   event = 'VimEnter',
-  branch = '0.1.x',
   dependencies = {
     'nvim-lua/plenary.nvim',
     {
@@ -64,13 +63,15 @@ return {
       -- the info you're looking for is in :help telescope.setup().
       --
       defaults = {
-        layout_strategy = 'vertical',
         dynamic_preview_title = true,
-        path_display = { 'truncate' },
+        layout_strategy = 'vertical',
+
         layout_config = {
-          width = 0.98,
+          width = 0.94,
           height = 0.96,
         },
+
+        path_display = { 'filename_first' },
       },
       extensions = {
         ['ui-select'] = {

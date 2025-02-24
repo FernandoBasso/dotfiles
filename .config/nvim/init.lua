@@ -197,11 +197,47 @@ vim.keymap.set(
 --
 vim.keymap.set(
   'n',
-  '<Leader>cq',
+  '<Leader>qo',
+  function ()
+    vim.cmd('copen')
+  end,
+  { desc = '[Q]uickfix [O]pen' }
+)
+
+----
+-- Close the quickfix window.
+--
+vim.keymap.set(
+  'n',
+  '<Leader>qc',
   function ()
     vim.cmd('cclose')
   end,
-  { desc = '[C]lose [Q]uickfix window' }
+  { desc = '[Q]uickfix [C]lose' }
+)
+
+----
+-- Next quickfix item
+--
+vim.keymap.set(
+  'n',
+  '<Leader>qn',
+  function ()
+    vim.cmd('cnext')
+  end,
+  { desc = '[Q]uickfix [N]ext item' }
+)
+
+----
+-- Previous quickfix item
+--
+vim.keymap.set(
+  'n',
+  '<Leader>qp',
+  function ()
+    vim.cmd('cprevious')
+  end,
+  { desc = '[Q]uickfix [P]revious item' }
 )
 
 ----

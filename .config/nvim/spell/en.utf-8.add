@@ -187,3 +187,6 @@ hljs
 stylesheet
 creational
 mux
+GOROOT
+tls
+gow

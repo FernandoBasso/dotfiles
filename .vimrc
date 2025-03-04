@@ -1,4 +1,6 @@
+""
 " UTF-8: 💩 λ ‽ ✔
+"
 set encoding=utf-8
 set fileencoding=utf-8
 
@@ -29,72 +31,24 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 
 Plug 'tomtom/tcomment_vim'
-Plug 'othree/html5.vim', { 'for': ['html', 'php'] }
-Plug 'gutenye/json5.vim'
-Plug 'cakebaker/scss-syntax.vim'
 Plug 'editorconfig/editorconfig-vim'
-
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-
-Plug 'purescript-contrib/purescript-vim'
-
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'npm install --production',
-  \ 'for': ['javascript', 'javascriptreact', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'https://github.com/junegunn/vim-emoji'
-Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
-
-" Plug 'pacha/vem-tabline'
-" Plug 'pseewald/vim-anyfold'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'Yggdroot/indentLine'
-Plug 'elzr/vim-json'
-" Plug 'altercation/vim-colors-solarized'
-" Plug 'NLKNguyen/papercolor-theme'
 Plug 'morhetz/gruvbox'
 
-""
-" Airline causes random chars to show up if running vim on
-" Kitty, but not on other terminals or tmux.
-"
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround',
-Plug 'vim-scripts/dbext.vim'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'habamax/vim-asciidoctor'
-" Plug '~/source/projects/img-paste.vim'
-
-if $SIMPLE != 1
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
 
 Plug '~/Cloud/Dropbox/vim/vim-uploader'
-Plug 'plasticboy/vim-markdown'
-Plug 'mzlogin/vim-markdown-toc'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'mg979/vim-visual-multi'
-Plug 'elixir-editors/vim-elixir'
 Plug 'chr4/nginx.vim'
 Plug 'jamessan/vim-gnupg'
-"Plug '~/Projects/vim/vim-tasklist-asciidoctor'
-
-"'file:///~/.vim/bundle/dbext'
-"'file:///~/.vim/bundle/vim-uploader'
 call plug#end()
 
 filetype plugin indent on
@@ -171,7 +125,9 @@ set directory=~/Temp/vim_tmp//
 set backupcopy=yes
 
 
+""
 " Restore cursor position (:help restore-cursor).
+"
 autocmd BufReadPost *
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
@@ -196,29 +152,6 @@ set conceallevel=1
 " NOTE: indentLine plugin seems to be overriding my conceal-related
 " settings. Checked with `:verbose set conceallevel`.
 ""
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" IndentLine
-"
-
-" NOTE: The font ProFontIIx does not display the char “¦”.
-"
-" let g:indentLine_char_list = ['·', ':', '¦', '┆', '┊', '|']
-" indentLine uses conceal stuff which together with default json.vim
-" hides quotes in json files. People suggest stuff here:
-" https://github.com/Yggdroot/indentLine/issues/140#issuecomment-173867054
-"
-
-"let g:indentLine_concealcursor = ''
-"let g:indentLine_conceallevel = 0
-
-"
-" json-vim
-"
-" Also to help with indentLine + json.vim hiding quotes from json files.
-let g:vim_json_syntax_conceal = 0
-
 
 "
 " NERDTree
@@ -659,25 +592,10 @@ let g:prettier#config#trailing_comma = 'all'
 "
 if (has('gui_running'))
   set guioptions=
-
   set lines=45
   set columns=120
-
-  "
-  " The font ProFontIIx does not display the char “¦”.
-  "
-  "set guifont=ProFontWindows\ Nerd\ Font\ Mono\ 16
-
-  " set guifont=SpaceMono\ Nerd\ Font\ Mono\ Bold\ 13
-  " set guifont=Inconsolata\ Semi-Bold\ Semi-Expanded\ 15
-  " set guifont=Source\ Code\ Pro\ Semi-Bold\ 14
-  " set guifont=SauceCodeProNerdFontCompleteM-Semibold:h16
-  " set guifont=Source Code Pro Semi-Bold 14
-  " set guifont=SauceCodePro\ Nerd\ Font\ Semi-Bold\ 13
   set guifont=SauceCodeProNFM:h18
-
   set linespace=5
-
   set guicursor=n-c:hor14,i:ver14,a:blinkon0
 endif
 

@@ -49,6 +49,13 @@ return {
 
     vim.keymap.set(
       'n',
+      '<leader>gT',
+      fzflua.lsp_typedefs,
+      { desc = '[G]o to [T]ype defs' }
+    )
+
+    vim.keymap.set(
+      'n',
       '<leader>ds',
       fzflua.lsp_document_symbols,
       { desc = '[D]ocument [S]ymbols' }

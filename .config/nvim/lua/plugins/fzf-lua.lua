@@ -4,6 +4,7 @@ return {
   opts = {},
   config = function()
     local fzflua = require('fzf-lua')
+
     fzflua.setup({
       winopts = {
         height = 0.96,
@@ -20,36 +21,43 @@ return {
 
     vim.keymap.set(
       'n',
+      '<leader>sr',
+      fzflua.resume,
+      { desc = '[S]earch [R]esume' }
+    )
+
+    vim.keymap.set(
+      'n',
       '<leader>sf',
-      function() fzflua.files() end,
+      fzflua.files,
       { desc = '[S]earch [F]iles' }
     )
 
     vim.keymap.set(
       'n',
       '<leader>gr',
-      function() fzflua.lsp_references() end,
+      fzflua.lsp_references,
       { desc = '[G]o to [R]eferences' }
     )
 
     vim.keymap.set(
       'n',
       '<leader>gi',
-      function() fzflua.lsp_implementations() end,
+      fzflua.lsp_implementations,
       { desc = '[G]o to [I]mplementations' }
     )
 
     vim.keymap.set(
       'n',
       '<leader>ds',
-      function() fzflua.lsp_document_symbols() end,
+      fzflua.lsp_document_symbols,
       { desc = '[D]ocument [S]ymbols' }
     )
 
     vim.keymap.set(
       'n',
       '<leader>ws',
-      function() fzflua.lsp_live_workspace_symbols() end,
+      fzflua.lsp_live_workspace_symbols,
       { desc = 'Live [W]orkspace [S]ymbols' }
     )
   end

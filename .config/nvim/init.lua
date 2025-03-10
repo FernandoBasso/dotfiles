@@ -404,6 +404,24 @@ vim.keymap.set(
   { desc = 'Copy current buffer/file relative path to the clipboard' }
 )
 
+------------------------------------------------------------------------
+-- <Tree-Sitter code folding>
+--
+-- • https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#folding
+-- • :help vim.treesitter.foldexpr()
+-- • :help nvim_treesitter
+--
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+
+----
+-- Don't fold whole buffer when opening a file.
+--
+vim.opt.foldenable = false
+--
+-- <Tree-Sitter code folding/>
+------------------------------------------------------------------------
+
 ----
 -- Start installing and configuring plugins with lazy.
 --

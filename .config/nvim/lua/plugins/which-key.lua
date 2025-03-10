@@ -1,7 +1,12 @@
 return {
   'folke/which-key.nvim',
   event = 'VeryLazy',
-  opts = {},
+  opts = {
+    ----
+    -- Wait 1.5 seconds before popping up.
+    --
+    delay = 1500
+  },
   keys = {
     {
       '<leader>?',

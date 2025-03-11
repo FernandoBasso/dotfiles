@@ -301,6 +301,7 @@ return {
       clangd = {},
       bashls = {},
       eslint = {},
+      terraformls = {},
 
       -- gopls is not needed as I'm using ray-x/go.nvim
       -- pyright = {},

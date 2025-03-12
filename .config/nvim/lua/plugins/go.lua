@@ -63,7 +63,7 @@ return {
         enable = false,
       },
       verbose_tests = true,
-      run_in_floaterm = false,
+      run_in_floaterm = true,
       floaterm = {
         position = 'auto',
         width = 0.96,

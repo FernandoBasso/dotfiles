@@ -62,29 +62,18 @@ git_info () {
 ##
 # Get AWS CLI/Vault env information.
 #
+# aws cli/vault sets the env var AWS_VAULT for the currently active
+# session. Therefore, we just verify it is set with a non-empty
+# value to decide if we display it in the prompty or not.
+#
 function aws_env_info () {
-	##
-	# Assume a normal shell will be level 1, and if AWS Vault started a
-	# new, authenticated shell, it will be level 2.
-	#
-	if [[ $SHLVL = 1 ]]
+	if [[ -z $AWS_VAULT ]]
 	then
 		printf ''
 		return 0
 	fi
 
-	##
-	# Replace newlines with ' ', then drop the last trailing ' '.
-	#
-	aws_env="$(aws-vault list | grep sso | cut -d ' ' -f 1 | tr '\n' ' ' | sed 's/ $//')"
-
-	if [[ -z $aws_env ]]
-	then
-		printf ''
-		return 0
-	fi
-
-	printf '%s' "(AWS $aws_env)"
+	printf '%s' "(AWS $AWS_VAULT)"
 }
 
 ps1simplest_nl () {

@@ -60,20 +60,19 @@ git_info () {
 }
 
 ##
-# Get AWS CLI/Vault env information.
+# Get aws-vault active profile session information.
 #
 # aws cli/vault sets the env var AWS_VAULT for the currently active
-# session. Therefore, we just verify it is set with a non-empty
-# value to decide if we display it in the prompty or not.
+# profile session. Therefore, we just verify it is set with a
+# non-empty value to decide if we display it in the prompty or not.
 #
-function aws_env_info () {
+function aws_vault_profile_info () {
 	if [[ -z $AWS_VAULT ]]
 	then
-		printf ''
 		return 0
 	fi
 
-	printf '%s' "(AWS $AWS_VAULT)"
+	printf '(AWS %s)' "$AWS_VAULT"
 }
 
 ps1simplest_nl () {
@@ -133,10 +132,10 @@ ps1go0 () {
 }
 
 ##
-# PS1 with curdir, go version and git branch.
+# PS1 with curdir, go version, git and the aws-vault info.
 #
 ps1go1 () {
-	PS1="\n${blue}\$(curdir) ${purple}[\$(version_go)] $(git_info) \$(aws_env_info)\n${normal}${BASH_PROMPT_CHAR} "
+	PS1="\n${blue}\$(curdir) ${purple}[\$(version_go)] $(git_info) \$(aws_vault_profile_info)\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ##

@@ -432,6 +432,15 @@ vim.api.nvim_create_autocmd('TermOpen', {
     vim.opt.relativenumber = false
   end,
 })
+
+----
+-- Keymap to split and open a terminal below.
+--
+vim.keymap.set('n', '<Leader>ot', function()
+  vim.cmd.vnew()
+  vim.cmd.term()
+  vim.cmd.wincmd('J')
+end)
 --
 -- </Terminal>
 ------------------------------------------------------------------------

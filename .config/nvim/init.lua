@@ -419,8 +419,23 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 --
 vim.opt.foldenable = false
 --
--- <Tree-Sitter code folding/>
+-- </Tree-Sitter code folding>
 ------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+-- <Terminal>
+--
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = vim.api.nvim_create_augroup('my-term-open', { clear = true }),
+  callback = function()
+    vim.opt.number = false
+    vim.opt.relativenumber = false
+  end,
+})
+--
+-- </Terminal>
+------------------------------------------------------------------------
+
 
 ----
 -- Start installing and configuring plugins with lazy.

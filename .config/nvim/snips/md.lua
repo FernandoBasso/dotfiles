@@ -37,6 +37,15 @@ description: Solutions with notes and explanations for the {} {}kyu Codewars cha
 - [{} :: Codewars {}kyu Challenge]({})
 ]=]
 
+--
+-- MyST code-block directive.
+--
+local cb_tmpl = [=[
+```{{code}} {}
+{}
+```
+]=]
+
 local md_snips = {
   s(
     'hrini',
@@ -51,6 +60,11 @@ local md_snips = {
   s(
     'hrsql',
     fmt('## {}\n\n- [{} :: HackerRank {} SQL Challenge]({})\n', { i(1), rep(1), i(2), i(3) })
+  ),
+
+  s(
+    'cb',
+    fmt(cb_tmpl, { i(1), i(2) })
   ),
 }
 

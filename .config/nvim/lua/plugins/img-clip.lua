@@ -4,6 +4,19 @@ return {
   opts = {
     relative_to_current_file = true,
     filetypes = {
+      markdown = {
+        ----
+        -- Assume the image will always be placed on directory above
+        -- as I'm mostly using this to write content on my own website.
+        --
+        dir_path = function()
+          return vim.fn.expand('%:.:h') .. '/../__assets'
+        end,
+
+        url_encode_path = true,
+        template = '![$CURSOR]($FILE_PATH)',
+        download_images = false,
+      },
       asciidoctor = {
         ----
         -- Make the image directory location relative to the location of

@@ -72,7 +72,7 @@ function aws_vault_profile_info () {
 		return 0
 	fi
 
-	printf '(AWS %s)' "$AWS_VAULT"
+	printf '(AWS %s ☁️)' "$AWS_VAULT"
 }
 
 ps1simplest_nl () {

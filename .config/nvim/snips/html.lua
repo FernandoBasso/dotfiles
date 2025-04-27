@@ -45,7 +45,7 @@ local html_snips = {
   --
   --    <!-- INI ANKI FRONT -->
   --    <div class="anki front">
-  --      (cursor here0
+  --      (cursor here)
   --    </div>
   --    <!-- END ANKI FRONT -->
   --
@@ -65,7 +65,54 @@ local html_snips = {
       }
     )
   ),
+
+  --
+  -- Anki HTML code block.
+  --
+  --      <div class="anki-code-block">
+  --        <pre>(cursor here)
+  --<code>
+  --</code></pre>
+  --      </div>
+  --
+  -- The cursor starts immediately after <code>$ so we don't
+  -- get an extraneous line break at the beginning of each
+  -- piece of code samples which would mess the presentation
+  -- depending on how it is rendered on different browsers,
+  -- tools and services.
+  --
+  -- Also the </pre> following </code> have to be on the same
+  -- line for similar reasons.
+  --
+  -- In short, the last line of actual code has to be on
+  -- the same line as the closing </code></pre>. Here's
+  -- a full example on how it has to look:
+  --
+  --          <div class="anki-code-block">
+  --     <pre><code>#include &lt;stdio.h&gt;
+  --
+  --     int main(void) {
+  --       fprintf(stdout, "%s\n", "Hello, World!");
+  --
+  --       return 0;
+  --     }</code></pre>
+  --          </div>
+  --
+  -- And of course, don't forget to use proper HTML entities
+  -- for special stuff like <, >, or &, among others.
+  --
+  s(
+    'ahcb',
+    fmt(
+      [[
+        <div class="anki-code-block">
+  <pre><code>{}</code></pre>
+        </div>
+      ]], {
+        i(1),
+      }
+    )
+  ),
 }
 
 ls.add_snippets('html', html_snips, { key = 'html' })
-

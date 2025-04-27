@@ -202,3 +202,4 @@ DDL
 DML
 DCL
 sed
+fprintf

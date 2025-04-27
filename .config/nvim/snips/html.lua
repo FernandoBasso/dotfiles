@@ -10,6 +10,7 @@ local d = ls.dynamic_node
 local r = ls.restore_node
 local fmt = require('luasnip.extras.fmt').fmt
 local rep = require('luasnip.extras').rep
+local l = require('luasnip.extras').lambda
 
 --
 -- HTML Snippets
@@ -33,6 +34,35 @@ local html_snips = {
         </body>
         </html>
       ]], { i(1), i(2) }
+    )
+  ),
+
+  --
+  -- Anki Card
+  --
+  -- Will create something like this:
+  --
+  --
+  --    <!-- INI ANKI FRONT -->
+  --    <div class="anki front">
+  --      (cursor here0
+  --    </div>
+  --    <!-- END ANKI FRONT -->
+  --
+  s(
+    'anki',
+    fmt(
+      [[
+        <!-- INI ANKI {card_type} -->
+        <div class="anki {}">
+          {}
+        </div>
+        <!-- END ANKI {card_type} -->
+      ]], {
+        i(1),
+        i(2),
+        card_type = l(l._1:upper(), 1)
+      }
     )
   ),
 }

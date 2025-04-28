@@ -30,7 +30,14 @@
        default))
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
- '(package-selected-packages nil)
+ '(package-selected-packages
+    '(adoc-mode company deft diff-hl dired-sidebar ef-themes emojify
+       expand-region geiser-chicken geiser-guile haskell-mode
+       helm-org-ql helm-projectile helm-rg htmlize imenu-list
+       markdown-mode neotree orderless org-download org-roam paredit
+       quelpa-use-package racket-mode slime tree-sitter-langs
+       treemacs-icons-dired treemacs-magit treemacs-projectile
+       typescript-mode vertico vscode-icon yasnippet))
  '(safe-local-variable-values
     '((org-blank-before-new-entry (heading . auto) (plain-list-item . auto))
        (org-list-description-max-indent . 5)
@@ -482,7 +489,7 @@
 (setq inferior-lisp-program
   (cond
     ((eq system-type 'gnu/linux) "/usr/bin/sbcl")
-    ((eq system-type 'darwin) "/usr/local/bin/sbcl")
+    ((eq system-type 'darwin) "/opt/homebrew/bin/sbcl")
     (t (message "inferior-lisp-program: Where is SBCL in this system‽"))))
 
 (use-package slime

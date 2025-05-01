@@ -756,19 +756,6 @@
 ; 'org-block nil
 ; :background "#fbf2d3")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; tree-sitter
-;;
-
-(use-package tree-sitter
-  :ensure t)
-
-(use-package tree-sitter-langs
-  :ensure t)
-
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
-
 ;(use-package solo-jazz-theme
 ;  :ensure t
 ;  :config

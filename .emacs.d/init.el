@@ -31,8 +31,8 @@
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
  '(package-selected-packages
-    '(adoc-mode company deft diff-hl dired-sidebar ef-themes emojify
-       expand-region geiser-chicken geiser-guile haskell-mode
+    '(adoc-mode clojure-mode company deft diff-hl dired-sidebar ef-themes
+       emojify expand-region geiser-chicken geiser-guile haskell-mode
        helm-org-ql helm-projectile helm-rg htmlize imenu-list
        markdown-mode neotree orderless org-download org-roam paredit
        quelpa-use-package racket-mode slime tree-sitter-langs
@@ -124,7 +124,7 @@
           browse-url-generic-program "open"
           browse-url-generic-args '("-a" "Firefox Developer Edition"))
   (setq browse-url-browser-function 'browse-url-generic
-        browse-url-generic-program "firefox-dev"))
+        browse-url-generic-program "firefox"))
 
 ;;;;
 ;; I prefer to enable line numbers manually only in certain
@@ -400,18 +400,19 @@
   :ensure t
   :config
   (dolist (m '(emacs-lisp-mode-hook
-               ielm-mode-hook
-               lisp-mode-hook
-               lisp-interaction-mode-hook
-               scheme-mode-hook
-               racket-mode-hook))
+                ielm-mode-hook
+                lisp-mode-hook
+                lisp-interaction-mode-hook
+                scheme-mode-hook
+                racket-mode-hook
+                clojure-mode-hook))
     (add-hook m #'paredit-mode))
 
- (autoload
-   'enable-paredit-mode
-   "paredit"
-   "Turn on pseudo-structural editing of Lisp code."
-   t)
+  (autoload
+    'enable-paredit-mode
+    "paredit"
+    "Turn on pseudo-structural editing of Lisp code."
+    t)
 
   (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
   (show-paren-mode 1))
@@ -693,6 +694,15 @@
 ;; JavaScript
 ;;
 (setq js-indent-level 2)
+
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Clojure, closure-mode
+;;
+(use-package clojure-mode
+  :ensure t)
 
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

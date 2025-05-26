@@ -204,3 +204,8 @@ DCL
 sed
 fprintf
 javascript
+Geiser
+repl
+DrRacket
+Paredit
+lexi

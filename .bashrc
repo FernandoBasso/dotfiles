@@ -9,7 +9,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 git_prompt_locations=(
 	'/usr/share/git/git-prompt.sh' # Arch Linux
 
@@ -175,12 +174,14 @@ done
 #
 z_possible_paths=(
   # Arch Linux through pacman.
+  # $ sudo pacman --sync --refresh --needed z
   "/usr/share/z/z.sh"
 
-  # Installed manually.
+  # Installed manually from Github
   "$HOME/bin/z/z.sh"
 
   # macOS brew.
+  # brew install z
   /opt/homebrew/etc/profile.d/z.sh
 )
 

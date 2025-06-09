@@ -10,29 +10,22 @@ LC_ALL="en_US.UTF-8"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ##
+# Use coreutils tools instead of macos default ones.
+#
+# Note that this path must come before other paths like /bin
+# or /usr/bin otherwise the shell will pick other programs
+# for ls, cp, etc.
+#
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+##
 # $ brew install bash-completion@2
 #
 # This config was just copy and pasted from the notes after the install.
 # View those instructions again with `brew info bash-completion@2`.
 #
- [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && \
-   . "/opt/homebrew/etc/profile.d/bash_completion.sh"
-
-##
-# Use coreutils tools instead of macos default ones.
-#
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-
-export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-
-##
-# Installed go from Arch Linux official repos.
-#
-# https://wiki.archlinux.org/title/Go#Install_directory
-#
-# export GOBIN="$HOME/sdk/go1.22.3/bin"
-# export GOPATH="$(/Users/indev/sdk/go1.22.3/bin/go env GOPATH)"
-# export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && \
+  . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 ##
 # https://github.com/go-nv/goenv
@@ -40,7 +33,7 @@ export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH$:$GOROOT/bin"
 export PATH="$PATH:$GOPATH/bin"
 
 ##

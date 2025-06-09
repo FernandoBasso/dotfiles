@@ -14,10 +14,10 @@ fi
 
 export OSFAMILY
 
-##
-# Use coreutils tools instead of macos default ones.
-#
-export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+if [[ $OSFAMILY = darwin ]]
+then
+  source ~/.bash_profile_macos
+fi
 
 ##
 # Installed go from Arch Linux official repos.

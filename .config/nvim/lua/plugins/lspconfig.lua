@@ -17,14 +17,14 @@ return {
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     --
-    { 'j-hui/fidget.nvim', opts = {} },
+    { 'j-hui/fidget.nvim',       opts = {} },
 
     ----
     -- `neodev` configures Lua LSP for your Neovim config, runtime and
     -- plugins used for completion, annotations and signatures of Neovim
     -- apis.
     --
-    { 'folke/neodev.nvim', opts = {} },
+    { 'folke/neodev.nvim',       opts = {} },
   },
   config = function()
     ----
@@ -33,94 +33,101 @@ return {
     --  associated with an lsp.
     --
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('my-lsp-attach', { clear = true }),
+      group = vim.api.nvim_create_augroup('my-lsp-attach',
+        { clear = true }),
       callback = function(event)
+        local map = function(keys, func, desc)
+          vim.keymap.set('n', keys, func,
+            { buffer = event.buf, desc = 'LSP: ' .. desc })
+        end
 
-      local map = function(keys, func, desc)
-        vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-      end
+        ----
+        -- Toggle LSP Inlay Hints
+        --
+        map(
+          '<Leader><Leader>h',
+          function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
+            local status = 'DISABLED'
 
-      ----
-      -- Toggle LSP Inlay Hints
-      --
-      map(
-        '<Leader><Leader>h',
-        function ()
-          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
-          local status = 'DISABLED'
-
-          if vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }) then
-            status = 'ENABLED'
-          else
-            status = 'DISABLED'
-          end
-
-          print('Inlay Hints', status)
-        end,
-        'Toggle LSP Inlay [H]ints'
-      )
-
-      map(
-        '<Leader><Leader>d',
-        (function()
-          local diag_status = 1
-          return function()
-            if diag_status == 1 then
-              diag_status = 0
-              vim.diagnostic.hide()
+            if vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }) then
+              status = 'ENABLED'
             else
-              diag_status = 1
-              vim.diagnostic.show()
+              status = 'DISABLED'
             end
-          end
-        end)(),
-        '[T]oggle LSP [D]iagnostics'
-      )
 
-      ----
-      -- Virtual Text Configs.
-      --
-      local defaultDiagnosticsConfig = {
-        virtual_text = false,
-        signs = true,
-        underline = true,
-        update_in_insert = false,
-        severity_sort = false,
-      }
+            print('Inlay Hints', status)
+          end,
+          'Toggle LSP Inlay [H]ints'
+        )
 
-      vim.diagnostic.config(defaultDiagnosticsConfig)
-
-      --
-      -- FIXME: We are mutating defaultDiagnosticsConfig inside the
-      -- if/else block as we are not doing a real copy, but just
-      -- assigning reference. We can implement this at some point:
-      --
-      -- • http://lua-users.org/wiki/CopyTable
-      --
-      map(
-        '<Leader><Leader>v',
-        (function()
-          local vt = false
-          return function()
-            if vt == true then
-              vt = false
-              local newOpts = defaultDiagnosticsConfig
-              newOpts.virtual_text = false
-              vim.diagnostic.config(newOpts)
-              print('LSP Virtual Text DISABLED')
-            else
-              vt = true
-              local newOpts = defaultDiagnosticsConfig
-              newOpts.virtual_text = true
-              vim.diagnostic.config(newOpts)
-              print('LSP Virtual Text ENABLED')
+        map(
+          '<Leader><Leader>d',
+          (function()
+            local diag_status = 1
+            return function()
+              if diag_status == 1 then
+                diag_status = 0
+                vim.diagnostic.hide()
+              else
+                diag_status = 1
+                vim.diagnostic.show()
+              end
             end
-          end
-        end)(),
+          end)(),
+          '[T]oggle LSP [D]iagnostics'
+        )
+
+        ----
+        -- Virtual Text Configs.
+        --
+        local defaultDiagnosticsConfig = {
+          virtual_text = false,
+          signs = true,
+          underline = true,
+          update_in_insert = false,
+          severity_sort = false,
+        }
+
+        vim.diagnostic.config(defaultDiagnosticsConfig)
+
+        --
+        -- FIXME: We are mutating defaultDiagnosticsConfig inside the
+        -- if/else block as we are not doing a real copy, but just
+        -- assigning reference. We can implement this at some point:
+        --
+        -- • http://lua-users.org/wiki/CopyTable
+        --
+        map(
+          '<Leader><Leader>v',
+          (function()
+            local vt = false
+            return function()
+              if vt == true then
+                vt = false
+                local newOpts = defaultDiagnosticsConfig
+                newOpts.virtual_text = false
+                vim.diagnostic.config(newOpts)
+                print('LSP Virtual Text DISABLED')
+              else
+                vt = true
+                local newOpts = defaultDiagnosticsConfig
+                newOpts.virtual_text = true
+                vim.diagnostic.config(newOpts)
+                print('LSP Virtual Text ENABLED')
+              end
+            end
+          end)(),
           'Toggle [V]irtual [T]ext'
         )
 
-        local signs = { Error = "󰅚 ", Warn = "󰀪 ", Hint = "󰌶 ", Info = " " }
+        local signs = {
+          Error = "󰅚 ",
+          Warn = "󰀪 ",
+          Hint = "󰌶 ",
+          Info =
+          " "
+        }
         for type, icon in pairs(signs) do
           local hl = "DiagnosticSign" .. type
           vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -225,21 +232,24 @@ return {
         --
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client.server_capabilities.documentHighlightProvider then
-          local highlight_augroup = vim.api.nvim_create_augroup('my-lsp-highlight', { clear = false })
+          local highlight_augroup = vim.api.nvim_create_augroup(
+            'my-lsp-highlight', { clear = false })
           vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
             buffer = event.buf,
             group = highlight_augroup,
             callback = vim.lsp.buf.document_highlight,
           })
 
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-            buffer = event.buf,
-            group = highlight_augroup,
-            callback = vim.lsp.buf.clear_references,
-          })
+          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' },
+            {
+              buffer = event.buf,
+              group = highlight_augroup,
+              callback = vim.lsp.buf.clear_references,
+            })
 
           vim.api.nvim_create_autocmd('LspDetach', {
-            group = vim.api.nvim_create_augroup('my-lsp-detach', { clear = true }),
+            group = vim.api.nvim_create_augroup('my-lsp-detach',
+              { clear = true }),
             callback = function(event2)
               vim.lsp.buf.clear_references()
               vim.api.nvim_clear_autocmds { group = 'my-lsp-highlight', buffer = event2.buf }
@@ -305,7 +315,7 @@ return {
       terraformls = {},
 
       -- gopls is not needed as I'm using ray-x/go.nvim
-      -- pyright = {},
+      pyright = {},
       -- rust_analyzer = {},
       --
       -- See `:help lspconfig-all` for a list of all the
@@ -357,7 +367,8 @@ return {
           -- the server configuration above. Useful when disabling
           -- certain features of an LSP (for example, turning off
           -- formatting for tsserver)
-          server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+          server.capabilities = vim.tbl_deep_extend('force', {},
+            capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
       },

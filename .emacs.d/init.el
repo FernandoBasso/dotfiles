@@ -32,12 +32,12 @@
  '(magit-push-arguments nil)
  '(package-selected-packages
     '(adoc-mode clojure-mode company deft diff-hl dired-sidebar ef-themes
-       emojify expand-region geiser-chicken geiser-guile haskell-mode
-       helm-org-ql helm-projectile helm-rg htmlize imenu-list
-       markdown-mode neotree orderless org-download org-roam paredit
-       quelpa-use-package racket-mode slime tree-sitter-langs
-       treemacs-icons-dired treemacs-magit treemacs-projectile
-       typescript-mode vertico vscode-icon yasnippet))
+       emojify expand-region geiser-chicken geiser-guile go-mode
+       haskell-mode helm-org-ql helm-projectile helm-rg htmlize
+       imenu-list markdown-mode neotree orderless org-download paredit
+       quelpa-use-package racket-mode slime treemacs-icons-dired
+       treemacs-magit treemacs-projectile typescript-mode vertico
+       vscode-icon yasnippet))
  '(safe-local-variable-values
     '((org-blank-before-new-entry (heading . auto) (plain-list-item . auto))
        (org-list-description-max-indent . 5)
@@ -97,9 +97,10 @@
 (set-face-attribute 'default nil
                     ;:family "Source Code Pro"
                     ;:family "CaskaydiaCove Nerd Font"
-                    :family "SauceCodePro NFM SemiBold"
+                    ;:family "SauceCodePro NFM SemiBold"
+                    :family "Hurmit Nerd Font Mono"
                     :height (cond
-                             ((eq system-type 'gnu/linux) 130)
+                             ((eq system-type 'gnu/linux) 120)
                              ((eq system-type 'darwin) 145)
                              (t 150))
                     :weight (cond

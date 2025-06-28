@@ -59,6 +59,11 @@ PATH="$PATH:$HOME/bin/apache-maven-3.8.4/bin"
 [[ -f /usr/share/fzf/key-bindings.bash ]] && source /usr/share/fzf/key-bindings.bash
 [[ -f /usr/share/fzf/completion.bash ]] && source /usr/share/fzf/completion.bash
 
+if command -v asdf 2>&1 1> /dev/null
+then
+  . <(asdf completion bash)
+fi
+
 export FZF_DEFAULT_OPTS='--preview-window right:36%'
 
 export DENO_INSTALL="$HOME/.deno"

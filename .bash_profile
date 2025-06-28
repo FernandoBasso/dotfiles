@@ -31,11 +31,16 @@ export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 ##
 # https://github.com/go-nv/goenv
 #
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
-export PATH="$GOROOT/bin:$PATH"
-export PATH="$PATH:$GOPATH/bin"
+# export GOENV_ROOT="$HOME/.goenv"
+# export PATH="$GOENV_ROOT/bin:$PATH"
+# eval "$(goenv init -)"
+# export PATH="$GOROOT/bin:$PATH"
+# export PATH="$PATH:$GOPATH/bin"
+
+if command -v asdf 2>&1 1> /dev/null
+then
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+fi
 
 ##
 # Seems to be required with some terminal applications. In my case, it was

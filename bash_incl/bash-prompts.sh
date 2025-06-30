@@ -29,43 +29,43 @@ curdir () {
   printf '%s' "${PWD##*/}"
 }
 
+version_bash () {
+  printf 'bash-%s' "$(printf '%s' "$BASH_VERSION" | sed 's/[^0-9.]//g')"
+}
+
 version_git () {
 	if command -v git 2>&1 1> /dev/null
 	then
-		printf 'git-%s' "$(git --version | sed 's/[^0-9.]//g')"
+		printf ' git-%s' "$(git --version | sed 's/[^0-9.]//g')"
 	fi
 }
 
 version_ruby () {
 	if command -v ruby 2>&1 1> /dev/null
 	then
-		printf 'ruby-%s' "$(ruby --version | tr -s ' ' | cut -d ' ' -f 2)"
+		printf ' ruby-%s' "$(ruby --version | tr -s ' ' | cut -d ' ' -f 2)"
 	fi
 }
 
 version_node () {
 	if command -v node 2>&1 1> /dev/null
 	then
-		printf 'node-%s' "$(node --version | sed 's/^v//')"
+		printf ' node-%s' "$(node --version | sed 's/^v//')"
 	fi
 }
 
 version_npm () {
 	if command -v npm 2>&1 1> /dev/null
 	then
-		printf 'npm-%s' "$(npm --version)"
+		printf ' npm-%s' "$(npm --version)"
 	fi
 }
 
 version_go () {
 	if command -v go 2>&1 1> /dev/null
 	then
-		printf 'go-%s' "$(go version | cut -d ' ' -f 3 | sed 's/^go/&-/')"
+		printf ' go-%s' "$(go version | cut -d ' ' -f 3 | sed 's/^go/&-/')"
 	fi
-}
-
-version_bash () {
-  printf 'bash-%s' "$(printf '%s' "$BASH_VERSION" | sed 's/[^0-9.]//g')"
 }
 
 hr='--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------'
@@ -119,11 +119,11 @@ ps1sfpnl () {
 
 ps1all () {
   PS1="\n${purple}\$(make_line)\n${purple}"
-  PS1+="[\$(version_bash)]"
-  PS1+=" [\$(version_git)]"
-  PS1+=" [\$(version_ruby)]"
-  PS1+=" [\$(version_node)]"
-  PS1+=" [\$(version_npm)]"
+  PS1+="\$(version_bash)"
+  PS1+="\$(version_git)"
+  PS1+="\$(version_ruby)"
+  PS1+="\$(version_node)"
+  PS1+="\$(version_npm)"
   PS1+="\n${blue}\w $red\$(__git_ps1 '[%s]')"
   PS1+="\n${normal}${BASH_PROMPT_CHAR} "
 }
@@ -134,11 +134,11 @@ ps1all () {
 #
 ps1all_curdir () {
   PS1="\n${purple}\$(make_line)\n${purple}"
-  PS1+="[bash-\$(version_bash)]"
-  PS1+=" [git-\$(version_git)]"
-  PS1+=" [$(~/.rvm/bin/rvm-prompt)]"
-  PS1+=" [node-\$(version_node)]"
-  PS1+=" [npm-\$(version_npm)]"
+  PS1+="\$(version_bash)]"
+  PS1+="\$(version_git)"
+	PS1+="\$(version_ruby)"
+  PS1+="\$(version_node)"
+  PS1+="\$(version_npm)"
 	PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')"
   PS1+="\n${normal}${BASH_PROMPT_CHAR} "
 }
@@ -154,7 +154,7 @@ ps1go0 () {
 # PS1 with curdir, go version, git and the aws-vault info.
 #
 ps1go1 () {
-	PS1="\n${blue}\$(curdir) ${purple}[\$(version_go)] $(git_info) \$(aws_vault_profile_info)\n${normal}${BASH_PROMPT_CHAR} "
+	PS1="\n${blue}\$(curdir) ${purple}\$(version_go) $(git_info) \$(aws_vault_profile_info)\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ##
@@ -163,23 +163,23 @@ ps1go1 () {
 #
 ps1_bash_git_go () {
   PS1="\n${purple}\$(make_line)\n${purple}"
-  PS1+="[bash-\$(version_bash)]"
-  PS1+=" [git-\$(version_git)]"
-  PS1+=" [\$(version_go)]"
+  PS1+="bash-\$(version_bash)"
+  PS1+="git-\$(version_git)"
+  PS1+="\$(version_go)"
 	PS1+="\n${blue}\$(curdir) $red\$(__git_ps1 '[%s]')"
   PS1+="\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ps1nodejs () {
-  PS1="\n${blue}\$(curdir) ${purple}[node-\$(version_node)] $(git_info)\n${normal}${BASH_PROMPT_CHAR} "
+  PS1="\n${blue}\$(curdir)${purple}\$(version_node) $(git_info)\n${normal}${BASH_PROMPT_CHAR} "
 }
 
 ps1heart () {
-  PS1="\n$blue\w $red\$(__git_ps1 '[%s]')\n$normal💖️ "
+  PS1="\n$blue\w $red\$(__git_ps1 '%s')\n$normal💖️ "
 }
 
 ps1tux () {
-  PS1="\n$blue\w $red\$(__git_ps1 '[%s]')\n$normal "
+  PS1="\n$blue\w $red\$(__git_ps1 '%s')\n$normal "
 }
 
 ##

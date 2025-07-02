@@ -594,7 +594,7 @@ if (has('gui_running'))
   set guioptions=
   set lines=45
   set columns=120
-  set guifont=SauceCodeProNFM:h18
+  set guifont=Hurmit\ Nerd\ Font\ 13
   set linespace=5
   set guicursor=n-c:hor14,i:ver14,a:blinkon0
 endif

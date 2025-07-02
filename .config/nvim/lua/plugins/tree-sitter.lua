@@ -8,6 +8,7 @@ return {
     ensure_installed = {
       'bash',
       'c',
+      'cpp',
       'go',
       'typescript',
       'javascript',

@@ -1,0 +1,6 @@
+configuration {
+  show-icons: true;
+  window-format: "{c}   {t}    {w}";
+}
+
+@theme "/usr/share/rofi/themes/gruvbox-light.rasi"

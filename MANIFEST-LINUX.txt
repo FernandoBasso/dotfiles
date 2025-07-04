@@ -9,6 +9,7 @@
 .config/kitty
 .config/alacritty
 .config/nvim
+.config/rofi
 .vim/colors/mylight1.vim
 .vim/colors/mytheme1.vim
 .vim/after

@@ -143,6 +143,12 @@ ps1all_curdir () {
   PS1+="\n${normal}${BASH_PROMPT_CHAR} "
 }
 
+ps1fullpath () {
+  PS1="\n${purple}\$(make_line)\n${purple}"
+	PS1+="${blue}\w $red\$(__git_ps1 '[%s]')"
+  PS1+="\n${normal}${BASH_PROMPT_CHAR} "
+}
+
 ##
 # PS1 with curdir go version.
 #

@@ -302,6 +302,8 @@ return {
     --  https://luals.github.io/wiki/settings/
     --
     local servers = {
+      cssls = {},
+      html = {},
       ----
       -- About ts_ls:
       --

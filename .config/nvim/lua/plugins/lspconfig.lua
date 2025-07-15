@@ -303,6 +303,7 @@ return {
     --
     local servers = {
       cssls = {},
+      jsonls = {},
       html = {},
       ----
       -- About ts_ls:

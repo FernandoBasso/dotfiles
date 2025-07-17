@@ -178,7 +178,7 @@ vim.keymap.set('i', '<C-s>', '<Esc>:update<CR>')
 vim.keymap.set(
   'n',
   '<Leader>rr',
-  function ()
+  function()
     vim.api.nvim_cmd(
       {
         cmd = 'source',
@@ -198,7 +198,7 @@ vim.keymap.set(
 vim.keymap.set(
   'n',
   '<Leader>qo',
-  function ()
+  function()
     vim.cmd('copen')
   end,
   { desc = '[Q]uickfix [O]pen' }
@@ -210,7 +210,7 @@ vim.keymap.set(
 vim.keymap.set(
   'n',
   '<Leader>qc',
-  function ()
+  function()
     vim.cmd('cclose')
   end,
   { desc = '[Q]uickfix [C]lose' }
@@ -222,7 +222,7 @@ vim.keymap.set(
 vim.keymap.set(
   'n',
   '<Leader>qn',
-  function ()
+  function()
     vim.cmd('cnext')
   end,
   { desc = '[Q]uickfix [N]ext item' }
@@ -234,7 +234,7 @@ vim.keymap.set(
 vim.keymap.set(
   'n',
   '<Leader>qp',
-  function ()
+  function()
     vim.cmd('cprevious')
   end,
   { desc = '[Q]uickfix [P]revious item' }
@@ -269,6 +269,46 @@ vim.keymap.set(
   '<leader>q',
   vim.diagnostic.setloclist,
   { desc = 'Open diagnostic [Q]uickfix list' }
+)
+
+vim.keymap.set(
+  'n',
+  '<leader>PO',
+  function()
+    ----
+    -- The Bang! causes Outline to _not_ steal focus from the
+    -- current buffer.
+    --
+    vim.api.nvim_command('Outline!')
+
+    ----
+    -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup#useful-api
+    --
+    -- .open() always focus the tree, no matter what.
+    -- Therefore, we stick with .toggle().
+    --
+    --
+    require("nvim-tree.api").tree.toggle({
+      path = nil,
+      current_window = false,
+      find_file = true,
+      update_root = false,
+      focus = false,
+    })
+  end,
+  { desc = 'Side Panels Open' }
+)
+
+vim.keymap.set(
+  'n',
+  '<leader>PC',
+  function()
+    if require('outline').is_open() then
+      vim.api.nvim_command('OutlineClose')
+    end
+    vim.api.nvim_command('NvimTreeClose')
+  end,
+  { desc = 'Side Panels Close' }
 )
 
 ----
@@ -361,7 +401,7 @@ vim.cmd [[
 local close_all_buffers_except_current = function()
   local current_buf = vim.fn.bufnr()
   local current_win = vim.fn.win_getid()
-  local bufs = vim.fn.getbufinfo({buflisted = 1})
+  local bufs = vim.fn.getbufinfo({ buflisted = 1 })
 
   for _, buf in ipairs(bufs) do
     if buf.bufnr ~= current_buf then

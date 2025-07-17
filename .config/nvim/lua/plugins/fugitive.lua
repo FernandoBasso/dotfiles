@@ -12,8 +12,22 @@ return {
     -- I can see the changes in more context when needed.
     --
     local vert_git = function()
+      ----
+      -- Close Outline if it is open. Need the conditional as the
+      -- OutlineClose command is not available (causing an error if we
+      -- attempt to run it in that case) unless Outline is currently
+      -- open.
+      --
+      if require('outline').is_open() then
+        vim.api.nvim_command('OutlineClose')
+      end
+
+      ----
+      -- NvimTreeClose simply does nothing in case it is already closed,
+      -- so, no need for any conditional.
+      --
       vim.api.nvim_command('NvimTreeClose')
-      -- vim.api.nvim_command('SymbolsOutlineClose')
+
       vim.api.nvim_command('vertical Git')
     end
 

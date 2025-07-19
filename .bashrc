@@ -212,10 +212,15 @@ done
 ##
 # https://exercism.org/cli-walkthrough
 #
-exercism_bin_path="$HOME/bin/exercism-linux/shell/exercism_completion.bash"
-[ -r "$exercism_bin_path" ] && source "$exercism_bin_path"
+# Source the bash completions.
+#
+exercism_completion_path="$HOME/bin/exercism/shell/exercism_completion.bash"
+[ -r "$exercism_completion_path" ] && source "$exercism_completion_path"
 
-export PATH="$PATH:$HOME/local/bin"
+##
+# Make `exercism` command available in the PATH.
+#
+export PATH="$PATH:$HOME/bin/exercism:$HOME/local/bin"
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi

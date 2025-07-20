@@ -34,10 +34,10 @@
     '(adoc-mode clojure-mode company deft diff-hl dired-sidebar ef-themes
        emojify expand-region geiser-chicken geiser-guile go-mode
        haskell-mode helm-org-ql helm-projectile helm-rg htmlize
-       imenu-list markdown-mode neotree orderless org-download paredit
-       quelpa-use-package racket-mode slime treemacs-icons-dired
-       treemacs-magit treemacs-projectile typescript-mode vertico
-       vscode-icon yasnippet))
+       imenu-list inf-clojure markdown-mode neotree orderless
+       org-download paredit quelpa-use-package racket-mode slime
+       treemacs-icons-dired treemacs-magit treemacs-projectile
+       typescript-mode vertico vscode-icon yasnippet))
  '(safe-local-variable-values
     '((org-blank-before-new-entry (heading . auto) (plain-list-item . auto))
        (org-list-description-max-indent . 5)
@@ -184,8 +184,8 @@
 ; Contents (with the command ‘T’ in an info page).
 ;
 (add-hook 'Info-mode-hook
-               (lambda ()
-                 (setq show-trailing-whitespace nil)))
+  (lambda ()
+    (setq show-trailing-whitespace nil)))
 
 (require 'package)
 
@@ -459,8 +459,8 @@
 (setq racket-documentation-search-location 'local)
 
 (add-hook 'racket-repl-mode-hook
-          (lambda ()
-            (setq show-trailing-whitespace nil)))
+  (lambda ()
+    (setq show-trailing-whitespace nil)))
 
 ;;
 ; Geiser and Chicken Scheme
@@ -507,8 +507,8 @@
   :ensure t)
 
 (add-hook 'slime-repl-mode-hook
-          (lambda ()
-            (setq show-trailing-whitespace nil)))
+  (lambda ()
+    (setq show-trailing-whitespace nil)))
 
 ;;
 ; org-mode
@@ -703,8 +703,20 @@
 ;; Clojure, closure-mode
 ;;
 (use-package clojure-mode
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'clojure-mode-hook #'inf-clojure-minor-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; inf-clojure
+;;
+(use-package inf-clojure
+  :ensure t
+  :config)
+
+(add-hook 'inf-clojure-mode-hook
+  (lambda ()
+    (setq show-trailing-whitespace nil)))
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -714,7 +726,7 @@
 (use-package go-mode
   :ensure t
   :config
-  ;(add-hook 'go-mode-hook 'lsp-deferred)
+                                        ;(add-hook 'go-mode-hook 'lsp-deferred)
   )
 
 ;;

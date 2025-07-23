@@ -712,21 +712,23 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Clojure, closure-mode
 ;;
+(use-package flycheck-clj-kondo
+  :ensure t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Clojure, clojure-mode
+;;
 (use-package clojure-mode
   :ensure t
   :config
-  (add-hook 'clojure-mode-hook #'inf-clojure-minor-mode))
+  (require 'flycheck-clj-kondo))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; inf-clojure
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; CIDER
 ;;
-(use-package inf-clojure
-  :ensure t
-  :config)
+(use-package cider
+  :ensure t)
 
-(add-hook 'inf-clojure-mode-hook
-  (lambda ()
-    (setq show-trailing-whitespace nil)))
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 

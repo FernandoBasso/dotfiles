@@ -736,10 +736,7 @@
 ;; Go, go-mode
 ;;
 (use-package go-mode
-  :ensure t
-  :config
-                                        ;(add-hook 'go-mode-hook 'lsp-deferred)
-  )
+  :ensure t)
 
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Three Chars Three Lines Scheme Comment
+# key: ;;;
+# --
+;;;
+;;; $1
+;;;

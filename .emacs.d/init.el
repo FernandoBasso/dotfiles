@@ -141,8 +141,16 @@
 (setq show-trailing-whitespace t)
 (setq delete-trailing-lines nil)
 (setq-default show-trailing-whitespace t)
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-; (add-hook 'before-save-hook 'delete-blank-lines)
+
+;;;;
+;; Let editorconfig know which files to trim trailing whitespace.
+;;
+;; https://github.com/editorconfig/editorconfig-emacs
+;;
+;(add-hook 'before-save-hook 'delete-trailing-whitespace
+
+;(add-hook 'before-save-hook 'delete-blank-lines)
+
 ;; Use spaces.
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)

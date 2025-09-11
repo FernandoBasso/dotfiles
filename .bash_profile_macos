@@ -10,6 +10,19 @@ LC_ALL="en_US.UTF-8"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 ##
+# On macOS, even using bash installed with Homebrew, many git commands
+# show their output on less, but still in a way that causes the output
+# to not remain on the terminal after less is quit. I prefer that git
+# output remains on the terminal until I want to clear it myself.
+#
+# Saw this on ohmyzsh and it has been working fine on my bash
+# setup as well:
+#
+# - https://github.com/ohmyzsh/ohmyzsh/discussions/10487
+#
+export PAGER='less -X -F'
+
+##
 # $ brew install bash-completion@2
 #
 # This config was just copy and pasted from the notes after the install.

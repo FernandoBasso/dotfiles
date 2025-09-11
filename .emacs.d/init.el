@@ -34,7 +34,7 @@
     '(adoc-mode auto-package-update cider company deft diff-hl dired-sidebar
        ef-themes emojify expand-region flycheck-clj-kondo geiser-chicken
        geiser-guile go-mode haskell-mode helm-org-ql helm-projectile
-       helm-rg htmlize imenu-list lsp-mode markdown-mode neotree
+       helm-rg htmlize imenu-list lsp-mode lsp-ui markdown-mode neotree
        orderless org-download paredit quelpa-use-package racket-mode rg
        slime treemacs-icons-dired treemacs-magit treemacs-projectile
        typescript-mode vertico vscode-icon yasnippet))
@@ -234,7 +234,10 @@
   (setq lsp-keymap-prefix "C-c l")
   :hook ((clojure-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
-:commands lsp)
+  :commands lsp)
+
+(use-package lsp-ui
+  :ensure t)
 
 (use-package which-key
   :ensure t

@@ -36,7 +36,7 @@
                flycheck-clj-kondo geiser-chicken geiser-guile go-mode
                haskell-mode helm-org-ql helm-projectile helm-rg
                htmlize imenu-list markdown-mode neotree orderless
-               org-download paredit quelpa-use-package racket-mode
+               org-download paredit quelpa-use-package racket-mode rg
                slime treemacs-icons-dired treemacs-magit
                treemacs-projectile typescript-mode vertico vscode-icon
                yasnippet))
@@ -97,22 +97,23 @@
 
 (setq backup-directory-alist `(("." . "~/Temp/Emacs"))):
 
-(set-face-attribute 'default nil
-                    ;:family "Source Code Pro"
-                    ;:family "CaskaydiaCove Nerd Font"
-                    ;:family "SauceCodePro NFM SemiBold"
-                    :family "Hurmit Nerd Font Mono"
-                    :height (cond
-                             ((eq system-type 'gnu/linux) 120)
-                             ((eq system-type 'darwin) 145)
-                             (t 150))
-                    :weight (cond
-                              ((eq system-type 'gnu/linux) 'semibold)
-                              ((eq system-type 'darwin) 'normal)
-                              (t 'normal))
-                    :width 'normal)
+(cond
+  ((eq system-type 'gnu/linux)
+    (set-face-attribute
+      'default nil
+      :family "Hurmit Nerd Font Mono"
+      :height 120
+      :width 'normal
+      :weight 'semibold))
+  ((eq system-type 'darwin)
+    (set-face-attribute
+      'default nil
+      :family "SauceCodePro Nerd Font Mono"
+      :height 145
+      :width 'expanded
+      :weight 'semibold)))
 
-(setq-default line-spacing 0.1)
+(setq-default line-spacing 0.3)
 
 (set-face-italic 'font-lock-comment-face nil)
 
@@ -682,6 +683,10 @@
 
 (setq helm-split-window-default-side 'right)
 
+(use-package rg
+  :ensure t
+  :config
+  (rg-enable-default-bindings))
 
 (setq org-todo-keywords
       '((sequence
@@ -695,11 +700,6 @@
          "CANCELED(c)"
          "DONE(d)")))
 
-
-;;(use-package gruvbox-theme
-;;  :ensure t
-;;  :config
-;;  (load-theme 'gruvbox-light-hard))
 
 (use-package diff-hl
   :ensure t

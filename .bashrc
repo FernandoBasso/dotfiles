@@ -155,9 +155,9 @@ to_source=(
   "$path_incl/wrappers.sh"
   "$path_incl/c-helpers.sh"
   "$path_incl/adoc-helpers.sh"
-  ~/source/local/local.bash
   ~/local/lib/node-completions.sh
   ~/local/lib/deno-completions.sh
+  ~/source/local/local.bash
 )
 
 for file in "${to_source[@]}" ; do

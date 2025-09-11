@@ -44,6 +44,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround',
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 Plug 'habamax/vim-asciidoctor'
 
 Plug '~/Cloud/Dropbox/vim/vim-uploader'

@@ -2,4 +2,4 @@
 # name: ;=> comment output
 # key: ;o
 # --
-;=> $1
+;;=> $1

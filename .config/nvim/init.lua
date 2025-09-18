@@ -495,18 +495,49 @@ require('lazy').setup({
       'gpanders/editorconfig.nvim',
       lazy = false,
     },
+    -- {
+    --   'sainnhe/gruvbox-material',
+    --   lazy = false,
+    --   priority = 1000,
+    --   config = function()
+    --     -- vim.g.gruvbox_material_enable_italic = false
+    --     vim.g.gruvbox_material_foreground = 'material'
+    --     vim.g.gruvbox_material_background = 'hard'
+    --     vim.g.gruvbox_material_enable_italic = false
+    --     vim.g.gruvbox_material_enable_italic = 0
+    --     vim.g.gruvbox_material_disable_italic_comment = 1
+    --     vim.cmd.colorscheme('gruvbox-material')
+    --   end
+    -- },
     {
-      'sainnhe/gruvbox-material',
-      lazy = false,
+      "ellisonleao/gruvbox.nvim",
       priority = 1000,
       config = function()
-        -- vim.g.gruvbox_material_enable_italic = false
-        vim.g.gruvbox_material_foreground = 'material'
-        vim.g.gruvbox_material_background = 'hard'
-        vim.g.gruvbox_material_enable_italic = false
-        vim.g.gruvbox_material_enable_italic = 0
-        vim.g.gruvbox_material_disable_italic_comment = 1
-        vim.cmd.colorscheme('gruvbox-material')
+        require("gruvbox").setup({
+          terminal_colors = true,
+          undercurl = true,
+          underline = true,
+          bold = true,
+          italic = {
+            strings = false,
+            emphasis = false,
+            comments = false,
+            operators = false,
+            folds = false,
+          },
+          strikethrough = true,
+          invert_selection = false,
+          invert_signs = false,
+          invert_tabline = false,
+          inverse = true,
+          contrast = "",
+          palette_overrides = {},
+          overrides = {},
+          dim_inactive = false,
+          transparent_mode = false,
+        })
+        vim.cmd('set background=light')
+        vim.cmd('colorscheme gruvbox')
       end
     },
     { import = 'plugins' },

@@ -31,8 +31,8 @@
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
  '(package-selected-packages
-    '(:eca adoc-mode auto-package-update cider company copilot deft diff-hl
-       dired-sidebar eca ef-themes emojify expand-region
+    '(:eca adoc-mode auto-package-update cider clj-refactor company copilot
+       deft diff-hl dired-sidebar eca ef-themes emojify expand-region
        flycheck-clj-kondo geiser-chicken geiser-guile go-mode
        haskell-mode helm-org-ql helm-projectile helm-rg htmlize
        imenu-list lsp-mode lsp-ui markdown-mode neotree orderless
@@ -217,13 +217,6 @@
     (eval-buffer)
     (quelpa-self-upgrade)))
 
-(quelpa
- '(quelpa-use-package
-   :fetcher git
-   :url "https://github.com/quelpa/quelpa-use-package.git"))
-
-(require 'quelpa-use-package)
-
 (use-package auto-package-update
   :ensure t
   :config
@@ -267,14 +260,6 @@
    (haskell . t)))
 
 (require 'ox-md)
-
-(use-package org-ql
-  :quelpa (org-ql :fetcher github :repo "alphapapa/org-ql"
-            :files (:defaults (:exclude "helm-org-ql.el"))))
-
-(use-package helm-org-ql
-  :quelpa (helm-org-ql :fetcher github :repo "alphapapa/org-ql"
-                       :files ("helm-org-ql.el")))
 
 ;(use-package org-roam
 ;  :ensure t
@@ -751,6 +736,15 @@
 ;;
 (use-package cider
   :ensure t)
+
+(use-package clj-refactor
+  :ensure t
+  :after (clojure-mode cider)
+  :init
+  (add-hook 'clojure-mode-hook (lambda ()
+                                 (clj-refactor-mode 1)
+                                 (yas-minor-mode 1)
+                                 (cljr-add-keybindings-with-prefix "C-c C-m"))))
 
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

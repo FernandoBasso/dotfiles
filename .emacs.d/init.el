@@ -31,14 +31,14 @@
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
  '(package-selected-packages
-    '(:eca adoc-mode auto-package-update cider clj-refactor company copilot
-       deft diff-hl dired-sidebar eca ef-themes emojify expand-region
-       flycheck-clj-kondo geiser-chicken geiser-guile go-mode
-       haskell-mode helm-org-ql helm-projectile helm-rg htmlize
-       imenu-list lsp-mode lsp-ui markdown-mode neotree orderless
-       org-download paredit quelpa-use-package racket-mode rg slime
-       treemacs-icons-dired treemacs-magit treemacs-projectile
-       typescript-mode vertico vscode-icon yasnippet))
+    '(adoc-mode auto-package-update clj-refactor clojure-ts-mode company
+       copilot deft diff-hl dired-sidebar doom-themes eca ef-themes
+       emojify expand-region flycheck-clj-kondo geiser-chicken
+       geiser-guile go-mode haskell-mode helm-org-ql helm-projectile
+       helm-rg htmlize imenu-list lsp-ui neotree nerd-icons orderless
+       org-download quelpa racket-mode rg slime treemacs-icons-dired
+       treemacs-magit treemacs-projectile typescript-mode vertico
+       vscode-icon))
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))
@@ -229,7 +229,7 @@
   :ensure t
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :hook ((clojure-mode . lsp)
+  :hook ((clojure-ts-mode . lsp)
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
@@ -425,7 +425,7 @@
                 lisp-interaction-mode-hook
                 scheme-mode-hook
                 racket-mode-hook
-                clojure-mode-hook))
+                clojure-ts-mode-hook))
     (add-hook m #'paredit-mode))
 
   (autoload
@@ -724,9 +724,9 @@
   :ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Clojure, clojure-mode
+;; Clojure, clojure-ts-mode
 ;;
-(use-package clojure-mode
+(use-package clojure-ts-mode
   :ensure t
   :config
   (require 'flycheck-clj-kondo))
@@ -739,9 +739,9 @@
 
 (use-package clj-refactor
   :ensure t
-  :after (clojure-mode cider)
+  :after (clojure-ts-mode cider)
   :init
-  (add-hook 'clojure-mode-hook (lambda ()
+  (add-hook 'clojure-ts-mode-hook (lambda ()
                                  (clj-refactor-mode 1)
                                  (yas-minor-mode 1)
                                  (cljr-add-keybindings-with-prefix "C-c C-m"))))
@@ -827,22 +827,71 @@
 ;    :config
 ;    (load-theme 'mindre t))
 
-(use-package ef-themes
+;(use-package ef-themes
+;  :ensure t
+;  :config
+;  (load-theme 'ef-day t)
+;  (set-face-italic-p 'italic nil)
+;  (set-face-italic 'font-lock-comment-face nil)
+;  (setq ef-themes-headings ; read the manual's entry or the doc string
+;      '((0 variable-pitch light 1.2)
+;        (1 variable-pitch light 1.1)
+;        (2 variable-pitch regular 1.0)
+;        (3 variable-pitch regular 1.0)
+;        (4 variable-pitch regular 1.0)
+;        (5 variable-pitch 1.4) ; absence of weight means `bold'
+;        (6 variable-pitch 1.3)
+;        (7 variable-pitch 1.2)
+;        (t variable-pitch 1.1))))
+
+(use-package nerd-icons
+  :ensure t)
+
+(use-package doom-themes
   :ensure t
+  :custom
+  (doom-themes-enable-bold t)
+  (doom-themes-enable-italic nil)
+
+  ;;;;
+  ;; use "doom-colors" for less minimal icon theme
+  ;;
+  (doom-themes-treemacs-theme "doom-atom")
+
   :config
-  (load-theme 'ef-day t)
-  (set-face-italic-p 'italic nil)
-  (set-face-italic 'font-lock-comment-face nil)
-  (setq ef-themes-headings ; read the manual's entry or the doc string
-      '((0 variable-pitch light 1.2)
-        (1 variable-pitch light 1.1)
-        (2 variable-pitch regular 1.0)
-        (3 variable-pitch regular 1.0)
-        (4 variable-pitch regular 1.0)
-        (5 variable-pitch 1.4) ; absence of weight means `bold'
-        (6 variable-pitch 1.3)
-        (7 variable-pitch 1.2)
-        (t variable-pitch 1.1))))
+  ;;;;
+  ;; Available light themes:
+  ;; · doom-gruvbox-light
+  ;; · doom-solarized-light
+  ;; · doom-one-light
+  ;; · doom-opera-light
+  ;; · dom-ayu-light
+  ;; · doom-bluloco-light
+  ;; · doom-feather-light (too much italics)
+  ;; · doom-nord-light (italics)
+  ;; · doom-oksolar-light
+  (load-theme 'doom-solarized-light t)
+
+  ;;;;
+  ;; Enable flashing mode-line on errors.
+  ;;
+  (doom-themes-visual-bell-config)
+
+  ;;;;
+  ;; Enable custom neotree theme. NOTE: nerd-icons must be installed!.
+  ;;
+  (doom-themes-neotree-config)
+
+  ;;;;
+  ;; For treemacs users.
+  ;;
+  (doom-themes-treemacs-config)
+
+  ;;;;
+  ;; Corrects (and improves) org-mode's native fontification.
+  ;;
+  (doom-themes-org-config))
+
 
 ;;;;
 ;; Work-related customizations and settings I should never

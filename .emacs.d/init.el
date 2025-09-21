@@ -10,7 +10,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-    '("75b371fce3c9e6b1482ba10c883e2fb813f2cc1c88be0b8a1099773eb78a7176"
+    '("ea4dd126d72d30805c083421a50544e235176d9698c8c541b824b60912275ba1"
+       "8c7e832be864674c220f9a9361c851917a93f921fedb7717b1b5ece47690c098"
+       "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
+       "5c7720c63b729140ed88cf35413f36c728ab7c70f8cd8422d9ee1cedeb618de5"
+       "b7a09eb77a1e9b98cafba8ef1bd58871f91958538f6671b22976ea38c2580755"
+       "e4a702e262c3e3501dfe25091621fe12cd63c7845221687e36a79e17cf3a67e0"
+       "a9028cd93db14a5d6cdadba789563cb90a97899c4da7df6f51d58bb390e54031"
+       "5e39e95c703e17a743fb05a132d727aa1d69d9d2c9cde9353f5350e545c793d4"
+       "75b371fce3c9e6b1482ba10c883e2fb813f2cc1c88be0b8a1099773eb78a7176"
        "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298"
        "4eb6fa2ee436e943b168a0cd8eab11afc0752aebb5d974bba2b2ddc8910fca8f"
        "6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1"
@@ -34,8 +42,9 @@
     '(adoc-mode auto-package-update clj-refactor clojure-ts-mode company
        copilot deft diff-hl dired-sidebar doom-themes eca ef-themes
        emojify expand-region flycheck-clj-kondo geiser-chicken
-       geiser-guile go-mode haskell-mode helm-org-ql helm-projectile
-       helm-rg htmlize imenu-list lsp-ui neotree nerd-icons orderless
+       geiser-guile go-mode haskell-lsp haskell-mode helm-org-ql
+       helm-projectile helm-rg htmlize imenu-list lsp-haskell lsp-ui
+       mindre-theme modus-themes neotree nerd-icons orderless
        org-download quelpa racket-mode rg slime treemacs-icons-dired
        treemacs-magit treemacs-projectile typescript-mode vertico
        vscode-icon))
@@ -230,7 +239,8 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :hook ((clojure-ts-mode . lsp)
-         (lsp-mode . lsp-enable-which-key-integration))
+          (haskell-mode . lsp)
+          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
 (use-package lsp-ui
@@ -382,9 +392,18 @@
           (lambda ()
             (yas-activate-extra-mode 'fundamental-mode)))
 
+(use-package lsp-haskell
+  :ensure t)
 
 (use-package haskell-mode
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'haskell-mode-hook #'lsp)
+  (add-hook 'haskell-literate-mode-hook #'lsp)
+  (add-hook
+    'inferior-haskell-mode-hook
+    (lambda ()
+      (setq show-trailing-whitespace nil))))
 
 ;;;
 ;;; • https://wiki.haskell.org/Emacs/Inferior_Haskell_processes#Interactive_Haskell_mode
@@ -870,7 +889,7 @@
   ;; · doom-feather-light (too much italics)
   ;; · doom-nord-light (italics)
   ;; · doom-oksolar-light
-  (load-theme 'doom-solarized-light t)
+  (load-theme 'doom-one-light t)
 
   ;;;;
   ;; Enable flashing mode-line on errors.

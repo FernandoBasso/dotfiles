@@ -39,15 +39,15 @@
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
  '(package-selected-packages
-    '(adoc-mode auto-package-update clj-refactor clojure-ts-mode company
-       copilot deft diff-hl dired-sidebar doom-themes eca ef-themes
-       emojify expand-region flycheck-clj-kondo geiser-chicken
-       geiser-guile go-mode haskell-lsp haskell-mode helm-org-ql
-       helm-projectile helm-rg htmlize imenu-list lsp-haskell lsp-ui
-       mindre-theme modus-themes neotree nerd-icons orderless
-       org-download quelpa racket-mode rg slime treemacs-icons-dired
-       treemacs-magit treemacs-projectile typescript-mode vertico
-       vscode-icon))
+    '(adoc-mode all-the-icons auto-package-update clj-refactor
+       clojure-ts-mode company copilot deft diff-hl dired-sidebar
+       doom-themes eca ef-themes emojify expand-region
+       flycheck-clj-kondo geiser-chicken geiser-guile go-mode
+       haskell-lsp haskell-mode helm-org-ql helm-projectile helm-rg
+       htmlize imenu-list lsp-haskell lsp-ui mindre-theme modus-themes
+       neotree nerd-icons orderless org-download quelpa racket-mode rg
+       slime treemacs-all-the-icons treemacs-icons-dired treemacs-magit
+       treemacs-projectile typescript-mode vertico vscode-icon))
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))
@@ -70,7 +70,7 @@
 
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
-(menu-bar-mode -1)
+(menu-bar-mode t)
 (scroll-bar-mode -1)
 (setq frame-title-format "%b | Always Be Awesome!")
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -643,12 +643,25 @@
 (use-package neotree
   :ensure t
   :config
-  (global-set-key [f4] 'neotree-toggle)
+  ;(global-set-key [f4] 'neotree-toggle)
   (setq neo-window-width 32))
 
+;;;;
+;; Run M-x all-the-icons-install-fonts.
+;;
+(use-package treemacs-all-the-icons
+  :ensure t
+  :after treemacs)
+
+;;;;
+;; https://github.com/Alexander-Miller/treemacs
+;;
 (use-package treemacs
   :ensure t
-  :defer t)
+  :defer t
+  :config
+  (global-set-key [f4] 'treemacs)
+  (treemacs-load-theme "all-the-icons"))
 
 (use-package treemacs-projectile
   :after (treemacs projectile)

@@ -640,12 +640,6 @@
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-use-custom-font t))
 
-(use-package neotree
-  :ensure t
-  :config
-  ;(global-set-key [f4] 'neotree-toggle)
-  (setq neo-window-width 32))
-
 ;;;;
 ;; Run M-x all-the-icons-install-fonts.
 ;;

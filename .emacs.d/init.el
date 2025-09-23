@@ -645,7 +645,10 @@
 ;;
 (use-package treemacs-all-the-icons
   :ensure t
-  :after treemacs)
+  :after treemacs
+  :config
+  (treemacs-add-and-display-current-project-exclusively)
+  (treemacs-follow-mode t))
 
 ;;;;
 ;; https://github.com/Alexander-Miller/treemacs

@@ -39,14 +39,13 @@
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
  '(package-selected-packages
-    '(adoc-mode all-the-icons auto-package-update clj-refactor
-       clojure-ts-mode company copilot deft diff-hl dired-sidebar
-       doom-themes eca ef-themes emojify expand-region
+    '(adoc-mode ample-light atom-light-theme auto-package-update
+       clj-refactor clojure-ts-mode company copilot deft diff-hl
+       dired-sidebar doom-light dracula-theme eca emojify expand-region
        flycheck-clj-kondo geiser-chicken geiser-guile go-mode
-       haskell-lsp haskell-mode helm-org-ql helm-projectile helm-rg
-       htmlize imenu-list lsp-haskell lsp-ui mindre-theme modus-themes
-       neotree nerd-icons orderless org-download quelpa racket-mode rg
-       slime treemacs-all-the-icons treemacs-icons-dired treemacs-magit
+       haskell-mode helm-lsp helm-org-ql helm-projectile helm-rg htmlize
+       imenu-list lsp-haskell lsp-ui orderless org-download quelpa
+       racket-mode rg slime treemacs-icons-dired treemacs-magit
        treemacs-projectile typescript-mode vertico vscode-icon))
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
@@ -242,6 +241,11 @@
           (haskell-mode . lsp)
           (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
+
+(use-package helm-lsp
+  :ensure t
+  :config
+  (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 
 (use-package lsp-ui
   :ensure t)
@@ -641,24 +645,17 @@
   (setq dired-sidebar-use-custom-font t))
 
 ;;;;
-;; Run M-x all-the-icons-install-fonts.
-;;
-(use-package treemacs-all-the-icons
-  :ensure t
-  :after treemacs
-  :config
-  (treemacs-add-and-display-current-project-exclusively)
-  (treemacs-follow-mode t))
-
-;;;;
 ;; https://github.com/Alexander-Miller/treemacs
 ;;
 (use-package treemacs
   :ensure t
-  :defer t
   :config
-  (global-set-key [f4] 'treemacs)
-  (treemacs-load-theme "all-the-icons"))
+  (setq treemacs-is-never-other-window t)
+  :bind
+  (:map global-map
+    ("<f4>" . treemacs)
+    ("M-0" . treemacs-select-window)
+    ("C-x t 1" . treemacs-delete-other-windows)))
 
 (use-package treemacs-projectile
   :after (treemacs projectile)
@@ -847,7 +844,6 @@
 ;  :config
 ;  (load-theme 'solo-jazz t))
 
-
 ;(use-package mindre-theme
 ;    :ensure t
 ;    :custom
@@ -873,54 +869,42 @@
 ;        (7 variable-pitch 1.2)
 ;        (t variable-pitch 1.1))))
 
-(use-package nerd-icons
-  :ensure t)
 
-(use-package doom-themes
+;;;
+;;; NOTE: doom-themes requires nerd-icons, which cause problems
+;;; with treemacs, which then doesn't display icons if nerd-icons
+;;; is installed, even when with (treemacs-load-theme "doom-colors").
+;;;
+;;; It seems to work if I install nerd-icons from package-list-packages,
+;;; but don't make it on init.el with use-package.
+;;;
+;(use-package doom-themes
+;  :ensure t
+;  :custom
+;  (doom-themes-enable-bold t)
+;  (doom-themes-enable-italic nil)
+;  (doom-themes-treemacs-theme "doom-atom")
+;  :config
+;  ;; Available light themes:
+;  ;; · doom-gruvbox-light
+;  ;; · doom-solarized-light
+;  ;; · doom-one-light
+;  ;; · doom-opera-light
+;  ;; · dom-ayu-light
+;  ;; · doom-bluloco-light
+;  ;; · doom-feather-light (too much italics)
+;  ;; · doom-nord-light (italics)
+;  ;; · doom-oksolar-light
+;  (load-theme 'doom-one-light t)
+;  (doom-themes-visual-bell-config)
+;  (doom-themes-treemacs-config)
+;  (doom-themes-org-config))
+
+(use-package ample-light
   :ensure t
-  :custom
-  (doom-themes-enable-bold t)
-  (doom-themes-enable-italic nil)
-
-  ;;;;
-  ;; use "doom-colors" for less minimal icon theme
-  ;;
-  (doom-themes-treemacs-theme "doom-atom")
-
   :config
-  ;;;;
-  ;; Available light themes:
-  ;; · doom-gruvbox-light
-  ;; · doom-solarized-light
-  ;; · doom-one-light
-  ;; · doom-opera-light
-  ;; · dom-ayu-light
-  ;; · doom-bluloco-light
-  ;; · doom-feather-light (too much italics)
-  ;; · doom-nord-light (italics)
-  ;; · doom-oksolar-light
-  (load-theme 'doom-one-light t)
-
-  ;;;;
-  ;; Enable flashing mode-line on errors.
-  ;;
-  (doom-themes-visual-bell-config)
-
-  ;;;;
-  ;; Enable custom neotree theme. NOTE: nerd-icons must be installed!.
-  ;;
-  (doom-themes-neotree-config)
-
-  ;;;;
-  ;; For treemacs users.
-  ;;
-  (doom-themes-treemacs-config)
-
-  ;;;;
-  ;; Corrects (and improves) org-mode's native fontification.
-  ;;
-  (doom-themes-org-config))
-
+  (load-theme 'ample-light t)
+  (set-face-italic 'font-lock-comment-face nil))
 
 ;;;;
 ;; Work-related customizations and settings I should never

@@ -731,7 +731,9 @@
 
 (use-package diff-hl
   :ensure t
-  :config (global-diff-hl-mode))
+  :config
+  (global-diff-hl-mode)
+  (setq diff-hl-show-staged-changes nil))
 
 (use-package expand-region
   :ensure t

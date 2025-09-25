@@ -10,7 +10,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-    '("f9d423fcd4581f368b08c720f04d206ee80b37bfb314fa37e279f554b6f415e9"
+    '("71b688e7ef7c844512fa7c4de7e99e623de99a2a8b3ac3df4d02f2cd2c3215e7"
+       "c038d994d271ebf2d50fa76db7ed0f288f17b9ad01b425efec09519fa873af53"
+       "2ff9ac386eac4dffd77a33e93b0c8236bb376c5a5df62e36d4bfa821d56e4e20"
+       "19a2c0b92a6aa1580f1be2deb7b8a8e3a4857b6c6ccf522d00547878837267e7"
+       "b1a691bb67bd8bd85b76998caf2386c9a7b2ac98a116534071364ed6489b695d"
+       "9c6aa7eb1bde73ba1142041e628827492bd05678df4d9097cda21b1ebcb8f8b9"
+       "1c2fb3448ce245f18c62fde3c7cfd008e69a27e88ae8a03fbb62857f13d0b6fe"
+       "6bf350570e023cd6e5b4337a6571c0325cec3f575963ac7de6832803df4d210a"
+       "f9d423fcd4581f368b08c720f04d206ee80b37bfb314fa37e279f554b6f415e9"
        "ea4dd126d72d30805c083421a50544e235176d9698c8c541b824b60912275ba1"
        "8c7e832be864674c220f9a9361c851917a93f921fedb7717b1b5ece47690c098"
        "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
@@ -43,12 +51,13 @@
     '(adoc-mode ample-light atom-light-theme auto-package-update
        catppuccin-latte catppuccin-theme clj-refactor clojure-ts-mode
        company copilot deft diff-hl dired-sidebar doom-light
-       dracula-theme eca emojify expand-region flycheck-clj-kondo
-       geiser-chicken geiser-guile go-mode haskell-mode helm-lsp
-       helm-org-ql helm-projectile helm-rg htmlize imenu-list
-       lsp-haskell lsp-ui modus-themes orderless org-download quelpa
-       racket-mode rg slime treemacs-icons-dired treemacs-magit
-       treemacs-projectile typescript-mode vertico vscode-icon))
+       dracula-theme eca ef-themes emojify expand-region
+       flycheck-clj-kondo geiser-chicken geiser-guile go-mode
+       gruvbox-theme haskell-mode helm-lsp helm-org-ql helm-projectile
+       helm-rg htmlize imenu-list lsp-haskell lsp-ui modus-themes
+       orderless org-download quelpa racket-mode rg slime
+       treemacs-icons-dired treemacs-magit treemacs-projectile
+       typescript-mode vertico vscode-icon))
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))
@@ -120,6 +129,7 @@
     (set-face-attribute
       'default nil
       :family "SauceCodePro Nerd Font Mono"
+      ;:family "Hurmit Nerd Font Mono"
       :height 145
       :width 'expanded
       :weight 'semibold)))
@@ -916,10 +926,16 @@
 ;;
 ;; https://github.com/protesilaos/modus-themes
 ;;
-(use-package modus-themes
+;; (use-package modus-themes
+;;   :ensure t
+;;   :config
+;;   (load-theme 'modus-operandi))
+
+(use-package ef-themes
   :ensure t
   :config
-  (load-theme 'modus-operandi))
+  (load-theme 'ef-day t)
+  (set-face-italic-p 'italic nil))
 
 ;;;;
 ;; Work-related customizations and settings I should never

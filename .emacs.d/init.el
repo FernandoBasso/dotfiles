@@ -50,7 +50,7 @@
  '(package-selected-packages
     '(adoc-mode ample-light atom-light-theme auto-package-update
        catppuccin-latte catppuccin-theme clj-refactor clojure-ts-mode
-       company copilot deft diff-hl dired-sidebar doom-light
+       company copilot deft diff-hl dired-sidebar doom-light doom-themes
        dracula-theme eca ef-themes emojify expand-region
        flycheck-clj-kondo geiser-chicken geiser-guile go-mode
        gruvbox-theme haskell-mode helm-lsp helm-org-ql helm-projectile
@@ -769,7 +769,11 @@
 (use-package clojure-ts-mode
   :ensure t
   :config
-  (require 'flycheck-clj-kondo))
+  (require 'flycheck-clj-kondo)
+  (add-hook 'clojure-ts-mode-hook #'cider-mode))
+
+(push '(clojure-mode . clojure-ts-mode) major-mode-remap-alist)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; CIDER
@@ -934,11 +938,10 @@
 ;;   :config
 ;;   (load-theme 'modus-operandi))
 
-(use-package ef-themes
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'ef-day t)
-  (set-face-italic-p 'italic nil))
+  (load-theme 'doom-one-light t))
 
 ;;;;
 ;; Work-related customizations and settings I should never

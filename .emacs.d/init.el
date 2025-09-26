@@ -853,6 +853,9 @@
 ; 'org-block nil
 ; :background "#fbf2d3")
 
+(require 'treesit)
+(setopt treesit-font-lock-level 4)
+
 ;(use-package solo-jazz-theme
 ;  :ensure t
 ;  :config

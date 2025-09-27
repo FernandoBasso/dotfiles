@@ -945,10 +945,14 @@
   :config
   (load-theme 'doom-one-light t))
 
-(use-package evil
-  :ensure t
-  :config
-  (evil-mode 1))
+;;
+;; Evil mode conflicts some keybindings with those of some other
+;; packages, like diff-hl S for stage hunk.
+;;
+;; use-package evil
+;;  :ensure t
+;;  :config
+;;  (evil-mode t))
 
 ;;;;
 ;; Work-related customizations and settings I should never

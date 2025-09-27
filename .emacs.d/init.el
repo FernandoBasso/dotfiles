@@ -264,7 +264,9 @@
 
 (use-package which-key
   :ensure t
-  :config (which-key-mode))
+  :config
+  (which-key-mode)
+  (setq which-key-idle-delay 0.7))
 
 (use-package emojify
   :ensure t

@@ -51,7 +51,7 @@
     '(adoc-mode ample-light atom-light-theme auto-package-update
        catppuccin-latte catppuccin-theme clj-refactor clojure-ts-mode
        company copilot deft diff-hl dired-sidebar doom-light doom-themes
-       dracula-theme eca ef-themes emojify expand-region
+       dracula-theme eca ef-themes emojify evil expand-region
        flycheck-clj-kondo geiser-chicken geiser-guile go-mode
        gruvbox-theme haskell-mode helm-lsp helm-org-ql helm-projectile
        helm-rg htmlize imenu-list lsp-haskell lsp-ui modus-themes
@@ -942,6 +942,11 @@
   :ensure t
   :config
   (load-theme 'doom-one-light t))
+
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
 
 ;;;;
 ;; Work-related customizations and settings I should never

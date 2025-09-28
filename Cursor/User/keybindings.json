@@ -278,6 +278,11 @@
     "when": "calva:connected && calva:keybindingsEnabled && editorLangId == 'clojure'"
   },
   {
+    "key": "ctrl+x t n",
+    "command": "calva.runNamespaceTests",
+    "when": "calva:connected && calva:keybindingsEnabled && editorLangId == 'clojure'"
+  },
+  {
     "key": "ctrl+shift+l",
     "command": "editor.action.inlineSuggest.acceptNextWord",
     "when": "cppSuggestion && !editorReadonly || inlineSuggestionVisible && !editorReadonly"
@@ -315,5 +320,5 @@
     "key": "ctrl+alt+e",
     "command": "paredit.forwardSexp",
     "when": "editorLangId == 'clojure'"
-  }
+  },
 ]

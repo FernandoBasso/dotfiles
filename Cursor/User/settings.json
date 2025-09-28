@@ -650,11 +650,11 @@
     },
     "path-autocomplete.triggerOutsideStrings": true,
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "plaintext": false,
         "markdown": false,
         "scminput": false,
-        "clojure": false
+        "clojure": true
     },
     "livePreview.autoRefreshPreview": "On Changes to Saved Files",
     "[css]": {
@@ -684,5 +684,6 @@
         "searchAndCompare": false,
         "launchpad": false
     },
-    "editor.hover.enabled": false
+    "editor.hover.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": true
 }

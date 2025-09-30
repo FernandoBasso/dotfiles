@@ -963,7 +963,9 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-one-light t))
+  (setq doom-themes-enable-italic nil)
+  (load-theme 'doom-one-light t)
+  (set-face-attribute 'italic nil))
 
 ;;
 ;; Evil mode conflicts some keybindings with those of some other

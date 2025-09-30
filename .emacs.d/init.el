@@ -880,6 +880,7 @@
   :bind (:map treesit-fold-mode-map
           ("C-c f t" . treesit-fold-toggle)
           ("C-c f o" . treesit-fold-open)
+          ("C-c f r o" . treesit-fold-open-recursively)
           ("C-c f c" . treesit-fold-close)
           ("C-c f O" . treesit-fold-open-all)
           ("C-c f C" . treesit-fold-close-all)

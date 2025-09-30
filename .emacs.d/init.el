@@ -967,6 +967,15 @@
   (load-theme 'doom-one-light t)
   (set-face-attribute 'italic nil))
 
+(use-package nerd-icons
+  :ensure t)
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 32))
+
 ;;
 ;; Evil mode conflicts some keybindings with those of some other
 ;; packages, like diff-hl S for stage hunk.

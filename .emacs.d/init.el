@@ -50,14 +50,14 @@
  '(package-selected-packages
     '(adoc-mode ample-light atom-light-theme auto-package-update
        catppuccin-latte catppuccin-theme clj-refactor clojure-ts-mode
-       company copilot deft diff-hl dired-sidebar doom-light doom-themes
-       dracula-theme eca ef-themes emojify evil expand-region
-       flycheck-clj-kondo geiser-chicken geiser-guile go-mode
-       gruvbox-theme haskell-mode helm-lsp helm-org-ql helm-projectile
-       helm-rg htmlize imenu-list lsp-haskell lsp-ui modus-themes
-       orderless org-download quelpa racket-mode rg slime
+       company copilot deft diff-hl dired-sidebar doom-light
+       doom-modeline doom-themes dracula-theme eca ef-themes emojify
+       expand-region flycheck-clj-kondo geiser-chicken geiser-guile
+       go-mode gruvbox-theme haskell-mode helm-lsp helm-org-ql
+       helm-projectile helm-rg htmlize imenu-list lsp-haskell lsp-ui
+       modus-themes orderless org-download quelpa racket-mode rg slime
        treemacs-icons-dired treemacs-magit treemacs-projectile
-       typescript-mode vertico vscode-icon))
+       treesit-fold typescript-mode vertico vscode-icon))
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))
@@ -862,6 +862,25 @@
 
 (require 'treesit)
 (setopt treesit-font-lock-level 4)
+
+;;
+;; https://github.com/emacs-tree-sitter/treesit-fold
+;;
+;; Folding feature based on the build-in tree-sitter support in Emacs 29+.
+;;
+(use-package treesit-fold
+  :ensure t
+  :config
+  (global-treesit-fold-mode)
+  (global-treesit-fold-indicators-mode)
+  :bind (:map treesit-fold-mode-map
+          ("C-c f t" . treesit-fold-toggle)
+          ("C-c f o" . treesit-fold-open)
+          ("C-c f c" . treesit-fold-close)
+          ("C-c f O" . treesit-fold-open-all)
+          ("C-c f C" . treesit-fold-close-all)
+          ("C-c f n" . treesit-fold-next-fold)
+          ("C-c f p" . treesit-fold-previous-fold)))
 
 ;(use-package solo-jazz-theme
 ;  :ensure t

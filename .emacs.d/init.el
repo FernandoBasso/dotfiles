@@ -128,11 +128,15 @@
   ((eq system-type 'darwin)
     (set-face-attribute
       'default nil
-      :family "SauceCodePro Nerd Font Mono"
+      ;:family "SauceCodePro Nerd Font Mono"
       ;:family "Hurmit Nerd Font Mono"
+      ;:family "JetBrainsMono Nerd Font Mono"
+      ;:family "Hack Nerd Font Mono"
+      :family "BlexMono Nerd Font Mono"
       :height 145
       :width 'expanded
-      :weight 'semibold)))
+      ;:weight 'semibold
+      )))
 
 (setq-default line-spacing 0.3)
 

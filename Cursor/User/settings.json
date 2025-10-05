@@ -200,7 +200,7 @@
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "editor.lineNumbers": "relative",
+    "editor.lineNumbers": "on",
     "editor.quickSuggestionsDelay": 1,
     "editor.tabSize": 2,
     "[json]": {
@@ -650,11 +650,11 @@
     },
     "path-autocomplete.triggerOutsideStrings": true,
     "github.copilot.enable": {
-        "*": true,
+        "*": false,
         "plaintext": false,
         "markdown": false,
         "scminput": false,
-        "clojure": true
+        "clojure": false
     },
     "livePreview.autoRefreshPreview": "On Changes to Saved Files",
     "[css]": {

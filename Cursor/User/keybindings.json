@@ -321,4 +321,8 @@
     "command": "paredit.forwardSexp",
     "when": "editorLangId == 'clojure'"
   },
+  {
+    "key": "ctrl+[Semicolon]",
+    "command": "workbench.action.files.save"
+  },
 ]

@@ -55,7 +55,7 @@ return {
     nnoremap <Leader>bb :Buffers<CR>
     nnoremap <Leader>g? :GF?<CR>
     nnoremap <Leader>rg :Rg!<CR>
-    nnoremap <Leader>t :Tags<CR>
+    "nnoremap <Leader>t :Tags<CR>
     nnoremap <Leader>m :Marks<CR>
     ]]
   end

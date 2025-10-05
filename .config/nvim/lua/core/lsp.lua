@@ -22,6 +22,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
+vim.keymap.set(
+  'n',
+  'gd',
+  vim.lsp.buf.definition,
+  { desc = 'LSP: Go to definition' }
+)
+
 vim.diagnostic.config({
   -- virtual_lines = true
   virtual_lines = {

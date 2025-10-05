@@ -61,11 +61,11 @@
 #
 # Press ‘Esc e’ or ‘Ctrl-[ e’
 #
-"\ee": alias-expand-line
+#"\ee": alias-expand-line
 #
 # Or press ‘Esc Tab’ or ‘Ctrl-[ Tab’.
 #
-"\e\t": alias-expand-line
+#"\e\t": alias-expand-line
 
 ##
 # When there more than one match, automatically show the available

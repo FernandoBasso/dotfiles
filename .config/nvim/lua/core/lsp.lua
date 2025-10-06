@@ -29,6 +29,13 @@ vim.keymap.set(
   { desc = 'LSP: Go to definition' }
 )
 
+vim.keymap.set(
+  'n',
+  'grf',
+  vim.lsp.buf.format,
+  { desc = 'LSP: Format current document' }
+)
+
 vim.diagnostic.config({
   -- virtual_lines = true
   virtual_lines = {

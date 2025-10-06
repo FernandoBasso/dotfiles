@@ -55,7 +55,7 @@
     "when": "editorFocus"
   },
   {
-    "key": "shift+alt+k",
+    "key": "shift+cmd+k",
     "command": "editor.action.showHover",
     "when": "editorTextFocus"
   },
@@ -258,11 +258,6 @@
     "command": "-workbench.action.togglePanel"
   },
   {
-    "key": "ctrl+alt+.",
-    "command": "paredit.slurpSexpForward",
-    "when": "editorLangId == 'clojure'"
-  },
-  {
     "key": "ctrl+x enter",
     "command": "calva.loadFile",
     "when": "calva:keybindingsEnabled && editorLangId == 'clojure'"
@@ -325,4 +320,19 @@
     "key": "ctrl+[Semicolon]",
     "command": "workbench.action.files.save"
   },
+  {
+    "key": "ctrl+alt+.",
+    "command": "paredit.slurpSexpForward",
+    "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
+  },
+  {
+    "key": "ctrl+alt+,",
+    "command": "paredit.slurpSexpBackward",
+    "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
+  },
+  {
+    "key": "ctrl+shift+alt+left",
+    "command": "-paredit.slurpSexpBackward",
+    "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
+  }
 ]

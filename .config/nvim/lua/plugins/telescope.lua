@@ -99,9 +99,9 @@ return {
     ----
     -- Trigger :Telescope.
     --
-    vim.cmd [[nnoremap <Leader>T :Telescope <C-d>]]
+    vim.cmd [[nnoremap <Leader>Tt :Telescope <C-d>]]
     vim.cmd [[nnoremap <Leader>Tl :Telescope lsp_<C-d>]]
-    vim.cmd [[nnoremap <Leader>ws :Telescope lsp_dynamic_workspace_symbols<CR>]]
+    vim.cmd [[nnoremap <Leader>Tws :Telescope lsp_dynamic_workspace_symbols<CR>]]
 
     --
     -- • :help telescope.builtin

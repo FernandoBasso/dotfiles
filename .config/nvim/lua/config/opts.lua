@@ -21,12 +21,12 @@ vim.opt.sidescrolloff = 8
 vim.opt.display:append('lastline')
 
 vim.cmd("set number")
-vim.cmd("set colorcolumn=72,80")
+vim.cmd("set colorcolumn=0")
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set laststatus=2")
 vim.g.transparent_background = false
 vim.opt.termguicolors = true
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 3
 vim.opt.signcolumn = "yes"
 
 vim.opt.incsearch = true

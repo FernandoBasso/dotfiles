@@ -195,6 +195,20 @@ return {
       { desc = '[ ] Find existing buffers' }
     )
 
+    vim.keymap.set(
+      'n',
+      '<leader>Tk',
+      builtin.keymaps,
+      { desc = 'Telescope [K]eymaps' }
+    )
+
+    vim.keymap.set(
+      'n',
+      '<leader>Tc',
+      builtin.commands,
+      { desc = 'Telescope [C]ommands' }
+    )
+
     ----
     -- Slightly advanced example of overriding default behavior and theme.
     --

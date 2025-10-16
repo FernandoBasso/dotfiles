@@ -334,5 +334,10 @@
     "key": "ctrl+shift+alt+left",
     "command": "-paredit.slurpSexpBackward",
     "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
+  },
+  {
+    "key": "ctrl+x =",
+    "command": "calva-fmt.alignCurrentForm",
+    "when": "editorLangId == 'clojure'"
   }
 ]

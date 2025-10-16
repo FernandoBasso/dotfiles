@@ -29,3 +29,14 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 		vim.cmd("vertical resize " .. target_width)
 	end,
 })
+
+
+-- local clj_augroup = vim.api.nvim_create_augroup("cljfmt_group", { clear = true })
+--
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   group = clj_augroup,
+--   pattern = { "*.clj", "*.cljs", "*.cljc" },
+--   callback = function()
+--     vim.cmd("silent !cljfmt --config .cljfmt.edn fix " .. vim.fn.expand("%:p"))
+--   end,
+-- })

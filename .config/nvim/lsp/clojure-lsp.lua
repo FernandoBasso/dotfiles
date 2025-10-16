@@ -11,9 +11,11 @@ return {
   },
   settings = {
     clojure = {
-      format = {
-        provider = "cljfmt",
-      },
+      -- format = {
+      --   enabled = true,
+      --   command = { "cljfmt" },
+      --   profile = "repl",
+      -- },
       lint = {
         lintOnChange = true,
         lintOnSave = true,

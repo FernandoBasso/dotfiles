@@ -2,9 +2,9 @@ require('config')
 require('core')
 
 vim.cmd [[
+  " '~/source/dotfiles/nvim-utils.vim',
+  " '~/source/local/libdev.vim',
   let files_to_source = [
-        \ '~/source/local/libdev.vim',
-        \ '~/source/dotfiles/nvim-utils.vim',
         \ '~/source/dotfiles/digraphs.vim'
         \ ]
 

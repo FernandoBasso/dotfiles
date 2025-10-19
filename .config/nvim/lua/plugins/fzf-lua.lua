@@ -1,7 +1,15 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {},
+  opts = {
+    winopts = {
+      width = 0.95,
+      height = 0.95,
+      preview = {
+        layout = "flex",
+      },
+    },
+  },
   keys = {
     {
       "<Leader>fn",

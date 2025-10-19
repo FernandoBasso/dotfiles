@@ -6,7 +6,15 @@ return {
     {
       "<Leader>fn",
       function() require('fzf-lua').files({ cwd = vim.fn.stdpath("config") }) end,
-      desc="[F]ind [n]ovim configs",
+      desc = "[F]ind [n]ovim configs",
+    },
+    {
+      "<Leader><Leader>",
+      function() require('fzf-lua').global() end,
+      --
+      -- https://github.com/ibhagwan/fzf-lua?tab=readme-ov-file#global-picker
+      --
+      desc = "LSP: Files, $, @ and #"
     },
     {
       "<Leader>ff",

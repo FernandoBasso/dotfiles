@@ -550,8 +550,6 @@
     ],
     "git.suggestSmartCommit": false,
     "window.titleBarStyle": "custom",
-    "window.customMenuBarAltFocus": false,
-    "window.enableMenuBarMnemonics": false,
     "window.commandCenter": true,
     "cSpell.suggestionsTimeout": 15000,
     "cSpell.spellCheckDelayMs": 2048,
@@ -562,25 +560,13 @@
     },
     "html.autoClosingTags": false,
     "vim.useSystemClipboard": true,
-    "haskell.ghcupExecutablePath": "~/.ghcup/bin",
-    "remote.SSH.remotePlatform": {
-        "sandbox.5dclm6.csb": "linux"
-    },
-    "codesandbox.currentWorkspace": "7a652f47-acc7-4bcc-a475-bcfccf7246f8",
-    "svg.preview.mode": "svg",
     "typescript.suggest.autoImports": false,
     "javascript.suggest.autoImports": false,
     "diffEditor.renderSideBySide": false,
     "[typescriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "java.imports.gradle.wrapper.checksums": [
-        {
-            "sha256": "501ded57dabaf73b176e3585863ec84a9197134201e897d46362eb64b6ef33ee",
-            "allowed": true
-        }
-    ],
-    "gitlens.plusFeatures.enabled": false,
+    // "gitlens.plusFeatures.enabled": false,
     "gitlens.virtualRepositories.enabled": false,
     "gitlens.currentLine.pullRequests.enabled": false,
     "gitlens.statusBar.pullRequests.enabled": false,
@@ -624,8 +610,6 @@
         "**/*.md": "./__assets/"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "insertDateString.formatDate": "%",
-    "mesonbuild.downloadLanguageServer": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.inlayHints.enabled": "off",
     "go.buildFlags": [
@@ -656,16 +640,9 @@
         "scminput": false,
         "clojure": false
     },
-    "livePreview.autoRefreshPreview": "On Changes to Saved Files",
     "[css]": {
         "editor.defaultFormatter": "vscode.css-language-features"
     },
-    "cursor.cpp.disabledLanguages": [
-        "plaintext",
-        "markdown",
-        "scminput"
-    ],
-    "cursor.cpp.enablePartialAccepts": true,
     "calva.fmt.configPath": "CLOJURE-LSP",
     "git.blame.editorDecoration.enabled": false,
     "git.blame.statusBarItem.enabled": false,

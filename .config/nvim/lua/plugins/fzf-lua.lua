@@ -30,6 +30,11 @@ return {
       desc = '[F]ind [f]iles in current project',
     },
     {
+      "<Leader>fb",
+      function() require('fzf-lua').buffers() end,
+      desc = '[F]ind [b]uffers in current project',
+    },
+    {
       "<Leader>fg",
       function() require('fzf-lua').live_grep({ resume = true }) end,
       desc = '[L]ive [g]rep in current project',
@@ -48,6 +53,51 @@ return {
       "<Leader>f?",
       function() require('fzf-lua').git_status() end,
       desc = "[F]ind in git status",
-    }
+    },
+    {
+      "<Leader>fc",
+      function() require('fzf-lua').builtin() end,
+      desc = "[F]find builtin [c]ommand",
+    },
+    {
+      "<Leader>fr",
+      function() require('fzf-lua').resume() end,
+      desc = "[F]ind [r]esume last search",
+    },
+    {
+      "<Leader>fw",
+      function() require('fzf-lua').grep_cword() end,
+      desc = "[F]ind c[w]ord",
+    },
+    {
+      "<Leader>fW",
+      function() require('fzf-lua').grep_cWORD() end,
+      desc = "[F]ind c[W]ORD",
+    },
+
+
+    ------------------------------------------------------------------------
+    -- Built-in LSP comes with several default keymaps as of nvim 0.11.
+    -- See ../core/lsp.lua. These are some extra keymaps.
+    {
+      "<Leader>gd",
+      function() require('fzf-lua').lsp_definitions() end,
+      desc = "[G]ind LSP [d]efinitions",
+    },
+    {
+      "<Leader>gr",
+      function() require('fzf-lua').lsp_references() end,
+      desc = "[G]ind LSP [r]eferences",
+    },
+    {
+      "<Leader>ld",
+      function() require('fzf-lua').lsp_document_diagnostics() end,
+      desc = "Find [L]SP [d]ocument diagnostics"
+    },
+    {
+      "<Leader>lD",
+      function() require('fzf-lua').lsp_workspace_diagnostics() end,
+      desc = "Find [L]SP workspace [s]diagnostics"
+    },
   },
 }

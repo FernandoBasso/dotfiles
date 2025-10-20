@@ -21,6 +21,7 @@
     "scss.validate": false,
     "editor.cursorBlinking": "solid",
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.showTabIndex": true,
     "vim.textwidth": 72,
     "vim.useCtrlKeys": true,
     "vim.normalModeKeyBindingsNonRecursive": [

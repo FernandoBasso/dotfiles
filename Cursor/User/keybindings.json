@@ -317,7 +317,7 @@
     "when": "editorLangId == 'clojure'"
   },
   {
-    "key": "ctrl+[Semicolon]",
+    "key": "ctrl+;",
     "command": "workbench.action.files.save"
   },
   {
@@ -339,5 +339,10 @@
     "key": "ctrl+x =",
     "command": "calva-fmt.alignCurrentForm",
     "when": "editorLangId == 'clojure'"
+  },
+  {
+    "key": "ctrl+6",
+    "command": "-extension.vim_ctrl+6",
+    "when": "editorTextFocus && vim.active && vim.use<C-6> && !inDebugRepl"
   }
 ]

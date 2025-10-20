@@ -37,8 +37,29 @@ vim.keymap.set(
   { desc = 'LSP: Format current document' }
 )
 
+--
+-- See :help diagnostic-toggle-virtual-lines-example.
+--
+vim.keymap.set('n', 'gK', function()
+  local cfg = vim.diagnostic.config()
+  vim.diagnostic.config({
+    virtual_text = false,
+    virtual_lines = {
+      current_line = not cfg.virtual_lines.current_line,
+    },
+  })
+end, { desc = 'Toggle diagnostic virtual_lines' })
+
 vim.diagnostic.config({
+  update_in_insert = false,
+  virtual_text = false,
+
+  -- virtual_text = {
+  --   current_line = true,
+  -- },
+
   -- virtual_lines = true
+
   virtual_lines = {
     current_line = true,
   },

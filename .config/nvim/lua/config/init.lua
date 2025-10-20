@@ -2,6 +2,7 @@ require('config.opts')
 require('config.keymaps')
 require('config.lsp_info')
 require('config.clojure')
+require('config.close_buffers')
 
 ------
 -- Restore cursor position.

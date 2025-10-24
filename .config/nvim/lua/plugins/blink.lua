@@ -4,7 +4,7 @@ return {
     "saghen/blink.cmp",
     version = "*",
     dependencies = {
-      "rafamadriz/friendly-snippets",
+      -- "rafamadriz/friendly-snippets",
       "PaterJason/cmp-conjure",
       "mikavilpas/blink-ripgrep.nvim",
       "L3MON4D3/LuaSnip",

@@ -8,7 +8,10 @@ return {
 				enabled = true,
 				auto_trigger = true,
 				keymap = {
-					accept = '<Tab>',
+          ----
+          -- The default <Tab> causes Tab not indent.
+          --
+					accept = '<C-y>',
 					next = '<M-]>',
 					prev = '<M-[>',
 					dismiss = '<C-]>',

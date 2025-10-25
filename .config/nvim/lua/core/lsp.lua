@@ -37,6 +37,13 @@ vim.keymap.set(
   { desc = 'LSP: Format current document' }
 )
 
+vim.keymap.set(
+  'n',
+  'gl',
+  vim.diagnostic.open_float,
+  { desc = 'LSP: List current diagnostics in float window' }
+)
+
 --
 -- See :help diagnostic-toggle-virtual-lines-example.
 --

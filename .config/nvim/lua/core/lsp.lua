@@ -1,9 +1,15 @@
 -- See https://gpanders.com/blog/whats-new-in-neovim-0-11/ for a nice overview
 -- of how the lsp setup works in neovim 0.11+.
 
+--
+-- Remember to create the configs in the lsp directory. The name of the
+-- files should match the names used below.
+--
 vim.lsp.enable({
   'lua_ls',
   'ts_ls',
+  'jsonls',
+  'yamlls',
   'clojure-lsp',
 })
 

@@ -1,27 +1,20 @@
 return {
-	'zbirenbaum/copilot.lua',
-	cmd = 'Copilot',
-	event = 'InsertEnter',
-	config = function()
-		require('copilot').setup({
-			suggestion = {
-				enabled = true,
-				auto_trigger = true,
-				keymap = {
-          ----
-          -- The default <Tab> causes Tab not indent.
-          --
-					accept = '<C-y>',
-					next = '<M-]>',
-					prev = '<M-[>',
-					dismiss = '<C-]>',
-				},
-			},
-			panel = { enabled = false },
-		})
+  'github/copilot.vim',
 
-		vim.keymap.set('n', '<leader>gc', function()
-			require('copilot.suggestion').toggle_auto_trigger()
-		end, { desc = 'Toggle [G]ithub [C]opilot' })
-	end,
+  config = function()
+    vim.g.copilot_no_tab_map = true
+    vim.api.nvim_set_keymap(
+      "i",
+      "<C-y>",
+      'copilot#Accept("<CR>")',
+      { expr = true, silent = true }
+    )
+
+    vim.api.nvim_create_autocmd("BufEnter", {
+      pattern = "*",
+      callback = function()
+        vim.g.copilot_enabled = false
+      end,
+    })
+  end,
 }

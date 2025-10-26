@@ -7,7 +7,8 @@
 --
 vim.lsp.enable({
   'lua_ls',
-  'ts_ls',
+  -- 'ts_ls',
+  'denols',
   'jsonls',
   'yamlls',
   'clojure-lsp',

@@ -121,3 +121,9 @@ if [[ $OSFAMILY = darwin ]]
 then
   source "$HOME/.bash_profile_macos"
 fi
+
+if [[ -f $HOME/.deno/env ]]
+then
+  echo sourcing deno env
+  . "$HOME/.deno/env"
+fi

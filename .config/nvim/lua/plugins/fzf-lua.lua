@@ -1,15 +1,34 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = { "nvim-tree/nvim-web-devicons" },
-  opts = {
-    winopts = {
-      width = 0.95,
-      height = 0.95,
-      preview = {
-        layout = "flex",
+  config = function()
+    local fzflua = require('fzf-lua')
+
+    fzflua.setup({
+      winopts = {
+        width = 0.95,
+        height = 0.95,
+        preview = {
+          layout = "flex",
+        },
       },
-    },
-  },
+      keymap = {
+        builtin = {
+          ["<C-t>"]        = "toggle-help",
+        },
+      },
+      actions = {
+        files = {
+          true,
+          ----
+          -- Opens the files directly as buffers instead of sendnig
+          -- them to the quickfix window.
+          --
+          ["enter"] = fzflua.actions.file_edit,
+        },
+      },
+    })
+  end,
   keys = {
     {
       "<Leader>fn",

@@ -72,11 +72,11 @@ vim.diagnostic.config({
   --   current_line = true,
   -- },
 
-  -- virtual_lines = true
+  virtual_lines = false,
 
-  virtual_lines = {
-    current_line = true,
-  },
+  -- virtual_lines = {
+  --   current_line = true,
+  -- },
 
   signs = {
     text = {

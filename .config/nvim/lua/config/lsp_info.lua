@@ -1,8 +1,3 @@
-local xs = {}
-table.insert(xs, "one")
-table.insert(xs, "two")
-print(table.concat(xs, ", "))
-
 vim.api.nvim_create_user_command(
   "LspStop",
   function()

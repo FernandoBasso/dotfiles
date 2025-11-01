@@ -1,3 +1,28 @@
+local xs = {}
+table.insert(xs, "one")
+table.insert(xs, "two")
+print(table.concat(xs, ", "))
+
+vim.api.nvim_create_user_command(
+  "LspStop",
+  function()
+    local buf = vim.api.nvim_get_current_buf()
+    local clients = vim.lsp.get_clients()
+    local stopped = {}
+
+    for _, client in pairs(clients) do
+      vim.lsp.stop_client(client.id)
+      table.insert(stopped, client.name)
+    end
+
+    print("Stopped: " .. table.concat(stopped, ", "))
+  end,
+  {
+    desc = "Stop LSP clients for current buffer",
+    force = false,
+  }
+)
+
 vim.api.nvim_create_user_command("LspInfo", function()
 	local buf = vim.api.nvim_get_current_buf()
 	local clients = vim.lsp.get_clients({ bufnr = buf })

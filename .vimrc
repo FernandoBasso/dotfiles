@@ -176,7 +176,9 @@ nnoremap <Leader>d :bprevious<CR>:bwipeout#<CR>
 " # We don't want C-s to lock and terminal (which is unlocked with C-q).
 " `stty -ixon` on bashrc
 nnoremap <C-s> :update<CR>
+nnoremap <C-;> :update<CR>
 inoremap <C-s> <Esc>:update<CR><Right>
+inoremap <C-;> <Esc>:update<CR><Right>
 
 inoremap <C-Space> <C-x><C-o>
 

@@ -22,6 +22,7 @@
     "editor.cursorBlinking": "solid",
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.editor.showTabIndex": true,
+    "workbench.quickOpen.preserveInput": true,
     "vim.textwidth": 72,
     "vim.useCtrlKeys": true,
     "vim.normalModeKeyBindingsNonRecursive": [

@@ -110,7 +110,17 @@ fi
 ##
 # Coursier Scala tools.
 #
-export PATH="$PATH:/home/deveng/.local/share/coursier/bin"
+# export PATH="$PATH:/home/deveng/.local/share/coursier/bin"
+
+
+##
+# https://asdf-vm.com/guide/getting-started.html
+#
+if [[ $(uname -o) =~ GNU/Linux ]]
+then
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+  . <(asdf completion bash)
+fi
 
 ##
 # If some tool installer for a given operating system adds lines to

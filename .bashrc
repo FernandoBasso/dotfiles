@@ -182,8 +182,8 @@ z_possible_paths=(
   # Arch Linux through pacman.
   "/usr/share/z/z.sh"
 
-  # Installed manually.
-  "$HOME/bin/z/z.sh"
+  # Installed manually from Github
+  "$HOME/bin/rupa-z/z.sh"
 
   # macOS brew.
   /opt/homebrew/etc/profile.d/z.sh
@@ -226,7 +226,10 @@ export PATH="$PATH:$HOME/bin/exercism:$HOME/local/bin"
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
 
-[ -f "/home/deveng/.ghcup/env" ] && source "/home/deveng/.ghcup/env"
+if [[ -f $HOME/.ghcup/env ]]
+then
+  source $HOME/.ghcup/env
+fi
 
 ##
 # For my C stuff.

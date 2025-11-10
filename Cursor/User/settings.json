@@ -1,6 +1,6 @@
 {
-    "editor.fontFamily": "'Hurmit Nerd Font', 'BlexMono Nerd Font Mono', 'Source Code Pro', 'SauceCodePro Nerd Font'",
-    "editor.fontSize": 14,
+    "editor.fontFamily": "'Hurmit Nerd Font', 'Myna', 'BlexMono Nerd Font Mono', 'Source Code Pro', 'SauceCodePro Nerd Font'",
+    "editor.fontSize": 15,
     "editor.fontWeight": "500",
     "editor.letterSpacing": 1.1,
     "editor.lineHeight": 24,
@@ -664,5 +664,9 @@
         "launchpad": false
     },
     "editor.hover.enabled": false,
-    "github.copilot.nextEditSuggestions.enabled": true
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "workbench.editor.empty.hint": "hidden",
+    "calva.evalOnSave": true,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1"
 }

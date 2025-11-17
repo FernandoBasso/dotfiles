@@ -172,9 +172,15 @@ let NERDTreeIgnore = ['\~$', 'node_modules']
 "
 nnoremap <Leader>d :bprevious<CR>:bwipeout#<CR>
 
+""
 " Save the file (some terminals get locked on ctrl-s, and ctrl-q unlocks).
 " # We don't want C-s to lock and terminal (which is unlocked with C-q).
 " `stty -ixon` on bashrc
+"
+" NOTE: C-; is not working on Terminator. Works fine in many other
+" terminals, though. There is no C-; keybinding in Terminator
+" itself. Not sure what is happening.
+"
 nnoremap <C-s> :update<CR>
 nnoremap <C-;> :update<CR>
 inoremap <C-s> <Esc>:update<CR><Right>

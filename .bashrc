@@ -268,7 +268,3 @@ then
   source "$HOME/bin/exercism-bin/shell/exercism_completion.bash"
 fi
 
-if [[ $(uname -s) == Linux ]]
-then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi

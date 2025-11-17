@@ -10,9 +10,6 @@
 	ane = commit --amend --no-edit
 [color "diff"]
 	whitespace = red reverse
-[help]
-	htmlPath = /home/fernando/Projects/From-Other-People/git-htmldocs
-	browser = opera
 [status]
 	showUntrackedFiles = all
 [init]

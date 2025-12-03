@@ -134,6 +134,5 @@ fi
 
 if [[ -f $HOME/.deno/env ]]
 then
-  echo sourcing deno env
   . "$HOME/.deno/env"
 fi

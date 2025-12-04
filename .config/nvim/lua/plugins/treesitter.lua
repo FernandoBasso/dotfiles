@@ -23,6 +23,7 @@ return {
 				"clojure",
 				"html",
 				"javascript",
+        "jsdoc",
 				"json",
 				"lua",
 				"luadoc",

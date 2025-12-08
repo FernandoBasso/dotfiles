@@ -66,7 +66,7 @@ set hidden
 set scrolloff=3
 set timeoutlen=350
 set mouse=a
-set cursorline
+set nocursorline
 
 " Indentation with SPACES
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
@@ -288,25 +288,28 @@ let g:gruvbox_bold = 0
 let g:gruvbox_italic = 0
 let g:solarized_italic = 0
 
-if $THEME == 'dark'
-  let s:theme_name = 'gruvbox'
-  set background=dark
-  execute 'colorscheme' s:theme_name
+set background=light
+colorscheme retrobox
 
-  execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
-else
-  "
-  " For light themes, either gruvbox or solarized are well
-  " configured on my setup (with color-overrides/* stuff).
-  "
-  let s:theme_name = 'gruvbox'
-  set background=light
-  execute 'colorscheme' s:theme_name
-
-  let g:airline_theme = 'xtermlight'
-
-  execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
-end
+" if $THEME == 'dark'
+"   let s:theme_name = 'gruvbox'
+"   set background=dark
+"   execute 'colorscheme' s:theme_name
+"
+"   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-dark.vim'
+" else
+"   "
+"   " For light themes, either gruvbox or solarized are well
+"   " configured on my setup (with color-overrides/* stuff).
+"   "
+"   let s:theme_name = 'gruvbox'
+"   set background=light
+"   execute 'colorscheme' s:theme_name
+"
+"   let g:airline_theme = 'xtermlight'
+"
+"   execute 'source' . g:dfdir . '/.vim/colors-overrides/' . s:theme_name . '-light.vim'
+" end
 
 let html_no_rendering = 1
 autocmd BufReadPost *.twig set filetype=html

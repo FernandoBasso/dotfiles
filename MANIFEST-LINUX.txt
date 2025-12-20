@@ -1,4 +1,5 @@
 .emacs.d/init.el
+.config/gtk-3.0/gtk.css
 .config/kitty
 .config/nvim
 .config/rofi

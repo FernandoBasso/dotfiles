@@ -1,109 +1,147 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	version = false,
-	build = ":TSUpdate",
-	event = { "BufReadPost", "BufNewFile" },
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-	},
-	config = function()
-		require("nvim-treesitter.configs").setup({
-			sync_install = true,
-			ignore_install = {},
-			modules = {},
-			highlight = {
-				enable = true,
-				additional_vim_regex_highlighting = false,
-			},
-			indent = { enable = true },
-			auto_install = true,
-			ensure_installed = {
-				"bash",
-				"c",
-				"clojure",
-				"html",
-				"javascript",
-        "jsdoc",
-				"json",
-				"lua",
-				"luadoc",
-				"luap",
-				"query",
-				"regex",
-				"vim",
-				"vimdoc",
-				"yaml",
-				"rust",
-				"go",
-				"gomod",
-				"gowork",
-				"gosum",
-			},
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<leader>vv",
-					node_incremental = "+",
-					scope_incremental = false,
-					node_decremental = "_",
-				},
-			},
-			textobjects = {
-				select = {
-					enable = true,
-					lookahead = true,
+  "nvim-treesitter/nvim-treesitter",
+  lazy = false,
+  build = ":TSUpdate",
+  config = function()
+    local ts = require("nvim-treesitter")
+    ts.install({
+      "bash",
+      "gitcommit",
+      "gitrebase",
+      "git_config",
+      "gitignore",
+      "gitattributes",
+      "javascript",
+      "typescript",
+      "jsdoc",
+      "json",
+      "json5",
+      "jsx",
+      "tsx",
+      "c",
+      "cpp"
+    })
 
-					keymaps = {
-						-- You can use the capture groups defined in textobjects.scm
-						["af"] = { query = "@function.outer", desc = "around a function" },
-						["if"] = { query = "@function.inner", desc = "inner part of a function" },
-						["ac"] = { query = "@class.outer", desc = "around a class" },
-						["ic"] = { query = "@class.inner", desc = "inner part of a class" },
-						["ai"] = { query = "@conditional.outer", desc = "around an if statement" },
-						["ii"] = { query = "@conditional.inner", desc = "inner part of an if statement" },
-						["al"] = { query = "@loop.outer", desc = "around a loop" },
-						["il"] = { query = "@loop.inner", desc = "inner part of a loop" },
-						["ap"] = { query = "@parameter.outer", desc = "around parameter" },
-						["ip"] = { query = "@parameter.inner", desc = "inside a parameter" },
-					},
-					selection_modes = {
-						["@parameter.outer"] = "v", -- charwise
-						["@parameter.inner"] = "v", -- charwise
-						["@function.outer"] = "v", -- charwise
-						["@conditional.outer"] = "V", -- linewise
-						["@loop.outer"] = "V", -- linewise
-						["@class.outer"] = "<c-v>", -- blockwise
-					},
-					include_surrounding_whitespace = false,
-				},
-				move = {
-					enable = true,
-					set_jumps = true, -- whether to set jumps in the jumplist
-					goto_previous_start = {
-						["[f"] = { query = "@function.outer", desc = "Previous function" },
-						["[c"] = { query = "@class.outer", desc = "Previous class" },
-						["[p"] = { query = "@parameter.inner", desc = "Previous parameter" },
-					},
-					goto_next_start = {
-						["]f"] = { query = "@function.outer", desc = "Next function" },
-						["]c"] = { query = "@class.outer", desc = "Next class" },
-						["]p"] = { query = "@parameter.inner", desc = "Next parameter" },
-					},
-				},
-				swap = {
-					enable = true,
-					swap_next = {
-						["<leader>sn"] = "@parameter.inner",
-					},
-					swap_previous = {
-						["<leader>sp"] = "@parameter.inner",
-					},
-				},
-			},
-		})
+    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.wo[0][0].foldmethod = 'expr'
 
-    vim.wo.foldmethod = 'expr'
-    vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-    vim.go.foldlevelstart = 99
-	end,
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = {
+        'javascript',
+        'typescript'
+      },
+      callback = function()
+        vim.treesitter.start()
+      end,
+    })
+  end
 }
+
+-- return {
+-- 	"nvim-treesitter/nvim-treesitter",
+-- 	build = ":TSUpdate",
+-- 	event = { "BufReadPost", "BufNewFile" },
+-- 	dependencies = {
+-- 		"nvim-treesitter/nvim-treesitter-textobjects",
+-- 	},
+-- 	config = function()
+-- 		require("nvim-treesitter.configs").setup({
+-- 			sync_install = true,
+-- 			ignore_install = {},
+-- 			modules = {},
+-- 			highlight = {
+-- 				enable = true,
+-- 				additional_vim_regex_highlighting = false,
+-- 			},
+-- 			indent = { enable = true },
+-- 			auto_install = true,
+-- 			ensure_installed = {
+-- 				"bash",
+-- 				"c",
+-- 				"clojure",
+-- 				"html",
+-- 				"javascript",
+--         "jsdoc",
+-- 				"json",
+-- 				"lua",
+-- 				"luadoc",
+-- 				"luap",
+-- 				"query",
+-- 				"regex",
+-- 				"vim",
+-- 				"vimdoc",
+-- 				"yaml",
+-- 				"rust",
+-- 				"go",
+-- 				"gomod",
+-- 				"gowork",
+-- 				"gosum",
+-- 			},
+-- 			incremental_selection = {
+-- 				enable = true,
+-- 				keymaps = {
+-- 					init_selection = "<leader>vv",
+-- 					node_incremental = "+",
+-- 					scope_incremental = false,
+-- 					node_decremental = "_",
+-- 				},
+-- 			},
+-- 			textobjects = {
+-- 				select = {
+-- 					enable = true,
+-- 					lookahead = true,
+--
+-- 					keymaps = {
+-- 						-- You can use the capture groups defined in textobjects.scm
+-- 						["af"] = { query = "@function.outer", desc = "around a function" },
+-- 						["if"] = { query = "@function.inner", desc = "inner part of a function" },
+-- 						["ac"] = { query = "@class.outer", desc = "around a class" },
+-- 						["ic"] = { query = "@class.inner", desc = "inner part of a class" },
+-- 						["ai"] = { query = "@conditional.outer", desc = "around an if statement" },
+-- 						["ii"] = { query = "@conditional.inner", desc = "inner part of an if statement" },
+-- 						["al"] = { query = "@loop.outer", desc = "around a loop" },
+-- 						["il"] = { query = "@loop.inner", desc = "inner part of a loop" },
+-- 						["ap"] = { query = "@parameter.outer", desc = "around parameter" },
+-- 						["ip"] = { query = "@parameter.inner", desc = "inside a parameter" },
+-- 					},
+-- 					selection_modes = {
+-- 						["@parameter.outer"] = "v", -- charwise
+-- 						["@parameter.inner"] = "v", -- charwise
+-- 						["@function.outer"] = "v", -- charwise
+-- 						["@conditional.outer"] = "V", -- linewise
+-- 						["@loop.outer"] = "V", -- linewise
+-- 						["@class.outer"] = "<c-v>", -- blockwise
+-- 					},
+-- 					include_surrounding_whitespace = false,
+-- 				},
+-- 				move = {
+-- 					enable = true,
+-- 					set_jumps = true, -- whether to set jumps in the jumplist
+-- 					goto_previous_start = {
+-- 						["[f"] = { query = "@function.outer", desc = "Previous function" },
+-- 						["[c"] = { query = "@class.outer", desc = "Previous class" },
+-- 						["[p"] = { query = "@parameter.inner", desc = "Previous parameter" },
+-- 					},
+-- 					goto_next_start = {
+-- 						["]f"] = { query = "@function.outer", desc = "Next function" },
+-- 						["]c"] = { query = "@class.outer", desc = "Next class" },
+-- 						["]p"] = { query = "@parameter.inner", desc = "Next parameter" },
+-- 					},
+-- 				},
+-- 				swap = {
+-- 					enable = true,
+-- 					swap_next = {
+-- 						["<leader>sn"] = "@parameter.inner",
+-- 					},
+-- 					swap_previous = {
+-- 						["<leader>sp"] = "@parameter.inner",
+-- 					},
+-- 				},
+-- 			},
+-- 		})
+--
+--     vim.wo.foldmethod = 'expr'
+--     vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+--     vim.go.foldlevelstart = 99
+-- 	end,
+-- }

@@ -38,7 +38,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'morhetz/gruvbox'
+"Plug 'morhetz/gruvbox'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround',
@@ -86,7 +86,7 @@ set sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize,resi
 "
 " Always copy to the clipboard.
 "
-"set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 "
 " NETRW
@@ -289,7 +289,10 @@ let g:gruvbox_italic = 0
 let g:solarized_italic = 0
 
 set background=light
+let g:airline_theme = 'google_light'
+
 colorscheme retrobox
+set colorcolumn=0
 
 " if $THEME == 'dark'
 "   let s:theme_name = 'gruvbox'
@@ -373,11 +376,11 @@ endfunction
 "
 set laststatus=2
 
-if $SIMPLE != 1
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 0
-  let g:airline_theme = 'gruvbox'
-endif
+" if $SIMPLE != 1
+"   let g:airline_powerline_fonts = 1
+"   let g:airline#extensions#tabline#enabled = 0
+"   let g:airline_theme = 'gruvbox'
+" endif
 
 "
 " UltiSnips

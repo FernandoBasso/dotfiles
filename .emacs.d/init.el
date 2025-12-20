@@ -47,17 +47,7 @@
        default))
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
- '(package-selected-packages
-    '(adoc-mode ample-light atom-light-theme auto-package-update
-       catppuccin-latte catppuccin-theme clj-refactor clojure-ts-mode
-       company copilot deft diff-hl dired-sidebar doom-light
-       doom-modeline doom-themes dracula-theme eca ef-themes emojify
-       expand-region flycheck-clj-kondo geiser-chicken geiser-guile
-       go-mode gruvbox-theme haskell-mode helm-lsp helm-org-ql
-       helm-projectile helm-rg htmlize imenu-list lsp-haskell lsp-ui
-       modus-themes orderless org-download quelpa racket-mode rg slime
-       treemacs-icons-dired treemacs-magit treemacs-projectile
-       treesit-fold typescript-mode vertico vscode-icon))
+ '(package-selected-packages nil)
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))
@@ -80,7 +70,7 @@
 
 (setq inhibit-startup-message t)
 (tool-bar-mode -1)
-(menu-bar-mode t)
+(menu-bar-mode -1)
 (scroll-bar-mode -1)
 (setq frame-title-format "%b | Always Be Awesome!")
 (fset 'yes-or-no-p 'y-or-n-p)

@@ -69,7 +69,10 @@ export FZF_DEFAULT_OPTS='--preview-window right:36%'
 export DENO_INSTALL="$HOME/.deno"
 PATH="$PATH:$DENO_INSTALL/bin"
 
-PATH="$HOME/local/chicken-5.3.0/bin:$PATH"
+##
+# https://fernandobasso.gitlab.io/devnotes/Scheme/CHICKEN-Scheme-Intro
+#
+PATH="$HOME/local/chicken-5.4.0/bin:$PATH"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 PATH="$PATH:$HOME/.rvm/bin"

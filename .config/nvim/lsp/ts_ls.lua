@@ -6,6 +6,8 @@ return {
   filetypes = {
     "typescript",
     "javascript",
+    "typescriptreact",
+    "javascriptreact",
   },
   root_markers = {
     "package.json",

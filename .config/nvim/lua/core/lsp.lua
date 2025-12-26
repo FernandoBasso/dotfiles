@@ -8,6 +8,7 @@
 vim.lsp.enable({
   'lua_ls',
   'ts_ls',
+  "cssls",
   'denols',
   'jsonls',
   'yamlls',

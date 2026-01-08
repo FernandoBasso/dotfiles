@@ -132,6 +132,11 @@ then
   source "$HOME/.bash_profile_macos"
 fi
 
+if [[ -f ~/work/.bash_profile_work_linux ]]
+then
+  source ~/work/.bash_profile_work_linux
+fi
+
 if [[ -f $HOME/.deno/env ]]
 then
   . "$HOME/.deno/env"

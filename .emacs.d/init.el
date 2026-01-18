@@ -47,7 +47,15 @@
        default))
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
- '(package-selected-packages nil)
+ '(package-selected-packages
+    '(adoc-mode auto-package-update clj-refactor clojure-ts-mode company
+       deft diff-hl dired-sidebar doom-modeline doom-themes emojify
+       expand-region flycheck-clj-kondo geiser-chicken geiser-guile
+       go-mode haskell-mode helm-lsp helm-org-ql helm-projectile helm-rg
+       htmlize imenu-list lsp-haskell lsp-ui orderless org-download
+       quelpa racket-mode rg slime tree-sitter-langs
+       treemacs-icons-dired treemacs-magit treemacs-projectile
+       treesit-fold typescript-mode vertico vscode-icon))
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))
@@ -112,7 +120,7 @@
     (set-face-attribute
       'default nil
       :family "Hurmit Nerd Font Mono"
-      :height 120
+      :height 115
       :width 'normal
       :weight 'semibold))
   ((eq system-type 'darwin)

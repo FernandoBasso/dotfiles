@@ -64,7 +64,14 @@ version_npm () {
 version_go () {
 	if command -v go 2>&1 1> /dev/null
 	then
-		printf ' go-%s' "$(go version | cut -d ' ' -f 3 | sed 's/^go/&-/')"
+		##
+		# Looks like Go 1.25.7 or displays “go version” differently.
+		# printf ' go-%s' "$(go version | cut -d ' ' -f 3 | sed 's/^go/&-/')"
+
+		##
+		# Works for go 1.25.7.
+		#
+		printf '%s' "$(go version | cut -d ' ' -f 3 | sed 's/^go/&-/')"
 	fi
 }
 

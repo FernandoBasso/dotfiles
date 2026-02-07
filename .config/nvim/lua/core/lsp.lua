@@ -9,10 +9,11 @@ vim.lsp.enable({
   'lua_ls',
   'ts_ls',
   "cssls",
-  'denols',
+  -- 'denols',
   'jsonls',
   'yamlls',
-  'clojure-lsp',
+  -- 'clojure-lsp',
+  'gopls',
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {

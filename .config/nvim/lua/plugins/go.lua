@@ -5,8 +5,8 @@ return {
     "neovim/nvim-lspconfig",
     "nvim-treesitter/nvim-treesitter",
   },
-  opts = function()
 
+  opts = function()
     require("go").setup(opts)
     local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -21,7 +21,23 @@ return {
       -- other options
     }
   end,
+
   event = {"CmdlineEnter"},
   ft = {"go", 'gomod'},
-  build = ':lua require("go.install").update_all_sync()'
+  build = ':lua require("go.install").update_all_sync()',
+
+  keys = {
+    {
+      '<C-x>T',
+      '<cmd>GoTestFile<cr>',
+      'n',
+      desc = 'Go test current file',
+    },
+    {
+      '<C-x><C-t>',
+      '<cmd>GoAlt<cr>',
+      'n',
+      desc = 'Go alternate file',
+    },
+  },
 }

@@ -185,6 +185,9 @@ z_possible_paths=(
   # Arch Linux through pacman.
   "/usr/share/z/z.sh"
 
+  # Fedora dnf install z
+  "/usr/libexec/z.sh"
+
   # Installed manually from Github
   "$HOME/bin/rupa-z/z.sh"
 

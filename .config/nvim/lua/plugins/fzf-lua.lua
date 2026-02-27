@@ -10,6 +10,7 @@ return {
         height = 0.95,
         preview = {
           layout = "flex",
+          -- layout = "vertical"
         },
       },
       keymap = {

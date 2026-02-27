@@ -3,7 +3,7 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.o.autoread = true
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
 
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2

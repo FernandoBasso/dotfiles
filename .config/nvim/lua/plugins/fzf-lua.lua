@@ -102,12 +102,22 @@ return {
     {
       "<Leader>gd",
       function() require('fzf-lua').lsp_definitions() end,
-      desc = "[G]ind LSP [d]efinitions",
+      desc = "[g]o find LSP [d]efinitions",
     },
     {
       "<Leader>gr",
       function() require('fzf-lua').lsp_references() end,
-      desc = "[G]ind LSP [r]eferences",
+      desc = "[g]o find LSP [r]eferences",
+    },
+    {
+      "<Leader>gs",
+      function() require('fzf-lua').lsp_workspace_symbols() end,
+      desc = "[g]o find LSP document [s]symbols",
+    },
+    {
+      "<Leader>gS",
+      function() require('fzf-lua').lsp_live_workspace_symbols() end,
+      desc = "[g]o find LSP workspace [S]symbols",
     },
     {
       "<Leader>ld",

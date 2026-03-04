@@ -151,7 +151,7 @@ fi
 # located in ~/source/dotfiles/bash_incl/bash-prompts.sh.
 #
 [ -e ./go.mod ] && ps1go1
-# [ -e .local.bashrc ] && source .local.bashrc
+[ -e .local.bashrc ] && source .local.bashrc
 
 ##
 # Run this when cd'ing to a directory.

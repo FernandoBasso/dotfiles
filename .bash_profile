@@ -141,3 +141,31 @@ if [[ -f $HOME/.deno/env ]]
 then
   . "$HOME/.deno/env"
 fi
+
+
+##
+# Run these when a new shell is opened, like when creating a new tab
+# or a split window on the terminal, which sources the RC files.
+#
+# ps1go1 is one of my shell prompt functions that set PS1. It is
+# located in ~/source/dotfiles/bash_incl/bash-prompts.sh.
+#
+[ -e ./go.mod ] && ps1go1
+# [ -e .local.bashrc ] && source .local.bashrc
+
+##
+# Run this when cd'ing to a directory.
+#
+# Where there is a shell, there is a way.
+#
+cd () {
+  builtin cd "$@"
+
+  if [ -e ./go.mod ]
+  then
+    ps1go1
+  elif [ -e ../go.mod ]
+  then
+    ps1go1
+  fi
+}

@@ -29,13 +29,20 @@ export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 # export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 ##
-# https://github.com/go-nv/goenv
+# Add the go binaries to the path as some editors, plugins
+# and tools need it.
 #
-# export GOENV_ROOT="$HOME/.goenv"
-# export PATH="$GOENV_ROOT/bin:$PATH"
-# eval "$(goenv init -)"
-# export PATH="$GOROOT/bin:$PATH"
-# export PATH="$PATH:$GOPATH/bin"
+#   $ go env GOBIN
+#   /home/devy/.asdf/installs/golang/1.26.1/bin
+#
+#   $ ls -1 $(go env GOBIN)
+#   golangci-lint*
+#   gopls*
+#
+if command -v go 2>&1 1> /dev/null
+then
+  export PATH="$PATH:$(go env GOBIN)"
+fi
 
 if command -v asdf 2>&1 1> /dev/null
 then

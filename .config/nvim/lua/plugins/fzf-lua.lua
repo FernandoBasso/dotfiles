@@ -45,7 +45,7 @@ return {
       desc = "LSP: Files, $, @ and #"
     },
     {
-      "<Leader>ff",
+      "<Leader>F",
       function() require('fzf-lua').files() end,
       desc = '[F]ind [f]iles in current project',
     },
@@ -111,7 +111,7 @@ return {
     },
     {
       "<Leader>gs",
-      function() require('fzf-lua').lsp_workspace_symbols() end,
+      function() require('fzf-lua').lsp_document_symbols() end,
       desc = "[g]o find LSP document [s]symbols",
     },
     {

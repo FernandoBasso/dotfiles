@@ -1,1 +1,0 @@
-/home/fernando/Projects/dotfiles/.vim/colors/mylight1.vim

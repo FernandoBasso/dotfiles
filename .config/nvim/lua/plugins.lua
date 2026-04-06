@@ -412,6 +412,13 @@ vim.pack.add({
 })
 
 ------------------------------------------------------------------------------
+-- DROPBAR
+--
+vim.pack.add({
+  { src= "https://github.com/Bekaboo/dropbar.nvim" },
+})
+
+------------------------------------------------------------------------------
 -- GO
 --
 -- Run this to install necessary tools:

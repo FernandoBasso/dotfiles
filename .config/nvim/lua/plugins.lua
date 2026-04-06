@@ -268,3 +268,47 @@ keymap(
   "Find [L]SP workspace [s]diagnostics"
 )
 
+------------------------------------------------------------------------------
+-- MASON,
+--
+vim.pack.add({
+  { src = "https://github.com/mason-org/mason.nvim" },
+  { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+
+  --
+  -- Activation of schemastore.nvim is done in:
+  --
+  --   - lsp/jsonls.lua
+  --   - lsp/yamlls.lua
+  --
+  { src = "https://github.com/b0o/schemastore.nvim" },
+})
+
+require("mason").setup({
+  ensure_installed = {
+    "stylua",
+    "shellcheck",
+    "shfmt",
+    "black",
+    "isort",
+    "flake8",
+    "prettierd",
+    "eslint_d",
+    "typescript-language-server",
+    "lua-language-server",
+
+    ----
+    -- Handled by ray-x/go.nvim
+    --
+    -- "gopls",
+    --
+    "rust-analyzer",
+    "clangd",
+    "cmake-language-server",
+    "bash-language-server",
+    "json-lsp",
+    "yaml-language-server",
+    "html-lsp",
+    "css-lsp",
+  },
+})

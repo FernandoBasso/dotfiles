@@ -81,3 +81,4 @@ autocmd('TextYankPost', {
 })
 
 require("plugins")
+require("lsp")

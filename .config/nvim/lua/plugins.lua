@@ -20,6 +20,83 @@ keymap(
 )
 
 ------------------------------------------------------------------------------
+-- TREE-SITTER
+--
+-- Some plugins or features require that tree-sitter loaded first, like
+-- ray-x/go.nvim, for example, otherwise we get
+vim.pack.add({
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+})
+
+local ts = require("nvim-treesitter")
+
+ts.install({
+  "lua",
+  "vim",
+  "vimdoc",
+  "query",
+  "bash",
+  "gitcommit",
+  "git_config",
+  "gitignore",
+  "gitattributes",
+  "haskell",
+  "ruby",
+  "go",
+  "gomod",
+  "gosum",
+  "gotmpl",
+  "javascript",
+  "typescript",
+  "jsdoc",
+  "json",
+  "json5",
+  "jsx",
+  "tsx",
+  "c",
+  "cpp"
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    "lua",
+    "vim",
+    "vimdoc",
+    "query",
+    "bash",
+    "gitcommit",
+    "git_config",
+    "gitignore",
+    "gitattributes",
+    "haskell",
+    "ruby",
+    "go",
+    "gomod",
+    "gosum",
+    "gotmpl",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "jsx",
+    "tsx",
+    "jsdoc",
+    "json",
+    "json5",
+    "c",
+    "cpp",
+  },
+
+  callback = function()
+    vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.wo[0][0].foldmethod = 'expr'
+    -- vim.wo[0][0].foldenable = false
+    vim.wo[0][0].foldlevel = 99
+    vim.treesitter.start()
+  end
+})
+
+------------------------------------------------------------------------------
 -- NVIM WEB DEVICONS
 --
 vim.pack.add({
@@ -309,4 +386,55 @@ keymap(
 vim.pack.add({
   { src = "https://github.com/tpope/vim-fugitive" },
 })
+
+------------------------------------------------------------------------------
+-- GO
+--
+-- Run this to install necessary tools:
+--
+-- :lua require("go.install").update_all_sync()',
+-- :GoInstallBinaries
+--
+vim.pack.add({
+  { src = "https://github.com/ray-x/go.nvim" },
+  { src = "https://github.com/ray-x/guihua.lua" },
+})
+
+require('go').setup({
+  lsp_cfg = true,
+
+  ----
+  -- Disables things like those “greyed out” types that show
+  -- up for iformational purposes.
+  --
+  lsp_inlay_hints = {
+    enable = false
+  },
+})
+
+local format_sync_grp = vim.api.nvim_create_augroup("Format", {
+  clear = false,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
+
+keymap(
+  "n",
+  "<C-x>T",
+  "<cmd>GoTestFile<CR>",
+  "GO: test current file"
+)
+
+keymap(
+  "n",
+  "<cmd>GoAlt<CR>",
+  "<C-x><C-t>",
+  "GO: jump to alternate file"
+)
 

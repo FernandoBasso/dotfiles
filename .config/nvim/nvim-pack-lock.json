@@ -4,6 +4,14 @@
       "rev": "9f0432fdd7825ab163520045831a40b6df82ea28",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
+    "go.nvim": {
+      "rev": "c97cac0cd9e56b44ae5d4b95034d414cedb20145",
+      "src": "https://github.com/ray-x/go.nvim"
+    },
+    "guihua.lua": {
+      "rev": "c4f1b5ee1a66dbcef0b2c5ee26e42b9757684f61",
+      "src": "https://github.com/ray-x/guihua.lua"
+    },
     "lualine.nvim": {
       "rev": "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
@@ -19,6 +27,10 @@
     "nvim-tree.lua": {
       "rev": "31503ad5d869fca61461d82a9126f62480ecb0ab",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "nvim-treesitter": {
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
       "rev": "40e9d5a6cc3db11b309e39593fc7ac03bb844e38",

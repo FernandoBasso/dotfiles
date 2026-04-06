@@ -4,6 +4,20 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local homedir = os.getenv('HOME')
 
+local function keymap(mode, keys, action, description)
+  vim.keymap.set(
+    mode,
+    keys,
+    action,
+    {
+      noremap = true,
+      silent = true,
+      nowait = true,
+      desc = description,
+    }
+  )
+end
+
 vim.g.mapleader = " "
 
 opt.guicursor = "i:block"
@@ -52,21 +66,16 @@ vim.cmd("colorscheme retrobox")
 --
 vim.keymap.set('n', '<C-;>', ':update<CR>')
 vim.keymap.set('i', '<C-;>', '<Esc>:update<CR>')
-
-----
--- Restore cursor position. :help restore-cursor.
---
-vim.cmd [[
-  augroup RestoreCursor
-    autocmd!
-    autocmd BufRead * autocmd FileType <buffer> ++once
-      \ let s:line = line("'\"")
-      \ | if s:line >= 1 && s:line <= line("$") && &filetype !~# 'commit'
-      \      && index(['xxd', 'gitrebase'], &filetype) == -1
-      \ |   execute "normal! g`\""
-      \ | endif
-  augroup END
-]]
+keymap(
+  "n",
+  "<Leader>rr",
+  function()
+    -- "<cmd>source $MYVIMRC<CR>",
+    vim.cmd("source $MYVIMRC")
+    print("NVim configs have been reloaded")
+  end,
+  "NVIM: reload config"
+)
 
 ----
 -- Highlight yanked text.
@@ -79,6 +88,21 @@ autocmd('TextYankPost', {
     end,
     group = highlight_group,
 })
+
+----
+-- Restore cursor position. :help restore-cursor.
+--
+vim.cmd [[
+  augroup RestoreCursor
+    autocmd!
+    autocmd BufRead * autocmd FileType <buffer> ++once
+      \ let s:line = line("'\"")
+      \ | if s:line >= 1 && s:line <= line("$") && &filetype !~# 'commit'
+                  \      && index(['xxd', 'gitrebase'], &filetype) == -1
+      \ |   execute "normal! g`\""
+      \ | endif
+  augroup END
+]]
 
 require("plugins")
 require("lsp")

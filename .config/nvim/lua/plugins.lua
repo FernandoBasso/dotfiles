@@ -1,8 +1,4 @@
-local g = vim.g
--- local keymap = vim.keymap.set
-local silent = { silent = true }
-
-function keymap(mode, keys, action, d)
+local function keymap(mode, keys, action, d)
   vim.keymap.set(
     mode,
     keys,
@@ -15,6 +11,13 @@ function keymap(mode, keys, action, d)
     }
   )
 end
+
+keymap(
+  "n",
+  "<leader>ps",
+  "<cmd>lua vim.pack.update()<CR>",
+  "PACK: Update"
+)
 
 ------------------------------------------------------------------------------
 -- NVIM WEB DEVICONS
@@ -284,31 +287,26 @@ vim.pack.add({
   { src = "https://github.com/b0o/schemastore.nvim" },
 })
 
-require("mason").setup({
-  ensure_installed = {
-    "stylua",
-    "shellcheck",
-    "shfmt",
-    "black",
-    "isort",
-    "flake8",
-    "prettierd",
-    "eslint_d",
-    "typescript-language-server",
-    "lua-language-server",
+require("mason").setup()
 
-    ----
-    -- Handled by ray-x/go.nvim
-    --
-    -- "gopls",
-    --
-    "rust-analyzer",
-    "clangd",
-    "cmake-language-server",
-    "bash-language-server",
-    "json-lsp",
-    "yaml-language-server",
-    "html-lsp",
-    "css-lsp",
-  },
+------------------------------------------------------------------------------
+-- OUTLINE
+--
+vim.pack.add({
+  { src = "https://github.com/hedyhli/outline.nvim" },
 })
+
+keymap(
+  "n",
+  "<Leader>o",
+  "<cmd>Outline<CR>",
+  "OUTLINE: toggle"
+)
+
+------------------------------------------------------------------------------
+-- FUGITIVE (GIT)
+--
+vim.pack.add({
+  { src = "https://github.com/tpope/vim-fugitive" },
+})
+

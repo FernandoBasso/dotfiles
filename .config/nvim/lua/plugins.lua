@@ -23,7 +23,8 @@ keymap(
 -- TREE-SITTER
 --
 -- Some plugins or features require that tree-sitter loaded first, like
--- ray-x/go.nvim, for example, otherwise we get
+-- ray-x/go.nvim, for example, otherwise we get parser errors.
+--
 vim.pack.add({
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
@@ -102,6 +103,29 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.pack.add({
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
+
+------------------------------------------------------------------------------
+-- WHICH KEY
+--
+vim.pack.add({
+  { src = "https://github.com/folke/which-key.nvim" },
+})
+
+require("which-key").setup({
+  ----
+  -- Wait 1.5 seconds before popping up.
+  --
+  delay = 1500,
+})
+
+keymap(
+  "n",
+  "<leader>?",
+  function()
+    require('which-key').show({ global = false })
+  end,
+  "WHICH-KEY: buffer-local keymaps"
+)
 
 ------------------------------------------------------------------------------
 -- LUALINE

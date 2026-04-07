@@ -550,6 +550,7 @@ vim.pack.add({
 
 require('go').setup({
   lsp_cfg = true,
+  lsp_codelens = false,
 
   ----
   -- Disables things like those “greyed out” types that show

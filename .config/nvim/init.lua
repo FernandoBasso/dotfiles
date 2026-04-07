@@ -54,6 +54,24 @@ opt.backupext = ".vimbkp"
 opt.backupdir = homedir .. "/Temp/vim_bkp/"
 opt.directory = homedir .. "/Temp/vim_tmp//"
 
+
+----
+-- Restore cursor position. :help restore-cursor. It has to come before
+-- the line vim.cmd.filetype("plugin indent on") for some reason, else
+-- it doesn't work.
+--
+vim.cmd [[
+  augroup RestoreCursor
+    autocmd!
+    autocmd BufRead * autocmd FileType <buffer> ++once
+      \ let s:line = line("'\"")
+      \ | if s:line >= 1 && s:line <= line("$") && &filetype !~# 'commit'
+                  \      && index(['xxd', 'gitrebase'], &filetype) == -1
+      \ |   execute "normal! g`\""
+      \ | endif
+  augroup END
+]]
+
 vim.cmd.filetype("plugin indent on")
 
 ----
@@ -88,21 +106,6 @@ autocmd('TextYankPost', {
     end,
     group = highlight_group,
 })
-
-----
--- Restore cursor position. :help restore-cursor.
---
-vim.cmd [[
-  augroup RestoreCursor
-    autocmd!
-    autocmd BufRead * autocmd FileType <buffer> ++once
-      \ let s:line = line("'\"")
-      \ | if s:line >= 1 && s:line <= line("$") && &filetype !~# 'commit'
-                  \      && index(['xxd', 'gitrebase'], &filetype) == -1
-      \ |   execute "normal! g`\""
-      \ | endif
-  augroup END
-]]
 
 require("plugins")
 require("lsp")

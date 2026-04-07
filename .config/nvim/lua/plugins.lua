@@ -586,3 +586,50 @@ keymap(
   "GO: jump to alternate file"
 )
 
+------------------------------------------------------------------------------
+-- LUASNIP
+--
+vim.pack.add({
+  { src = "https://github.com/L3MON4D3/LuaSnip" },
+})
+
+local luasnip = require('luasnip')
+
+require("luasnip").config.set_config {
+  history = true,
+  updateevents = 'TextChanged,TextChangedI',
+  enable_autosnippets = true,
+}
+
+--
+-- I actually use digraphs quite often so instead of <C-k> as suggested
+-- in the docs I'll go with <C-j> to insert a snippet or jump forward
+-- to the next node.
+--
+vim.keymap.set({ 'i', 's' }, '<C-j>', function()
+  if luasnip.expand_or_jumpable() then
+    luasnip.expand_or_jump()
+  end
+end, { silent = true })
+
+----
+--
+-- <S-Tab> to jump back on snippet nodes.
+--
+vim.keymap.set({ 'i', 's' }, '<S-Tab>', function()
+  if luasnip.jumpable(-1) then
+    luasnip.jump(-1)
+  end
+end, { silent = true })
+
+vim.keymap.set('i', '<c-l>', function()
+  if luasnip.choice_active() then
+    luasnip.change_choice()
+  end
+end, { silent = true })
+
+require('luasnip.loaders.from_lua').load({
+  paths = {
+    '~/.config/nvim/snips/'
+  }
+})

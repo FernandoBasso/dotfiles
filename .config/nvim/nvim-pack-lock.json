@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "LuaSnip": {
+      "rev": "a62e1083a3cfe8b6b206e7d3d33a51091df25357",
+      "src": "https://github.com/L3MON4D3/LuaSnip"
+    },
     "dropbar.nvim": {
       "rev": "ce202248134e3949aac375fd66c28e5207785b10",
       "src": "https://github.com/Bekaboo/dropbar.nvim"

@@ -223,6 +223,7 @@ vim.pack.add({
 local fzf_lua_actions = require('fzf-lua.actions')
 
 require('fzf-lua').setup({
+  fzf_colors = true,
   keymap = {
     builtin = {
       ["<C-f>"] = "preview-page-down",

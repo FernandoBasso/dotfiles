@@ -84,15 +84,67 @@ vim.cmd("colorscheme retrobox")
 --
 vim.keymap.set('n', '<C-;>', ':update<CR>')
 vim.keymap.set('i', '<C-;>', '<Esc>:update<CR>')
+
+----
+-- Source $HOME/.config/nvim/init.lua.
+--
 keymap(
   "n",
   "<Leader>rr",
   function()
-    -- "<cmd>source $MYVIMRC<CR>",
     vim.cmd("source $MYVIMRC")
     print("NVim configs have been reloaded")
   end,
   "NVIM: reload config"
+)
+
+
+----
+-- Close the quickfix window.
+--
+keymap(
+  'n',
+  '<Leader>qo',
+  function()
+    vim.cmd('copen')
+  end,
+  '[Q]uickfix [O]pen'
+)
+
+----
+-- Close the quickfix window.
+--
+keymap(
+  'n',
+  '<Leader>qc',
+  function()
+    vim.cmd('cclose')
+  end,
+  '[Q]uickfix [C]lose'
+)
+
+----
+-- Next quickfix item
+--
+keymap(
+  'n',
+  '<Leader>qn',
+  function()
+    vim.cmd('cnext')
+  end,
+  '[Q]uickfix [N]ext item'
+)
+
+----
+-- Previous quickfix item
+--
+keymap(
+  'n',
+  '<Leader>qp',
+  function()
+    vim.cmd('cprevious')
+  end,
+  '[Q]uickfix [P]revious item'
 )
 
 ----

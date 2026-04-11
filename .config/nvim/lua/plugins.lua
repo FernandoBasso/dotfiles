@@ -398,6 +398,8 @@ vim.pack.add({
   { src = "https://github.com/hedyhli/outline.nvim" },
 })
 
+require("outline").setup()
+
 keymap(
   "n",
   "<Leader>o",
@@ -583,8 +585,8 @@ keymap(
 
 keymap(
   "n",
-  "<cmd>GoAlt<CR>",
   "<C-x><C-t>",
+  "<cmd>GoAlt<CR>",
   "GO: jump to alternate file"
 )
 

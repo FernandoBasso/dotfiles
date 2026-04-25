@@ -90,7 +90,12 @@ vim.cmd.filetype("plugin indent on")
 ----
 -- Colorscheme
 --
-vim.cmd("colorscheme retrobox")
+-- Retrobox comes with both vim and nvim. A good one! Currently, I'm
+-- using Gruvbox though, as it has better support for third-party stuff
+-- and LSP. Diagnostics and other things get more readable with Gruvbox.
+-- Look in plugins.lua.
+--
+-- vim.cmd("colorscheme retrobox")
 
 ----
 -- Save with Ctrl+; (I just like it). See `:help update`.

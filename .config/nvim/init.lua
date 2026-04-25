@@ -31,7 +31,6 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.shiftround = true
-opt.listchars = "tab:␉ ,trail:·"
 opt.list = true
 opt.number = true
 opt.relativenumber = false
@@ -43,6 +42,20 @@ opt.inccommand = "nosplit"
 opt.completeopt = { "menuone", "popup", "noinsert" }
 opt.winborder = "rounded"
 opt.hlsearch = false
+
+vim.opt.listchars = {
+  -- space        = "·",
+  nbsp            = "␣",
+  multispace      = "·",
+  trail           = "·",
+  lead            = "¦",
+  leadmultispace  = "¦   ",
+  conceal         = "░",
+  precedes        = "❮",
+  extends         = "❯",
+  tab             = "␉ ",
+  leadtab         = "╌╌¦",
+}
 
 vim.cmd("set clipboard+=unnamedplus")
 vim.cmd("set laststatus=2")

@@ -42,19 +42,23 @@ opt.completeopt = { "menuone", "popup", "noinsert" }
 opt.winborder = "rounded"
 opt.hlsearch = false
 
+----
+-- Listchars with some disabled as they conflict or become messy
+-- when combined with ident guides or other plugins.
+--
 opt.list = true
 opt.listchars = {
   -- space        = "·",
   nbsp            = "␣",
   multispace      = "·",
   trail           = "·",
-  lead            = "¦",
-  leadmultispace  = "¦   ",
+  -- lead            = "¦",
+  -- leadmultispace  = "¦   ",
   conceal         = "░",
   precedes        = "❮",
   extends         = "❯",
   tab             = "␉ ",
-  leadtab         = "╌╌¦",
+  -- leadtab         = "╌╌¦",
 }
 
 vim.cmd("set clipboard+=unnamedplus")

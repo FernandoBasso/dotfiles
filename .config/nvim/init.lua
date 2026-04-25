@@ -31,7 +31,6 @@ opt.tabstop = 2
 opt.softtabstop = 2
 opt.shiftwidth = 2
 opt.shiftround = true
-opt.list = true
 opt.number = true
 opt.relativenumber = false
 opt.numberwidth = 2
@@ -43,7 +42,8 @@ opt.completeopt = { "menuone", "popup", "noinsert" }
 opt.winborder = "rounded"
 opt.hlsearch = false
 
-vim.opt.listchars = {
+opt.list = true
+opt.listchars = {
   -- space        = "·",
   nbsp            = "␣",
   multispace      = "·",

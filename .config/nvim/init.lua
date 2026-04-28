@@ -181,5 +181,30 @@ autocmd('TextYankPost', {
     group = highlight_group,
 })
 
+----
+-- Yank with context & file path.
+--
+-- https://xata.io/blog/configuring-neovim-coding-agents
+--
+local yank = require("yank")
+
+keymap(
+  'n',
+  '<Leader>yr',
+  function()
+    yank.yank_path(yank.get_buffer_cwd_relative(), 'relative')
+  end,
+  '[Y]ank [R]elative path'
+)
+
+keymap(
+  'v',
+  '<Leader>yr',
+  function()
+    yank.yank_visual_with_path(yank.get_buffer_cwd_relative(), 'relative')
+  end,
+  '[Y]ank selection with [R]elative path'
+)
+
 require("plugins")
 require("lsp")

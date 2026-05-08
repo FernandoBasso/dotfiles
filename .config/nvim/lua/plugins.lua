@@ -764,6 +764,15 @@ require("snacks").setup({
 })
 
 ------------------------------------------------------------------------------
+-- AUTOPAIRS
+--
+vim.pack.add({
+  { src = "https://github.com/windwp/nvim-autopairs" }
+})
+
+require("nvim-autopairs").setup({})
+
+------------------------------------------------------------------------------
 -- GRUVBOX
 --
 vim.pack.add({

@@ -47,6 +47,12 @@ fi
 backend="$work_dir/sc-new-service"
 frontend="$work_dir/sc-web-app"
 
+kitty @ launch --cwd "$frontend" --title "$win_title" \
+	--type=tab --tab-title nvim-FE
+
+kitty @ launch --cwd "$backend" --title "$win_title" \
+	--type=tab --tab-title nvim-BE
+
 kitty @ launch --cwd "$backend" --title "$win_title" \
 	--type=tab --tab-title DOCKER
 

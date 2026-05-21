@@ -782,3 +782,27 @@ vim.pack.add({
 require("gruvbox").setup()
 vim.cmd.colorscheme("gruvbox")
 
+------------------------------------------------------------------------------
+-- DBEE
+--
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(evt)
+    print("==========")
+    print(evt.data.spec.name)
+    print("==========")
+    if evt.data.spec.name == "dbee" then
+      require("dbee").install()
+    end
+  end
+})
+
+vim.pack.add({
+  { src = "https://github.com/kndndrj/nvim-dbee" },
+  { src = "https://github.com/MunifTanjim/nui.nvim" },
+})
+
+require("dbee").setup({
+  sources = {
+    require("dbee.sources").EnvSource:new("DBEE_CONNECTIONS")
+  }
+})

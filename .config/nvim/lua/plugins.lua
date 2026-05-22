@@ -19,6 +19,35 @@ keymap(
   "PACK: Update"
 )
 
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(evt)
+    local kind = evt.data.kind
+    local name = evt.data.spec.name
+    local active = evt.data.active
+
+    print("================================================")
+    print("Kind:", kind)
+    print("Name:", name)
+    print("Active:", active)
+    print("================================================")
+
+    if kind == "install" then
+      if name == "dbee" then
+        require("dbee").install()
+      end
+    end
+
+    if kind == "update" then
+      if name == "tree-sitter" then
+        if not active then
+          vim.cmd.packadd("nvim-treesitter")
+        end
+        vim.cmd("TSUpdate")
+      end
+    end
+  end
+})
+
 ------------------------------------------------------------------------------
 -- TREE-SITTER
 --
@@ -785,17 +814,6 @@ vim.cmd.colorscheme("gruvbox")
 ------------------------------------------------------------------------------
 -- DBEE
 --
-vim.api.nvim_create_autocmd("PackChanged", {
-  callback = function(evt)
-    print("==========")
-    print(evt.data.spec.name)
-    print("==========")
-    if evt.data.spec.name == "dbee" then
-      require("dbee").install()
-    end
-  end
-})
-
 vim.pack.add({
   { src = "https://github.com/kndndrj/nvim-dbee" },
   { src = "https://github.com/MunifTanjim/nui.nvim" },

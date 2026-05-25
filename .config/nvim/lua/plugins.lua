@@ -754,7 +754,12 @@ require("snacks").setup({
       relative = "cursor",
     }
   },
-  picker = { enabled = false },
+
+  ----
+  -- Enables searcheable LSP code actions!
+  --
+  picker = { enabled = true },
+
   notifier = { enabled = true },
   quickfile = { enabled = false },
   scope = { enabled = true },
@@ -786,6 +791,7 @@ require("dbee").setup({
     require("dbee.sources").EnvSource:new("DBEE_CONNECTIONS")
   }
 })
+
 ---
 ------------------------------------------------------------------------------
 -- GRUVBOX

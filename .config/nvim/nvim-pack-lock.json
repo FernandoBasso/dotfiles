@@ -14,7 +14,7 @@
       "src": "https://github.com/Bekaboo/dropbar.nvim"
     },
     "fzf-lua": {
-      "rev": "71b45a044c4ef6ecb1910880ef642d5a0e1c02e9",
+      "rev": "c8aaa74c97157b2c62bdcfc1e57b15c052dc63ca",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -30,7 +30,7 @@
       "src": "https://github.com/ellisonleao/gruvbox.nvim"
     },
     "guihua.lua": {
-      "rev": "26e2e557f5b1a0c5cb25cab41d71ddba61523cba",
+      "rev": "8c34ebbb59990c6cb70110d786ad82b2a7182c78",
       "src": "https://github.com/ray-x/guihua.lua"
     },
     "lualine.nvim": {
@@ -42,7 +42,7 @@
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason.nvim": {
-      "rev": "cbf8d285e1462dd24acf3507817be2bbcb035919",
+      "rev": "bb639d4bf385a4d89f478b83af4d770be05ab7eb",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "nui.nvim": {
@@ -66,7 +66,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
-      "rev": "7d8dad2c837fcdf2e65997e68657c1a21c568074",
+      "rev": "0d7d35fa946837b8738b17c18d1faa1ac351e7f9",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "outline.nvim": {
@@ -74,7 +74,7 @@
       "src": "https://github.com/hedyhli/outline.nvim"
     },
     "schemastore.nvim": {
-      "rev": "59b4296a733a5b93ce2aee23ee406b6d279183cc",
+      "rev": "68ba9015c0cc77a0fe954bd2578dfa7a5c24134f",
       "src": "https://github.com/b0o/schemastore.nvim"
     },
     "snacks.nvim": {

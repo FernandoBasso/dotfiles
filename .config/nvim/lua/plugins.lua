@@ -19,6 +19,31 @@ keymap(
   "PACK: Update"
 )
 
+----
+-- :execute "MasonInstall" . " " . LSPs
+--
+-- Or with lua:
+--
+-- :lua vim.cmd("MasonInstall" .. " " .. vim.g.LSPs)
+--
+-- No gopls has it is handled automatically by ray-x/go.nvim.
+--
+vim.g.LSPs = table.concat({
+  "bash-language-server",
+  "typescript-language-server",
+  "yaml-language-server",
+  "json-lsp",
+  "css-lsp",
+}, " ")
+
+----
+-- Call :MyMasonInstall after installing the plugins for the first time.
+--
+vim.api.nvim_create_user_command("MyMasonInstall", function()
+  print("==== Mason: Installing LSPs")
+  vim.cmd("MasonInstall " .. vim.g.LSPs)
+end, {})
+
 vim.api.nvim_create_autocmd("PackChanged", {
   callback = function(evt)
     local kind = evt.data.kind
@@ -42,10 +67,50 @@ vim.api.nvim_create_autocmd("PackChanged", {
         if not active then
           vim.cmd.packadd("nvim-treesitter")
         end
+
         vim.cmd("TSUpdate")
       end
+
     end
   end
+})
+
+vim.pack.add({
+  "https://github.com/nvim-treesitter/nvim-treesitter",
+  "https://github.com/nvim-tree/nvim-web-devicons",
+  "https://github.com/folke/which-key.nvim",
+  "https://github.com/nvim-lualine/lualine.nvim",
+  "https://github.com/nvim-tree/nvim-tree.lua",
+  "https://github.com/ibhagwan/fzf-lua",
+  "https://github.com/mason-org/mason.nvim",
+  "https://github.com/mason-org/mason-lspconfig.nvim",
+
+  --
+  -- Activation of schemastore.nvim is done in:
+  --
+  --   - lsp/jsonls.lua
+  --   - lsp/yamlls.lua
+  --
+  "https://github.com/b0o/schemastore.nvim",
+
+  "https://github.com/hedyhli/outline.nvim",
+  "https://github.com/tpope/vim-fugitive",
+  "https://github.com/lewis6991/gitsigns.nvim",
+  "https://github.com/ray-x/go.nvim",
+  "https://github.com/ray-x/guihua.lua",
+  "https://github.com/Bekaboo/dropbar.nvim",
+  "https://github.com/L3MON4D3/LuaSnip",
+
+  {
+    src = "https://github.com/Saghen/blink.cmp",
+    version = "v1",
+  },
+
+  "https://github.com/folke/snacks.nvim",
+  "https://github.com/windwp/nvim-autopairs",
+  "https://github.com/ellisonleao/gruvbox.nvim",
+  "https://github.com/kndndrj/nvim-dbee",
+  "https://github.com/MunifTanjim/nui.nvim",
 })
 
 ------------------------------------------------------------------------------
@@ -54,10 +119,6 @@ vim.api.nvim_create_autocmd("PackChanged", {
 -- Some plugins or features require that tree-sitter loaded first, like
 -- ray-x/go.nvim, for example, otherwise we get parser errors.
 --
-vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-})
-
 local ts = require("nvim-treesitter")
 
 ts.install({
@@ -127,19 +188,8 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 ------------------------------------------------------------------------------
--- NVIM WEB DEVICONS
---
-vim.pack.add({
-  { src = "https://github.com/nvim-tree/nvim-web-devicons" },
-})
-
-------------------------------------------------------------------------------
 -- WHICH KEY
 --
-vim.pack.add({
-  { src = "https://github.com/folke/which-key.nvim" },
-})
-
 require("which-key").setup({
   ----
   -- Wait 1.5 seconds before popping up.
@@ -159,10 +209,6 @@ keymap(
 ------------------------------------------------------------------------------
 -- LUALINE
 --
-vim.pack.add({
-  { src = 'https://github.com/nvim-lualine/lualine.nvim' },
-})
-
 require("lualine").setup({
   options = {
     icons_enabled = true,
@@ -178,17 +224,12 @@ require("lualine").setup({
 ------------------------------------------------------------------------------
 -- NVIM-TREE
 --
-vim.pack.add({
-  { src = 'https://github.com/nvim-tree/nvim-tree.lua' },
-})
-
 keymap(
   "n",
   "<Leader>T",
   "<cmd>:NvimTreeToggle<CR>",
   'NVim-Tree: Toggle'
 )
-
 
 require('nvim-tree').setup({
   update_focused_file = {
@@ -244,11 +285,6 @@ require('nvim-tree').setup({
 ------------------------------------------------------------------------------
 -- FZF-LUA
 --
-
-vim.pack.add({
-  { src = "https://github.com/ibhagwan/fzf-lua" },
-})
-
 local fzf_lua_actions = require('fzf-lua.actions')
 
 require('fzf-lua').setup({
@@ -403,30 +439,13 @@ keymap(
 )
 
 ------------------------------------------------------------------------------
--- MASON,
+-- MASON
 --
-vim.pack.add({
-  { src = "https://github.com/mason-org/mason.nvim" },
-  { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
-
-  --
-  -- Activation of schemastore.nvim is done in:
-  --
-  --   - lsp/jsonls.lua
-  --   - lsp/yamlls.lua
-  --
-  { src = "https://github.com/b0o/schemastore.nvim" },
-})
-
 require("mason").setup()
 
 ------------------------------------------------------------------------------
 -- OUTLINE
 --
-vim.pack.add({
-  { src = "https://github.com/hedyhli/outline.nvim" },
-})
-
 require("outline").setup()
 
 keymap(
@@ -437,19 +456,8 @@ keymap(
 )
 
 ------------------------------------------------------------------------------
--- FUGITIVE (GIT)
---
-vim.pack.add({
-  { src = "https://github.com/tpope/vim-fugitive" },
-})
-
-------------------------------------------------------------------------------
 -- GITSIGNS
 --
-vim.pack.add({
-  { src = "https://github.com/lewis6991/gitsigns.nvim" },
-});
-
 require("gitsigns").setup({
   on_attach = function(bufnr)
     local gitsigns = require 'gitsigns'
@@ -561,13 +569,6 @@ require("gitsigns").setup({
 })
 
 ------------------------------------------------------------------------------
--- DROPBAR
---
-vim.pack.add({
-  { src= "https://github.com/Bekaboo/dropbar.nvim" },
-})
-
-------------------------------------------------------------------------------
 -- GO
 --
 -- Run this to install necessary tools:
@@ -575,11 +576,6 @@ vim.pack.add({
 -- :lua require("go.install").update_all_sync()',
 -- :GoInstallBinaries
 --
-vim.pack.add({
-  { src = "https://github.com/ray-x/go.nvim" },
-  { src = "https://github.com/ray-x/guihua.lua" },
-})
-
 require('go').setup({
   lsp_cfg = true,
   lsp_codelens = false,
@@ -622,10 +618,6 @@ keymap(
 ------------------------------------------------------------------------------
 -- LUASNIP
 --
-vim.pack.add({
-  { src = "https://github.com/L3MON4D3/LuaSnip" },
-})
-
 local luasnip = require('luasnip')
 
 require("luasnip").config.set_config {
@@ -671,13 +663,6 @@ require('luasnip.loaders.from_lua').load({
 ------------------------------------------------------------------------------
 -- BLINK CMP
 --
-vim.pack.add({
-  {
-    src = "https://github.com/Saghen/blink.cmp",
-    version = "v1",
-  }
-})
-
 require("blink.cmp").setup({
   keymap = {
     ["<C-n>"] = { "select_next", "fallback" },
@@ -741,10 +726,6 @@ require("blink.cmp").setup({
 ------------------------------------------------------------------------------
 -- SNACKS
 --
-vim.pack.add({
-  { src = "https://github.com/folke/snacks.nvim" },
-})
-
 keymap(
   "n",
   "<Leader>Ii",
@@ -795,32 +776,19 @@ require("snacks").setup({
 ------------------------------------------------------------------------------
 -- AUTOPAIRS
 --
-vim.pack.add({
-  { src = "https://github.com/windwp/nvim-autopairs" }
-})
-
 require("nvim-autopairs").setup({})
-
-------------------------------------------------------------------------------
--- GRUVBOX
---
-vim.pack.add({
-  "https://github.com/ellisonleao/gruvbox.nvim"
-})
-
-require("gruvbox").setup()
-vim.cmd.colorscheme("gruvbox")
 
 ------------------------------------------------------------------------------
 -- DBEE
 --
-vim.pack.add({
-  { src = "https://github.com/kndndrj/nvim-dbee" },
-  { src = "https://github.com/MunifTanjim/nui.nvim" },
-})
-
 require("dbee").setup({
   sources = {
     require("dbee.sources").EnvSource:new("DBEE_CONNECTIONS")
   }
 })
+---
+------------------------------------------------------------------------------
+-- GRUVBOX
+--
+require("gruvbox").setup()
+vim.cmd.colorscheme("gruvbox")

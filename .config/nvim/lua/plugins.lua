@@ -187,6 +187,19 @@ vim.api.nvim_create_autocmd('FileType', {
   end
 })
 
+----
+-- This will do something similar to LSP document symbols (which I currently
+-- have mapped to <Leader>gs).
+--
+keymap(
+  "n",
+  "<leader>ts",
+  function()
+    vim.cmd('FzfLua treesitter')
+  end,
+  "TREE-SITTER: [T]ree-sitter Document [S]ymbols"
+)
+
 ------------------------------------------------------------------------------
 -- WHICH KEY
 --

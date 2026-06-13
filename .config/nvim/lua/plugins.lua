@@ -779,6 +779,9 @@ require("snacks").setup({
   bigfile = { enabled = false },
   dashboard = { enabled = false },
   explorer = { enabled = false },
+  words = {
+    enabled = false,
+  },
   image = {
     enabled = true,
     inline = false,
@@ -799,7 +802,7 @@ require("snacks").setup({
   --
   picker = { enabled = true },
 
-  notifier = { enabled = true },
+  notifier = { enabled = false },
   quickfile = { enabled = false },
   scope = { enabled = true },
   scroll = { enabled = true },
@@ -831,7 +834,60 @@ require("dbee").setup({
   }
 })
 
----
+------------------------------------------------------------------------------
+-- NVIM-DAP
+--
+
+local dap = require('dap')
+
+dap.set_log_level("TRACE")
+
+local jsdbg = vim.fn.stdpath('data') .. '/mason/bin/js-debug-adapter'
+print(jsdbg)
+
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    command = "node",
+    args = {
+      vim.fn.stdpath('data') .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+      "${port}",
+    },
+  }
+}
+
+for _, language in ipairs({ "javascript", "typescript", "javascriptreact", "typescriptreact" }) do
+  dap.configurations[language] = {
+    {
+      ----
+      -- Debug the current open file.
+      --
+      type = "pwa-node",
+      request = "launch",
+      name = "Launch Current File",
+      program = "${file}",
+      cwd = "${workspaceFolder}",
+      sourceMaps = true,
+    },
+    {
+      ----
+      -- Attach to a running Node.js process (e.g., started with `--inspect`)
+      --
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach to Process",
+      processId = require("dap.utils").pick_process,
+      cwd = "${workspaceFolder}",
+      sourceMaps = true,
+    },
+  }
+end
+
+local dapui = require('dapui');
+dapui.setup()
+
 ------------------------------------------------------------------------------
 -- GRUVBOX
 --

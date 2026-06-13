@@ -159,20 +159,21 @@ fi
 #
 [ -e ./go.mod ] && ps1go1
 [ -e .local.bashrc ] && source .local.bashrc
+[ -e .nvmrc ] && nvm use
 
 ##
 # Run this when cd'ing to a directory.
 #
 # Where there is a shell, there is a way.
 #
-cd () {
-  builtin cd "$@"
-
-  if [ -e ./go.mod ]
-  then
-    ps1go1
-  elif [ -e ../go.mod ]
-  then
-    ps1go1
-  fi
-}
+# cd () {
+#   builtin cd "$@"
+#
+#   if [ -e ./go.mod ]
+#   then
+#     ps1go1
+#   elif [ -e ../go.mod ]
+#   then
+#     ps1go1
+#   fi
+# }

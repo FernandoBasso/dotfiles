@@ -19,6 +19,27 @@ keymap(
   "PACK: Update"
 )
 
+require("vim._core.ui2").enable({
+  ----
+  -- Whether to enable or disable the UI.
+  --
+  enable = true,
+  msg = {
+    ----
+    -- Options related to the message module.
+    --
+    ---@type 'cmd'|'msg' Where to place regular messages, either in the
+    ---cmdline or in a separate ephemeral message window.
+    --
+    targets = "msg",
+
+    ----
+    -- Time a message is visible in the message window.
+    --
+    timeout = 4000,
+  },
+})
+
 ----
 -- :execute "MasonInstall" . " " . LSPs
 --
@@ -111,6 +132,11 @@ vim.pack.add({
   "https://github.com/ellisonleao/gruvbox.nvim",
   "https://github.com/kndndrj/nvim-dbee",
   "https://github.com/MunifTanjim/nui.nvim",
+
+  -- MasonInstall js-debug-adapter
+  "https://github.com/nvim-neotest/nvim-nio",
+  "https://github.com/rcarriga/nvim-dap-ui",
+  "https://github.com/mfussenegger/nvim-dap"
 })
 
 ------------------------------------------------------------------------------

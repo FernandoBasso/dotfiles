@@ -835,7 +835,7 @@ require("dbee").setup({
 })
 
 ------------------------------------------------------------------------------
--- NVIM-DAP
+-- DAP
 --
 
 local dap = require('dap')
@@ -884,6 +884,15 @@ for _, language in ipairs({ "javascript", "typescript", "javascriptreact", "type
     },
   }
 end
+
+---
+-- :help dap-mappings
+--
+keymap("n", "<F9>", function() dap.continue() end, "DAP: Continue")
+keymap("n", "<F10>", function() dap.step_over() end, "DAP: Step over")
+keymap("n", "<F11>", function() dap.step_into() end, "DAP: Step into")
+keymap("n", "<F12>", function() dap.step_out() end, "DAP: Step out")
+keymap("n", "<Leader>B", function() dap.toggle_breakpoint() end, "DAP: Toggle breakpoint")
 
 local dapui = require('dapui');
 dapui.setup()

@@ -5,7 +5,7 @@ return {
   },
   filetypes = {
     "typescript",
-    -- "javascript",
+    "javascript",
   },
   root_markers = {
     "deno.json",

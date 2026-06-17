@@ -6,6 +6,7 @@ vim.lsp.enable({
   "yamlls",
   "bashls",
   "ts_ls",
+  "denols",
   "gopls",
   "lua_ls",
   "cssls",

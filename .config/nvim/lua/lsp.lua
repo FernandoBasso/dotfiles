@@ -1,16 +1,18 @@
 local utils = require('utils')
 local keymap = utils.keymap
 
-vim.lsp.enable({
-  "jsonls",
-  "yamlls",
-  "bashls",
-  "ts_ls",
-  "denols",
-  "gopls",
-  "lua_ls",
-  "cssls",
-})
+if vim.env.NVIM_DISABLE_LSP == nil then
+  vim.lsp.enable({
+    "jsonls",
+    "yamlls",
+    "bashls",
+    "ts_ls",
+    "denols",
+    "gopls",
+    "lua_ls",
+    "cssls",
+  })
+end
 
 vim.diagnostic.config({
   virtual_text = true,

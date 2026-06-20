@@ -24,19 +24,36 @@ local jsts_snips = {
   ),
 
   -----
-  -- console.log('==== <desc>', data);
-  --
-  s(
-    'cls',
-    fmt("console.log('==== {}\', {});", { i(1), i(2) })
-  ),
-
-  -----
   -- def log
   --
   s(
     'deflog',
     t("const log = console.log.bind(console);")
+  ),
+
+  -----
+  -- Assumes we have `const log = console.log.bind();` from
+  -- our deflog snippet.
+  --
+  -- log([
+  --
+  -- ]);
+  --
+  s(
+    'loga',
+    fmt([[
+      log([
+        {}
+      ]);
+    ]], { i(1) })
+  ),
+
+  -----
+  -- console.log('==== <desc>', data);
+  --
+  s(
+    'cls',
+    fmt("console.log('==== {}\', {});", { i(1), i(2) })
   ),
 
   -----

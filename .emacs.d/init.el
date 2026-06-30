@@ -137,7 +137,9 @@
   ((eq system-type 'gnu/linux)
     (set-face-attribute
       'default nil
-      :family "Hurmit Nerd Font Mono"
+      ;:family "Hurmit Nerd Font Mono"
+      ;:family "UbuntuMono Nerd Font"
+      :family "JetBrainsMono NFP"
       :height 115
       :width 'normal
       :weight 'semibold))

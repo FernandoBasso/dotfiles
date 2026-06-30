@@ -130,6 +130,7 @@ vim.pack.add({
   "https://github.com/folke/snacks.nvim",
   "https://github.com/windwp/nvim-autopairs",
   "https://github.com/ellisonleao/gruvbox.nvim",
+  "https://github.com/sainnhe/gruvbox-material",
   "https://github.com/kndndrj/nvim-dbee",
   "https://github.com/MunifTanjim/nui.nvim",
 
@@ -713,16 +714,26 @@ if vim.env.NVIM_DISABLE_BLINK == nil then
       ["<C-f>"] = {},
       ["<Up>"] = { "select_prev", "fallback" },
       ["<Down>"] = { "select_next", "fallback" },
+      ['<C-space>'] = {
+        function(cmp)
+          cmp.show({ providers = { 'lsp', 'snippets', 'path', 'buffer' } })
+        end
+      },
     },
     cmdline = {
       enabled = false,
-      completion = { menu = { auto_show = true } },
+      completion = {
+        menu = {
+          auto_show = true,
+        },
+      },
       keymap = {
         ["<CR>"] = { "accept_and_enter", "fallback" },
       },
     },
     completion = {
       menu = {
+        auto_show = false,
         border = nil,
         scrolloff = 1,
         scrollbar = false,
@@ -902,5 +913,6 @@ dapui.setup()
 ------------------------------------------------------------------------------
 -- GRUVBOX
 --
-require("gruvbox").setup()
-vim.cmd.colorscheme("gruvbox")
+-- require("gruvbox").setup()
+vim.cmd.colorscheme("gruvbox-material")
+

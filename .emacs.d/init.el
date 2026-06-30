@@ -111,6 +111,23 @@
 ;   (directory-files-recursively "~/source/mynotes/dev-how-to" "\\.org$")))
 
 ;; For terminal non-blinking cursor. See C-h m Emacs RET m Cursor Display RET.
+;;;;;;
+;;; This is to have the blocks show in uppercase, like
+;;; #+BEGIN_... and #+END_...
+;;;
+(setq
+  org-structure-template-alist
+  '(("a" . "EXPORT ASCII")
+     ("c" . "CENTER")
+     ("C" . "COMMENT")
+     ("e" . "EXAMPLE")
+     ("E" . "EXPORT")
+     ("h" . "EXPORT HTML")
+     ("l" . "EXPORT LATEX")
+     ("q" . "QUOTE")
+     ("s" . "SRC")
+     ("v" . "VERSE")))
+
 (setq visible-cursor nil)
 
 (setq backup-directory-alist `(("." . "~/Temp/Emacs"))):

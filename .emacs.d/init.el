@@ -102,15 +102,14 @@
 ;(load "~/source/local/emacs.d/org-mode.el")
 
 ;;
-;; These are the places I currently keep collections of .org
-;; files.
+;; These are the places I currently keep collections
+;; of .org files.
 ;;
-; (setq
-;  org-agenda-files
-;  (append
-;   (directory-files-recursively "~/source/mynotes/dev-how-to" "\\.org$")))
+(setq
+ org-agenda-files
+ (append
+  (directory-files-recursively "~/source/devnotes" "\\.org$")))
 
-;; For terminal non-blinking cursor. See C-h m Emacs RET m Cursor Display RET.
 ;;;;;;
 ;;; This is to have the blocks show in uppercase, like
 ;;; #+BEGIN_... and #+END_...
@@ -128,6 +127,8 @@
      ("s" . "SRC")
      ("v" . "VERSE")))
 
+;; For terminal non-blinking cursor. See C-h m Emacs RET m Cursor
+;; Display RET.
 (setq visible-cursor nil)
 
 (setq backup-directory-alist `(("." . "~/Temp/Emacs"))):

@@ -987,8 +987,8 @@
   :ensure t
   :config
   (setq doom-themes-enable-italic nil)
-  (load-theme 'doom-one-light t)
   (set-face-attribute 'italic nil))
+  (load-theme 'doom-solarized-light t)
 
 (use-package nerd-icons
   :ensure t)

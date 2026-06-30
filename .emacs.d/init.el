@@ -10,7 +10,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-    '("71b688e7ef7c844512fa7c4de7e99e623de99a2a8b3ac3df4d02f2cd2c3215e7"
+    '("0f1341c0096825b1e5d8f2ed90996025a0d013a0978677956a9e61408fcd2c77"
+       "5244ba0273a952a536e07abaad1fdf7c90d7ebb3647f36269c23bfd1cf20b0b8"
+       "71b688e7ef7c844512fa7c4de7e99e623de99a2a8b3ac3df4d02f2cd2c3215e7"
        "c038d994d271ebf2d50fa76db7ed0f288f17b9ad01b425efec09519fa873af53"
        "2ff9ac386eac4dffd77a33e93b0c8236bb376c5a5df62e36d4bfa821d56e4e20"
        "19a2c0b92a6aa1580f1be2deb7b8a8e3a4857b6c6ccf522d00547878837267e7"
@@ -47,15 +49,7 @@
        default))
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
- '(package-selected-packages
-    '(adoc-mode auto-package-update clj-refactor clojure-ts-mode company
-       deft diff-hl dired-sidebar doom-modeline doom-themes emojify
-       expand-region flycheck-clj-kondo geiser-chicken geiser-guile
-       go-mode haskell-mode helm-lsp helm-org-ql helm-projectile helm-rg
-       htmlize imenu-list lsp-haskell lsp-ui orderless org-download
-       quelpa racket-mode rg slime tree-sitter-langs
-       treemacs-icons-dired treemacs-magit treemacs-projectile
-       treesit-fold typescript-mode vertico vscode-icon))
+ '(package-selected-packages nil)
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))

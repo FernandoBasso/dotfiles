@@ -7,7 +7,7 @@ if vim.env.NVIM_DISABLE_LSP == nil then
     "yamlls",
     "bashls",
     "ts_ls",
-    "denols",
+    -- "denols",
     "gopls",
     "lua_ls",
     "cssls",
@@ -15,7 +15,7 @@ if vim.env.NVIM_DISABLE_LSP == nil then
 end
 
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = false,
 })
 
 local lsp_highlight_group = vim.api.nvim_create_augroup("LspDocumentHighlight", {

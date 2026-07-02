@@ -11,42 +11,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
     '("0f1341c0096825b1e5d8f2ed90996025a0d013a0978677956a9e61408fcd2c77"
-       "5244ba0273a952a536e07abaad1fdf7c90d7ebb3647f36269c23bfd1cf20b0b8"
-       "71b688e7ef7c844512fa7c4de7e99e623de99a2a8b3ac3df4d02f2cd2c3215e7"
-       "c038d994d271ebf2d50fa76db7ed0f288f17b9ad01b425efec09519fa873af53"
-       "2ff9ac386eac4dffd77a33e93b0c8236bb376c5a5df62e36d4bfa821d56e4e20"
-       "19a2c0b92a6aa1580f1be2deb7b8a8e3a4857b6c6ccf522d00547878837267e7"
-       "b1a691bb67bd8bd85b76998caf2386c9a7b2ac98a116534071364ed6489b695d"
-       "9c6aa7eb1bde73ba1142041e628827492bd05678df4d9097cda21b1ebcb8f8b9"
-       "1c2fb3448ce245f18c62fde3c7cfd008e69a27e88ae8a03fbb62857f13d0b6fe"
-       "6bf350570e023cd6e5b4337a6571c0325cec3f575963ac7de6832803df4d210a"
-       "f9d423fcd4581f368b08c720f04d206ee80b37bfb314fa37e279f554b6f415e9"
-       "ea4dd126d72d30805c083421a50544e235176d9698c8c541b824b60912275ba1"
-       "8c7e832be864674c220f9a9361c851917a93f921fedb7717b1b5ece47690c098"
-       "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
-       "5c7720c63b729140ed88cf35413f36c728ab7c70f8cd8422d9ee1cedeb618de5"
-       "b7a09eb77a1e9b98cafba8ef1bd58871f91958538f6671b22976ea38c2580755"
-       "e4a702e262c3e3501dfe25091621fe12cd63c7845221687e36a79e17cf3a67e0"
-       "a9028cd93db14a5d6cdadba789563cb90a97899c4da7df6f51d58bb390e54031"
-       "5e39e95c703e17a743fb05a132d727aa1d69d9d2c9cde9353f5350e545c793d4"
-       "75b371fce3c9e6b1482ba10c883e2fb813f2cc1c88be0b8a1099773eb78a7176"
-       "d14f3df28603e9517eb8fb7518b662d653b25b26e83bd8e129acea042b774298"
-       "4eb6fa2ee436e943b168a0cd8eab11afc0752aebb5d974bba2b2ddc8910fca8f"
-       "6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1"
-       "83e0376b5df8d6a3fbdfffb9fb0e8cf41a11799d9471293a810deb7586c131e6"
-       "78c4238956c3000f977300c8a079a3a8a8d4d9fee2e68bad91123b58a4aa8588"
-       "a06658a45f043cd95549d6845454ad1c1d6e24a99271676ae56157619952394a"
-       "d91ef4e714f05fff2070da7ca452980999f5361209e679ee988e3c432df24347"
-       "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0"
-       "585942bb24cab2d4b2f74977ac3ba6ddbd888e3776b9d2f993c5704aa8bb4739"
-       "8f97d5ec8a774485296e366fdde6ff5589cf9e319a584b845b6f7fa788c9fa9a"
-       "a22f40b63f9bc0a69ebc8ba4fbc6b452a4e3f84b80590ba0a92b4ff599e53ad0"
-       "b583823b9ee1573074e7cbfd63623fe844030d911e9279a7c8a5d16de7df0ed0"
-       "8e797edd9fa9afec181efbfeeebf96aeafbd11b69c4c85fa229bb5b9f7f7e66c"
-       "2b9dc43b786e36f68a9fd4b36dd050509a0e32fe3b0a803310661edb7402b8b6"
-       "1436d643b98844555d56c59c74004eb158dc85fc55d2e7205f8d9b8c860e177f"
-       "84890723510d225c45aaff941a7e201606a48b973f0121cb9bcb0b9399be8cba"
-       default))
+       "5c7720c63b729140ed88cf35413f36c728ab7c70f8cd8422d9ee1cedeb618de5"))
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
  '(package-selected-packages nil)
@@ -126,33 +91,6 @@
 (setq visible-cursor nil)
 
 (setq backup-directory-alist `(("." . "~/Temp/Emacs"))):
-
-(cond
-  ((eq system-type 'gnu/linux)
-    (set-face-attribute
-      'default nil
-      ;:family "Hurmit Nerd Font Mono"
-      ;:family "UbuntuMono Nerd Font"
-      :family "JetBrainsMono NFP"
-      :height 115
-      :width 'normal
-      :weight 'semibold))
-  ((eq system-type 'darwin)
-    (set-face-attribute
-      'default nil
-      :family "SauceCodePro Nerd Font Mono"
-      ;:family "Hurmit Nerd Font Mono"
-      ;:family "JetBrainsMono Nerd Font Mono"
-      ;:family "Hack Nerd Font Mono"
-      ;:family "BlexMono Nerd Font Mono"
-      :height 145
-      :width 'expanded
-      ;:weight 'semibold
-      )))
-
-(setq-default line-spacing 0.3)
-
-(set-face-italic 'font-lock-comment-face nil)
 
 (global-visual-line-mode t)
 
@@ -912,24 +850,6 @@
 ;    :config
 ;    (load-theme 'mindre t))
 
-;(use-package ef-themes
-;  :ensure t
-;  :config
-;  (load-theme 'ef-day t)
-;  (set-face-italic-p 'italic nil)
-;  (set-face-italic 'font-lock-comment-face nil)
-;  (setq ef-themes-headings ; read the manual's entry or the doc string
-;      '((0 variable-pitch light 1.2)
-;        (1 variable-pitch light 1.1)
-;        (2 variable-pitch regular 1.0)
-;        (3 variable-pitch regular 1.0)
-;        (4 variable-pitch regular 1.0)
-;        (5 variable-pitch 1.4) ; absence of weight means `bold'
-;        (6 variable-pitch 1.3)
-;        (7 variable-pitch 1.2)
-;        (t variable-pitch 1.1))))
-
-
 ;;;
 ;;; NOTE: doom-themes requires nerd-icons, which cause problems
 ;;; with treemacs, which then doesn't display icons if nerd-icons
@@ -960,6 +880,7 @@
 ;  (doom-themes-treemacs-config)
 ;  (doom-themes-org-config))
 
+
 ;;
 ;; https://github.com/catppuccin/emacs
 ;;
@@ -980,9 +901,7 @@
 (use-package doom-themes
   :ensure t
   :config
-  (setq doom-themes-enable-italic nil)
-  (set-face-attribute 'italic nil))
-  (load-theme 'doom-solarized-light t)
+  (load-theme 'doom-one-light t))
 
 (use-package nerd-icons
   :ensure t)
@@ -1008,3 +927,32 @@
 ;;
 (when (file-exists-p "~/local/emacs_work.el")
   (load-file "~/local/emacs_work.el"))
+
+
+(cond
+  ((eq system-type 'gnu/linux)
+    (set-face-attribute
+      'default nil
+      :family "Ubuntu Mono"
+      :height 125
+      :width 'normal
+      :weight 'normal))
+  ((eq system-type 'darwin)
+    (set-face-attribute
+      'default nil
+      :family "SauceCodePro Nerd Font Mono"
+      :height 145
+      :width 'expanded
+      ;:weight 'semibold
+      )))
+
+(setq-default line-spacing 0.3)
+
+
+(add-hook 'org-mode-hook
+  (lambda ()
+    (setq-default line-spacing 3)
+    (load-theme 'doom-one-light)
+    (visual-line-mode t)
+    (auto-fill-mode -1)
+    (turn-off-auto-fill)))

@@ -60,32 +60,6 @@
 ;(load "~/source/local/emacs.d/emacs-custom.el")
 ;(load "~/source/local/emacs.d/org-mode.el")
 
-;;
-;; These are the places I currently keep collections
-;; of .org files.
-;;
-(setq
- org-agenda-files
- (append
-  (directory-files-recursively "~/source/devnotes" "\\.org$")))
-
-;;;;;;
-;;; This is to have the blocks show in uppercase, like
-;;; #+BEGIN_... and #+END_...
-;;;
-(setq
-  org-structure-template-alist
-  '(("a" . "EXPORT ASCII")
-     ("c" . "CENTER")
-     ("C" . "COMMENT")
-     ("e" . "EXAMPLE")
-     ("E" . "EXPORT")
-     ("h" . "EXPORT HTML")
-     ("l" . "EXPORT LATEX")
-     ("q" . "QUOTE")
-     ("s" . "SRC")
-     ("v" . "VERSE")))
-
 ;; For terminal non-blinking cursor. See C-h m Emacs RET m Cursor
 ;; Display RET.
 (setq visible-cursor nil)
@@ -225,34 +199,6 @@
 (use-package emojify
   :ensure t
   :hook (after-init . global-emojify-mode))
-
-(global-set-key [f6] 'org-latex-preview)
-
-;;
-;; The docs say ‘convert’, but it is clearly only working
-;; with ‘imagemagick’.
-;;
-(setq org-preview-latex-default-process 'imagemagick)
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (shell . t)
-   (scheme . t)
-   (ruby . t)
-   (haskell . t)))
-
-(require 'ox-md)
-
-;(use-package org-roam
-;  :ensure t
-;  :custom
-;  (org-roam-directory "~/source/mynotes/dev-how-to/org-roam-notes")
-;  :bind (("C-c n l" . org-roam-buffer-toggle)
-;         ("C-c n f" . org-roam-node-find)
-;         ("C-c n i" . org-roam-node-insert))
-;  :config
-;  (org-roam-setup)
-;  (require 'org-roam-export))
 
 (use-package vertico
   :ensure t
@@ -519,66 +465,6 @@
 (add-hook 'slime-repl-mode-hook
   (lambda ()
     (setq show-trailing-whitespace nil)))
-
-;;
-; org-mode
-;
-(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
-
-(global-set-key "\C-cc" 'org-content)
-
-(define-key global-map "\C-cc" 'org-capture)
-
-(use-package org-ql
-  :ensure t)
-
-(use-package helm-org-ql
-  :ensure t
-  :config
-  (global-set-key (kbd "C-c q") 'helm-org-ql-agenda-files))
-
-(setq org-src-fontify-natively t)
-(setq org-src-tab-acts-natively t)
-(setq org-src-window-setup 'current-window)
-(setq org-edit-src-content-indentation 0)
-(setq org-goto-interface 'outline-path-completion)
-(setq org-outline-path-complete-in-steps nil)
-(setq org-html-htmlize-output-type 'css)
-
-;;
-;; With this, we can set images the width we want inside org
-;; buffer. For example:
-;;
-;;  #+ATTR_ORG: :width 600
-;;  [[./images/gnu.png]]
-;;
-(setq org-image-actual-width nil)
-
-(setq org-html-html5-fancy t)
-(setq org-html-doctype "html5")
-
-;;
-;; Hide *bold*, /italic/, ~code~, =verbatim= and +strike-through+ symbols.
-;;
-(setq org-hide-emphasis-markers t)
-
-;;
-;; Hidding the markers and having these colors look OK and readable
-;; with gruvbox-light-hard theme.
-;;
-;; (setq org-emphasis-alist
-;;       '(("*" bold)
-;;         ("/" italic)
-;;         ("_" underline)
-;;         ("+" (:strike-through t :foreground "gray"))
-;;         ("=" (:foreground "magenta"))
-;;         ("~" (:foreground "maroon"))))
-
-;; Bigger Latex Fragments
-(plist-put org-format-latex-options :scale 1.5)
 
 
 ;;
@@ -948,11 +834,144 @@
 
 (setq-default line-spacing 0.3)
 
+;;
+; org-mode
+;
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+(global-set-key "\C-cc" 'org-content)
+
+(define-key global-map "\C-cc" 'org-capture)
+
+(use-package org-ql
+  :ensure t)
+
+(use-package helm-org-ql
+  :ensure t
+  :config
+  (global-set-key (kbd "C-c q") 'helm-org-ql-agenda-files))
+
+(setq org-src-fontify-natively t)
+(setq org-src-tab-acts-natively t)
+(setq org-src-window-setup 'current-window)
+(setq org-edit-src-content-indentation 0)
+(setq org-goto-interface 'outline-path-completion)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-html-htmlize-output-type 'css)
+
+;;
+;; With this, we can set images the width we want inside org
+;; buffer. For example:
+;;
+;;  #+ATTR_ORG: :width 600
+;;  [[./images/gnu.png]]
+;;
+(setq org-image-actual-width nil)
+
+(setq org-html-html5-fancy t)
+(setq org-html-doctype "html5")
+
+;;
+;; Hide *bold*, /italic/, ~code~, =verbatim= and +strike-through+ symbols.
+;;
+(setq org-hide-emphasis-markers t)
+
+;;
+;; Hidding the markers and having these colors look OK and readable
+;; with gruvbox-light-hard theme.
+;;
+;; (setq org-emphasis-alist
+;;       '(("*" bold)
+;;         ("/" italic)
+;;         ("_" underline)
+;;         ("+" (:strike-through t :foreground "gray"))
+;;         ("=" (:foreground "magenta"))
+;;         ("~" (:foreground "maroon"))))
+
+;;;;
+;; Bigger Latex Fragments.
+;;
+(plist-put org-format-latex-options :scale 1.5)
+
+;;;;
+;; These are the places I currently keep collections
+;; of .org files.
+;;
+(setq
+ org-agenda-files
+ (append
+  (directory-files-recursively "~/source/devnotes" "\\.org$")))
+
+;;;;
+;; This is to have the blocks show in uppercase, like
+;; #+BEGIN_... and #+END_...
+;;
+(setq
+  org-structure-template-alist
+  '(("a" . "EXPORT ASCII")
+     ("c" . "CENTER")
+     ("C" . "COMMENT")
+     ("e" . "EXAMPLE")
+     ("E" . "EXPORT")
+     ("h" . "EXPORT HTML")
+     ("l" . "EXPORT LATEX")
+     ("q" . "QUOTE")
+     ("s" . "SRC")
+     ("v" . "VERSE")))
+
+(plist-put org-format-latex-options :background "Transparent")
+(global-set-key [f6] 'org-latex-preview)
+
+;;
+;; The docs say ‘convert’, but it is clearly only working
+;; with ‘imagemagick’.
+;;
+(setq org-preview-latex-default-process 'imagemagick)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (shell . t)
+   (scheme . t)
+   (ruby . t)
+   (haskell . t)))
+
+(require 'ox-md)
+
+;(use-package org-roam
+;  :ensure t
+;  :custom
+;  (org-roam-directory "~/source/mynotes/dev-how-to/org-roam-notes")
+;  :bind (("C-c n l" . org-roam-buffer-toggle)
+;         ("C-c n f" . org-roam-node-find)
+;         ("C-c n i" . org-roam-node-insert))
+;  :config
+;  (org-roam-setup)
+;  (require 'org-roam-export))
 
 (add-hook 'org-mode-hook
   (lambda ()
     (setq-default line-spacing 3)
-    (load-theme 'doom-one-light)
+    (load-theme 'doom-solarized-light)
     (visual-line-mode t)
     (auto-fill-mode -1)
     (turn-off-auto-fill)))
+
+;;;;
+;; Disable italics for code syntax elements. Keep /italic/ in org-mode.
+;;
+(custom-set-faces
+  '(font-lock-comment-face ((t (:slant normal))))
+  '(font-lock-keyword-face ((t (:slant normal))))
+  '(font-lock-doc-face ((t (:slant normal))))
+  '(font-lock-string-face ((t (:slant normal))))
+  '(font-lock-builtin-face ((t (:slant normal))))
+  '(font-lock-type-face ((t (:slant normal))))
+  '(font-lock-variable-name-face ((t (:slant normal))))
+  '(font-lock-function-name-face ((t (:slant normal))))
+  '(org-block-begin-line ((t (:slant normal))))
+  '(org-block-end-line ((t (:slant normal))))
+  '(org-meta-line ((t (:slant normal)))))
+

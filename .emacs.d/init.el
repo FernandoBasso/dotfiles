@@ -960,7 +960,8 @@
     (turn-off-auto-fill)))
 
 ;;;;
-;; Disable italics for code syntax elements. Keep /italic/ in org-mode.
+;; Disable italics for code syntax elements and in org blocks and meta
+;; lines. Keep /italic/ in org-mode.
 ;;
 (custom-set-faces
   '(font-lock-comment-face ((t (:slant normal))))

@@ -148,6 +148,19 @@ vim.pack.add({
 --
 local ts = require("nvim-treesitter")
 
+vim.api.nvim_create_autocmd('User', {
+  pattern = 'TSUpdate',
+
+  callback = function()
+    require('nvim-treesitter.parsers').asciidoc = {
+      install_info = {
+        url = '~/source/tree-sitter/tree-sitter-asciidoc/tree-sitter-asciidoc',
+        generate = true,
+      },
+    }
+  end
+})
+
 ts.install({
   "lua",
   "vim",

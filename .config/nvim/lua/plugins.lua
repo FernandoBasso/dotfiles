@@ -154,6 +154,11 @@ vim.api.nvim_create_autocmd('User', {
   callback = function()
     require('nvim-treesitter.parsers').asciidoc = {
       install_info = {
+        ----
+        -- Cloned from:
+        --
+        -- https://github.com/cathaysia/tree-sitter-asciidoc
+        --
         url = '~/source/tree-sitter/tree-sitter-asciidoc/tree-sitter-asciidoc',
         generate = true,
       },

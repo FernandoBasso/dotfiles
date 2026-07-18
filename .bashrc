@@ -66,6 +66,14 @@ then
   . <(asdf completion bash)
 fi
 
+##
+# $ sudo pacman --sync --refresh --needed hugo
+#
+if command -v hugo 2>&1 1> /dev/null
+then
+  . <(hugo completion bash)
+fi
+
 export FZF_DEFAULT_OPTS='--preview-window right:36%'
 
 export DENO_INSTALL="$HOME/.deno"

@@ -18,21 +18,24 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 
-local lsp_highlight_group = vim.api.nvim_create_augroup("LspDocumentHighlight", {
-  clear = true
-})
-
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  group = lsp_highlight_group,
-  buffer = 0,
-  callback = vim.lsp.buf.document_highlight,
-})
-
-vim.api.nvim_create_autocmd({ "CursorMoved" }, {
-  group = lsp_highlight_group,
-  buffer = 0,
-  callback = vim.lsp.buf.clear_references,
-})
+----
+-- Not working and causing some warnings from time to time.
+--
+-- local lsp_highlight_group = vim.api.nvim_create_augroup("LspDocumentHighlight", {
+--   clear = true
+-- })
+--
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   group = lsp_highlight_group,
+--   buffer = 0,
+--   callback = vim.lsp.buf.document_highlight,
+-- })
+--
+-- vim.api.nvim_create_autocmd({ "CursorMoved" }, {
+--   group = lsp_highlight_group,
+--   buffer = 0,
+--   callback = vim.lsp.buf.clear_references,
+-- })
 
 keymap(
   'n',

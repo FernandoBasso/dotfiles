@@ -19,6 +19,7 @@ local function keymap(mode, keys, action, description)
 end
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 opt.guicursor = "i:block"
 opt.signcolumn = "yes:1"

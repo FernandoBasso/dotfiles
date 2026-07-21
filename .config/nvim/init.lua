@@ -207,11 +207,11 @@ keymap(
   '[Y]ank selection with [R]elative path'
 )
 
-vim.cmd [[
-  autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-  autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-]]
+-- vim.cmd [[
+--   autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+--   autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+--   autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+-- ]]
 
 require("plugins")
 require("lsp")

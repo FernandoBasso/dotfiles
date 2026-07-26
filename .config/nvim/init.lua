@@ -189,6 +189,30 @@ autocmd('TextYankPost', {
 --
 local yank = require("yank")
 
+local yank_relative_path = function()
+  vim.fn.setreg('+', vim.fn.expand('%'))
+  print('Yanked relative path for ' .. vim.fn.expand('%'))
+end
+
+keymap(
+  'n',
+  '<Leader>yp',
+  yank_relative_path,
+  '[y]ank [p]ath'
+)
+
+local yank_absolute_path = function()
+  vim.fn.setreg('+', vim.fn.expand('%:p'))
+  print('Yanked absolute path for ' .. vim.fn.expand('%:p'))
+end
+
+keymap(
+  'n',
+  '<Leader>yP',
+  yank_absolute_path,
+  '[y]ank full [P]ath'
+)
+
 keymap(
   'n',
   '<Leader>yr',

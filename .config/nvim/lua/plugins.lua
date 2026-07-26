@@ -755,6 +755,18 @@ if vim.env.NVIM_DISABLE_BLINK == nil then
     },
     completion = {
       menu = {
+        ----
+        -- Because I prefer not to have completions jumping in front
+        -- of me all the time, triggering LuaSnip snippets require
+        -- that we first show the completion with <C-Space>, select
+        -- an option and expand it with <C-y>. If the snippet trigger
+        -- name is known, for example, I have one named blk for
+        -- AsciiDoc block source code, I can simply type blk followed by
+        -- <C-j> and the snippet will expand.
+        --
+        -- In short, it is not necessary to have auto_show true to be
+        -- able to expand snippets.
+        --
         auto_show = false,
         border = nil,
         scrolloff = 1,

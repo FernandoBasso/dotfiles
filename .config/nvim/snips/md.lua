@@ -46,6 +46,29 @@ local cb_tmpl = [=[
 ```
 ]=]
 
+----
+-- MyST colon fence
+--
+-- :::{code} lisp
+-- ...
+-- :::
+--
+-- :::{tip} Tip title
+-- ...
+-- :::
+--
+-- :::{figure} __assets/sunset.png
+-- :label: figure1
+-- :alt: Sunset at the beach
+-- Relaxing at the beach
+-- :::
+--
+local cf_tmpl = [=[
+:::{{{}}} {}
+{}
+:::
+]=]
+
 local md_snips = {
   s(
     'hrini',
@@ -60,6 +83,12 @@ local md_snips = {
   s(
     'hrsql',
     fmt('## {}\n\n- [{} :: HackerRank {} SQL Challenge]({})\n', { i(1), rep(1), i(2), i(3) })
+  ),
+
+
+  s(
+    'cf',
+    fmt(cf_tmpl, { i(1), i(2), i(3) })
   ),
 
   s(

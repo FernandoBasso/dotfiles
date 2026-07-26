@@ -82,4 +82,5 @@ local adoc_snips = {
   )
 }
 
-ls.add_snippets('asciidoctor', adoc_snips, { key = 'adoc' })
+ls.add_snippets('asciidoctor', adoc_snips, { key = 'asciiadoctor_snips' })
+ls.add_snippets('asciidoc', adoc_snips, { key = 'asciiadoc_snips' })

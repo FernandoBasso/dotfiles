@@ -948,5 +948,7 @@ dapui.setup()
 -- GRUVBOX
 --
 -- require("gruvbox").setup()
+vim.g.gruvbox_material_enable_italic = false
+vim.g.gruvbox_material_disable_italic_comment = 1
 vim.cmd.colorscheme("gruvbox-material")
 

@@ -103,10 +103,15 @@ vim.cmd.filetype("plugin indent on")
 -- vim.cmd("colorscheme retrobox")
 
 ----
--- Save with Ctrl+; (I just like it). See `:help update`.
+-- Save with Ctrl+; only works in Kitty, but not in Tmux inside Kitty.
+-- Others work accross the board. See `:help update`.
 --
 vim.keymap.set('n', '<C-;>', ':update<CR>')
 vim.keymap.set('i', '<C-;>', '<Esc>:update<CR>')
+vim.keymap.set('n', '<M-;>', ':update<CR>')
+vim.keymap.set('i', '<M-;>', '<Esc>:update<CR>')
+vim.keymap.set('n', '<C-s>', ':update<CR>')
+vim.keymap.set('i', '<C-s>', '<Esc>:update<CR>')
 
 ----
 -- Source $HOME/.config/nvim/init.lua.

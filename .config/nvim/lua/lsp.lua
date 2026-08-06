@@ -11,6 +11,7 @@ if vim.env.NVIM_DISABLE_LSP == nil then
     "gopls",
     "lua_ls",
     "cssls",
+    "ruby-lsp",
   })
 end
 

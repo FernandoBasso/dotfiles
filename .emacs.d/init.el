@@ -10,11 +10,23 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-    '("0f1341c0096825b1e5d8f2ed90996025a0d013a0978677956a9e61408fcd2c77"
+    '("b7a09eb77a1e9b98cafba8ef1bd58871f91958538f6671b22976ea38c2580755"
+       "d97ac0baa0b67be4f7523795621ea5096939a47e8b46378f79e78846e0e4ad3d"
+       "5244ba0273a952a536e07abaad1fdf7c90d7ebb3647f36269c23bfd1cf20b0b8"
+       "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
+       "0f1341c0096825b1e5d8f2ed90996025a0d013a0978677956a9e61408fcd2c77"
        "5c7720c63b729140ed88cf35413f36c728ab7c70f8cd8422d9ee1cedeb618de5"))
  '(helm-source-names-using-follow '("Org Agenda Files"))
  '(magit-push-arguments nil)
- '(package-selected-packages nil)
+ '(package-selected-packages
+    '(adoc-mode auto-package-update clj-refactor clojure-ts-mode company
+       deft diff-hl dired-sidebar doom-modeline doom-themes emojify
+       expand-region flycheck-clj-kondo geiser-chicken geiser-guile
+       go-mode haskell-mode helm-lsp helm-org-ql helm-projectile helm-rg
+       htmlize imenu-list lsp-haskell lsp-ui obsidian orderless
+       org-download org-modern quelpa racket-mode rg slime
+       treemacs-icons-dired treemacs-magit treemacs-projectile
+       treesit-auto treesit-fold typescript-mode vertico vscode-icon))
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))
@@ -30,7 +42,18 @@
  ;; If there is more than one, they won't work right.
  '(flyspell-duplicate ((t (:underline (:color "#7c6f64" :style wave)))))
  '(flyspell-incorrect ((t (:underline (:color "#9d0006" :style wave)))))
+ '(font-lock-builtin-face ((t (:slant normal))))
+ '(font-lock-comment-face ((t (:slant normal))))
+ '(font-lock-doc-face ((t (:slant normal))))
+ '(font-lock-function-name-face ((t (:slant normal))))
+ '(font-lock-keyword-face ((t (:slant normal))))
+ '(font-lock-string-face ((t (:slant normal))))
+ '(font-lock-type-face ((t (:slant normal))))
+ '(font-lock-variable-name-face ((t (:slant normal))))
  '(markdown-code-face ((t nil)))
+ '(org-block-begin-line ((t (:slant normal))))
+ '(org-block-end-line ((t (:slant normal))))
+ '(org-meta-line ((t (:slant normal))))
  '(racket-xp-def-face ((t (:inherit match :background "pale goldenrod" :foreground "dark magenta" :underline t))))
  '(racket-xp-use-face ((t (:inherit match :background "pale goldenrod" :foreground "dark magenta")))))
 
@@ -348,6 +371,9 @@
   (adoc-title-1-face ((t (:height 1.1 :weight bold))))
   (adoc-title-2-face ((t (:height 1.0 :weight bold)))))
 
+;; (use-package asciidoc-mode
+;;   :ensure t)
+
 ;;;;
 ;; Enabling eval-expression-minibuffer-setup-hook causes
 ;; <CR> on minibuffer eval expressions just to create a
@@ -496,7 +522,7 @@
   (setq dired-sidebar-subtree-line-prefix "__")
   (setq dired-sidebar-theme 'vscode)
   (setq dired-sidebar-use-term-integration t)
-  (setq dired-sidebar-use-custom-font t))
+  (setq dired-sidebar-use-custom- t))
 
 ;;;;
 ;; https://github.com/Alexander-Miller/treemacs
@@ -702,6 +728,11 @@
 
 (require 'treesit)
 (setopt treesit-font-lock-level 4)
+(use-package treesit-auto
+  :ensure t
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode t))
 
 ;;
 ;; https://github.com/emacs-tree-sitter/treesit-fold
@@ -722,6 +753,16 @@
           ("C-c f C" . treesit-fold-close-all)
           ("C-c f n" . treesit-fold-next-fold)
           ("C-c f p" . treesit-fold-previous-fold)))
+
+;;;;
+;; Copied from https://github.com/bbatsov/emacs.d/blob/master/init.el
+;;
+(defun nuke-loaded-themes ()
+  "Nuke all loaded themes."
+  (interactive)
+  (dolist (theme custom-enabled-themes)
+    (disable-theme theme))
+  (message "Themes nuked"))
 
 ;(use-package solo-jazz-theme
 ;  :ensure t
@@ -819,8 +860,9 @@
   ((eq system-type 'gnu/linux)
     (set-face-attribute
       'default nil
-      :family "Ubuntu Mono"
-      :height 125
+      ;:family "JetBrainsMono Nerd Font"
+      :family "Hurmit Nerd Font Mono"
+      :height 120
       :width 'normal
       :weight 'normal))
   ((eq system-type 'darwin)
@@ -911,7 +953,7 @@
 ;;
 (setq
   org-structure-template-alist
-  '(("a" . "EXPORT ASCII")
+  '(("a" . "EXPORT ")
      ("c" . "CENTER")
      ("C" . "COMMENT")
      ("e" . "EXAMPLE")
@@ -963,16 +1005,5 @@
 ;; Disable italics for code syntax elements and in org blocks and meta
 ;; lines. Keep /italic/ in org-mode.
 ;;
-(custom-set-faces
-  '(font-lock-comment-face ((t (:slant normal))))
-  '(font-lock-keyword-face ((t (:slant normal))))
-  '(font-lock-doc-face ((t (:slant normal))))
-  '(font-lock-string-face ((t (:slant normal))))
-  '(font-lock-builtin-face ((t (:slant normal))))
-  '(font-lock-type-face ((t (:slant normal))))
-  '(font-lock-variable-name-face ((t (:slant normal))))
-  '(font-lock-function-name-face ((t (:slant normal))))
-  '(org-block-begin-line ((t (:slant normal))))
-  '(org-block-end-line ((t (:slant normal))))
-  '(org-meta-line ((t (:slant normal)))))
+
 

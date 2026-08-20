@@ -3,6 +3,8 @@
 /**
  * Works for Gtk and VTE-based terminal emulators.
  */
+VteTerminal,
+TerminalScreen,
 vte-terminal,
 terminal-window {
   padding: 8px 8px 8px 8px;

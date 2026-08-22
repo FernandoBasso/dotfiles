@@ -27,3 +27,4 @@
 .bashrc
 .inputrc
 .gmrunrc
+.hunspell_en_US

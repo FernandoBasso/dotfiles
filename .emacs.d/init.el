@@ -832,7 +832,7 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-one-light t))
+  (load-theme 'doom-gruvbox-light t))
 
 (use-package nerd-icons
   :ensure t)
@@ -1000,7 +1000,7 @@
 (add-hook 'org-mode-hook
   (lambda ()
     (setq-default line-spacing 3)
-    (load-theme 'doom-solarized-light)
+    (load-theme 'doom-gruvbox-light)
     (visual-line-mode t)
     (auto-fill-mode -1)
     (turn-off-auto-fill)))

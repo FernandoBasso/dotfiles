@@ -8,7 +8,7 @@
 # effect on a given page.
 #
 
-persdict_files=($(find ~/.mozilla -iname persdict.dat))
+persdict_files=($(find ~/.config/mozilla -iname persdict.dat))
 date="$(date +'%Y-%m-%d-%M-%S')"
 
 ##
@@ -28,7 +28,7 @@ cat ./words.txt | sort | uniq > ./persdict.txt
 
 ##
 # Copy the sorted and deduped resulting file as persdict.dat
-# in each of the profile directries where the original dict
+# in each of the profile directories where the original dict
 # files were found in the first place.
 #
 for file in "${persdict_files[@]}"

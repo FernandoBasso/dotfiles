@@ -369,7 +369,11 @@
   :custom-face
   (adoc-title-0-face ((t (:height 1.2 :weight bold))))
   (adoc-title-1-face ((t (:height 1.1 :weight bold))))
-  (adoc-title-2-face ((t (:height 1.0 :weight bold)))))
+  (adoc-title-2-face ((t (:height 1.0 :weight bold))))
+  :config
+  (add-hook 'adoc-mode-hook (lambda ()
+                              (turn-off-auto-fill)
+                              (visual-line-mode -1))))
 
 ;; (use-package asciidoc-mode
 ;;   :ensure t)

@@ -13,3 +13,10 @@ ifdef
 latexmath
 env
 github
+adoc
+adocwiki
+AsciiDoc
+cmdline
+asciidoc
+yml
+param

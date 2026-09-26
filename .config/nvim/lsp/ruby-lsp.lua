@@ -1,3 +1,5 @@
+local blink_capabilities = require('blink.cmp').get_lsp_capabilities()
+
 return {
   cmd = {
     "ruby-lsp",
@@ -9,9 +11,16 @@ return {
     "Gemfile",
     ".git",
   },
+  capabilities = blink_capabilities,
   init_options = {
-    formatter = "standard",
-    linters = { "standard" },
+    formatter = "rubocop",
+    linters = { "rubocop" },
+    enabledFeatures = {
+      hover = true,
+      completion = true,
+      definition = true,
+    },
+    documentHighlight = true,
     addonSettings = {
       ["Ruby LSP Rails"] = {
         enablePendingMigrationsPrompt = false,
@@ -19,4 +28,5 @@ return {
     },
   },
 }
+
 

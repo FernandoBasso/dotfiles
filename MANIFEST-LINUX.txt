@@ -2,6 +2,7 @@
 .config/gtk-3.0/gtk.css
 .config/kitty
 .config/nvim
+.config/zed
 .config/rofi
 .local/share/nvim/site/spell
 .vim/colors/mylight1.vim

@@ -1,0 +1,32 @@
+{
+  "languages": {
+    "Ruby": {
+      "format_on_save": "modifications"
+    }
+  },
+  "soft_wrap": "editor_width",
+  "cli_default_open_behavior": "new_window",
+  "theme": "One Light",
+  "buffer_font_family": "Hurmit Nerd Font Mono",
+  "show_whitespaces": "trailing",
+  "preferred_line_length": 78,
+  "tab_size": 2,
+  "terminal": {
+    "font_weight": 400.0,
+    "font_size": 16.0,
+    "font_family": "Hurmit Nerd Font"
+  },
+  "show_completions_on_input": false,
+  "project_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "tree_view": false
+  },
+  "cursor_animation": {
+    "enabled": false
+  },
+  "cursor_blink": false,
+  "vim_mode": true,
+  "disable_ai": true
+}

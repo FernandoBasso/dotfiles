@@ -83,5 +83,10 @@
     "unbind": {
       "ctrl-j": "workspace::ToggleBottomDock"
     }
+  },
+  {
+    "bindings": {
+      "ctrl-k ctrl-y": "editor::InsertSnippet"
+    }
   }
 ]

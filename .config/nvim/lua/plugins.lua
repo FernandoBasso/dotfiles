@@ -525,110 +525,115 @@ require("gitsigns").setup({
   on_attach = function(bufnr)
     local gitsigns = require 'gitsigns'
 
-    local function map(mode, l, r, opts)
-      opts = opts or {}
-      opts.buffer = bufnr
-      vim.keymap.set(mode, l, r, opts)
-    end
+    keymap(
+      'n',
+      ']c',
+      function()
+        if vim.wo.diff then
+          vim.cmd.normal { ']c', bang = true }
+        else
+          gitsigns.nav_hunk 'next'
+        end
+      end,
+      'Jump to next git [c]hange'
+    )
 
-    map('n', ']c', function()
-      if vim.wo.diff then
-        vim.cmd.normal { ']c', bang = true }
-      else
-        gitsigns.nav_hunk 'next'
-      end
-    end, { desc = 'Jump to next git [c]hange' })
+    keymap(
+      'n',
+      '[c',
+      function()
+        if vim.wo.diff then
+          vim.cmd.normal { '[c', bang = true }
+        else
+          gitsigns.nav_hunk 'prev'
+        end
+      end,
+      'Jump to previous git [c]hange'
+    )
 
-    map('n', '[c', function()
-      if vim.wo.diff then
-        vim.cmd.normal { '[c', bang = true }
-      else
-        gitsigns.nav_hunk 'prev'
-      end
-    end, { desc = 'Jump to previous git [c]hange' })
-
-    map(
+    keymap(
       'v',
       '<leader>hs',
       function()
         gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
       end,
-      { desc = 'stage git hunk on visual selection' }
+      'stage git hunk on visual selection'
     )
 
-    map(
+    keymap(
       'v',
       '<leader>hr',
       function()
         gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
       end,
-      { desc = 'reset git hunk on visual selection' }
+      'reset git hunk on visual selection'
     )
 
-    map(
+    keymap(
       'n',
       '<leader>hs',
       gitsigns.stage_hunk,
-      { desc = 'git [s]tage hunk' }
+      'git [s]tage hunk'
     )
 
-    -- map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'git [r]eset hunk' })
-
-    map(
+    keymap(
       'n',
       '<leader>hS',
       gitsigns.stage_buffer,
-      { desc = 'git [S]tage buffer' }
+      'git [S]tage buffer'
     )
 
-    -- map('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = 'git [u]ndo stage hunk' })
-
-    -- map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
-
-    map(
+    keymap(
       'n',
-      '<leader>hp',
+      "<C-'>",
       gitsigns.preview_hunk,
-      { desc = 'git [p]review hunk' }
+      'git [p]review hunk'
     )
 
-    map(
+    keymap(
       'n',
-      '<leader>hb',
-      gitsigns.blame_line,
-      { desc = 'git [b]lame line' }
+      "<C-M-y>",
+      gitsigns.stage_hunk,
+      'git [p]review hunk'
     )
 
-    map(
+    keymap(
+      'n',
+      '<C-M-b>',
+      gitsigns.blame_line,
+      'git [b]lame line'
+    )
+
+    keymap(
       'n',
       '<leader>hd',
       gitsigns.diffthis,
-      { desc = 'git [d]iff against index' }
+      'git [d]iff against index'
     )
 
-    map(
+    keymap(
       'n',
       '<leader>hD',
       function()
         gitsigns.diffthis '@'
       end,
-      { desc = 'git [D]iff against last commit' }
+      'git [D]iff against last commit'
     )
 
-    map(
+    keymap(
       'n',
       '<leader>tb',
       gitsigns.toggle_current_line_blame,
-      { desc = '[T]oggle git show [b]lame line' }
+      '[T]oggle git show [b]lame line'
     )
 
-    map(
+    keymap(
       'n',
       '<leader>tD',
       gitsigns.toggle_deleted,
-      { desc = '[T]oggle git show [D]eleted' }
+      '[T]oggle git show [D]eleted'
     )
-  end,
+  end
 })
 
 ------------------------------------------------------------------------------
@@ -688,7 +693,6 @@ require("luasnip").config.set_config {
   updateevents = 'TextChanged,TextChangedI',
   enable_autosnippets = true,
 }
-
 
 --
 -- I actually use digraphs quite often so instead of <C-k> as suggested

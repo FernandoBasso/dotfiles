@@ -1,8 +1,44 @@
 {
+  "autosave": "on_focus_change",
+  "which_key": {
+    "enabled": true
+  },
+  "git": {
+    "inline_blame": {
+      "location": "status_bar"
+    }
+  },
   "languages": {
+    "ERB": {
+      "format_on_save": "modifications",
+      "language_servers": [
+        "...",
+        "!tailwindcss-language-server"
+      ]
+    },
     "Ruby": {
+      "document_symbols": "on",
+      "document_folding_ranges": "on",
+      "language_servers": [
+        "ruby-lsp",
+        "rubocop",
+        "!solargraph",
+        "!tailwindcss-language-server"
+      ],
+      "formatter": {
+        "language_server": {
+          "name": "ruby-lsp"
+        }
+      },
       "format_on_save": "modifications"
     }
+  },
+  "lsp": {
+    "rubocop": {
+      "initialization_options": {
+        "safeAutocorrect": true,
+      }
+    },
   },
   "soft_wrap": "editor_width",
   "cli_default_open_behavior": "new_window",

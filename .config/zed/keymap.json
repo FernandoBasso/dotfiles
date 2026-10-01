@@ -38,14 +38,14 @@
   },
   {
     "context": "Editor && mode == full",
-    "unbind": {
-      "ctrl-alt-shift-backspace": "editor::GoToNextChange"
+    "bindings": {
+      "ctrl-[ p": "editor::GoToPreviousChange"
     }
   },
   {
     "context": "Editor && mode == full",
-    "bindings": {
-      "ctrl-[ p": "editor::GoToPreviousChange"
+    "unbind": {
+      "ctrl-alt-shift-backspace": "editor::GoToNextChange"
     }
   },
   {
@@ -87,6 +87,35 @@
   {
     "bindings": {
       "ctrl-k ctrl-y": "editor::InsertSnippet"
+    }
+  },
+  {
+    "context": "GitPanel && ChangesList && !GitBranchSelector && !GitRepositorySelector",
+    "bindings": {
+      "ctrl-k shift-p": "workspace::CopyPath"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-k shift-p": "editor::CopyPermalinkToLine"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-k p": "workspace::CopyPath"
+    }
+  },
+  {
+    "context": "GitPanel && ChangesList && !GitBranchSelector && !GitRepositorySelector || Editor",
+    "bindings": {
+      "ctrl-k p": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "Editor || Workspace",
+    "bindings": {
+      "alt-g m": "git::OpenModifiedFiles"
     }
   }
 ]

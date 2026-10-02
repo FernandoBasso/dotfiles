@@ -46,3 +46,10 @@ keymap(
   end,
   'Open diagnostic float'
 )
+
+keymap(
+  'n',
+  '<C-S-i>',
+  vim.lsp.buf.format,
+  'Format using LSP'
+)

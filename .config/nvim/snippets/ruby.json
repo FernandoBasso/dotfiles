@@ -1,0 +1,28 @@
+{
+  "pretty print": {
+    "prefix": "pp",
+    "body": [
+      "puts \"===============================================\"",
+      "pp $0",
+      "puts \"===============================================\""
+    ]
+  },
+
+  "block": {
+    "prefix": "blk",
+    "body": [
+      "${1:type} ${2:name}",
+      "  $0",
+      "end"
+    ]
+  },
+
+  "initialize method": {
+    "prefix": "ini",
+    "body": [
+      "def initialize(${1:args})",
+      "  $0",
+      "end"
+    ]
+  }
+}

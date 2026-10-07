@@ -1,0 +1,26 @@
+{
+  "name": "fbasso-snippets",
+  "type": "module",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "plaintext",
+          "asciidoc",
+          "markdown",
+          "html",
+          "global",
+          "all"
+        ],
+        "path": "./global.json"
+      },
+      {
+        "language": "ruby",
+        "path": "./ruby.json"
+      }
+    ]
+  }
+}

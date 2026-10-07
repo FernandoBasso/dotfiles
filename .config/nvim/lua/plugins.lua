@@ -379,7 +379,8 @@ require('fzf-lua').setup({
     width = 0.95,
     height = 0.95,
     preview = {
-      layout = "flex",
+      vertical = "down:60%",
+      layout = "vertical",
     },
   },
 })
@@ -721,10 +722,21 @@ vim.keymap.set('i', '<c-l>', function()
   end
 end, { silent = true })
 
+----
+-- These are the more complex lua snippets.
+--
 require('luasnip.loaders.from_lua').load({
   paths = {
-    '~/.config/nvim/snips/'
+    '~/.config/nvim/luasnips/'
   }
+})
+
+----
+-- Simpler and easier to create (and maintain)
+-- VS Code/Zed style snippets in JSON.
+--
+require('luasnip.loaders.from_vscode').lazy_load({
+  paths = '~/source/dotfiles/.config/nvim/snippets'
 })
 
 ------------------------------------------------------------------------------

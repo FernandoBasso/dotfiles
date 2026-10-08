@@ -117,5 +117,29 @@
     "bindings": {
       "alt-g m": "git::OpenModifiedFiles"
     }
+  },
+  {
+    "context": "CommitEditor > Editor",
+    "unbind": {
+      "alt-l": "git::GenerateCommitMessage"
+    }
+  },
+  {
+    "context": "GitCommit > Editor && mode == auto_height",
+    "unbind": {
+      "alt-l": "git::GenerateCommitMessage"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "unbind": {
+      "alt-l": "editor::AcceptEditPrediction"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-l": "editor::CopyFileLocation"
+    }
   }
 ]

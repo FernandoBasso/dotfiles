@@ -1,5 +1,8 @@
 {
-  "autosave": "on_focus_change",
+  "minimap": {
+    "max_width_columns": 72
+  },
+  "autosave": "off",
   "which_key": {
     "enabled": true
   },
@@ -9,10 +12,14 @@
     }
   },
   "languages": {
+    "Plain Text": {
+      "preferred_line_length": 72
+    },
     "ERB": {
       "format_on_save": "modifications",
       "language_servers": [
         "...",
+        "codebook",
         "!tailwindcss-language-server"
       ]
     },
@@ -22,6 +29,7 @@
       "language_servers": [
         "ruby-lsp",
         "rubocop",
+        "codebook",
         "!solargraph",
         "!tailwindcss-language-server"
       ],

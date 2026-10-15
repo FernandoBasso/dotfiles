@@ -961,10 +961,10 @@
     (setq-default line-spacing 3)
     (visual-line-mode t)
     (auto-fill-mode -1)
-    (turn-off-auto-fill)))
+    (turn-off-auto-fill)
+    (set-face-attribute 'italic nil :slant 'italic)))
 
 ;;;;
 ;; Disable italics for code syntax elements and in org blocks and meta
 ;; lines. Keep /italic/ in org-mode.
 ;;
-

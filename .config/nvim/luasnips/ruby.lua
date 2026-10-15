@@ -60,6 +60,22 @@ local ruby_snips = {
       }
     )
   ),
+
+  ----
+  -- Code block
+  --
+  s(
+    'blk',
+    fmt(
+      [[
+        {} {}
+          {}
+        end
+      ]], {
+        i(1, "type"), i(2, "name"), i(0, "content")
+      }
+    )
+  ),
 }
 
 ls.add_snippets('ruby', ruby_snips, { key = 'rb' })

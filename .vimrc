@@ -609,8 +609,8 @@ let g:prettier#config#trailing_comma = 'all'
 "
 if (has('gui_running'))
   set guioptions=
-  set lines=45
-  set columns=120
+  set lines=28
+  set columns=96
   set guifont=Hurmit\ Nerd\ Font\ 13
   set linespace=5
   set guicursor=n-c:hor14,i:ver14,a:blinkon0

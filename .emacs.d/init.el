@@ -832,7 +832,9 @@
 (use-package doom-themes
   :ensure t
   :config
-  (load-theme 'doom-gruvbox-light t))
+  (load-theme 'doom-gruvbox-light t)
+  (doom-themes-treemacs-config)
+  (doom-themes-org-config))
 
 (use-package nerd-icons
   :ensure t)
@@ -1000,7 +1002,6 @@
 (add-hook 'org-mode-hook
   (lambda ()
     (setq-default line-spacing 3)
-    (load-theme 'doom-gruvbox-light)
     (visual-line-mode t)
     (auto-fill-mode -1)
     (turn-off-auto-fill)))
@@ -1009,5 +1010,4 @@
 ;; Disable italics for code syntax elements and in org blocks and meta
 ;; lines. Keep /italic/ in org-mode.
 ;;
-
 

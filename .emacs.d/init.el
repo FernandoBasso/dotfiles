@@ -1,3 +1,7 @@
+;; -*- lexical-binding: nil -*-
+;; https://emacs.stackexchange.com/questions/85745/how-to-totally-and-completely-remove-the-no-lexical-binding-warning
+;;
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -24,9 +28,10 @@
        expand-region flycheck-clj-kondo geiser-chicken geiser-guile
        go-mode haskell-mode helm-lsp helm-org-ql helm-projectile helm-rg
        htmlize imenu-list lsp-haskell lsp-ui obsidian orderless
-       org-download org-modern quelpa racket-mode rg slime
+       org-download org-drill org-modern quelpa racket-mode rg slime
        treemacs-icons-dired treemacs-magit treemacs-projectile
-       treesit-auto treesit-fold typescript-mode vertico vscode-icon))
+       treesit-auto treesit-fold typescript-mode vertico vscode-icon
+       xterm-color))
  '(package-vc-selected-packages
     '((copilot :url "https://github.com/copilot-emacs/copilot.el" :branch
         "main")))
@@ -248,7 +253,7 @@
    org-download-image-dir "__assets"
    ;; Basename setting seems to be simply ignored.
    org-download-screenshot-basename ".org.png"
-   org-download-timestamp "org_%Y%m%d-%H%M%S_"
+   org-download-timestamp "%Y-%m-%d_"
    org-download-heading-lvl nil)
   :custom
   (org-download-screenshot-method
@@ -672,6 +677,9 @@
 (use-package go-mode
   :ensure t)
 
+(use-package org-drill
+  :ensure t)
+
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -768,73 +776,12 @@
     (disable-theme theme))
   (message "Themes nuked"))
 
-;(use-package solo-jazz-theme
-;  :ensure t
-;  :config
-;  (load-theme 'solo-jazz t))
-
-;(use-package mindre-theme
-;    :ensure t
-;    :custom
-;    (mindre-use-more-bold nil)
-;    (mindre-use-faded-lisp-parens t)
-;    :config
-;    (load-theme 'mindre t))
-
-;;;
-;;; NOTE: doom-themes requires nerd-icons, which cause problems
-;;; with treemacs, which then doesn't display icons if nerd-icons
-;;; is installed, even when with (treemacs-load-theme "doom-colors").
-;;;
-;;; It seems to work if I install nerd-icons from package-list-packages,
-;;; but don't make it on init.el with use-package.
-;;;
-;(use-package doom-themes
-;  :ensure t
-;  :custom
-;  (doom-themes-enable-bold t)
-;  (doom-themes-enable-italic nil)
-;  (doom-themes-treemacs-theme "doom-atom")
-;  :config
-;  ;; Available light themes:
-;  ;; · doom-gruvbox-light
-;  ;; · doom-solarized-light
-;  ;; · doom-one-light
-;  ;; · doom-opera-light
-;  ;; · dom-ayu-light
-;  ;; · doom-bluloco-light
-;  ;; · doom-feather-light (too much italics)
-;  ;; · doom-nord-light (italics)
-;  ;; · doom-oksolar-light
-;  (load-theme 'doom-one-light t)
-;  (doom-themes-visual-bell-config)
-;  (doom-themes-treemacs-config)
-;  (doom-themes-org-config))
-
-
-;;
-;; https://github.com/catppuccin/emacs
-;;
-;; (use-package catppuccin-theme
-;;  :ensure t
-;;  :config
-;;  (load-theme 'catppuccin)
-;;  (setq catppuccin-flavor 'latte))
-
-;;
-;; https://github.com/protesilaos/modus-themes
-;;
-;; (use-package modus-themes
-;;   :ensure t
-;;   :config
-;;   (load-theme 'modus-operandi))
-
 (use-package doom-themes
   :ensure t
+  :custom
+  (doom-themes-enable-italic nil)
   :config
-  (load-theme 'doom-gruvbox-light t)
-  (doom-themes-treemacs-config)
-  (doom-themes-org-config))
+  (load-theme 'doom-gruvbox-light t))
 
 (use-package nerd-icons
   :ensure t)
@@ -861,14 +808,24 @@
 (when (file-exists-p "~/local/emacs_work.el")
   (load-file "~/local/emacs_work.el"))
 
-
+;;;;
+;; Find fonts with fc-list & grep. Examples:
+;;
+;;   $ fc-list : family | grep -i mono
+;;   $ fc-list : family | grep -i nerd
+;;   $ fc-list : family | grep -i '\(hurmit\|hermit\|source\|sauce\)'
+;;
 (cond
   ((eq system-type 'gnu/linux)
     (set-face-attribute
       'default nil
       ;:family "JetBrainsMono Nerd Font"
-      :family "Hurmit Nerd Font Mono"
-      :height 120
+      :family "UbuntuMono Nerd Font"
+      ;family "Hurmit Nerd Font Mono"
+      ;:family "BlexMono Nerd Font"
+      ;:family "SpaceMono Nerd Font Mono"
+      ;:family "Source Code Pro"
+      :height 130
       :width 'normal
       :weight 'normal))
   ((eq system-type 'darwin)

@@ -62,3 +62,8 @@ aur
 aurutils
 aurpkgs
 struct
+configs
+colorschemes
+wmctrl
+emacs
+keymap

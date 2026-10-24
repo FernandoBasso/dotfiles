@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: ;=> comment output
-# key: ;o
-# --
-;;=> $1

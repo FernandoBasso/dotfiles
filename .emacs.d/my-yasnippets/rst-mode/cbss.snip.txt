@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: Code Block Shell Session
-# key: cbss
-# --
-.. code:: shell-session
-
-   $1
-$0

@@ -148,4 +148,39 @@
   :ensure t
   :init
   (vertico-mode)
-  ;(vertico-buffer-mode))
+  ;(vertico-buffer-mode)
+  )
+
+
+(use-package typescript-mode
+  :ensure t
+  :config
+  (setq-default typescript-indent-level 2))
+
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
+
+(use-package org-download
+  :ensure t
+  :after org
+  :config
+  (setq-default
+   org-download-image-dir "__assets"
+   ;; Basename setting seems to be simply ignored.
+   org-download-screenshot-basename ".org.png"
+   org-download-timestamp "%Y-%m-%d_"
+   org-download-heading-lvl nil)
+  :custom
+  (org-download-screenshot-method
+   (cond
+    ((eq system-type 'gnu/linux)
+     "xclip -selection clipboard -t image/png -o > '%s'")
+    ((eq system-type 'darwin)
+     "pngpaste %s")))
+  :bind
+  (:map org-mode-map
+        (("C-M-y" . org-download-screenshot)
+         ("s-y" . org-download-yank))))

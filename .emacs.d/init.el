@@ -104,10 +104,16 @@
 ;;;;
 ;; The default browser to open URLs.
 ;;
-;; ERROR: Saying variable is nil?! What? Maybe due to the
-;; new lexical binding thing?
+;; Without the require, it complains the variable is nil when
+;; starting Emacs, but works with C-x C-e because after emacs
+;; is fully loaded, the variable is set.
 ;;
-;(setq browse-url-browser-function browse-url-firefox-program)
+;; Could solve with with-eval-after-load as well.
+;;
+;(require 'browse-url)
+(with-eval-after-load 'browse-url
+  (setq browse-url-browser-function browse-url-firefox-program))
+
 
 ;;;;
 ;; Need to handle opening the browser differently on different
@@ -125,3 +131,21 @@
 ;; General, global keymaps.
 ;;
 (global-set-key (kbd "C-c t l") 'toggle-truncate-lines)
+
+(with-eval-after-load 'package-archives
+  (add-to-list
+   'package-archives
+   '("melpa-stable" . "https://stable.melpa.org/packages/")
+   t))
+
+
+(use-package which-key
+  :config
+  (which-key-mode)
+  (setq which-key-iddle-delay 0.7))
+
+(use-package vertico
+  :ensure t
+  :init
+  (vertico-mode)
+  ;(vertico-buffer-mode))

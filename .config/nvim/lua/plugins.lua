@@ -759,6 +759,13 @@ if vim.env.NVIM_DISABLE_BLINK == nil then
         end
       },
     },
+    fuzzy = {
+      ----
+      -- Started getting some error that no fuzzy matching library was
+      -- found and suggested doing some cargo build command. But I don't
+      -- have time now, and this works well enough for me.
+      implementation = "lua",
+    },
     cmdline = {
       enabled = false,
       completion = {

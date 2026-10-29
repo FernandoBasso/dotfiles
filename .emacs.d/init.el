@@ -136,12 +136,23 @@
 ;; Moving between windows
 ;;
 ;; Similar to vim where we use hjkl to move left, down, up, and right.
+;; The function says “move”, but it does't move the window, instead,
+;; move to the window (jump there).
 ;;
 (global-set-key (kbd "C-c l") 'windmove-right)
 (global-set-key (kbd "C-c h") 'windmove-left)
 (global-set-key (kbd "C-c j") 'windmove-down)
 (global-set-key (kbd "C-c k") 'windmove-up)
 
+;;;;
+;; When I run something like C-h k or C-h f, and Emacs
+;; shows a new split window with the content to read, point is still on
+;; the original place. I constantly find myself having to C-x o to go to
+;; the new window so that I can press q to close it. With this, it always
+;; places point on the new “ephemeral” windows so it can be navigated and
+;; quickly closed with q. Point then goes back to the original window.
+;;
+(setq help-window-select t)
 
 (require 'package)
 
@@ -204,7 +215,116 @@
   :ensure t
   :init
   (vertico-mode)
-  ;(vertico-buffer-mode)
+  ;;;;;
+  ;; Display vertico like a regular, large buffer, either on the left,
+  ;; right, top or bottom (depending on the current layout and where
+  ;; point is).
+  ;;
+  (vertico-buffer-mode))
+
+(use-package consult
+  :ensure t
+  ;; Replace bindings. Lazily loaded by `use-package'.
+  :bind (;; C-c bindings in `mode-specific-map'
+          ("C-c M-x" . consult-mode-command)
+          ("C-c h" . consult-history)
+          ("C-c k" . consult-kmacro)
+          ("C-c m" . consult-man)
+          ("C-c i" . consult-info)
+          ([remap Info-search] . consult-info)
+
+          ;; C-x bindings in `ctl-x-map'
+
+          ("C-x M-:" . consult-complex-command) ;; orig. repeat-complex-command
+          ("C-x b" . consult-buffer) ;; orig. switch-to-buffer
+          ("C-x 4 b" . consult-buffer-other-window) ;; orig. switch-to-buffer-other-window
+          ("C-x 5 b" . consult-buffer-other-frame) ;; orig. switch-to-buffer-other-frame
+          ("C-x t b" . consult-buffer-other-tab) ;; orig. switch-to-buffer-other-tab
+          ("C-x r b" . consult-bookmark)         ;; orig. bookmark-jump
+          ("C-x p b" . consult-project-buffer) ;; orig. project-switch-to-buffer
+
+          ;; Custom M-# bindings for fast register access
+          ("M-#" . consult-register-load)
+          ("M-'" . consult-register-store) ;; orig. abbrev-prefix-mark (unrelated)
+          ("C-M-#" . consult-register)
+
+          ;; Other custom bindings
+          ("M-y" . consult-yank-pop) ;; orig. yank-pop
+
+          ;; M-g bindings in `goto-map'
+          ("M-g e" . consult-compile-error)
+          ("M-g r" . consult-grep-match)
+          ("M-g f" . consult-flymake)   ;; Alternative: consult-flycheck
+          ("M-g g" . consult-goto-line) ;; orig. goto-line
+          ("M-g M-g" . consult-goto-line) ;; orig. goto-line
+          ("M-g o" . consult-outline) ;; Alternative: consult-org-heading
+          ("M-g m" . consult-mark)
+          ("M-g k" . consult-global-mark)
+          ("M-g i" . consult-imenu)
+          ("M-g I" . consult-imenu-multi)
+          ;; M-s bindings in `search-map'
+          ("M-s d" . consult-find) ;; Alternative: consult-fd
+          ("M-s c" . consult-locate)
+          ("M-s g" . consult-grep)
+          ("M-s G" . consult-git-grep)
+          ("M-s r" . consult-ripgrep)
+          ("M-s l" . consult-linel)
+          ("M-s L" . consult-line-multi)
+          ("M-s k" . consult-keep-lines)
+          ("M-s u" . consult-focus-lines)
+          ;; Isearch integration
+          ("M-s e" . consult-isearch-history)
+          :map isearch-mode-map
+          ("M-e" . consult-isearch-history) ;; orig. isearch-edit-string
+          ("M-s e" . consult-isearch-history) ;; orig. isearch-edit-string
+          ("M-s l" . consult-line) ;; needed by consult-line to detect isearch
+          ("M-s L" . consult-line-multi) ;; needed by consult-line to detect isearch
+          ;; Minibuffer history
+          :map minibuffer-local-map
+          ("M-s" . consult-history) ;; orig. next-matching-history-element
+          ("M-r" . consult-history)) ;; orig. previous-matching-history-element
+
+  ;; The :init configuration is always executed (Not lazy)
+  :init
+
+  ;; Tweak the register preview for `consult-register-load',
+  ;; `consult-register-store' and the built-in commands.  This improves the
+  ;; register formatting, adds thin separator lines, register sorting and hides
+  ;; the window mode line.
+  (advice-add #'register-preview :override #'consult-register-window)
+  (setq register-preview-delay 0.5)
+
+  ;; Use Consult to select xref locations with preview
+  (setq xref-show-xrefs-function #'consult-xref
+    xref-show-definitions-function #'consult-xref)
+
+  ;; Configure other variables and modes in the :config section,
+  ;; after lazily loading the package.
+  :config
+
+  ;; Optionally configure preview. The default value
+  ;; is 'any, such that any key triggers the preview.
+  ;; (setq consult-preview-key 'any)
+  (setq consult-preview-key "M-.")
+  ;; (setq consult-preview-key '("S-<down>" "S-<up>"))
+  ;; For some commands and buffer sources it is useful to configure the
+  ;; :preview-key on a per-command basis using the `consult-customize' macro.
+  (consult-customize
+    consult-theme :preview-key '(:debounce 0.2 any)
+    consult-ripgrep consult-git-grep consult-grep consult-man
+    consult-bookmark consult-recent-file consult-xref
+    consult-source-bookmark consult-source-file-register
+    consult-source-recent-file consult-source-project-recent-file
+    :preview-key "M-."
+    :preview-key '(:debounce 0.4 any))
+
+  ;; Optionally configure the narrowing key.
+  ;; Both < and C-+ work reasonably well.
+  (setq consult-narrow-key "<") ;; "C-+"
+
+  ;; Optionally make narrowing help available in the minibuffer.
+  ;; You may want to use `embark-prefix-help-command' or which-key instead.
+  ;; (keymap-set consult-narrow-map (concat consult-narrow-key " ?") #'consult-narrow-help)
   )
 
 ;;;;
@@ -232,6 +352,12 @@
 
   (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
   (show-paren-mode 1))
+
+;;;;
+;; https://devhowto.gitlab.io/editors/emacs/spell-checking.html
+;;
+(use-package flyspell
+  :ensure t)
 
 ;;;;
 ;; https://github.com/bbatsov/adoc-mode
@@ -280,6 +406,48 @@
         (("C-M-y" . org-download-screenshot)
          ("s-y" . org-download-yank))))
 
+;;
+; org-mode
+;
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+(global-set-key "\C-cc" 'org-content)
+
+(define-key global-map "\C-cc" 'org-capture)
+
+(setq org-src-fontify-natively t)
+(setq org-src-tab-acts-natively t)
+(setq org-src-window-setup 'current-window)
+(setq org-edit-src-content-indentation 0)
+(setq org-goto-interface 'outline-path-completion)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-html-htmlize-output-type 'css)
+
+;;
+;; With this, we can set images the width we want inside org
+;; buffer. For example:
+;;
+;;  #+ATTR_ORG: :width 600
+;;  [[./images/gnu.png]]
+;;
+(setq org-image-actual-width nil)
+
+(setq org-html-html5-fancy t)
+(setq org-html-doctype "html5")
+
+;;
+;; Hide *bold*, /italic/, ~code~, =verbatim= and +strike-through+ symbols.
+;;
+(setq org-hide-emphasis-markers t)
+
+;;;;
+;; Bigger Latex Fragments.
+;;
+;(plist-put org-format-latex-options :scale 1.5)
+
 ;(require 'treesit)
 ;(setopt treesit-font-lock-level 4)
 ;(use-package treesit-auto
@@ -308,9 +476,9 @@
 ;          ("C-c f n" . treesit-fold-next-fold)
 ;          ("C-c f p" . treesit-fold-previous-fold)))
 
-;;;;;;
-;;;; Copied from https://github.com/bbatsov/emacs.d/blob/master/init.el
 ;;;;
+;; Copied from https://github.com/bbatsov/emacs.d/blob/master/init.el
+;;
 (defun nuke-loaded-themes ()
   "Nuke all loaded themes."
   (interactive)
@@ -318,21 +486,24 @@
     (disable-theme theme))
   (message "Themes nuked"))
 
-(use-package doom-themes
-  :ensure t
-  :custom
-  (doom-themes-enable-italic nil)
-  :config
-  (load-theme 'doom-solarized-light t))
+;;(use-package doom-themes
+;;  :ensure t
+;;  :custom
+;;  (doom-themes-enable-italic nil)
+;;  :config
+;;  ;(load-theme 'doom-solarized-light t)
+;;  )
+
+(load-theme 'tsdh-light)
 
 (use-package nerd-icons
   :ensure t)
 
-;(use-package doom-modeline
-;  :ensure t
-;  :init (doom-modeline-mode 1)
-;  :config
-;  (setq doom-modeline-height 26))
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 26))
 
 
 ;;;;

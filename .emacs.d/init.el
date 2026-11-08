@@ -377,14 +377,39 @@
 ;;
 (use-package adoc-mode
   :ensure t
+  :init
   :custom-face
   (adoc-title-0-face ((t (:height 1.2 :weight bold))))
   (adoc-title-1-face ((t (:height 1.1 :weight bold))))
   (adoc-title-2-face ((t (:height 1.0 :weight bold))))
   :config
+  (customize-set-variable 'adoc-title-scaling nil)
+  (set-face-attribute
+    'fixed-pitch
+    nil
+    :family  (face-attribute 'default :family)
+    :height 1.0)
+  ;;;;
+  ;; Face for link::<url>[name of the link].
+  ;;
+  (set-face-attribute
+    'adoc-superscript-face
+    nil
+    :family  (face-attribute 'default :family)
+    :height 1.0)
+  ;;;;
+  ;; Face for image::<url>[alt text].
+  ;;
+  (set-face-attribute
+    'adoc-secondary-text-face
+    nil
+    :family (face-attribute 'default :family)
+    :height 1.0)
+  (set-face-attribute 'adoc-code-face nil :inherit 'default)
   (add-hook 'adoc-mode-hook (lambda ()
                               (turn-off-auto-fill)
-                              (visual-line-mode -1))))
+                              (visual-line-mode -1)
+                              (setq-local compile-command "echo hello "))))
 
 
 (use-package typescript-mode

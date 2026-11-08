@@ -34,6 +34,11 @@
 (blink-cursor-mode -1)
 
 ;;;;
+;; Shows the line and column number on the modeline.
+;;
+(setq column-number-mode t)
+
+;;;;
 ;; Got to the last point position when you previously visited the
 ;; same file.
 ;;
@@ -145,11 +150,11 @@
 (global-set-key (kbd "C-c k") 'windmove-up)
 
 ;;;;
-;; When I run something like C-h k or C-h f, and Emacs
-;; shows a new split window with the content to read, point is still on
-;; the original place. I constantly find myself having to C-x o to go to
-;; the new window so that I can press q to close it. With this, it always
-;; places point on the new “ephemeral” windows so it can be navigated and
+;; When I run something like C-h k or C-h f, and Emacs shows a new help
+;; window with the content to read, point is still on the original
+;; place. I constantly find myself having to C-x o to go to the new
+;; window so that I can press q to close it. With this, it always places
+;; point on the new “ephemeral” windows so it can be navigated and
 ;; quickly closed with q. Point then goes back to the original window.
 ;;
 (setq help-window-select t)
@@ -341,7 +346,7 @@
                 lisp-interaction-mode-hook
                 scheme-mode-hook
                 racket-mode-hook
-                clojure-ts-mode-hook))
+                clojusre-ts-mode-hook))
     (add-hook m #'paredit-mode))
 
   (autoload
@@ -352,6 +357,14 @@
 
   (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode +1)))
   (show-paren-mode 1))
+
+;;;;
+;; Avoid conflict with consult M-s search/find functions.
+;;
+(eval-after-load 'paredit
+  '(progn
+     (define-key paredit-mode-map (kbd "<M-s>") nil)
+     (define-key paredit-mode-map (kbd "<M-S-s>") 'paredit-splice-sexp)))
 
 ;;;;
 ;; https://devhowto.gitlab.io/editors/emacs/spell-checking.html

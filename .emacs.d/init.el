@@ -366,6 +366,11 @@
      (define-key paredit-mode-map (kbd "<M-s>") nil)
      (define-key paredit-mode-map (kbd "<M-S-s>") 'paredit-splice-sexp)))
 
+(use-package company
+  :ensure t
+  :config
+  (add-hook 'after-init-hoook 'global-company-mode))
+
 ;;;;
 ;; https://devhowto.gitlab.io/editors/emacs/spell-checking.html
 ;;

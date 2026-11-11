@@ -217,6 +217,11 @@
   :after (treemacs magit)
   :ensure t)
 
+(use-package diff-hl
+  :ensure t
+  :config
+  (global-diff-hl-mode))
+
 (use-package magit
   :ensure t
   :config

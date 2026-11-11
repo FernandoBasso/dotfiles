@@ -372,6 +372,22 @@
   (add-hook 'after-init-hoook 'global-company-mode))
 
 ;;;;
+;; https://emacs-lsp.github.io/lsp-mode/
+;;
+(use-package lsp-mode
+  :ensure t
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :hook
+  (lsp-mode . lsp-enable-which-key-integration)
+  ;;;;
+  ;; $ gem install ruby-lsp
+  ;;
+  (ruby-mode . lsp)
+  (typescript-mode . lsp)
+  :commands lsp)
+
+;;;;
 ;; https://devhowto.gitlab.io/editors/emacs/spell-checking.html
 ;;
 (use-package flyspell

@@ -159,6 +159,13 @@
 ;;
 (setq help-window-select t)
 
+;;;;
+;; Flymake.
+;;
+(global-set-key (kbd "M-n") 'flymake-goto-next-error)
+(global-set-key (kbd "M-p") 'flymake-goto-prev-error)
+
+
 (require 'package)
 
 (add-to-list

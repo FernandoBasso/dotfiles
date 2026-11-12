@@ -131,6 +131,13 @@
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "firefox"))
 
+;;;;
+;; Eshell
+;;
+(setq eshell-prompt-function (lambda () "\n$ "))
+(add-hook 'eshell-mode-hook (lambda ()
+                              (setq show-trailing-whitespace nil)))
+
 
 ;;;;
 ;; General, global keymaps.

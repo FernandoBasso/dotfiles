@@ -182,6 +182,10 @@
 
 (add-to-list
   'package-archives
+  '("melpa" . "https://melpa.org"))
+
+(add-to-list
+  'package-archives
   '("nongnu" . "https://elpa.nongnu.org/nongnu/")
   t)
 
@@ -411,8 +415,14 @@
 ;; · https://codeberg.org/geiser/chicken
 ;; · https://www.nongnu.org/geiser/index.html
 ;;
+;; $ git clone \
+;;     https://codeberg.org/geiser/chicken.git \
+;;     ~/source/others/geiser-chicken \
+;;     --origin=upstream
+;;
 (use-package geiser-chicken
   :ensure t
+  :load-path "~/source/others/geiser-chicken"
   :config
 ;;;;
   ;; $ sudo pacman install chicken

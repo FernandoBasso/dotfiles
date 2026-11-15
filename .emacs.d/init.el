@@ -407,6 +407,22 @@
   :commands lsp)
 
 ;;;;
+;; · https://github.com/emacsmirror/geiser
+;; · https://codeberg.org/geiser/chicken
+;; · https://www.nongnu.org/geiser/index.html
+;;
+(use-package geiser-chicken
+  :ensure t
+  :config
+;;;;
+  ;; $ sudo pacman install chicken
+  ;;
+  ;; But the binaries are chicken-csi and chicken-csc because dot-net mono
+  ;; package won the naming battle and took csi and csc.
+  ;;
+  (setq geiser-chicken-binary "chicken-csi"))
+
+;;;;
 ;; https://devhowto.gitlab.io/editors/emacs/spell-checking.html
 ;;
 (use-package flyspell

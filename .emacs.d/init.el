@@ -496,6 +496,10 @@
 
 (define-key global-map "\C-cc" 'org-capture)
 
+(add-hook 'org-mode-hook (lambda ()
+                           (setq fill-column 72)
+                           (auto-fill-mode)))
+
 (setq org-src-fontify-natively t)
 (setq org-src-tab-acts-natively t)
 (setq org-src-window-setup 'current-window)

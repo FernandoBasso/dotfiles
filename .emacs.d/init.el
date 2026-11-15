@@ -424,7 +424,7 @@
   :ensure t
   :load-path "~/source/others/geiser-chicken"
   :config
-;;;;
+  ;;;;
   ;; $ sudo pacman install chicken
   ;;
   ;; But the binaries are chicken-csi and chicken-csc because dot-net mono

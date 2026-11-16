@@ -421,20 +421,24 @@
 ;;     ~/source/others/geiser-chicken \
 ;;     --origin=upstream
 ;;
+;; $ cd ~/source/others/geiser-chicken
+;; $ chicken-install -s -l .
+;;
 ;; Around Nov 2026, I had to also install chicken-doc from
 ;; https://github.com/crzcrz/chicken-doc/tree/chicken-6-fixes
 ;; for CHICKEN 6 to work arround this error:
 ;;
 ;;   Error: unbound variable: geiser#geiser-eval
 ;;
-;; See this thread:
+;; Relevante threads on chicken-users mailing list:
+;;
 ;; · https://lists.nongnu.org/archive/html/chicken-users/2026-11/threads.html
 ;;
 (use-package geiser-chicken
   :ensure t
   :load-path "~/source/others/geiser-chicken"
   :config
-;;;;
+  ;;;;
   ;; $ sudo pacman install chicken
   ;;
   ;; But the binaries are chicken-csi and chicken-csc because dot-net mono

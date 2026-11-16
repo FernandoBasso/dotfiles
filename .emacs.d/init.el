@@ -430,7 +430,7 @@
 ;;
 ;;   Error: unbound variable: geiser#geiser-eval
 ;;
-;; Relevante threads on chicken-users mailing list:
+;; Relevant threads on chicken-users mailing list:
 ;;
 ;; · https://lists.nongnu.org/archive/html/chicken-users/2026-11/threads.html
 ;;

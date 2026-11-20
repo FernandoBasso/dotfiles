@@ -252,7 +252,9 @@
   ;; right, top or bottom (depending on the current layout and where
   ;; point is).
   ;;
-  (vertico-buffer-mode))
+  (vertico-buffer-mode)
+  :config
+  (setq completion-styles '(basic substring partial-completion flex)))
 
 (use-package consult
   :ensure t

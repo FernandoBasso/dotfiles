@@ -458,6 +458,9 @@
 (use-package flyspell
   :ensure t)
 
+(use-package git-modes
+  :ensure t)
+
 ;;;;
 ;; https://github.com/bbatsov/adoc-mode
 ;;

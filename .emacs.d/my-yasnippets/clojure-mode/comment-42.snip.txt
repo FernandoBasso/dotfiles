@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: 4/2 explanation comment
+# key: ;;
+# --
+;;;;
+;; $1
+;;

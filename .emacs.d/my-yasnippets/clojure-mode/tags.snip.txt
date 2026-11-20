@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: tags comment
+# key: ;t
+# --
+;;
+;; tags: $1
+;;

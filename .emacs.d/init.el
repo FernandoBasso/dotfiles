@@ -458,6 +458,43 @@
 (use-package flyspell
   :ensure t)
 
+;;;
+;;; https://joaotavora.github.io/yasnippet/
+;;;
+;;; Given a snippet with the trigger chars dq which inserts double curly
+;;; quotes and places the point inside them, typing dq RET would produce
+;;; “|”.
+;;;
+;;; Alternatively type C-c & C-s (yas-insert-snippet) to get a list of
+;;; candidates. Select one and press RET.
+;;;
+(use-package yasnippet
+  :ensure t
+  :config
+
+  ;; We need to set `yas-snippet-dirs' BEFORE enabling the global mode.
+  ;; https://emacs.stackexchange.com/questions/10523/yasnippet-configuration-does-not-persist-across-emacs-runs/10531#10531
+  (setq yas-snippet-dirs '("~/source/dotfiles/.emacs.d/my-yasnippets"))
+  (yas-global-mode 1)
+
+  ;; For some reason, when snippets are expanded, the indentation is
+  ;; messed up, even though it is correct in the snippet file/definition.
+  ;; This seems to have solved the problem.
+  (setq yas-indent-line nil)
+
+  ;; Avoid expanded snippets to insert newlines after their expanded text.
+  (setq-default mode-require-final-newline nil)
+  (setq-default require-final-newline nil))
+
+;;;;
+;; Simulate global snippets using fudamental-mode snippets.
+;;
+;; https://github.com/joaotavora/yasnippet/issues/557
+;;
+(add-hook 'yas-minor-mode-hook
+          (lambda ()
+            (yas-activate-extra-mode 'fundamental-mode)))
+
 (use-package git-modes
   :ensure t)
 

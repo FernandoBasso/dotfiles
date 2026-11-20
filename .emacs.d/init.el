@@ -106,6 +106,10 @@
   (lambda ()
     (setq show-trailing-whitespace nil)))
 
+(add-hook 'shell-command-mode-hook
+  (lambda ()
+    (setq show-trailing-whitespace nil)))
+
 ;;;;
 ;; The default browser to open URLs.
 ;;

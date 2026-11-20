@@ -1,10 +1,27 @@
-# .gitignore, symlinked to ~/.gitignore. Not to be confused with
-# the repo's .gitignore.
-tmp/
-.emacs.bkp
+# -*- mode: gitignore; -*-
+
+########################################################################
+# <Emacs>
+#
+# Also see:
+#
+# https://github.com/github/gitignore/blob/main/Global/Emacs.gitignore
+#
+
+# Package repositories
 .emacs.d/quelpa
-.emacs.d/history
-.emacs.d/places
+
+# Auto-save and temporary files.
+\#*\#
+.\#*
+*~
+
+# Compiled elisp.
+*.elc
+
+#
+# </Emacs>
+########################################################################
 
 #
 # Work-related stuff that I am better off not sharing.

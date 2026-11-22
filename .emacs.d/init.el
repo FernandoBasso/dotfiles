@@ -3,6 +3,8 @@
 ;; https://emacs.stackexchange.com/questions/85745/how-to-totally-and-completely-remove-the-no-lexical-binding-warning
 ;;
 
+(load "~/source/dotfiles/.emacs.d/utils.el")
+
 ;;
 ;; Very simple init.el that makes the UI clean and with a very
 ;; basic, but useful set of configs.
@@ -147,6 +149,9 @@
 ;; General, global keymaps.
 ;;
 (global-set-key (kbd "C-c t l") 'toggle-truncate-lines)
+
+(keymap-global-set "M-o" 'my/insert-line-below)
+(keymap-global-set "M-O" 'my/insert-line-above)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Moving between windows

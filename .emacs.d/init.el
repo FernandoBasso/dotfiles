@@ -515,33 +515,28 @@
   (adoc-title-2-face ((t (:height 1.0 :weight bold))))
   :config
   (customize-set-variable 'adoc-title-scaling nil)
-  (set-face-attribute
-    'fixed-pitch
-    nil
-    :family  (face-attribute 'default :family)
-    :height 1.0)
-  ;;;;
-  ;; Face for link::<url>[name of the link].
-  ;;
-  (set-face-attribute
-    'adoc-superscript-face
-    nil
-    :family  (face-attribute 'default :family)
-    :height 1.0)
-  ;;;;
-  ;; Face for image::<url>[alt text].
-  ;;
-  (set-face-attribute
-    'adoc-secondary-text-face
-    nil
-    :family (face-attribute 'default :family)
-    :height 1.0)
   (set-face-attribute 'adoc-code-face nil :inherit 'default)
   (add-hook 'adoc-mode-hook (lambda ()
                               (turn-off-auto-fill)
                               (visual-line-mode -1)
                               (setq-local compile-command "echo hello "))))
 
+;;; No italics and same font size for these faces. Move point to
+;;; something that you want to know the face name and C-8 C-x =.
+;;; The face name should show at the very bototm of the output.
+(dolist (prop '(
+                 ;; link::<url>[name of the link].
+                 adoc-superscript-face
+                 ;; image::<url>[alt].
+                 adoc-secondary-text-face
+                 adoc-blockquote-face
+                 adoc-emphasis-face
+                 fixed-pitch))
+  (set-face-attribute prop
+    nil
+    :family (face-attribute 'default :family)
+    :slant 'normal
+    :height 1.0))
 
 (use-package typescript-mode
   :ensure t

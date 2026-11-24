@@ -152,6 +152,7 @@
 
 (keymap-global-set "M-o" 'my/insert-line-below)
 (keymap-global-set "M-O" 'my/insert-line-above)
+(keymap-global-set "C-c f" 'my/insert-file-name-at-point)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Moving between windows

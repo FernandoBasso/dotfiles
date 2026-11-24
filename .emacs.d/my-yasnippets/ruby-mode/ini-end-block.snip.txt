@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Ini & end ruby block
+# key: blk
+# --
+${1:if_do_class_module_etc} ${2:name_or_logic}
+$0
+end
